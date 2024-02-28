@@ -1,9 +1,11 @@
 name: Cmys
 
-on:
-  schedule:
-    - cron: '0 3,16 * * *'
-    
+on: [push]
+
+
+permissions:
+  contents: write
+  
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -31,9 +33,6 @@ jobs:
           git commit itv.txt -m "Add generated file"
           #git pull --rebase
           git push -f
-
-      - name: Cleanup cache    # 删除缓存标识
-        run: rm -rf key_itvtxt
 
       - name: Run cctv
         run: python ${{ github.workspace }}/cctv.py
