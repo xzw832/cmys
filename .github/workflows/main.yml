@@ -1,6 +1,6 @@
 name: Cmys
 
-on:
+on: [push]
 
     
 jobs:
