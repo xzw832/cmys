@@ -1,8 +1,7 @@
 name: Cmys
 
 on:
-  schedule:
-    - cron: '0 3,16 * * *'
+
     
 jobs:
   build:
