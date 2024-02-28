@@ -1,0 +1,62 @@
+name: Cmys
+
+on:
+  schedule:
+    - cron: '0 3,16 * * *'
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Install dependencies
+        run: pip install selenium requests futures eventlet
+            
+      - name: Run itv
+        run: python ${{ github.workspace }}/itv.py
+
+      - name: 先提交总表
+        run: |
+          git config --local user.email "g832@x-zw.com"
+          git config --local user.name "xzw832"
+          git add .
+          git commit itv.txt -m "Add generated file"
+          #git pull --rebase
+          git push -f
+
+      - name: Cleanup cache    # 删除缓存标识
+        run: rm -rf key_itvtxt
+
+      - name: Run cctv
+        run: python ${{ github.workspace }}/cctv.py
+
+      - name: Run weishi
+        run: python ${{ github.workspace }}/weishi.py
+
+      - name: Run ktpd
+        run: python ${{ github.workspace }}/ktpd.py
+          
+      - name: Run ysyl
+        run: python ${{ github.workspace }}/ysyl.py
+          
+      - name: Run xiangang
+        run: python ${{ github.workspace }}/xiangang.py
+          
+      - name: Run qita
+        run: python ${{ github.workspace }}/qita.py
+
+      - name: 提交总表更改
+        run: |
+          git add .
+          git commit qita.txt -m "Add generated file"
+          git commit *.txt -m "Add generated file"
+          #git pull --rebase
+          git push -f
