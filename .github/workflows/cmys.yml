@@ -2,7 +2,6 @@ name: Cmys
 
 on: [push]
 
-
 env:
   clientId: 00000001-0100-0010-0100-100000000001
   tenant: mycmys.onmicrosoft.com
