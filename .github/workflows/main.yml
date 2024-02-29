@@ -1,6 +1,7 @@
 name: cmys
-on: [push]
-    
+on:
+  schedule:
+    - cron: '0 8,20 * * *' 
 env:
   clientId: 00000001-0100-0010-0100-100000000001
   tenant: mycmys.onmicrosoft.com
@@ -27,7 +28,7 @@ jobs:
 
       - name: Run itv
         run: python ${{ github.workspace }}/itv.py
-      - name: 提交总表更改
+      - name: 提交更改
         run: |
           git config --local user.name "xzw832" 
           git config --local user.email "g832@x-zw.com"
