@@ -1,8 +1,7 @@
 name: Cmys
 
-on:
-  schedule:
-    - cron: '0 11,23 * * *'
+on: [push]
+
 
 permissions:
   contents: write
