@@ -1,5 +1,5 @@
 【  央视频道  】,#genre#
-CCTV1,http://58.210.60.226:9901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0
+CCTV1,http://58.210.60.226:9901/tsfile/live/0001_1.m3u8
 CCTV1,http://123.160.232.232:85/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0
 CCTV1,http://1.194.50.138:10086/tsfile/live/1006_1.m3u8?key=txiptv&playlive=1&authid=0
 CCTV1,http://59.62.8.250:9901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0
