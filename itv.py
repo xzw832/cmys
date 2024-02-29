@@ -83,8 +83,8 @@ for url in urls:
     chrome_options.add_argument("blink-settings=imagesEnabled=false")
     driver = webdriver.Chrome(options=chrome_options)
     # 使用WebDriver访问网页
-    driver.get(url, timeout=5)  # 将网址替换为你要访问的网页地址
-    time.sleep(5)
+    driver.get(url)  # 将网址替换为你要访问的网页地址
+    time.sleep(10)
     # 获取网页内容
     page_content = driver.page_source
 
