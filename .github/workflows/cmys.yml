@@ -1,8 +1,7 @@
 name: Cmys
 
-on:
-  schedule:
-    - cron: '0 11,23 * * *'
+on: [push]
+
 
 permissions:
   contents: write
@@ -18,7 +17,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.8
+          python-version: 3.1
 
       - name: Install dependencies
         run: pip install selenium requests futures eventlet
@@ -31,6 +30,5 @@ jobs:
           git config --local user.email "g832@x-zw.com"
           git config --local user.name "xzw832"
           git add .
-          git commit itv.txt -m "Add generated file"
-          #git pull --rebase
+          git commit *.txt -m "Add generated file"
           git push -f
