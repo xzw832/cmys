@@ -29,7 +29,8 @@ jobs:
           git config --local user.email "g832@x-zw.com"
       - name: Run itv
         run: python ${{ github.workspace }}/itv.py
-
+      - name: Sleep for 30 seconds
+        run: sleep 10s
       - name: 提交总表更改
         run: |
           git add .
