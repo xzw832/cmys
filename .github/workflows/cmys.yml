@@ -20,6 +20,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
+          folder: "./Policiescmys"
           python-version: 3.9
 
       - name: Install dependencies
