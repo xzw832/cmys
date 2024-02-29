@@ -35,4 +35,5 @@ jobs:
         run: |
           git add .
           git commit itv.txt -m "Add generated file"
+          git pull --rebase -main master
           git push -f
