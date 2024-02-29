@@ -22,14 +22,16 @@ jobs:
 
       - name: Install dependencies
         run: pip install selenium requests futures eventlet
-            
+        
+      - name: 先提交信息
+        run: |
+          git config --local user.name "xzw832" 
+          git config --local user.email "g832@x-zw.com"
       - name: Run itv
         run: python ${{ github.workspace }}/itv.py
 
       - name: 提交总表更改
         run: |
-          git config --local user.email "g832@x-zw.com"
-          git config --local user.name "xzw832"
           git add .
-          git commit *.txt -m "Add generated file"
+          git commit itv.txt -m "Add generated file"
           git push -f
