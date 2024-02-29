@@ -1,8 +1,7 @@
 name: Cmys
 
-on: 
-  schedule:
-    - cron: '0 11,23 * * *'
+on: [push]
+
 
 permissions:
   contents: write
@@ -22,18 +21,14 @@ jobs:
 
       - name: Install dependencies
         run: pip install selenium requests futures eventlet
-        
-      - name: 先提交信息
+
+      - name: Run cctv
+        run: python ${{ github.workspace }}/cctv.py
+
+      - name: 提交总表更改
         run: |
           git config --local user.name "xzw832" 
           git config --local user.email "g832@x-zw.com"
-      - name: Run itv
-        run: python ${{ github.workspace }}/itv.py
-      - name: Sleep for 30 seconds
-        run: sleep 10s
-      - name: 提交总表更改
-        run: |
           git add .
-          git commit itv.txt -m "Add generated file"
-          git pull itv.txt main
-          git push itv.txt main
+          git commit cctv.txt -m "Add generated file"
+          git push -f
