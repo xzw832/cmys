@@ -3,7 +3,7 @@ name: Cmys_set
 on:
   push:
     paths:
-      - 'itv.txt'   # 仅当该文件被修改时触发运行
+      - 'itv1.txt'   # 仅当该文件被修改时触发运行
     branches: [main]  # 限制只在主分支上触发运行
 permissions:
   contents: write
