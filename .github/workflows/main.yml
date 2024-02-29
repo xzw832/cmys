@@ -23,9 +23,6 @@ jobs:
 
       - name: Install dependencies
         run: pip install selenium requests futures eventlet
-            
-      - name: Run itv
-        run: python ${{ github.workspace }}/itv.py
 
       - name: Run cctv
         run: python ${{ github.workspace }}/cctv.py
@@ -35,13 +32,13 @@ jobs:
 
       - name: Run ktpd
         run: python ${{ github.workspace }}/ktpd.py
-          
+ 
       - name: Run ysyl
         run: python ${{ github.workspace }}/ysyl.py
-          
+
       - name: Run xiangang
         run: python ${{ github.workspace }}/xiangang.py
-          
+
       - name: Run qita
         run: python ${{ github.workspace }}/qita.py
 
