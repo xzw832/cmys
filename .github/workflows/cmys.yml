@@ -1,0 +1,34 @@
+name: Cmys
+
+on: [push]
+
+permissions:
+  contents: write
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Install dependencies
+        run: pip install selenium requests futures eventlet
+            
+      - name: Run itv
+        run: python ${{ github.workspace }}/itv.py
+
+      - name: 提交总表更改
+        run: |
+          git config --local user.email "g832@x-zw.com"
+          git config --local user.name "xzw832"
+          git add .
+          git commit itv.txt -m "Add generated file"
+          #git pull --rebase
+          git push -f
