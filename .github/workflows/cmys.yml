@@ -1,8 +1,7 @@
 name: Cmys
 
-on:
-  schedule:
-    - cron: '0 11,23 * * *'
+on: [push]
+
 
 permissions:
   contents: write
@@ -35,5 +34,5 @@ jobs:
         run: |
           git add .
           git commit itv.txt -m "Add generated file"
-          # git pull --rebase -main master
-          git push -f
+          git pull itv.txt main
+          git push itv.txt main
