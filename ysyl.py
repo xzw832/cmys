@@ -27,7 +27,7 @@ with open("itv.txt", 'r', encoding='utf-8') as file:
                 channel_name, channel_url = line.split(',')
                 if '电影' in channel_name or '影院' in channel_name or '剧场' in channel_name or '影视' in channel_name:
                     channels.append((channel_name, channel_url))
-
+    file.close()
 # 定义工作线程函数
 def worker():
     while True:
@@ -121,3 +121,4 @@ with open("ysyl.txt", 'w', encoding='utf-8') as file:
             else:
                 file.write(f"{channel_name},{channel_url}\n")
                 channel_counters[channel_name] = 1
+    file.close()
