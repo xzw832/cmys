@@ -27,7 +27,7 @@ with open("itv.txt", 'r', encoding='utf-8') as file:
                 channel_name, channel_url = line.split(',')
                 if '凤凰' not in channel_name and '卫视' not in channel_name and 'CCTV' not in channel_name and '测试' not in channel_name and '电影' not in channel_name and '影院' not in channel_name and '剧场' not in channel_name and '影视' not in channel_name and '卡通' not in channel_name and '动漫' not in channel_name and '动画' not in channel_name and '少儿' not in channel_name:
                     channels.append((channel_name, channel_url))
-
+    file.close()
 # 定义工作线程函数
 def worker():
     while True:
@@ -121,7 +121,7 @@ with open("qita.txt", 'w', encoding='utf-8') as file:
             else:
                 file.write(f"{channel_name},{channel_url}\n")
                 channel_counters[channel_name] = 1
-                
+    file.close()
 print(f"{now_today}其他频道更新完成")
 
 # 合并文件内容
@@ -131,11 +131,12 @@ for file_path in file_paths:
     with open(file_path, 'r', encoding="utf-8") as file:
         content = file.read()
         file_contents.append(content)
-
+        file.close()
+        
 # print(f"{now_today}合并文件完成")
 
 # 写入合并后的文件
 with open("itvlist.txt", "w", encoding="utf-8") as output:
     output.write('\n'.join(file_contents))
-
+    file.close()
 # print(f"{now_today}写入合并后的文件")
