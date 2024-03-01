@@ -27,7 +27,7 @@ with open("itv.txt", 'r', encoding='utf-8') as file:
                 channel_name, channel_url = line.split(',')
                 if '卡通' in channel_name or '动漫' in channel_name or '动画' in channel_name or '少儿' in channel_name:
                     channels.append((channel_name, channel_url))
-file.close()
+    file.close()
 # 定义工作线程函数
 def worker():
     while True:
@@ -121,3 +121,4 @@ with open("ktpd.txt", 'w', encoding='utf-8') as file:
             else:
                 file.write(f"{channel_name},{channel_url}\n")
                 channel_counters[channel_name] = 1
+    file.close()
