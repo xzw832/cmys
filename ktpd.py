@@ -27,7 +27,7 @@ with open("itv.txt", 'r', encoding='utf-8') as file:
                 channel_name, channel_url = line.split(',')
                 if '卡通' in channel_name or '动漫' in channel_name or '动画' in channel_name or '少儿' in channel_name:
                     channels.append((channel_name, channel_url))
-
+file.close()
 # 定义工作线程函数
 def worker():
     while True:
@@ -68,7 +68,9 @@ def worker():
             error_channels.append(error_channel)
             numberx = (len(results) + len(error_channels)) / len(channels) * 100
             # print(f"可用频道：{len(results)} 个 , 不可用频道：{len(error_channels)} 个 , 总频道：{len(channels)} 个 ,总进度：{numberx:.2f} %。")
-
+        
+        # 减少CPU占用
+        time.sleep(0)
         # 标记任务完成
         task_queue.task_done()
 
