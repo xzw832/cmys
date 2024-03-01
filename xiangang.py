@@ -27,7 +27,7 @@ with open("itv.txt", 'r', encoding='utf-8') as file:
                 channel_name, channel_url = line.split(',')
                 if '凤凰' in channel_name or 'CN_' in channel_name:
                     channels.append((channel_name, channel_url))
-
+    file.close()
 # 定义工作线程函数
 def worker():
     while True:
@@ -121,3 +121,4 @@ with open("xiangang.txt", 'w', encoding='utf-8') as file:
             else:
                 file.write(f"{channel_name},{channel_url}\n")
                 channel_counters[channel_name] = 1
+    file.close()
