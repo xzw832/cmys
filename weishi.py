@@ -68,7 +68,9 @@ def worker():
             error_channels.append(error_channel)
             numberx = (len(results) + len(error_channels)) / len(channels) * 100
             # print(f"可用频道：{len(results)} 个 , 不可用频道：{len(error_channels)} 个 , 总频道：{len(channels)} 个 ,总进度：{numberx:.2f} %。")
-
+        
+        # 减少CPU占用
+        time.sleep(0)
         # 标记任务完成
         task_queue.task_done()
 
