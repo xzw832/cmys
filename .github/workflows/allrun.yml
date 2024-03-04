@@ -1,0 +1,12 @@
+name: allruning
+on:
+  # 手动运行
+  workflow_dispatch:
+jobs:
+  call-workflow-1-in-local-repo:
+    uses: ./.github/workflows/itv.yml
+  call-workflow-2-in-local-repo:
+    uses: ./.github/workflows/cctv.yml
+  call-workflow-in-another-repo:
+    uses: ./.github/workflows/weishi.yml
+    
