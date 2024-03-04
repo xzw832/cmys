@@ -1,7 +1,13 @@
 name: Python Cache Example
 on:
+  schedule:
+    - cron: '0 3,6,9,12,15,17,20,23 * * *'
+      
   # 手动运行
   workflow_dispatch:
+env:
+  clientId: 00000001-0100-0011-0101-100011100001
+  tenant: lives02.monmicrosoft.com
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -32,62 +38,33 @@ jobs:
       # 安装所需的包
       - name: Install dependencies
         run: pip install selenium requests futures eventlet
+
+      - name: Install pip install --upgrade pip
+        run: pip install --upgrade pip
         
       # 运行测试等其他任务...
       - name: Run itv
         run: python ${{ github.workspace }}/itv.py
-      - name: 提交更改
-        run: |
-          git config --local user.name "xzw832" 
-          git config --local user.email "g832@x-zw.com"
-          git add .
-          git commit itv.txt -m "Add generated file"
-          git push -f
+
       - name: Run cctv
         run: python ${{ github.workspace }}/cctv.py
-      - name: 提交cctv更改
-        run: |
-          git add .
-          git commit cctv.txt -m "Add generated file"
-          git push -f
           
       - name: Run weishi
         run: python ${{ github.workspace }}/weishi.py
-      - name: 提交weishi更改
-        run: |
-          git add .
-          git commit weishi.txt -m "Add generated file"
-          git push -f
           
       - name: Run ktpd
         run: python ${{ github.workspace }}/ktpd.py
-      - name: 提交ktpd更改
-        run: |
-          git add .
-          git commit ktpd.txt -m "Add generated file"
-          git push -f
           
       - name: Run ysyl
         run: python ${{ github.workspace }}/ysyl.py
-      - name: 提交ysyl更改
-        run: |
-          git add .
-          git commit ysyl.txt -m "Add generated file"
-          git push -f
              
       - name: Run qita
         run: python ${{ github.workspace }}/qita.py
       - name: 提交总表更改
         run: |
+          git config --local user.name "xzw832" 
+          git config --local user.email "g832@x-zw.com"
           git add .
-          git commit qita.txt -m "Add generated file"
-          git commit itvlist.txt -m "Add generated file"
+          git commit *.txt -m "Add generated file"
           git push -f
-          
-      # 保存新的缓存
-      - name: Save cache for future use
-        if: steps.restore_cache.outputs.cache-hit != 'true'
-        uses: actions/cache@v2
-        with:
-          path: ~/.cache/pip
-          key: python-${{ hashFiles('requirements.txt') }}
+        
