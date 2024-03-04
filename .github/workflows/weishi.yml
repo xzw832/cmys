@@ -1,0 +1,53 @@
+name: weishiruning
+on:
+  # 手动运行
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      # 安装依赖并创建虚拟环境
+      - name: Set up Python environment
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+        
+      # 将当前目录添加到PYTHONPATH
+      - name: Add current directory to PYTHONPATH
+        run: |
+          echo "export PYTHONPATH=$(pwd)" >> $GITHUB_ENV
+          
+      # 如果之前已经有了缓存，则从缓存中还原
+      - name: Restore cache if available
+        id: restore_cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: python-${{ hashFiles('requirements.txt') }}
+      
+      # 安装所需的包
+      - name: Install dependencies
+        run: pip install selenium requests futures eventlet
+        
+      # 运行测试等其他任务...
+      - name: Run weishi
+        run: python ${{ github.workspace }}/weishi.py
+      - name: 提交更改
+        run: |
+          git config --local user.name "xzw832" 
+          git config --local user.email "g832@x-zw.com"
+          git add .
+          git commit weishi.txt -m "Add generated file"
+          git push -f
+
+      # 保存新的缓存
+      - name: Save cache for future use
+        if: steps.restore_cache.outputs.cache-hit != 'true'
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: python-${{ hashFiles('requirements.txt') }}
