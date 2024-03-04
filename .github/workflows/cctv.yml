@@ -1,7 +1,7 @@
 name: cctvruning
 on:
   # 手动运行
-  workflow_dispatch:
+  workflow_call:
 jobs:
   build:
     runs-on: ubuntu-latest
