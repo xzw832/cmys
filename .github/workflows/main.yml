@@ -29,6 +29,4 @@ jobs:
           git commit itv.txt -m "Add generated file"
           git push -f
 
-      - name: Run cctv
-        uses: ./.github/actions/cctv
         
