@@ -1,8 +1,7 @@
 name: cctv setup
 on:
-  push:
-    tags:
-      - v1.**
+  # 手动运行
+  workflow_dispatch:
 
 jobs:
   build:
