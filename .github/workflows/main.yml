@@ -2,66 +2,30 @@ name: Python Cache Example
 on:
   # 手动运行
   workflow_dispatch:
-env:
-  clientId: 00000001-0100-0011-0101-100011100001
-  tenant: lives02.monmicrosoft.com
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
-      
-      # 安装依赖并创建虚拟环境
-      - name: Set up Python environment
-        uses: actions/setup-python@v2
+        uses: actions/checkout@v4
+    
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          python-version: 3.9
-        
-      # 将当前目录添加到PYTHONPATH
-      - name: Add current directory to PYTHONPATH
-        run: |
-          echo "export PYTHONPATH=$(pwd)" >> $GITHUB_ENV
-          
-      # 如果之前已经有了缓存，则从缓存中还原
-      - name: Restore cache if available
-        id: restore_cache
-        uses: actions/cache@v2
-        with:
-          path: ~/.cache/pip
-          key: python-${{ hashFiles('requirements.txt') }}
-      
-      # 安装所需的包
+          python-version: 3.x
+
       - name: Install dependencies
         run: pip install selenium requests futures eventlet
 
-      - name: Install pip install --upgrade pip
-        run: pip install --upgrade pip
-        
-      # 运行测试等其他任务...
       - name: Run itv
         run: python ${{ github.workspace }}/itv.py
-
-      - name: Run cctv
-        run: python ${{ github.workspace }}/cctv.py
-          
-      - name: Run weishi
-        run: python ${{ github.workspace }}/weishi.py
-          
-      - name: Run ktpd
-        run: python ${{ github.workspace }}/ktpd.py
-          
-      - name: Run ysyl
-        run: python ${{ github.workspace }}/ysyl.py
-             
-      - name: Run qita
-        run: python ${{ github.workspace }}/qita.py
       - name: 提交总表更改
         run: |
           git config --local user.name "xzw832" 
           git config --local user.email "g832@x-zw.com"
           git add .
-          git commit *.txt -m "Add generated file"
+          git commit itv.txt -m "Add generated file"
           git push -f
         
