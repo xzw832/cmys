@@ -1,8 +1,9 @@
 name: cctv setup
 on:
   push:
-    branches: [ main ]
-    paths: "itv.txt"
+    branches: 'main'
+    paths: 
+      - 'itv.txt'
 
 jobs:
   build:
