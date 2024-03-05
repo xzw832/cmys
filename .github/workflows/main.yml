@@ -29,4 +29,8 @@ jobs:
           git commit itv.txt -m "Add generated file"
           git push -f
 
-        
+      - name: Checkout repository
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.PAT }}
