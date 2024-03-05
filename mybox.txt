@@ -1,4 +1,5 @@
 【  央视频道  】,#genre#
+CCTV-13新闻,http://tvbox6.com/tv/cctv.php?id=13
 CCTV-01综合,http://tvbox6.com/tv/cctv.php?id=1
 CCTV-02财经,http://tvbox6.com/tv/cctv.php?id=2
 CCTV-03综艺,http://tvbox6.com/tv/cctv.php?id=3
@@ -12,7 +13,6 @@ CCTV-09记录,http://tvbox6.com/tv/cctv.php?id=9
 CCTV-10科教,http://tvbox6.com/tv/cctv.php?id=10
 CCTV-11戏曲,http://tvbox6.com/tv/cctv.php?id=11
 CCTV-12社会与法,http://tvbox6.com/tv/cctv.php?id=12
-CCTV-13新闻,http://tvbox6.com/tv/cctv.php?id=13
 CCTV-14少儿,http://tvbox6.com/tv/cctv.php?id=14
 CCTV-15音乐,http://tvbox6.com/tv/cctv.php?id=15
 CCTV-16奥林匹克,http://tvbox6.com/tv/cctv.php?id=16
