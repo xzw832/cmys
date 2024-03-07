@@ -27,7 +27,7 @@ with open("itv.txt", 'r', encoding='utf-8') as file:
                 channel_name, channel_url = line.split(',')
                 if 'CCTV' in channel_name:
                     channels.append((channel_name, channel_url))
-file.close()
+    file.close()
 # 定义工作线程函数
 def worker():
     while True:
@@ -41,9 +41,9 @@ def worker():
             ts_url = channel_url_t + ts_lists[0]  # 拼接单个视频片段下载链接
 
             # 多获取的视频数据进行5秒钟限制
-            with eventlet.Timeout(4, False):
+            with eventlet.Timeout(5, False):
                 start_time = time.time()
-                content = requests.get(ts_url, timeout=4).content
+                content = requests.get(ts_url, timeout=(1,5)).content
                 end_time = time.time()
                 response_time = (end_time - start_time) * 1
 
@@ -76,7 +76,7 @@ def worker():
 
 
 # 创建多个工作线程
-num_threads = 10
+num_threads = 15
 for _ in range(num_threads):
     t = threading.Thread(target=worker, daemon=True) 
     #t = threading.Thread(target=worker, args=(event,len(channels)))  # 将工作线程设置为守护线程
