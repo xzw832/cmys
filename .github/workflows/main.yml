@@ -1,7 +1,7 @@
 name: Python main
 on:
-  schedule:
-    - cron: '0 5,13,17,23 * * *'
+  #schedule:
+  #  - cron: '0 5,13,17,23 * * *'
       
   # 手动运行
   workflow_dispatch:
