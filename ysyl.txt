@@ -1,14 +1,12 @@
 【  影视频道  】,#genre#
-BTV影视,http://115.171.86.183:9901/tsfile/live/16029_1.m3u8?key=txiptv&playlive=1&authid=0
-CHC家庭影院,http://112.235.200.85:9901/tsfile/live/1010_1.m3u8?key=txiptv&playlive=1&authid=0
-江西影视旅,http://111.74.155.231:9901/tsfile/live/0019_1.m3u8?key=txiptv&playlive=0&authid=0
-河北影视剧,http://111.225.114.162:808/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0
+山东影视,http://112.6.117.141:9901/tsfile/live/1059_1.m3u8?key=txiptv&playlive=1&authid=0
 第一剧场,http://123.182.208.248:8088/tsfile/live/1011_1.m3u8?key=txiptv&playlive=1&authid=0
-陕西西部影视,http://219.145.20.213:1023/tsfile/live/0135_1.m3u8?key=txiptv&playlive=0&authid=0
-陕西西部影视,http://219.145.20.213:1741/tsfile/live/0135_1.m3u8?key=txiptv&playlive=0&authid=0
-陕西西部影视,http://219.145.20.213:18081/tsfile/live/0135_1.m3u8?key=txiptv&playlive=0&authid=0
-陕西西部影视,http://219.145.20.213:1985/tsfile/live/0135_1.m3u8?key=txiptv&playlive=0&authid=0
-陕西西部影视,http://219.145.20.213:2002/tsfile/live/0135_1.m3u8?key=txiptv&playlive=0&authid=0
-陕西西部影视,http://219.145.20.213:311/tsfile/live/0135_1.m3u8?key=txiptv&playlive=0&authid=0
-陕西西部影视,http://219.145.20.213:3443/tsfile/live/0135_1.m3u8?key=txiptv&playlive=0&authid=0
-陕西西部影视,http://219.145.20.213:9030/tsfile/live/0135_1.m3u8?key=txiptv&playlive=0&authid=0
+第一剧场,http://183.94.212.30:9901/tsfile/live/1017_1.m3u8?key=txiptv&playlive=1&authid=0
+陕西西部影视,http://113.140.69.126:9901/tsfile/live/0135_1.m3u8?key=txiptv&playlive=0&authid=0
+陕西西部影视,http://219.145.20.213:12421/tsfile/live/0135_1.m3u8?key=txiptv&playlive=0&authid=0
+陕西西部影视,http://219.145.20.213:12546/tsfile/live/0135_1.m3u8?key=txiptv&playlive=0&authid=0
+陕西西部影视,http://219.145.20.213:14000/tsfile/live/0135_1.m3u8?key=txiptv&playlive=0&authid=0
+陕西西部影视,http://219.145.20.213:1688/tsfile/live/0135_1.m3u8?key=txiptv&playlive=0&authid=0
+陕西西部影视,http://219.145.20.213:3525/tsfile/live/0135_1.m3u8?key=txiptv&playlive=0&authid=0
+陕西西部影视,http://219.145.20.213:4899/tsfile/live/0135_1.m3u8?key=txiptv&playlive=0&authid=0
+陕西西部影视,http://219.145.20.213:50000/tsfile/live/0135_1.m3u8?key=txiptv&playlive=0&authid=0
