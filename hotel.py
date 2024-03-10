@@ -14,8 +14,6 @@ urls = [
     "http://tonkiang.us/hoteliptv.php?page=1&s=%E5%87%A4%E5%87%B0"
     ]
 
-results = []
-
 for url in urls:
     # 创建一个Chrome WebDriver实例
     chrome_options = Options()
@@ -47,6 +45,7 @@ infoList = []
 for url in urls:
     try:
         # 创建一个Chrome WebDriver实例
+        results = []
         chrome_options = Options()
         chrome_options.add_argument('--headless')
         chrome_options.add_argument('--no-sandbox')
@@ -67,6 +66,9 @@ for url in urls:
         #page_content = driver.page_source
         #print(page_content)
         soup = BeautifulSoup(driver.page_source, "html.parser")
+        # 关闭WebDriver
+        driver.quit()
+        
         tables_div = soup.find("div", class_="tables")
         results = (
             tables_div.find_all("div", class_="result")
@@ -80,6 +82,7 @@ for url in urls:
         for result in results:
             print(result)
             m3u8_div = result.find("div", class_="m3u8")
+
             url_int = m3u8_div.text.strip() if m3u8_div else None
             info_div = (
                 m3u8_div.find_next_sibling("div") if m3u8_div else None
@@ -93,9 +96,9 @@ for url in urls:
                     else None
                 )
             infoList.append((url_int, resolution))
-            print(infoList[-1])
-        # 关闭WebDriver
-        driver.quit()
+            print("-------------------------------------------------------------------------------------------------------")
+            print(url_int)
+            print(resolution)
     except Exception as e:
         print(f"Error on page {url}: {e}")
         continue
