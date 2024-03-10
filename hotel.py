@@ -77,8 +77,8 @@ for url in urls:
         ):
             break
         for result in results:
+            print(result)
             m3u8_div = result.find("div", class_="m3u8")
-            print(m3u8_div)
             url_int = m3u8_div.text.strip() if m3u8_div else None
             info_div = (
                 m3u8_div.find_next_sibling("div") if m3u8_div else None
