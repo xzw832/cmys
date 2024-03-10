@@ -97,4 +97,5 @@ for url in urls:
         print(f"Error on page {url}: {e}")
         continue
 
-  
+  for info in infoList:
+      print(info)
