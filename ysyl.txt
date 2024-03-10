@@ -1,12 +1,10 @@
 【  影视频道  】,#genre#
-山东影视,http://112.6.117.141:9901/tsfile/live/1059_1.m3u8?key=txiptv&playlive=1&authid=0
-第一剧场,http://123.182.208.248:8088/tsfile/live/1011_1.m3u8?key=txiptv&playlive=1&authid=0
-第一剧场,http://183.94.212.30:9901/tsfile/live/1017_1.m3u8?key=txiptv&playlive=1&authid=0
-陕西西部影视,http://113.140.69.126:9901/tsfile/live/0135_1.m3u8?key=txiptv&playlive=0&authid=0
-陕西西部影视,http://219.145.20.213:12421/tsfile/live/0135_1.m3u8?key=txiptv&playlive=0&authid=0
-陕西西部影视,http://219.145.20.213:12546/tsfile/live/0135_1.m3u8?key=txiptv&playlive=0&authid=0
-陕西西部影视,http://219.145.20.213:14000/tsfile/live/0135_1.m3u8?key=txiptv&playlive=0&authid=0
-陕西西部影视,http://219.145.20.213:1688/tsfile/live/0135_1.m3u8?key=txiptv&playlive=0&authid=0
-陕西西部影视,http://219.145.20.213:3525/tsfile/live/0135_1.m3u8?key=txiptv&playlive=0&authid=0
-陕西西部影视,http://219.145.20.213:4899/tsfile/live/0135_1.m3u8?key=txiptv&playlive=0&authid=0
-陕西西部影视,http://219.145.20.213:50000/tsfile/live/0135_1.m3u8?key=txiptv&playlive=0&authid=0
+中国电影2,http://110.72.79.92:808/hls/65/index.m3u8
+古装剧场,http://223.82.161.157:8822/hls/500/index.m3u8
+广东影视,http://110.72.79.92:808/hls/59/index.m3u8
+怀旧剧场,http://223.82.161.157:8822/hls/67/index.m3u8
+热播剧场,http://110.72.79.92:808/hls/220/index.m3u8
+碟战剧场,http://110.72.79.92:808/hls/1024/index.m3u8
+第一剧场,http://223.82.161.157:8822/hls/70/index.m3u8
+经典电影,http://110.72.79.60:808/hls/220/index.m3u8
+风云剧场,http://223.82.161.157:8822/hls/69/index.m3u8
