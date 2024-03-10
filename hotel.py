@@ -88,6 +88,7 @@ for url in urls:
                     else None
                 )
             infoList.append((url_int, resolution))
+            print(url_int, resolution)
             
         # 关闭WebDriver
         driver.quit()
