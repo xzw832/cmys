@@ -92,6 +92,7 @@ for url in urls:
                     else None
                 )
             infoList.append((url_int, resolution))
+            print(infoList[-1])
         # 关闭WebDriver
         driver.quit()
     except Exception as e:
