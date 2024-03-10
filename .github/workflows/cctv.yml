@@ -39,7 +39,10 @@ jobs:
         run: pip3 install --user pipenv
       - name: Install dependecies
         run:  pipenv --python python3 && pipenv install
-
+      # 安装所需的包
+      - name: Install dependencies
+        run: pip install selenium requests futures eventlet
+        
       - name: Run hotel
         run: python ${{ github.workspace }}/hotel.py
 
