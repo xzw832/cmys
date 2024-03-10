@@ -64,7 +64,7 @@ for url in urls:
         )
         time.sleep(10)
         page_content = driver.page_source
-        print(page_content)
+        #print(page_content)
         soup = BeautifulSoup(driver.page_source, "html.parser")
         tables_div = soup.find("div", class_="tables")
         results = (
@@ -78,6 +78,7 @@ for url in urls:
             break
         for result in results:
             m3u8_div = result.find("div", class_="m3u8")
+            print(m3u8_div)
             url_int = m3u8_div.text.strip() if m3u8_div else None
             info_div = (
                 m3u8_div.find_next_sibling("div") if m3u8_div else None
@@ -91,13 +92,10 @@ for url in urls:
                     else None
                 )
             infoList.append((url_int, resolution))
-            print(url_int, resolution)
-            
+            print(url_int)
         # 关闭WebDriver
         driver.quit()
     except Exception as e:
         print(f"Error on page {url}: {e}")
         continue
 
-for info in infoList:
-    print(info)
