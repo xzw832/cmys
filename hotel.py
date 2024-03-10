@@ -7,8 +7,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium_stealth import stealth
 from bs4 import BeautifulSoup
+from selenium.webdriver.chrome.options import Options
+import requests
 import re
-
 
 urls = [
     "http://tonkiang.us/hoteliptv.php?page=1&s=%E5%87%A4%E5%87%B0"
