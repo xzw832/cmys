@@ -43,4 +43,11 @@ jobs:
       - name: Run hotel
         run: python ${{ github.workspace }}/hotel.py
 
-        
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git diff
+          git add result.txt
+          git commit -m "Github Action Auto Updated"
+          git push 
