@@ -64,7 +64,7 @@ for url in urls:
             )
         )
         time.sleep(10)
-        page_content = driver.page_source
+        #page_content = driver.page_source
         #print(page_content)
         soup = BeautifulSoup(driver.page_source, "html.parser")
         tables_div = soup.find("div", class_="tables")
