@@ -23,8 +23,8 @@ jobs:
         run: pip install selenium requests futures eventlet
 
       # 运行测试等其他任务...
-      - name: Run itv
-        run: python ${{ github.workspace }}/itv.py
+      #- name: Run itv
+      #  run: python ${{ github.workspace }}/itv.py
 
       - name: Run cctv
         run: python ${{ github.workspace }}/cctv.py
