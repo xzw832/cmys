@@ -6,7 +6,6 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 import os
 import re
-from selenium_stealth import stealth
 import aiohttp
 import asyncio
 from bs4 import BeautifulSoup
