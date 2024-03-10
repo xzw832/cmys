@@ -7,7 +7,8 @@ import requests
 import re
 
 urls = [
-    "http://tonkiang.us/hoteliptv.php?page=1&s=%E5%87%A4%E5%87%B0"    #湖南
+    "http://tonkiang.us/hoteliptv.php?page=1&s=%E5%87%A4%E5%87%B0",
+    "http://tonkiang.us/hoteliptv.php?page=2&s=%E5%87%A4%E5%87%B0"
     ]
 
 results = []
