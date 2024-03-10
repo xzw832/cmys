@@ -41,71 +41,58 @@ for url in urls:
     urls = set(urls_all)  # 去重得到唯一的URL列表
     for url in urls:
       print(url)
-
-class GetSource:
-
-    def __init__(self):
-        self.driver = self.setup_driver()
-        self.main()
-
-    def setup_driver(self):
-        options = webdriver.ChromeOptions()
-        options.add_argument("start-maximized")
-        options.add_argument("--headless")
-        options.add_experimental_option("excludeSwitches", ["enable-automation"])
-        options.add_experimental_option("useAutomationExtension", False)
-        options.add_argument("blink-settings=imagesEnabled=false")
-        driver = webdriver.Chrome(options=options)
-        stealth(
-            driver,
-            languages=["en-US", "en"],
-            vendor="Google Inc.",
-            platform="Win32",
-            webgl_vendor="Intel Inc.",
-            renderer="Intel Iris OpenGL Engine",
-            fix_hairline=True,
+        
+# 查找所有符合指定格式的网址
+infoList = []
+for url in urls:
+    try:
+        # 创建一个Chrome WebDriver实例
+        chrome_options = Options()
+        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--no-sandbox')
+        chrome_options.add_argument('--disable-dev-shm-usage')
+        chrome_options.add_experimental_option("useAutomationExtension", False)
+        chrome_options.add_argument("blink-settings=imagesEnabled=false")
+        driver = webdriver.Chrome(options=chrome_options)
+        # 使用WebDriver访问网页
+        driver.get(url)  # 将网址替换为你要访问的网页地址
+        WebDriverWait(chrome_options.driver, 10).until(
+            EC.presence_of_element_located(
+                (By.CSS_SELECTOR, "div.tables")
+            )
         )
-        return driver
-
-    async def visitPage(self, channelItems):
-        infoList = []
-        for url in urls:
-            try:
-                page_url = f"http://tonkiang.us/9dlist2.php?s={url}"
-                self.driver.get(page_url)
-                WebDriverWait(self.driver, 10).until(
-                    EC.presence_of_element_located(
-                        (By.CSS_SELECTOR, "div.tables")
-                    )
+        time.sleep(10)
+        soup = BeautifulSoup(chrome_options.driver.page_source, "html.parser")
+        tables_div = soup.find("div", class_="tables")
+        results = (
+            tables_div.find_all("div", class_="result")
+            if tables_div
+            else []
+        )
+        if not any(
+            result.find("div", class_="m3u8") for result in results
+        ):
+            break
+        for result in results:
+            m3u8_div = result.find("div", class_="m3u8")
+            url_int = m3u8_div.text.strip() if m3u8_div else None
+            info_div = (
+                m3u8_div.find_next_sibling("div") if m3u8_div else None
+            )
+            resolution = None
+            if info_div:
+                info_text = info_div.text.strip()
+                resolution = (
+                    info_text.partition(" ")[2].partition("•")[2]
+                    if info_text.partition(" ")[2].partition("•")[2]
+                    else None
                 )
-                soup = BeautifulSoup(self.driver.page_source, "html.parser")
-                tables_div = soup.find("div", class_="tables")
-                results = (
-                    tables_div.find_all("div", class_="result")
-                    if tables_div
-                    else []
-                )
-                if not any(
-                    result.find("div", class_="m3u8") for result in results
-                ):
-                    break
-                for result in results:
-                    m3u8_div = result.find("div", class_="m3u8")
-                    url_int = m3u8_div.text.strip() if m3u8_div else None
-                    info_div = (
-                        m3u8_div.find_next_sibling("div") if m3u8_div else None
-                    )
-                    resolution = None
-                    if info_div:
-                        info_text = info_div.text.strip()
-                        resolution = (
-                            info_text.partition(" ")[2].partition("•")[2]
-                            if info_text.partition(" ")[2].partition("•")[2]
-                            else None
-                        )
-                    infoList.append((url_int, resolution))
-            except Exception as e:
-                print(f"Error on page {url}: {e}")
-                continue
+            infoList.append((url_int, resolution))
+            
+        # 关闭WebDriver
+        driver.quit()
+    except Exception as e:
+        print(f"Error on page {url}: {e}")
+        continue
 
-GetSource()
+  
