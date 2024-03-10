@@ -8,11 +8,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import requests
 import re
-import config
-from selenium_stealth import stealth
-import aiohttp
-import asyncio
-from bs4 import BeautifulSoup
+
 
 urls = [
     "http://tonkiang.us/hoteliptv.php?page=1&s=%E5%87%A4%E5%87%B0"
