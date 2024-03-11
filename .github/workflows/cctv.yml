@@ -12,17 +12,14 @@ jobs:
           operating-system: ['ubuntu-20.04']
       steps:
       - uses: actions/checkout@v3 # Checking out the repo
-      - name: Run with setup-python 3.9
-        uses: actions/setup-python@v4
+      - name: Run with setup-python 3.8
+        uses: actions/setup-python@v3
         with:
           python-version: '3.9'
           update-environment: false
           cache: 'pipenv'
 
 
-      - name: Install Selenium
-        run: |
-            sudo pip3 install selenium
       - name: Set up Chrome
         uses: browser-actions/setup-chrome@latest
         with:
