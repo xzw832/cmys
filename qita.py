@@ -25,7 +25,7 @@ with open("itv.txt", 'r', encoding='utf-8') as file:
         if count == 1:
             if line:
                 channel_name, channel_url = line.split(',')
-                if '凤凰' not in channel_name and '卫视' not in channel_name and 'CCTV' not in channel_name and '测试' not in channel_name and '电影' not in channel_name and '影院' not in channel_name and '剧场' not in channel_name and '影视' not in channel_name and '卡通' not in channel_name and '动漫' not in channel_name and '动画' not in channel_name and '少儿' not in channel_name:
+                if '卫视' not in channel_name and 'CCTV' not in channel_name and '测试' not in channel_name and '电影' not in channel_name and '影院' not in channel_name and '剧场' not in channel_name and '影视' not in channel_name and '卡通' not in channel_name and '动漫' not in channel_name and '动画' not in channel_name and '少儿' not in channel_name:
                     channels.append((channel_name, channel_url))
     file.close()
 # 定义工作线程函数
@@ -35,7 +35,7 @@ def worker():
         channel_name, channel_url = task_queue.get()
         try:
             channel_url_t = channel_url.rstrip(channel_url.split('/')[-1])  # m3u8链接前缀
-            lines = requests.get(channel_url, timeout=3).text.strip().split('\n')  # 获取m3u8文件内容
+            lines = requests.get(channel_url, timeout=3, stream=True).text.strip().split('\n')  # 获取m3u8文件内容
             ts_lists = [line.split('/')[-1] for line in lines if line.startswith('#') == False]  # 获取m3u8文件下视频流后缀
             ts_lists_0 = ts_lists[0].rstrip(ts_lists[0].split('.ts')[-1])  # m3u8链接前缀
             ts_url = channel_url_t + ts_lists[0]  # 拼接单个视频片段下载链接
@@ -43,7 +43,7 @@ def worker():
             # 多获取的视频数据进行5秒钟限制
             with eventlet.Timeout(5, False):
                 start_time = time.time()
-                content = requests.get(ts_url, timeout=(1,5)).content
+                content = requests.get(ts_url, timeout=(1,4), stream=True).content
                 end_time = time.time()
                 response_time = (end_time - start_time) * 1
 
@@ -104,14 +104,14 @@ results.sort(key=lambda x: (x[0], -float(x[2].split()[0])))
 now_today = datetime.date.today()
 # 将结果写入文件
 
-result_counter = 8  # 每个频道需要的个数
+result_counter = 4  # 每个频道需要的个数
 
 with open("qita.txt", 'w', encoding='utf-8') as file:
     channel_counters = {}
     file.write('【  其他频道  】,#genre#\n')
     for result in results:
         channel_name, channel_url, speed = result
-        if '凤凰' not in channel_name and '卫视' not in channel_name and 'CCTV' not in channel_name and '测试' not in channel_name and '电影' not in channel_name and '影院' not in channel_name and '剧场' not in channel_name and '影视' not in channel_name and '卡通' not in channel_name and '动漫' not in channel_name and '动画' not in channel_name and '少儿' not in channel_name:
+        if '卫视' not in channel_name and 'CCTV' not in channel_name and '测试' not in channel_name and '电影' not in channel_name and '影院' not in channel_name and '剧场' not in channel_name and '影视' not in channel_name and '卡通' not in channel_name and '动漫' not in channel_name and '动画' not in channel_name and '少儿' not in channel_name:
             if channel_name in channel_counters:
                 if channel_counters[channel_name] >= result_counter:
                     continue
@@ -121,7 +121,7 @@ with open("qita.txt", 'w', encoding='utf-8') as file:
             else:
                 file.write(f"{channel_name},{channel_url}\n")
                 channel_counters[channel_name] = 1
-    file.close()
+    file.close()                
 print(f"{now_today}其他频道更新完成")
 
 # 合并文件内容
@@ -132,11 +132,12 @@ for file_path in file_paths:
         content = file.read()
         file_contents.append(content)
         file.close()
-        
+
 # print(f"{now_today}合并文件完成")
 
 # 写入合并后的文件
 with open("itvlist.txt", "w", encoding="utf-8") as output:
     output.write('\n'.join(file_contents))
-    file.close()
+    output.close()
+
 # print(f"{now_today}写入合并后的文件")
