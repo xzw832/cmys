@@ -96,8 +96,8 @@ for url in urls:
                 )
             infoList.append((url_int, resolution))
             print("-------------------------------------------------------------------------------------------------------")
-            name =(f"{resolution}")
-            print(name)
+            name =(f"{url_int}")
+            print(“＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝”+name)
 
     except Exception as e:
         print(f"Error on page {url}: {e}")
