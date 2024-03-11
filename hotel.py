@@ -55,7 +55,6 @@ for url in urls:
         driver = webdriver.Chrome(options=chrome_options)
         # 使用WebDriver访问网页
         page_url= f"http://tonkiang.us/9dlist2.php?s={url}"
-        print(page_url)
         driver.get(page_url)  # 将网址替换为你要访问的网页地址
         WebDriverWait(driver, 10).until(
             EC.presence_of_element_located(
@@ -97,8 +96,9 @@ for url in urls:
                 )
             infoList.append((url_int, resolution))
             print("-------------------------------------------------------------------------------------------------------")
-            print(url_int)
-            print(resolution)
+            name =(f"{resolution}")
+            print(name)
+
     except Exception as e:
         print(f"Error on page {url}: {e}")
         continue
