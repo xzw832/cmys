@@ -81,8 +81,11 @@ for url in urls:
         for result in results:
             print(result)
             m3u8_div = result.find("div", class_="m3u8")
-
             url_int = m3u8_div.text.strip() if m3u8_div else None
+            #取频道名称
+            m3u8_name_div = result.find("div", class_="channel")
+            url_name = m3u8_name_div.text.strip() if m3u8_div else None
+            #－－－－－
             info_div = (
                 m3u8_div.find_next_sibling("div") if m3u8_div else None
             )
@@ -96,8 +99,10 @@ for url in urls:
                 )
             infoList.append((url_int, resolution))
             print("-------------------------------------------------------------------------------------------------------")
-            name =(f"{url_int}")
+            name =(f"{url_name}")
             print(name)
+            urlsp =(f"{url_int}")
+            print(urlsp)
             print("-------------------------------------------------------------------------------------------------------")
 
     except Exception as e:
