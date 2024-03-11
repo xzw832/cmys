@@ -90,7 +90,7 @@ def worker():
             name =(f"{channel_url}")
             if "m3u8" not in name:
                 channel_url_t= name+"/"
-            else
+            else:
                 channel_url_t = channel_url.rstrip(channel_url.split('/')[-1])  # m3u8链接前缀
                 
             print(channel_url_t)
