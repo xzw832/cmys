@@ -28,6 +28,7 @@ with open("itv.txt", 'r', encoding='utf-8') as file:
                 if '卡通' in channel_name or '动漫' in channel_name or '动画' in channel_name or '少儿' in channel_name:
                     channels.append((channel_name, channel_url))
     file.close()
+
 # 定义工作线程函数
 def worker():
     while True:
@@ -35,15 +36,15 @@ def worker():
         channel_name, channel_url = task_queue.get()
         try:
             channel_url_t = channel_url.rstrip(channel_url.split('/')[-1])  # m3u8链接前缀
-            lines = requests.get(channel_url, timeout=3).text.strip().split('\n')  # 获取m3u8文件内容
+            lines = requests.get(channel_url, timeout=3, stream=True).text.strip().split('\n')  # 获取m3u8文件内容
             ts_lists = [line.split('/')[-1] for line in lines if line.startswith('#') == False]  # 获取m3u8文件下视频流后缀
             ts_lists_0 = ts_lists[0].rstrip(ts_lists[0].split('.ts')[-1])  # m3u8链接前缀
             ts_url = channel_url_t + ts_lists[0]  # 拼接单个视频片段下载链接
 
             # 多获取的视频数据进行5秒钟限制
-            with eventlet.Timeout(54, False):
+            with eventlet.Timeout(5, False):
                 start_time = time.time()
-                content = requests.get(ts_url, timeout=(1,5)).content
+                content = requests.get(ts_url, timeout=(1,4), stream=True).content
                 end_time = time.time()
                 response_time = (end_time - start_time) * 1
 
@@ -104,7 +105,7 @@ results.sort(key=lambda x: (x[0], -float(x[2].split()[0])))
 now_today = datetime.date.today()
 # 将结果写入文件
 
-result_counter = 8  # 每个频道需要的个数
+result_counter = 5  # 每个频道需要的个数
 
 with open("ktpd.txt", 'w', encoding='utf-8') as file:
     channel_counters = {}
