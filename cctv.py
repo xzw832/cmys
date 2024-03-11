@@ -87,7 +87,12 @@ def worker():
         # 从队列中获取一个任务
         channel_name, channel_url = task_queue.get()
         try:
-            channel_url_t = channel_url.rstrip(channel_url.split('/')[-1])  # m3u8链接前缀
+            name =(f"{channel_url}")
+            if "m3u8" not in name:
+                channel_url_t= name+"/"
+            else
+                channel_url_t = channel_url.rstrip(channel_url.split('/')[-1])  # m3u8链接前缀
+                
             print(channel_url_t)
             lines = requests.get(channel_url, timeout=3).text.strip().split('\n')  # 获取m3u8文件内容
             ts_lists = [line.split('/')[-1] for line in lines if line.startswith('#') == False]  # 获取m3u8文件下视频流后缀
