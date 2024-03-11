@@ -100,6 +100,7 @@ def worker():
             ts_url = channel_url_t + ts_lists[0]  # 拼接单个视频片段下载链接
 
             # 多获取的视频数据进行5秒钟限制
+            eventlet.monkey_patch()
             with eventlet.Timeout(5, False):
                 start_time = time.time()
                 content = requests.get(ts_url, timeout=(1,4)).content
