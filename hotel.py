@@ -99,9 +99,9 @@ for url in urls:
                 )
             #infoList.append((url_int, resolution))
             #print("-------------------------------------------------------------------------------------------------------")
-            #name =(f"{url_name}")
+            name =(f"{url_name}")
             #print(name)
-            #urlsp =(f"{url_int}")
+            urlsp =(f"{url_int}")
             #print(urlsp)
             #print("-------------------------------------------------------------------------------------------------------")
             if "m3u8" in urlsp:
