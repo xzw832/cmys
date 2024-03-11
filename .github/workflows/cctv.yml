@@ -48,6 +48,3 @@ jobs:
       - name: Run hotel
         run: python ${{ github.workspace }}/hotel.py
 
-          git add result.txt
-          git commit -m "Github Action Auto Updated"
-          git push 
