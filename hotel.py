@@ -153,7 +153,8 @@ for url in urls:
                 name = name.replace("CMIPTV", "")
                 name = name.replace("台", "")
                 name = name.replace("内蒙卫视", "内蒙古卫视")
-                infoList.append(f"{name},{urlsp}")
+                if "m3u8" in url_int or "m3u8" in urlsp:
+                    infoList.append(f"{name},{urlsp}")
         except Exception as e:
             print(f"Error on page {urlv}: {e}")
             continue
