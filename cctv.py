@@ -25,6 +25,59 @@ with open("itv.txt", 'r', encoding='utf-8') as file:
         if count == 1:
             if line:
                 channel_name, channel_url = line.split(',')
+                name =(f"{channel_name}")
+                name = name.replace("_HD", "")
+                name = name.replace("(高清)", "")
+                name = name.replace("厦门卫视高清", "厦门卫视")
+                name = name.replace("吉林卫视高清", "吉林卫视")
+                name = name.replace("四川卫视高清", "四川卫视")
+                name = name.replace("天津卫视高清", "天津卫视")
+                name = name.replace("安徽卫视高清", "安徽卫视")
+                name = name.replace("广东卫视高清", "广东卫视")
+                name = name.replace("江苏卫视高清", "江苏卫视")
+                name = name.replace("河北卫视高清", "河北卫视")
+                name = name.replace("浙江卫视高清", "浙江卫视")
+                name = name.replace("深圳卫视高清", "深圳卫视")
+                name = name.replace("湖北卫视高清", "湖北卫视")
+                name = name.replace("湖南卫视高清", "湖南卫视")
+                name = name.replace("福建东南卫视高清", "福建东南卫视")
+                name = name.replace("辽宁卫视高清", "辽宁卫视")
+                name = name.replace("黑龙江卫视高清", "黑龙江卫视")
+                name = name.replace("山东教育", "山东教育卫视")
+                name = name.replace("山东高清", "山东卫视")
+                name = name.replace("广东体育高清", "广东体育卫视")
+                name = name.replace("广东珠江高清", "广东珠江卫视")
+                name = name.replace("广东高清", "广东卫视")
+                name = name.replace("浙江高清", "浙江卫视")
+                name = name.replace("深圳高清", "深圳卫视")
+                name = name.replace("湖北高清", "湖北卫视")
+                name = name.replace("湖南高清", "湖南卫视")
+                name = name.replace("江苏高清", "江苏卫视")
+                name = name.replace("汕头综合高清", "汕头综合")
+                name = name.replace("汕头文旅体育高清", "汕头文旅体育")
+                name = name.replace("汕头文旅体育高清", "汕头文旅体育")
+                results.append(f"{name},{channel_url}")
+    file.close()
+
+results = set(results)  # 去重得到唯一的URL列表
+results = sorted(results)
+
+with open("itv.txt", 'w', encoding='utf-8') as file:
+    for result in results:
+        file.write(result + "\n")
+        # print(result)
+    file.close()
+
+results = []
+channels = []
+with open("itv.txt", 'r', encoding='utf-8') as file:
+    lines = file.readlines()
+    for line in lines:
+        line = line.strip()
+        count = line.count(',')
+        if count == 1:
+            if line:
+                channel_name, channel_url = line.split(',')
                 if 'CCTV' in channel_name:
                     channels.append((channel_name, channel_url))
     file.close()
@@ -44,7 +97,7 @@ def worker():
             # 多获取的视频数据进行5秒钟限制
             with eventlet.Timeout(5, False):
                 start_time = time.time()
-                content = requests.get(ts_url, timeout=(1,5)).content
+                content = requests.get(ts_url, timeout=(1,4)).content
                 end_time = time.time()
                 response_time = (end_time - start_time) * 1
 
@@ -63,12 +116,12 @@ def worker():
                 result = channel_name, channel_url, f"{normalized_speed:.3f} MB/s"
                 results.append(result)
                 numberx = (len(results) + len(error_channels)) / len(channels) * 100
-                print(f"可用频道：{len(results)} 个 , 不可用频道：{len(error_channels)} 个 , 总频道：{len(channels)} 个 ,总进度：{numberx:.2f} %。")
+                # print(f"可用频道：{len(results)} 个 , 不可用频道：{len(error_channels)} 个 , 总频道：{len(channels)} 个 ,总进度：{numberx:.2f} %。")
         except:
             error_channel = channel_name, channel_url
             error_channels.append(error_channel)
             numberx = (len(results) + len(error_channels)) / len(channels) * 100
-            print(f"可用频道：{len(results)} 个 , 不可用频道：{len(error_channels)} 个 , 总频道：{len(channels)} 个 ,总进度：{numberx:.2f} %。")
+            # print(f"可用频道：{len(results)} 个 , 不可用频道：{len(error_channels)} 个 , 总频道：{len(channels)} 个 ,总进度：{numberx:.2f} %。")
         
         # 减少CPU占用
         time.sleep(0)
@@ -104,6 +157,13 @@ results.sort(key=lambda x: (x[0], -float(x[2].split()[0])))
 results.sort(key=lambda x: channel_key(x[0]))
 now_today = datetime.date.today()
 
+# 将结果写入文件
+with open("cctv_all_results.txt", 'w', encoding='utf-8') as file:
+    for result in results:
+        channel_name, channel_url, speed = result
+        file.write(f"{channel_name},{channel_url},{speed}\n")
+    file.close()
+    
 result_counter = 8  # 每个频道需要的个数
 
 with open("cctv.txt", 'w', encoding='utf-8') as file:
@@ -121,4 +181,5 @@ with open("cctv.txt", 'w', encoding='utf-8') as file:
             else:
                 file.write(f"{channel_name},{channel_url}\n")
                 channel_counters[channel_name] = 1
+
     file.close()
