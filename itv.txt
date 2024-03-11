@@ -1,4 +1,3 @@
-,http://123.54.174.167:808/hls/14/index.m3u8
 CCTV1,http://110.19.99.200:808/hls/101/index.m3u8
 CCTV1,http://110.72.56.74:808/hls/54/index.m3u8
 CCTV1,http://110.72.60.83:808/hls/54/index.m3u8
