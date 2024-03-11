@@ -48,3 +48,10 @@ jobs:
       - name: Run hotel
         run: python ${{ github.workspace }}/hotel.py
 
+      - name: 提交更改
+        run: |
+          git config --local user.name "xzw832" 
+          git config --local user.email "g832@x-zw.com"
+          git add .
+          git commit *.txt -m "Add generated file"
+          git push -f
