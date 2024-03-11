@@ -11,7 +11,9 @@ import re
 from bs4 import BeautifulSoup
 
 urls = [
-    "http://tonkiang.us/hoteliptv.php?page=1&s=%E5%87%A4%E5%87%B0"
+    "http://tonkiang.us/hoteliptv.php?page=1&s=%E5%87%A4%E5%87%B0",
+    "http://tonkiang.us/hoteliptv.php?page=1&s=%E6%B1%95%E5%A4%B4",
+    "http://tonkiang.us/hoteliptv.php?page=1&s=%E7%94%B5%E5%BD%B1"
     ]
 
 for url in urls:
