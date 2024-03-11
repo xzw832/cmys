@@ -1785,7 +1785,11 @@ J2,http://ali.hlspull.yximgs.com/live/twlivefhwohdpthzyfiplhdftuzfbvdimhdznbzszb
 
 【  轮播频道  】,#genre#
 摔跤格斗,https://d2p372oxiwmcn1.cloudfront.net/hls/1080p/playlist.m3u8
+摔跤格斗,https://d2p372oxiwmcn1.cloudfront.net/hls/1080p/playlist.m3u8?virtualDomain=yinhe.live_hls.zte.com
+摔跤格斗,https://d2p372oxiwmcn1.cloudfront.net/hls/1080p/playlist.m3u8?virtualDomain=test.tvboxosc.cyou
 美国极限运动台,http://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master_928.m3u8
+美国极限运动台,http://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master_928.m3u8?virtualDomain=yinhe.live_hls.zte.com
+美国极限运动台,http://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master_928.m3u8?virtualDomain=test.tvboxosc.cyou
 封神榜（老版）,https://live.metshop.top/yy/1353426319
 我爱我家,https://live.metshop.top/yy/1382735557
 津门飞鹰,https://live.metshop.top/yy/1354143942
