@@ -17,7 +17,7 @@ results = []
 channels = []
 error_channels = []
 
-with open("itv.txt", 'r', encoding='utf-8') as file:
+with open("myitv.txt", 'r', encoding='utf-8') as file:
     lines = file.readlines()
     for line in lines:
         line = line.strip()
@@ -26,7 +26,8 @@ with open("itv.txt", 'r', encoding='utf-8') as file:
             if line:
                 channel_name, channel_url = line.split(',')
                 name =(f"{channel_name}")
-                name = name.replace("_HD", "")
+                name = name.replace("_", "")
+                name = name.replace("HD", "")
                 name = name.replace("(高清)", "")
                 name = name.replace("厦门卫视高清", "厦门卫视")
                 name = name.replace("吉林卫视高清", "吉林卫视")
@@ -53,9 +54,12 @@ with open("itv.txt", 'r', encoding='utf-8') as file:
                 name = name.replace("湖北高清", "湖北卫视")
                 name = name.replace("湖南高清", "湖南卫视")
                 name = name.replace("江苏高清", "江苏卫视")
+                name = name.replace("北京卫视高清", "北京卫视")
+                name = name.replace("福建东南卫视", "东南卫视")
                 name = name.replace("汕头综合高清", "汕头综合")
                 name = name.replace("汕头文旅体育高清", "汕头文旅体育")
                 name = name.replace("汕头文旅体育高清", "汕头文旅体育")
+                name = name.replace("高清", "")
                 results.append(f"{name},{channel_url}")
     file.close()
 
@@ -87,23 +91,16 @@ def worker():
         # 从队列中获取一个任务
         channel_name, channel_url = task_queue.get()
         try:
-            name =(f"{channel_url}")
-            if "m3u8" not in name:
-                channel_url_t= name+"/"
-            else:
-                channel_url_t = channel_url.rstrip(channel_url.split('/')[-1])  # m3u8链接前缀
-                
-            print(channel_url_t)
-            lines = requests.get(channel_url, timeout=3).text.strip().split('\n')  # 获取m3u8文件内容
+            channel_url_t = channel_url.rstrip(channel_url.split('/')[-1])  # m3u8链接前缀
+            lines = requests.get(channel_url, timeout=5, stream=True).text.strip().split('\n')  # 获取m3u8文件内容
             ts_lists = [line.split('/')[-1] for line in lines if line.startswith('#') == False]  # 获取m3u8文件下视频流后缀
             ts_lists_0 = ts_lists[0].rstrip(ts_lists[0].split('.ts')[-1])  # m3u8链接前缀
             ts_url = channel_url_t + ts_lists[0]  # 拼接单个视频片段下载链接
 
             # 多获取的视频数据进行5秒钟限制
-            eventlet.monkey_patch()
             with eventlet.Timeout(5, False):
                 start_time = time.time()
-                content = requests.get(ts_url, timeout=(1,4)).content
+                content = requests.get(ts_url, timeout=(1,4), stream=True).content
                 end_time = time.time()
                 response_time = (end_time - start_time) * 1
 
