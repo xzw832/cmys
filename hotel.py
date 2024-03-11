@@ -157,8 +157,7 @@ for url in urls:
         continue
         
 infoList = set(infoList)  # 去重得到唯一的URL列表
-infoList.sort(key=lambda x: (x[0], -float(x[2].split()[0])))
-infoList.sort(key=lambda x: channel_key(x[0]))
+infoList = sorted(infoList)
 
 with open("myitv.txt", 'w', encoding='utf-8') as file:
     for info in infoList:
