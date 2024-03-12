@@ -109,7 +109,7 @@ def worker():
                         normalized_speed = min(max(download_speed / 1024, 0.001), 100)
                         result = channel_name, channel_url, f"{normalized_speed:.3f} MB/s"
                         results.append(result)
-                        break
+                        #break
         except:
             # 无法连接并超时的情况下输出“X”
             print(f'X\t{i}')
