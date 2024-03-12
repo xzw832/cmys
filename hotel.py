@@ -17,6 +17,7 @@ resultslist = []
 urls = [
     "http://tonkiang.us/hoteliptv.php?page=1&s=%E5%87%A4%E5%87%B0",
     "http://tonkiang.us/hoteliptv.php?page=2&s=%E5%87%A4%E5%87%B0",
+    "http://tonkiang.us/hoteliptv.php?page=3&s=%E5%87%A4%E5%87%B0",
     "http://tonkiang.us/hoteliptv.php?page=1&s=%E6%8F%AD%E9%98%B3",
     "http://tonkiang.us/hoteliptv.php?page=1&s=%E5%B9%BF%E5%B7%9E",
     "http://tonkiang.us/hoteliptv.php?page=1&s=%E6%B1%95%E5%A4%B4",
@@ -59,7 +60,7 @@ with open("iplist.txt", 'w', encoding='utf-8') as file:
 
 resultslist = set(resultslist)    # 去重得到唯一的URL列表
 
-for iplist in resultslist:   
+for ipv in resultslist:   
     try:
         # 创建一个Chrome WebDriver实例
         results = []
@@ -71,7 +72,7 @@ for iplist in resultslist:
         chrome_options.add_argument("blink-settings=imagesEnabled=false")
         driver = webdriver.Chrome(options=chrome_options)
         # 使用WebDriver访问网页
-        page_url= f"http://foodieguide.com/iptvsearch/alllist.php?s={iplist}"
+        page_url= f"http://foodieguide.com/iptvsearch/alllist.php?s={ipv}"
         print(page_url)
         driver.get(page_url)  # 将网址替换为你要访问的网页地址
         WebDriverWait(driver, 20).until(
@@ -115,9 +116,13 @@ for iplist in resultslist:
                 )
             #infoList.append((url_int, resolution))
             #print("-------------------------------------------------------------------------------------------------------")
-            name =(f"{url_name}")
+            name =f"{url_name}"
+            if len(name) == 0:
+                name = "Err画中画"
             #print(name)
-            urlsp =(f"{url_int}")
+            urlsp =f"{url_int}"
+             if len(urlsp) == 0:
+                urlsp = "rtp://127.0.0.1"           
             print(f"{url_name}\t{url_int}")
             #print("-------------------------------------------------------------------------------------------------------")
             name = name.replace("cctv", "CCTV")
@@ -168,7 +173,7 @@ for iplist in resultslist:
             name = name.replace("内蒙卫视", "内蒙古卫视")
             infoList.append(f"{name},{urlsp}")
     except Exception as e:
-        print(f"Error on page {iplist}: {e}")
+        print(f"Error on page {ipv}: {e}")
         continue
 
         
