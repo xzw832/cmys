@@ -103,18 +103,7 @@ for ipv in resultslist:
             m3u8_name_div = result.find("div", class_="channel")
             url_name = m3u8_name_div.text.strip() if m3u8_div else None
             #－－－－－
-            info_div = (
-                m3u8_div.find_next_sibling("div") if m3u8_div else None
-            )
-            resolution = None
-            if info_div:
-                info_text = info_div.text.strip()
-                resolution = (
-                    info_text.partition(" ")[2].partition("•")[2]
-                    if info_text.partition(" ")[2].partition("•")[2]
-                    else None
-                )
-            #infoList.append((url_int, resolution))
+
             #print("-------------------------------------------------------------------------------------------------------")
             name =f"{url_name}"
             if len(name) == 0:
@@ -174,7 +163,7 @@ for ipv in resultslist:
             infoList.append(f"{name},{urlsp}")
     except Exception as e:
         print(f"Error on page {ipv}: {e}")
-        continue
+        #continue
 
         
 infoList = set(infoList)  # 去重得到唯一的URL列表
