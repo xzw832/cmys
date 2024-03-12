@@ -60,11 +60,14 @@ jobs:
         run: python ${{ github.workspace }}/ysyl.py
              
       - name: Run qita
-        run: python ${{ github.workspace }}/qita.py        
+        run: python ${{ github.workspace }}/qita.py
+        
       - name: 提交更改
         run: |
-          git config --local user.name "xzw832" 
-          git config --local user.email "g832@x-zw.com"
+          #git config --local user.name "xzw832" 
+          #git config --local user.email "g832@x-zw.com"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
           git add .
           git commit *.txt -m "Add generated file"
           git push -f
