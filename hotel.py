@@ -56,7 +56,9 @@ with open("iplist.txt", 'w', encoding='utf-8') as file:
         file.write(iplist + "\n")
         print(iplist)
     file.close()
-    
+
+resultslist = set(resultslist)    # 去重得到唯一的URL列表
+
 for iplist in resultslist:   
     try:
         # 创建一个Chrome WebDriver实例
