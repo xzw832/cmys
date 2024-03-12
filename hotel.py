@@ -112,7 +112,7 @@ for iplist in resultslist:
             #infoList.append((url_int, resolution))
             print("-------------------------------------------------------------------------------------------------------")
             name =(f"{url_name}")
-            print(name)
+            #print(name)
             urlsp =(f"{url_int}")
             urlsp =(f"{url_name}\t{url_int}")
             print(urlsp)
