@@ -48,7 +48,7 @@ for url in urls:
     # urls = list(set(urls_all))  # 去重得到唯一的URL列表
     urls_y = set(urls_all)  # 去重得到唯一的URL列表
     for urlv in urls_y:
-        results.append(f"{urlv}}")
+        results.append(f"{urlv}")
         
 with open("iplist.txt", 'w', encoding='utf-8') as file:
     for result in results:
