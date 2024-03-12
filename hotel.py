@@ -168,8 +168,9 @@ for ipv in sorted_list:
             infoList.append(f"{name},{urlsp}")
     except Exception as e:
         print(f"Error on page {ipv}: {e}")
-        #continue
         time.sleep(10)
+        continue
+
 
 infoList = set(infoList)  # 去重得到唯一的URL列表
 infoList = sorted(infoList)
