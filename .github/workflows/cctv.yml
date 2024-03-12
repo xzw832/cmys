@@ -45,8 +45,8 @@ jobs:
       #- name: Run hotel
       #  run: python ${{ github.workspace }}/hotel.py
       
-      - name: Run test
-        run: python ${{ github.workspace }}/test.py
+      - name: Run cctv
+        run: python ${{ github.workspace }}/cctv.py
         
       - name: 提交更改
         run: |
