@@ -121,7 +121,7 @@ for ipv in resultslist:
                 name = "Err画中画"
             #print(name)
             urlsp =f"{url_int}"
-             if len(urlsp) == 0:
+            if len(urlsp) == 0:
                 urlsp = "rtp://127.0.0.1"           
             print(f"{url_name}\t{url_int}")
             #print("-------------------------------------------------------------------------------------------------------")
