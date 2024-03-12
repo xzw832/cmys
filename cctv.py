@@ -84,11 +84,28 @@ with open("myitv.txt", 'r', encoding='utf-8') as file:
 results = set(results)  # 去重得到唯一的URL列表
 results = sorted(results)
 
-with open("itv.txt", 'w', encoding='utf-8') as file:
+with open("newitv.txt", 'w', encoding='utf-8') as file:
     for result in results:
         file.write(result + "\n")
         # print(result)
     file.close()
+
+# 合并文件内容
+file_contents = []
+file_paths = ["newitv.txt", "itv.txt"]  # 替换为实际的文件路径列表
+for file_path in file_paths:
+    with open(file_path, 'r', encoding="utf-8") as file:
+        content = file.read()
+        file_contents.append(content)
+        file.close()
+
+# print(f"{now_today}合并文件完成")
+
+# 写入合并后的文件
+with open("itv.txt", "w", encoding="utf-8") as output:
+    output.write('\n'.join(file_contents))
+    output.close()
+
 
 results = []
 channels = []
