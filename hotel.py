@@ -111,7 +111,7 @@ for iplist in resultslist:
                 )
             #infoList.append((url_int, resolution))
             #print("-------------------------------------------------------------------------------------------------------")
-            urlsp =(f"{url_name}\t{url_int}")
+            urlsp =(f"{url_int}")
             print(urlsp)
             #print("-------------------------------------------------------------------------------------------------------")
             name = name.replace("cctv", "CCTV")
