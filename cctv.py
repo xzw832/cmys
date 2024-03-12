@@ -64,7 +64,7 @@ with open("myitv.txt", 'r', encoding='utf-8') as file:
                 name = name.replace("汕头文旅体育高清", "汕头文旅体育")
                 name = name.replace("高清", "")
                 urlright = channel_url[:4]
-                if urlright == 'http'
+                if urlright == 'http':
                     results.append(f"{name},{channel_url}")
     file.close()
 
