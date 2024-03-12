@@ -15,20 +15,20 @@ infoList = []
 urls_y = []
 resultslist = []
 urls = [
-    "http://tonkiang.us/hoteliptv.php?page=1&s=%E5%87%A4%E5%87%B0",
-    "http://tonkiang.us/hoteliptv.php?page=2&s=%E5%87%A4%E5%87%B0",
-    "http://tonkiang.us/hoteliptv.php?page=3&s=%E5%87%A4%E5%87%B0",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=%E6%8F%AD%E9%98%B3",
-    "http://tonkiang.us/hoteliptv.php?page=2&s=%E6%8F%AD%E9%98%B3",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=%E5%B9%BF%E5%B7%9E",
-    "http://tonkiang.us/hoteliptv.php?page=2&s=%E5%B9%BF%E5%B7%9E",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=%E6%B1%95%E5%A4%B4",
-    "http://tonkiang.us/hoteliptv.php?page=2&s=%E6%B1%95%E5%A4%B4",
-    "http://tonkiang.us/hoteliptv.php?page=3&s=%E6%B1%95%E5%A4%B4",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=%E6%B1%95%E5%B0%BE",
-    "http://tonkiang.us/hoteliptv.php?page=2&s=%E6%B1%95%E5%B0%BE",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=%E7%94%B5%E5%BD%B1",
-    "http://tonkiang.us/hoteliptv.php?page=2&s=%E7%94%B5%E5%BD%B1"
+    "http://tonkiang.us/hoteliptv.php?page=1&s=凤凰",
+    "http://tonkiang.us/hoteliptv.php?page=2&s=凤凰",
+    "http://tonkiang.us/hoteliptv.php?page=3&s=凤凰",
+    "http://tonkiang.us/hoteliptv.php?page=1&s=揭阳",
+    "http://tonkiang.us/hoteliptv.php?page=2&s=揭阳",
+    "http://tonkiang.us/hoteliptv.php?page=1&s=广州",
+    "http://tonkiang.us/hoteliptv.php?page=2&s=广州",
+    "http://tonkiang.us/hoteliptv.php?page=1&s=汕头",
+    "http://tonkiang.us/hoteliptv.php?page=2&s=汕头",
+    "http://tonkiang.us/hoteliptv.php?page=3&s=汕头",
+    "http://tonkiang.us/hoteliptv.php?page=1&s=汕尾",
+    "http://tonkiang.us/hoteliptv.php?page=2&s=汕尾",
+    "http://tonkiang.us/hoteliptv.php?page=1&s=广东",
+    "http://tonkiang.us/hoteliptv.php?page=2&s=广东"
     ]
 
 for url in urls:
@@ -87,7 +87,6 @@ for ipv in sorted_list:
                 )
         )
         time.sleep(15)
-
         soup = BeautifulSoup(driver.page_source, "html.parser")
         # 关闭WebDriver
         driver.quit()
@@ -109,7 +108,6 @@ for ipv in sorted_list:
             m3u8_name_div = result.find("div", class_="channel")
             url_name = m3u8_name_div.text.strip() if m3u8_div else None
             #－－－－－
-
             #print("-------------------------------------------------------------------------------------------------------")
             name =f"{url_name}"
             if len(name) == 0:
@@ -172,7 +170,7 @@ for ipv in sorted_list:
         print(f"Error on page {ipv}: {e}")
         #continue
         time.sleep(10)
-        
+
 infoList = set(infoList)  # 去重得到唯一的URL列表
 infoList = sorted(infoList)
 
