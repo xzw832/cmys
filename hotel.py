@@ -52,7 +52,8 @@ for url in urls:
     for urlv in urls_y:
         resultslist.append(f"{urlv}")
 
-resultslist = set(resultslist)    # 去重得到唯一的URL列表    
+resultslist = set(resultslist)    # 去重得到唯一的URL列表
+resultslist = sorted(resultslist)
 with open("iplist.txt", 'w', encoding='utf-8') as file:
     for iplist in resultslist:
         file.write(iplist + "\n")
@@ -71,7 +72,7 @@ for ipv in resultslist:
         chrome_options.add_argument("blink-settings=imagesEnabled=false")
         driver = webdriver.Chrome(options=chrome_options)
         # 使用WebDriver访问网页
-        page_url= f"http://foodieguide.com/iptvsearch/alllist.php?s={ipv}"
+        page_url= f"http://tonkiang.us/9dlist2.php?s={ipv}"
         print(page_url)
         driver.get(page_url)  # 将网址替换为你要访问的网页地址
         WebDriverWait(driver, 20).until(
@@ -79,7 +80,7 @@ for ipv in resultslist:
                 (By.CSS_SELECTOR, "div.tables")
                 )
         )
-        time.sleep(20)
+        time.sleep(30)
 
         soup = BeautifulSoup(driver.page_source, "html.parser")
         # 关闭WebDriver
