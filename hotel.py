@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 
 # 查找所有符合指定格式的网址
 infoList = []
-
+urls_y = []
 urls = [
     "http://tonkiang.us/hoteliptv.php?page=1&s=%E5%87%A4%E5%87%B0",
     "http://tonkiang.us/hoteliptv.php?page=2&s=%E5%87%A4%E5%87%B0",
@@ -41,7 +41,6 @@ for url in urls:
     driver.quit()
 
     # 查找所有符合指定格式的网址
-    urls_y = []
     pattern = r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d+"  # 设置匹配的格式，如http://8.8.8.8:8888
     urls_all = re.findall(pattern, page_content)
     # urls = list(set(urls_all))  # 去重得到唯一的URL列表
