@@ -95,8 +95,8 @@ def worker():
     while True:
         # 从队列中获取一个任务
         channel_name, channel_url = task_queue.get()
-        now=time.time()
         try:
+            now=time.time()
             res=se.get(channel_url,headers=headers,timeout=5,stream=True)
             if res.status_code==200:
                 for k in res.iter_content(chunk_size=1048576):
