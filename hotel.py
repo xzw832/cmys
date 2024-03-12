@@ -53,14 +53,15 @@ for url in urls:
         resultslist.append(f"{urlv}")
 
 resultslist = set(resultslist)    # 去重得到唯一的URL列表
-resultslist = sorted(resultslist)
+
 with open("iplist.txt", 'w', encoding='utf-8') as file:
     for iplist in resultslist:
         file.write(iplist + "\n")
         print(iplist)
     file.close()
-
-for ipv in resultslist:   
+    
+sorted_list = sorted(resultslist)
+for ipv in sorted_list:   
     try:
         # 创建一个Chrome WebDriver实例
         results = []
