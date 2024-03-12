@@ -77,8 +77,6 @@ with open("iplist.txt", 'r', encoding='utf-8') as file:
             #page_content = driver.page_source
             #print(page_content)
             soup = BeautifulSoup(driver.page_source, "html.parser")
-            # 关闭WebDriver
-            driver.quit()
                 
             tables_div = soup.find("div", class_="tables")
             results = (
@@ -112,7 +110,7 @@ with open("iplist.txt", 'r', encoding='utf-8') as file:
                 #infoList.append((url_int, resolution))
                 print("-------------------------------------------------------------------------------------------------------")
                 name =(f"{url_name}")
-                #print(name)
+                print(name)
                 urlsp =(f"{url_int}")
                 print(urlsp)
                 print("-------------------------------------------------------------------------------------------------------")
@@ -167,6 +165,8 @@ with open("iplist.txt", 'r', encoding='utf-8') as file:
         except Exception as e:
             print(f"Error on page {line}: {e}")
             continue
+        # 关闭WebDriver
+        driver.quit()
         
 infoList = set(infoList)  # 去重得到唯一的URL列表
 infoList = sorted(infoList)
