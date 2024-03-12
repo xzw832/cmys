@@ -16,6 +16,8 @@ results = []
 
 channels = []
 error_channels = []
+headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36'}
+se=requests.Session()
 
 with open("myitv.txt", 'r', encoding='utf-8') as file:
     lines = file.readlines()
@@ -33,6 +35,7 @@ with open("myitv.txt", 'r', encoding='utf-8') as file:
                 name = name.replace("吉林卫视高清", "吉林卫视")
                 name = name.replace("四川卫视高清", "四川卫视")
                 name = name.replace("天津卫视高清", "天津卫视")
+                name = name.replace("天津高清", "天津卫视")
                 name = name.replace("安徽卫视高清", "安徽卫视")
                 name = name.replace("广东卫视高清", "广东卫视")
                 name = name.replace("江苏卫视高清", "江苏卫视")
@@ -60,7 +63,9 @@ with open("myitv.txt", 'r', encoding='utf-8') as file:
                 name = name.replace("汕头文旅体育高清", "汕头文旅体育")
                 name = name.replace("汕头文旅体育高清", "汕头文旅体育")
                 name = name.replace("高清", "")
-                results.append(f"{name},{channel_url}")
+                urlright = channel_url[:4]
+                if urlright == 'http'
+                    results.append(f"{name},{channel_url}")
     file.close()
 
 results = set(results)  # 去重得到唯一的URL列表
@@ -90,41 +95,24 @@ def worker():
     while True:
         # 从队列中获取一个任务
         channel_name, channel_url = task_queue.get()
+        now=time.time()
         try:
-            channel_url_t = channel_url.rstrip(channel_url.split('/')[-1])  # m3u8链接前缀
-            lines = requests.get(channel_url, timeout=5, stream=True).text.strip().split('\n')  # 获取m3u8文件内容
-            ts_lists = [line.split('/')[-1] for line in lines if line.startswith('#') == False]  # 获取m3u8文件下视频流后缀
-            ts_lists_0 = ts_lists[0].rstrip(ts_lists[0].split('.ts')[-1])  # m3u8链接前缀
-            ts_url = channel_url_t + ts_lists[0]  # 拼接单个视频片段下载链接
-
-            # 多获取的视频数据进行5秒钟限制
-            with eventlet.Timeout(5, False):
-                start_time = time.time()
-                content = requests.get(ts_url, timeout=(1,4), stream=True).content
-                end_time = time.time()
-                response_time = (end_time - start_time) * 1
-
-            if content:
-                with open(ts_lists_0, 'ab') as f:
-                    f.write(content)  # 写入文件
-                file_size = len(content)
-                # print(f"文件大小：{file_size} 字节")
-                download_speed = file_size / response_time / 1024
-                # print(f"下载速度：{download_speed:.3f} kB/s")
-                normalized_speed = min(max(download_speed / 1024, 0.001), 100)  # 将速率从kB/s转换为MB/s并限制在1~100之间
-                #print(f"标准化后的速率：{normalized_speed:.3f} MB/s")
-
-                # 删除下载的文件
-                os.remove(ts_lists_0)
-                result = channel_name, channel_url, f"{normalized_speed:.3f} MB/s"
-                results.append(result)
-                numberx = (len(results) + len(error_channels)) / len(channels) * 100
-                # print(f"可用频道：{len(results)} 个 , 不可用频道：{len(error_channels)} 个 , 总频道：{len(channels)} 个 ,总进度：{numberx:.2f} %。")
+            res=se.get(i,headers=headers,timeout=5,stream=True)
+            if res.status_code==200:
+                for k in res.iter_content(chunk_size=1048576):
+                    # 这里的chunk_size是1MB，每次读取1MB测试视频流
+                    # 如果能获取视频流，则输出读取的时间以及链接
+                    if k:
+                        print(f'{time.time()-now:.2f}\t{i}')
+                        response_time = (time.time()-now) * 1
+                        download_speed = 1048576 / response_time / 1024
+                        normalized_speed = min(max(download_speed / 1024, 0.001), 100)
+                        result = channel_name, channel_url, f"{normalized_speed:.3f} MB/s"
+                        results.append(result)
+                        break
         except:
-            error_channel = channel_name, channel_url
-            error_channels.append(error_channel)
-            numberx = (len(results) + len(error_channels)) / len(channels) * 100
-            # print(f"可用频道：{len(results)} 个 , 不可用频道：{len(error_channels)} 个 , 总频道：{len(channels)} 个 ,总进度：{numberx:.2f} %。")
+            # 无法连接并超时的情况下输出“X”
+            print(f'X\t{i}')
         
         # 减少CPU占用
         time.sleep(0)
