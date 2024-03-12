@@ -76,7 +76,7 @@ for iplist in resultslist:
                 (By.CSS_SELECTOR, "div.tables")
                 )
         )
-        time.sleep(10)
+        time.sleep(20)
 
         soup = BeautifulSoup(driver.page_source, "html.parser")
         tables_div = soup.find("div", class_="tables")
