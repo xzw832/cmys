@@ -14,13 +14,12 @@ from bs4 import BeautifulSoup
 infoList = []
 urls_y = []
 resultslist = []
-
+    # "http://tonkiang.us/hoteliptv.php?page=1&s=%E5%B9%BF%E5%B7%9E",
+    # "http://tonkiang.us/hoteliptv.php?page=1&s=%E6%B1%95%E5%A4%B4",
 urls = [
     "http://tonkiang.us/hoteliptv.php?page=1&s=%E5%87%A4%E5%87%B0",
     "http://tonkiang.us/hoteliptv.php?page=2&s=%E5%87%A4%E5%87%B0",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=%E6%8F%AD%E9%98%B3",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=%E5%B9%BF%E5%B7%9E",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=%E6%B1%95%E5%A4%B4",
+    "http://tonkiang.us/hoteliptv.php?page=3&s=%E6%8F%AD%E9%98%B3",
     "http://tonkiang.us/hoteliptv.php?page=1&s=%E6%B1%95%E5%B0%BE",
     "http://tonkiang.us/hoteliptv.php?page=2&s=%E6%B1%95%E5%A4%B4",
     "http://tonkiang.us/hoteliptv.php?page=1&s=%E7%94%B5%E5%BD%B1"
@@ -37,7 +36,7 @@ for url in urls:
     driver = webdriver.Chrome(options=chrome_options)
     # 使用WebDriver访问网页
     driver.get(url)  # 将网址替换为你要访问的网页地址
-    time.sleep(20)
+    time.sleep(15)
     # 获取网页内容
     page_content = driver.page_source
 
@@ -70,7 +69,7 @@ for iplist in resultslist:
         chrome_options.add_argument("blink-settings=imagesEnabled=false")
         driver = webdriver.Chrome(options=chrome_options)
         # 使用WebDriver访问网页
-        page_url= f"http://tonkiang.us/9dlist2.php?s={iplist}"
+        page_url= f"http://foodieguide.com/iptvsearch/alllist.php?s={iplist}"
         print(page_url)
         driver.get(page_url)  # 将网址替换为你要访问的网页地址
         WebDriverWait(driver, 20).until(
