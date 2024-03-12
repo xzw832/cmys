@@ -86,7 +86,7 @@ for ipv in sorted_list:
                 (By.CSS_SELECTOR, "div.tables")
                 )
         )
-        time.sleep(28)
+        time.sleep(30)
 
         soup = BeautifulSoup(driver.page_source, "html.parser")
         # 关闭WebDriver
