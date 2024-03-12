@@ -45,9 +45,10 @@ for url in urls:
     pattern = r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d+"  # 设置匹配的格式，如http://8.8.8.8:8888
     urls_all = re.findall(pattern, page_content)
     # urls = list(set(urls_all))  # 去重得到唯一的URL列表
-    urls_y = set(urls_all)  # 去重得到唯一的URL列表
-    with open("iplist.txt", 'w', encoding='utf-8') as file:
-        for urlv in urls_y:
-            file.write(urlv + "\n")
-            print(urlv)
-        file.close()
+    urls_y = urls_y + set(urls_all)  # 去重得到唯一的URL列表
+    
+with open("iplist.txt", 'w', encoding='utf-8') as file:
+    for urlv in urls_y:
+        file.write(urlv + "\n")
+        print(urlv)
+    file.close()
