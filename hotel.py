@@ -82,6 +82,8 @@ for iplist in resultslist:
         time.sleep(20)
 
         soup = BeautifulSoup(driver.page_source, "html.parser")
+        # 关闭WebDriver
+        driver.quit()
         tables_div = soup.find("div", class_="tables")
         results = (
             tables_div.find_all("div", class_="result")
@@ -168,8 +170,7 @@ for iplist in resultslist:
     except Exception as e:
         print(f"Error on page {iplist}: {e}")
         continue
-    # 关闭WebDriver
-    driver.quit()
+
         
 infoList = set(infoList)  # 去重得到唯一的URL列表
 infoList = sorted(infoList)
