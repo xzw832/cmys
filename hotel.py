@@ -89,8 +89,7 @@ for ipv in sorted_list:
         time.sleep(30)
 
         soup = BeautifulSoup(driver.page_source, "html.parser")
-        # 关闭WebDriver
-        driver.quit()
+
         tables_div = soup.find("div", class_="tables")
         results = (
             tables_div.find_all("div", class_="result")
@@ -171,7 +170,10 @@ for ipv in sorted_list:
     except Exception as e:
         print(f"Error on page {ipv}: {e}")
         #continue
+        time.sleep(20)
 
+    # 关闭WebDriver
+    driver.quit()
         
 infoList = set(infoList)  # 去重得到唯一的URL列表
 infoList = sorted(infoList)
