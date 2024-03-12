@@ -73,7 +73,7 @@ for ipv in sorted_list:
         chrome_options.add_argument("blink-settings=imagesEnabled=false")
         driver = webdriver.Chrome(options=chrome_options)
         # 使用WebDriver访问网页
-        page_url= f"http://tonkiang.us/9dlist2.php?s={ipv}"
+        page_url= f"http://foodieguide.com/iptvsearch/alllist.php?s={ipv}"
         print(page_url)
         driver.get(page_url)  # 将网址替换为你要访问的网页地址
         WebDriverWait(driver, 20).until(
