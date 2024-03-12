@@ -81,12 +81,12 @@ for ipv in sorted_list:
         page_url= f"http://tonkiang.us/9dlist2.php?s={ipv}"
         print(page_url)
         driver.get(page_url)  # 将网址替换为你要访问的网页地址
-        WebDriverWait(driver, 20).until(
+        WebDriverWait(driver, 30).until(
             EC.presence_of_element_located(
                 (By.CSS_SELECTOR, "div.tables")
                 )
         )
-        time.sleep(30)
+        time.sleep(28)
 
         soup = BeautifulSoup(driver.page_source, "html.parser")
         # 关闭WebDriver
