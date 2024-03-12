@@ -1,5 +1,7 @@
 name: cctv setup
 on:
+  schedule:
+    - cron: '0 1,5,9,13,17,21 * * *'
   # 手动运行
   workflow_dispatch:
 
@@ -42,12 +44,23 @@ jobs:
           pip install selenium requests futures eventlet
           pip install beautifulsoup4
         
-      #- name: Run hotel
-      #  run: python ${{ github.workspace }}/hotel.py
+      - name: Run hotel
+        run: python ${{ github.workspace }}/hotel.py
       
       - name: Run cctv
         run: python ${{ github.workspace }}/cctv.py
-        
+          
+      - name: Run weishi
+        run: python ${{ github.workspace }}/weishi.py
+          
+      - name: Run ktpd
+        run: python ${{ github.workspace }}/ktpd.py
+          
+      - name: Run ysyl
+        run: python ${{ github.workspace }}/ysyl.py
+             
+      - name: Run qita
+        run: python ${{ github.workspace }}/qita.py        
       - name: 提交更改
         run: |
           git config --local user.name "xzw832" 
