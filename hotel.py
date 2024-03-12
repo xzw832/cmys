@@ -14,12 +14,12 @@ from bs4 import BeautifulSoup
 infoList = []
 urls_y = []
 resultslist = []
-    # "http://tonkiang.us/hoteliptv.php?page=1&s=%E5%B9%BF%E5%B7%9E",
-    # "http://tonkiang.us/hoteliptv.php?page=1&s=%E6%B1%95%E5%A4%B4",
 urls = [
     "http://tonkiang.us/hoteliptv.php?page=1&s=%E5%87%A4%E5%87%B0",
     "http://tonkiang.us/hoteliptv.php?page=2&s=%E5%87%A4%E5%87%B0",
-    "http://tonkiang.us/hoteliptv.php?page=3&s=%E6%8F%AD%E9%98%B3",
+    "http://tonkiang.us/hoteliptv.php?page=1&s=%E6%8F%AD%E9%98%B3",
+    "http://tonkiang.us/hoteliptv.php?page=1&s=%E5%B9%BF%E5%B7%9E",
+    "http://tonkiang.us/hoteliptv.php?page=1&s=%E6%B1%95%E5%A4%B4",
     "http://tonkiang.us/hoteliptv.php?page=1&s=%E6%B1%95%E5%B0%BE",
     "http://tonkiang.us/hoteliptv.php?page=2&s=%E6%B1%95%E5%A4%B4",
     "http://tonkiang.us/hoteliptv.php?page=1&s=%E7%94%B5%E5%BD%B1"
@@ -110,10 +110,13 @@ for iplist in resultslist:
                     else None
                 )
             #infoList.append((url_int, resolution))
-            #print("-------------------------------------------------------------------------------------------------------")
+            print("-------------------------------------------------------------------------------------------------------")
+            name =(f"{url_name}")
+            print(name)
             urlsp =(f"{url_int}")
+            urlsp =(f"{url_name}\t{url_int}")
             print(urlsp)
-            #print("-------------------------------------------------------------------------------------------------------")
+            print("-------------------------------------------------------------------------------------------------------")
             name = name.replace("cctv", "CCTV")
             name = name.replace("中央", "CCTV")
             name = name.replace("央视", "CCTV")
