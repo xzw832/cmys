@@ -51,14 +51,13 @@ for url in urls:
     urls_y = set(urls_all)  # 去重得到唯一的URL列表
     for urlv in urls_y:
         resultslist.append(f"{urlv}")
-        
+
+resultslist = set(resultslist)    # 去重得到唯一的URL列表    
 with open("iplist.txt", 'w', encoding='utf-8') as file:
     for iplist in resultslist:
         file.write(iplist + "\n")
         print(iplist)
     file.close()
-
-resultslist = set(resultslist)    # 去重得到唯一的URL列表
 
 for ipv in resultslist:   
     try:
@@ -114,6 +113,7 @@ for ipv in resultslist:
                 urlsp = "rtp://127.0.0.1"           
             print(f"{url_name}\t{url_int}")
             #print("-------------------------------------------------------------------------------------------------------")
+            urlsp = urlsp.replace("http://67.211.73.118:9901", "")
             name = name.replace("cctv", "CCTV")
             name = name.replace("中央", "CCTV")
             name = name.replace("央视", "CCTV")
