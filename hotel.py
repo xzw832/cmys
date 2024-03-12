@@ -45,11 +45,15 @@ for url in urls:
     urls_all = re.findall(pattern, page_content)
     # urls = list(set(urls_all))  # 去重得到唯一的URL列表
     urls_y = set(urls_all)  # 去重得到唯一的URL列表
-    for urlv in urls_y:
-        urlsp =(f"{urlv}")
-        print(urlsp)
-        
-    for urlv in urls_y:
+    with open("iplist.txt", 'w', encoding='utf-8') as file:
+        for urlv in urls_y:
+            file.write(urlv + "\n")
+            print(urlv)
+        file.close()
+
+with open("iplist.txt", 'r', encoding='utf-8') as file:
+    lines = file.readlines()
+    for line in lines:   
         try:
             # 创建一个Chrome WebDriver实例
             results = []
@@ -61,12 +65,12 @@ for url in urls:
             chrome_options.add_argument("blink-settings=imagesEnabled=false")
             driver = webdriver.Chrome(options=chrome_options)
             # 使用WebDriver访问网页
-            page_url= f"http://tonkiang.us/9dlist2.php?s={urlv}"
+            page_url= f"http://tonkiang.us/9dlist2.php?s={line}"
             driver.get(page_url)  # 将网址替换为你要访问的网页地址
             WebDriverWait(driver, 10).until(
                 EC.presence_of_element_located(
                     (By.CSS_SELECTOR, "div.tables")
-                )
+                 )
             )
             time.sleep(10)
             #page_content = driver.page_source
@@ -74,15 +78,15 @@ for url in urls:
             soup = BeautifulSoup(driver.page_source, "html.parser")
             # 关闭WebDriver
             driver.quit()
-            
+                
             tables_div = soup.find("div", class_="tables")
             results = (
                 tables_div.find_all("div", class_="result")
                 if tables_div
                 else []
-            )
-            if not any(
-                result.find("div", class_="m3u8") for result in results
+                )
+                if not any(
+                    result.find("div", class_="m3u8") for result in results
             ):
                 break
             for result in results:
@@ -160,7 +164,7 @@ for url in urls:
                 if "m3u8" in url_int or "m3u8" in urlsp:
                     infoList.append(f"{name},{urlsp}")
         except Exception as e:
-            print(f"Error on page {urlv}: {e}")
+            print(f"Error on page {line}: {e}")
             continue
         
 infoList = set(infoList)  # 去重得到唯一的URL列表
