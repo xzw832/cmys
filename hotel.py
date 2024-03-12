@@ -171,7 +171,6 @@ for ipv in sorted_list:
         time.sleep(10)
         continue
 
-
 infoList = set(infoList)  # 去重得到唯一的URL列表
 infoList = sorted(infoList)
 
