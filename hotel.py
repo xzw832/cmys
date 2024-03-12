@@ -16,10 +16,12 @@ urls_y = []
 resultslist = []
 
 urls = [
-    "http://tonkiang.us/hoteliptv.php?page=1&s=%E5%87%A4%E5%87%B0",
+    "http://tonkiang.us/hoteliptv.php?page=1&s=%E5%87%A4%E5%87%B0",    #凤凰2页
     "http://tonkiang.us/hoteliptv.php?page=2&s=%E5%87%A4%E5%87%B0",
-    "http://tonkiang.us/hoteliptv.php?page=3&s=%E5%87%A4%E5%87%B0",
+    "http://tonkiang.us/hoteliptv.php?page=1&s=%E6%8F%AD%E9%98%B3",
+    "http://tonkiang.us/hoteliptv.php?page=1&s=%E5%B9%BF%E5%B7%9E",
     "http://tonkiang.us/hoteliptv.php?page=1&s=%E6%B1%95%E5%A4%B4",
+    "http://tonkiang.us/hoteliptv.php?page=1&s=%E6%B1%95%E5%B0%BE",    #汕尾
     "http://tonkiang.us/hoteliptv.php?page=2&s=%E6%B1%95%E5%A4%B4",
     "http://tonkiang.us/hoteliptv.php?page=1&s=%E7%94%B5%E5%BD%B1"
     ]
