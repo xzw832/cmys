@@ -42,8 +42,11 @@ jobs:
           pip install selenium requests futures eventlet
           pip install beautifulsoup4
         
-      - name: Run hotel
-        run: python ${{ github.workspace }}/hotel.py
+      #- name: Run hotel
+      #  run: python ${{ github.workspace }}/hotel.py
+      
+      - name: Run test
+        run: python ${{ github.workspace }}/test.py
         
       - name: 提交更改
         run: |
