@@ -84,11 +84,11 @@ with open("iplist.txt", 'r', encoding='utf-8') as file:
                 tables_div.find_all("div", class_="result")
                 if tables_div
                 else []
-                )
-                if not any(
-                    result.find("div", class_="m3u8") for result in results
-                ):
-                    break
+            )
+            if not any(
+                result.find("div", class_="m3u8") for result in results
+            ):
+                break
             for result in results:
                 print(result)
                 m3u8_div = result.find("div", class_="m3u8")
