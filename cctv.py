@@ -38,6 +38,7 @@ with open("myitv.txt", 'r', encoding='utf-8') as file:
                 name = name.replace("汕头一", "汕头综合")
                 name = name.replace("汕头三台", "汕头文旅体育")
                 name = name.replace("汕头台", "汕头综合")
+                name = name.replace("汕头生活", "汕头经济生活")
                 name = name.replace("厦门卫视高清", "厦门卫视")
                 name = name.replace("吉林卫视高清", "吉林卫视")
                 name = name.replace("四川卫视高清", "四川卫视")
