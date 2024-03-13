@@ -77,7 +77,7 @@ with open("myitv.txt", 'r', encoding='utf-8') as file:
                 name = name.replace("香港音乐", "香港音乐卫视")
                 urlright = channel_url[:4]
                 if urlright == 'http':
-                    if '画中画' not in channel_name and '单音' not in channel_name:
+                    if '画中画' not in channel_name and '单音' not in channel_name and '直播' not in channel_name and '电视' not in channel_name and '主视' not in channel_name:
                         results.append(f"{name},{channel_url}")
     file.close()
 
@@ -92,7 +92,7 @@ with open("newitv.txt", 'w', encoding='utf-8') as file:
 
 # 合并文件内容
 file_contents = []
-file_paths = ["newitv.txt", "itv.txt"]  # 替换为实际的文件路径列表
+file_paths = ["cctv.txt", "weishi.txt", "ktpd.txt", "ysyl.txt","xiangang.txt", "qita.txt", "newitv.txt"]  # 替换为实际的文件路径列表
 for file_path in file_paths:
     with open(file_path, 'r', encoding="utf-8") as file:
         content = file.read()
