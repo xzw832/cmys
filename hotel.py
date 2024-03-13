@@ -15,18 +15,17 @@ infoList = []
 urls_y = []
 resultslist = []
 urls = [
-    "http://tonkiang.us/hoteliptv.php?page=1&s=凤凰",
-    "http://tonkiang.us/hoteliptv.php?page=2&s=凤凰",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=揭阳",
-    "http://tonkiang.us/hoteliptv.php?page=2&s=揭阳",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=广州",
-    "http://tonkiang.us/hoteliptv.php?page=2&s=广州",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=汕头",
-    "http://tonkiang.us/hoteliptv.php?page=2&s=汕头",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=汕尾",
-    "http://tonkiang.us/hoteliptv.php?page=2&s=汕尾",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=广东",
-    "http://tonkiang.us/hoteliptv.php?page=2&s=广东"
+    "http://foodieguide.com/iptvsearch/hoteliptv.php?page=1&s=凤凰",
+    "http://foodieguide.com/iptvsearch/hoteliptv.php?page=2&s=凤凰",
+    "http://foodieguide.com/iptvsearch/hoteliptv.php?page=3&s=凤凰",
+    "http://foodieguide.com/iptvsearch/hoteliptv.php?page=4&s=凤凰",
+    "http://foodieguide.com/iptvsearch/hoteliptv.php?page=1&s=揭阳",
+    "http://foodieguide.com/iptvsearch/hoteliptv.php?page=1&s=广州",
+    "http://foodieguide.com/iptvsearch/hoteliptv.php?page=1&s=汕头",
+    "http://foodieguide.com/iptvsearch/hoteliptv.php?page=2&s=汕头",
+    "http://foodieguide.com/iptvsearch/hoteliptv.php?page=1&s=深圳",
+    "http://foodieguide.com/iptvsearch/hoteliptv.php?page=1&s=汕尾",
+    "http://foodieguide.com/iptvsearch/hoteliptv.php?page=1&s=广东"
     ]
 
 for url in urls:
