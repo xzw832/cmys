@@ -27,7 +27,19 @@ urls = [
     "http://foodieguide.com/iptvsearch/hoteliptv.php?page=1&s=汕尾",
     "http://foodieguide.com/iptvsearch/hoteliptv.php?page=1&s=广东"
     ]
-
+# 初始化计数器为0
+counter = 0
+ 
+# 每次调用该函数时将计数器加1并返回结果
+def increment_counter():
+    global counter
+    counter += 1
+    return counter
+ 
+# 测试代码
+print(increment_counter()) # 输出：1
+print(increment_counter()) # 输出：2
+print(increment_counter()) # 输出：3
 for url in urls:
     # 创建一个Chrome WebDriver实例
     chrome_options = Options()
@@ -45,7 +57,7 @@ for url in urls:
 
     # 关闭WebDriver
     driver.quit()
-
+    print(increment_counter())    #方便看看是否有执行啊
     # 查找所有符合指定格式的网址
     pattern = r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d+"  # 设置匹配的格式，如http://8.8.8.8:8888
     urls_all = re.findall(pattern, page_content)
