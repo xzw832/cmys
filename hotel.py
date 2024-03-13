@@ -17,10 +17,10 @@ resultslist = []
 urls = [
     "http://foodieguide.com/iptvsearch/hoteliptv.php?page=1&s=凤凰",
     "http://foodieguide.com/iptvsearch/hoteliptv.php?page=2&s=凤凰",
-    "http://foodieguide.com/iptvsearch/hoteliptv.php?page=3&s=凤凰",
-    "http://foodieguide.com/iptvsearch/hoteliptv.php?page=4&s=凤凰",
-    "http://foodieguide.com/iptvsearch/hoteliptv.php?page=1&s=揭阳",
     "http://foodieguide.com/iptvsearch/hoteliptv.php?page=1&s=广州",
+    "http://foodieguide.com/iptvsearch/hoteliptv.php?page=2&s=广州",
+    "http://foodieguide.com/iptvsearch/hoteliptv.php?page=1&s=揭阳",
+    "http://foodieguide.com/iptvsearch/hoteliptv.php?page=2&s=揭阳",
     "http://foodieguide.com/iptvsearch/hoteliptv.php?page=1&s=汕头",
     "http://foodieguide.com/iptvsearch/hoteliptv.php?page=2&s=汕头",
     "http://foodieguide.com/iptvsearch/hoteliptv.php?page=1&s=深圳",
