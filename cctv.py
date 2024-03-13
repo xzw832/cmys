@@ -77,6 +77,7 @@ with open("myitv.txt", 'r', encoding='utf-8') as file:
                 name = name.replace("香港翡翠", "香港翡翠卫视")
                 name = name.replace("香港音乐", "香港音乐卫视")
                 name = name.replace("高请", "")
+                name = name.replace("超", "")
                 name = name.replace("CCTVCCTV", "CCTV")
                 urlright = channel_url[:4]
                 if urlright == 'http':
