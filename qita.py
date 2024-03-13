@@ -8,6 +8,14 @@ import requests
 import eventlet
 eventlet.monkey_patch()
 
+def cut_first_chinese_words(text, num=2):
+    for i, char in enumerate(text):
+        if char >= '\u4e00' and char <= '\u9fa5':
+            return text[:i+2]
+    return 'xxxxxxxxxxxxxxxxxx'
+ 
+guangdong_text = "东莞中山佛山顺德南海南方宝安岭南广东广州广视揭西揭阳汕头汕尾江门海豚深圳清远龙岗湛江潮州珠江粤语肇庆茂名韶关"
+
 # 线程安全的队列，用于存储下载任务
 task_queue = Queue()
 
@@ -56,7 +64,7 @@ def worker():
                     file_size = len(content)
                     # print(f"文件大小：{file_size} 字节")
                     download_speed = file_size / response_time / 1024
-                    # print(f"下载速度：{download_speed:.3f} kB/s")
+                    print(f"下载速度：{download_speed:.3f} kB/s")
                     normalized_speed = min(max(download_speed / 1024, 0.001), 100)  # 将速率从kB/s转换为MB/s并限制在1~100之间
                     #print(f'{channel_url}')
                     #print(f"m3u8 标准化后的速率：{normalized_speed:.3f} MB/s")
@@ -125,23 +133,40 @@ results.sort(key=lambda x: (x[0], -float(x[2].split()[0])))
 now_today = datetime.date.today()
 # 将结果写入文件
 
-result_counter = 4  # 每个频道需要的个数
+result_counter = 8  # 每个频道需要的个数
 
 with open("qita.txt", 'w', encoding='utf-8') as file:
+    channel_counters = {}
+    file.write('【  广东频道  】,#genre#\n')
+    for result in results:
+        channel_name, channel_url, speed = result
+        if '卫视' not in channel_name and 'CCTV' not in channel_name and '测试' not in channel_name and '电影' not in channel_name and '影院' not in channel_name and '剧场' not in channel_name and '影视' not in channel_name and '卡通' not in channel_name and '动漫' not in channel_name and '动画' not in channel_name and '少儿' not in channel_name:
+            if cut_first_chinese_words(channel_name) in guangdong_text:
+                if channel_name in channel_counters:
+                    if channel_counters[channel_name] >= result_counter:
+                        continue
+                    else:
+                        file.write(f"{channel_name},{channel_url}\n")
+                        channel_counters[channel_name] += 1
+                else:
+                    file.write(f"{channel_name},{channel_url}\n")
+                    channel_counters[channel_name] = 1
+    # 写入其他频道
     channel_counters = {}
     file.write('【  其他频道  】,#genre#\n')
     for result in results:
         channel_name, channel_url, speed = result
         if '卫视' not in channel_name and 'CCTV' not in channel_name and '测试' not in channel_name and '电影' not in channel_name and '影院' not in channel_name and '剧场' not in channel_name and '影视' not in channel_name and '卡通' not in channel_name and '动漫' not in channel_name and '动画' not in channel_name and '少儿' not in channel_name:
-            if channel_name in channel_counters:
-                if channel_counters[channel_name] >= result_counter:
-                    continue
+            if cut_first_chinese_words(channel_name) not in guangdong_text:
+                if channel_name in channel_counters:
+                    if channel_counters[channel_name] >= result_counter:
+                        continue
+                    else:
+                        file.write(f"{channel_name},{channel_url}\n")
+                        channel_counters[channel_name] += 1
                 else:
                     file.write(f"{channel_name},{channel_url}\n")
-                    channel_counters[channel_name] += 1
-            else:
-                file.write(f"{channel_name},{channel_url}\n")
-                channel_counters[channel_name] = 1
+                    channel_counters[channel_name] = 1
     file.close()                
 print(f"{now_today}其他频道更新完成")
 
