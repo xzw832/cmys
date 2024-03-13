@@ -9,7 +9,18 @@ import time
 import os
 import re
 from bs4 import BeautifulSoup
-
+    "http://tonkiang.us/hoteliptv.php?page=1&s=凤凰",
+    "http://tonkiang.us/hoteliptv.php?page=2&s=凤凰",
+    "http://tonkiang.us/hoteliptv.php?page=1&s=揭阳",
+    "http://tonkiang.us/hoteliptv.php?page=2&s=揭阳",
+    "http://tonkiang.us/hoteliptv.php?page=1&s=广州",
+    "http://tonkiang.us/hoteliptv.php?page=2&s=广州",
+    "http://tonkiang.us/hoteliptv.php?page=1&s=汕头",
+    "http://tonkiang.us/hoteliptv.php?page=2&s=汕头",
+    "http://tonkiang.us/hoteliptv.php?page=1&s=汕尾",
+    "http://tonkiang.us/hoteliptv.php?page=2&s=汕尾",
+    "http://tonkiang.us/hoteliptv.php?page=1&s=广东",
+    "http://tonkiang.us/hoteliptv.php?page=2&s=广东"
 # 查找所有符合指定格式的网址
 infoList = []
 urls_y = []
