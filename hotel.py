@@ -113,14 +113,10 @@ for ipv in sorted_list:
             name =f"{url_name}"
             if len(name) == 0:
                 name = "Err画中画"
-            if name == "None":
-                name = "Err画中画"
             #print(name)
             urlsp =f"{url_int}"
             if len(urlsp) == 0:
-                urlsp = "rtp://127.0.0.1"
-             if urlsp == "None":
-                urlsp = "rtp://127.0.0.1"               
+                urlsp = "rtp://127.0.0.1"             
             print(f"{url_name}\t{url_int}")
             #print("-------------------------------------------------------------------------------------------------------")
             urlsp = urlsp.replace("http://67.211.73.118:9901", "")
