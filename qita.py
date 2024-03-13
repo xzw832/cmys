@@ -13,7 +13,7 @@ def cut_first_chinese_words(text, num=2):
         if char >= '\u4e00' and char <= '\u9fa5':
             return text[:i+2]
     return 'xxxxxxxxxxxxxxxxxx'
- 
+
 guangdong_text = "东莞中山佛山顺德南海南方宝安岭南广东广州广视揭西揭阳汕头汕尾江门海豚深圳清远龙岗湛江潮州珠江粤语肇庆茂名韶关"
 
 # 线程安全的队列，用于存储下载任务
