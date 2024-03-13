@@ -99,7 +99,8 @@ for ipv in sorted_list:
         if not any(
             result.find("div", class_="m3u8") for result in results
         ):
-            break
+            #break
+            print("Err-------------------------------------------------------------------------------------------------------")
         for result in results:
             #print(result)
             m3u8_div = result.find("div", class_="m3u8")
