@@ -1429,7 +1429,7 @@ DOX电影,http://test.tvboxosc.cyou/ipv4_live/8/DOX电影/yiyang
 风云剧场,http://test.tvboxosc.cyou/ipv4_live/7/风云剧场/yiyang
 风云剧场,http://test.tvboxosc.cyou/ipv4_live/8/风云剧场/yiyang
 
-【  其他频道  】,#genre#
+【  广东频道  】,#genre#
 东莞新闻综合,http://test.tvboxosc.cyou/ipv4_live/1/东莞新闻综合/qita
 东莞新闻综合,http://test.tvboxosc.cyou/ipv4_live/2/东莞新闻综合/qita
 东莞新闻综合,http://test.tvboxosc.cyou/ipv4_live/3/东莞新闻综合/qita
