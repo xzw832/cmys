@@ -92,8 +92,11 @@ def worker():
                             response_time = (time.time()-now) * 1
                             download_speed = 3145728 / response_time / 1024
                             normalized_speed = min(max(download_speed / 1024, 0.001), 100)
-                            result = channel_name, channel_url, f"{normalized_speed:.3f} MB/s"
-                            results.append(result)
+                            if response_time > 2:
+                                result = channel_name, channel_url, f"{normalized_speed:.3f} MB/s"
+                                results.append(result)
+                            else:
+                                print(f'X\t{channel_url}')
                             break
             except:
                 # 无法连接并超时的情况下输出“X”
