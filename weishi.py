@@ -30,6 +30,7 @@ with open("itv.txt", 'r', encoding='utf-8') as file:
                 if '卫视' in channel_name:
                     channels.append((channel_name, channel_url))
     file.close()
+    
 # 定义工作线程函数
 def worker():
     while True:
