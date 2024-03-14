@@ -1526,14 +1526,6 @@ DOX电影,http://test.tvboxosc.cyou/ipv4_live/8/DOX电影/yiyang
 南方经济,http://test.tvboxosc.cyou/ipv4_live/6/南方经济/qita
 南方经济,http://test.tvboxosc.cyou/ipv4_live/7/南方经济/qita
 南方经济,http://test.tvboxosc.cyou/ipv4_live/8/南方经济/qita
-南方购物,http://test.tvboxosc.cyou/ipv4_live/1/南方购物/qita
-南方购物,http://test.tvboxosc.cyou/ipv4_live/2/南方购物/qita
-南方购物,http://test.tvboxosc.cyou/ipv4_live/3/南方购物/qita
-南方购物,http://test.tvboxosc.cyou/ipv4_live/4/南方购物/qita
-南方购物,http://test.tvboxosc.cyou/ipv4_live/5/南方购物/qita
-南方购物,http://test.tvboxosc.cyou/ipv4_live/6/南方购物/qita
-南方购物,http://test.tvboxosc.cyou/ipv4_live/7/南方购物/qita
-南方购物,http://test.tvboxosc.cyou/ipv4_live/8/南方购物/qita
 南海,http://test.tvboxosc.cyou/ipv4_live/1/南海/qita
 南海,http://test.tvboxosc.cyou/ipv4_live/2/南海/qita
 南海,http://test.tvboxosc.cyou/ipv4_live/3/南海/qita
