@@ -84,7 +84,7 @@ def worker():
                             response_time = (time.time()-now) * 1
                             download_speed = 2097152 / response_time / 1024
                             normalized_speed = min(max(download_speed / 1024, 0.001), 100)
-                            if response_time > 1.2:
+                            if response_time > 0.8:
                                 result = channel_name, channel_url, f"{normalized_speed:.3f} MB/s"
                                 results.append(result)
                             else:
