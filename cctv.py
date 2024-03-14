@@ -7,7 +7,10 @@ from queue import Queue
 import requests
 import eventlet
 eventlet.monkey_patch()
-
+# 判断首位是否为数字，是返回真
+def is_first_digit(s):
+    return s[0].isdigit() if s else False
+    
 # 线程安全的队列，用于存储下载任务
 task_queue = Queue()
 
@@ -88,8 +91,10 @@ with open("myitv.txt", 'r', encoding='utf-8') as file:
                 name = name.replace("CCTVCCTV", "CCTV")
                 urlright = channel_url[:4]
                 if urlright == 'http':
-                    if '画中画' not in channel_name and '单音' not in channel_name and '直播' not in channel_name and '电视' not in channel_name and '主视' not in channel_name:
-                        results.append(f"{name},{channel_url}")
+                    if '画中画' not in channel_name or '单音' not in channel_name or '直播' not in channel_name or '测试' not in channel_name or '主视' not in channel_name:
+                        check_name = f"{name}"
+                        if not is_first_digit(check_name):
+                            results.append(f"{name},{channel_url}")
     file.close()
 
 results = set(results)  # 去重得到唯一的URL列表
@@ -185,8 +190,11 @@ def worker():
                             response_time = (time.time()-now) * 1
                             download_speed = 3145728 / response_time / 1024
                             normalized_speed = min(max(download_speed / 1024, 0.001), 100)
-                            result = channel_name, channel_url, f"{normalized_speed:.3f} MB/s"
-                            results.append(result)
+                            if response_time > 2:
+                                result = channel_name, channel_url, f"{normalized_speed:.3f} MB/s"
+                                results.append(result)
+                            else:
+                                print(f'X\t{channel_url}')
                             break
             except:
                 # 无法连接并超时的情况下输出“X”
