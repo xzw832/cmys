@@ -1,7 +1,8 @@
 name: cctv setup
 on:
   schedule:
-    - cron: '0 2,9,16,23 * * *'
+    - cron: '0 14 * * *'
+    #- cron: '0 2,9,16,23 * * *'
   # 手动运行
   workflow_dispatch:
 
