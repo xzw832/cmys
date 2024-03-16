@@ -118,7 +118,8 @@ for file_path in file_paths:
         file.close()
 
 # print(f"{now_today}合并文件完成")
-
+file_contents = set(file_contents)  # 去重得到唯一的URL列表
+file_contents = sorted(file_contents)
 # 写入合并后的文件
 with open("itv.txt", "w", encoding="utf-8") as output:
     output.write('\n'.join(file_contents))
