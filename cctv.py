@@ -131,14 +131,14 @@ with open("itv.txt", 'r', encoding='utf-8') as file:
         count = line.count(',')
         if count == 1:
             if line:
-                channel_name, channel_url = line.split(',')
+                channel_name, channel_url = line
                 results.append((channel_name, channel_url))
                 
 results = set(results)  # 去重得到唯一的URL列表
 results = sorted(results)
 with open("itv.txt", 'w', encoding='utf-8') as file:
     for result in results:
-        channel_name, channel_url = result.split(',')
+        channel_name, channel_url = result
         file.write(f"{channel_name},{channel_url}\n")
     file.close()
 
@@ -151,7 +151,7 @@ with open("itv.txt", 'r', encoding='utf-8') as file:
         count = line.count(',')
         if count == 1:
             if line:
-                channel_name, channel_url = line.split(',')
+                channel_name, channel_url = line
                 if 'CCTV' in channel_name:
                     channels.append((channel_name, channel_url))
     file.close()
