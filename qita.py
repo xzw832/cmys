@@ -176,7 +176,7 @@ with open("qita.txt", 'w', encoding='utf-8') as file:
     for result in results:
         channel_name, channel_url, speed = result
         if '卫视' not in channel_name and 'CCTV' not in channel_name and '测试' not in channel_name and '电影' not in channel_name and '影院' not in channel_name and '剧场' not in channel_name and '影视' not in channel_name and '卡通' not in channel_name and '动漫' not in channel_name and '动画' not in channel_name and '少儿' not in channel_name:
-            if cut_first_chinese_words(channel_name) not in guangdong_text:
+            if cut_first_chinese_words(channel_name) not in guangdong_text or cut_first_chinese_words(channel_name) not in tiyu_text:
                 if channel_name in channel_counters:
                     if channel_counters[channel_name] >= result_counter:
                         continue
