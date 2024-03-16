@@ -1,53 +1,66 @@
-name: weishiruning
+name: set sorted all
 on:
   # 手动运行
-  workflow_call:
+  workflow_dispatch:
+
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      
-      # 安装依赖并创建虚拟环境
-      - name: Set up Python environment
-        uses: actions/setup-python@v2
+  push:
+      runs-on: ${{ matrix.operating-system }}
+      strategy:
+        matrix:
+          # in this example, there is a newer version already installed, 3.7.7, so the older version will be downloaded
+          operating-system: ['ubuntu-20.04']
+      steps:
+      - uses: actions/checkout@v3 # Checking out the repo
+      - name: Run with setup-python 3.8
+        uses: actions/setup-python@v3
         with:
-          python-version: 3.9
-        
-      # 将当前目录添加到PYTHONPATH
-      - name: Add current directory to PYTHONPATH
+          python-version: '3.9'
+          update-environment: false
+          cache: 'pipenv'
+
+
+      - name: Set up Chrome
+        uses: browser-actions/setup-chrome@latest
+        with:
+          chrome-version: stable
+      - name: Download chrome driver
+        uses: nanasess/setup-chromedriver@master
+      - name: Launch chrome driver
         run: |
-          echo "export PYTHONPATH=$(pwd)" >> $GITHUB_ENV
-          
-      # 如果之前已经有了缓存，则从缓存中还原
-      - name: Restore cache if available
-        id: restore_cache
-        uses: actions/cache@v2
-        with:
-          path: ~/.cache/pip
-          key: python-${{ hashFiles('requirements.txt') }}
-      
+            export DISPLAY=:99
+            chromedriver --url-base=/wd/hub &
+            sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional         
+        
+      - name: Install pipenv
+        run: pip3 install --user pipenv
+      - name: Install dependecies
+        run:  pipenv --python python3 && pipenv install
       # 安装所需的包
       - name: Install dependencies
-        run: pip install selenium requests futures eventlet
-        
-      # 运行测试等其他任务...
+        run: |
+          pip install selenium requests futures eventlet
+          pip install beautifulsoup4
+
+      - name: Run cctv
+        run: python ${{ github.workspace }}/cctv.py
+          
       - name: Run weishi
         run: python ${{ github.workspace }}/weishi.py
+          
+      - name: Run ktpd
+        run: python ${{ github.workspace }}/ktpd.py
+          
+      - name: Run ysyl
+        run: python ${{ github.workspace }}/ysyl.py
+             
+      - name: Run qita
+        run: python ${{ github.workspace }}/qita.py
+        
       - name: 提交更改
         run: |
           git config --local user.name "xzw832" 
           git config --local user.email "g832@x-zw.com"
           git add .
-          git commit weishi.txt -m "Add generated file"
+          git commit *.txt -m "Add generated file"
           git push -f
-
-      # 保存新的缓存
-      - name: Save cache for future use
-        if: steps.restore_cache.outputs.cache-hit != 'true'
-        uses: actions/cache@v2
-        with:
-          path: ~/.cache/pip
-          key: python-${{ hashFiles('requirements.txt') }}
