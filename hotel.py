@@ -1,4 +1,4 @@
-import config
+import random
 import concurrent.futures
 from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
@@ -9,7 +9,10 @@ import time
 import os
 import re
 from bs4 import BeautifulSoup
+from queue import Queue
+import threading
 
+lock = threading.Lock()
 # 查找所有符合指定格式的网址
 infoList = []
 urls_y = []
@@ -29,18 +32,21 @@ urls = [
     "http://tonkiang.us/hoteliptv.php?page=2&s=广东"
     ]
 # 初始化计数器为0
-counter = 0
+counter = -1
  
 # 每次调用该函数时将计数器加1并返回结果
 def increment_counter():
     global counter
     counter += 1
     return counter
- 
-# 测试代码
-print(increment_counter()) # 输出：1
-print(increment_counter()) # 输出：2
-print(increment_counter()) # 输出：3
+
+#判断一个数字是单数还是双数可
+def is_odd_or_even(number):
+    if number % 2 == 0:
+        return True
+    else:
+        return False
+
 for url in urls:
     # 创建一个Chrome WebDriver实例
     chrome_options = Options()
@@ -76,30 +82,39 @@ with open("iplist.txt", 'w', encoding='utf-8') as file:
     file.close()
     
 sorted_list = sorted(resultslist)
-for ipv in sorted_list:   
+
+def worker(thread_url,counter_id):
     try:
         # 创建一个Chrome WebDriver实例
         results = []
         chrome_options = Options()
+        chrome_options.add_argument(f"user-data-dir=selenium{counter_id}")
         chrome_options.add_argument('--headless')
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
         chrome_options.add_experimental_option("useAutomationExtension", False)
         chrome_options.add_argument("blink-settings=imagesEnabled=false")
         driver = webdriver.Chrome(options=chrome_options)
+        # 设置页面加载超时
+        driver.set_page_load_timeout(60)  # 10秒后超时
+     
+        # 设置脚本执行超时
+        driver.set_script_timeout(50)  # 5秒后超时
         # 使用WebDriver访问网页
-        page_url= f"http://foodieguide.com/iptvsearch/alllist.php?s={ipv}"
+        if is_odd_or_even(random.randint(1, 200)):
+            page_url= f"http://tonkiang.us/9dlist2.php?s={thread_url}"
+        else:
+            page_url= f"http://foodieguide.com/iptvsearch/alllist.php?s={thread_url}"
+        
         print(page_url)
         driver.get(page_url)  # 将网址替换为你要访问的网页地址
-        WebDriverWait(driver, 10).until(
+        WebDriverWait(driver, 45).until(
             EC.presence_of_element_located(
                 (By.CSS_SELECTOR, "div.tables")
                 )
         )
-        time.sleep(15)
+        time.sleep(1)
         soup = BeautifulSoup(driver.page_source, "html.parser")
-        # 关闭WebDriver
-        driver.quit()
         tables_div = soup.find("div", class_="tables")
         results = (
             tables_div.find_all("div", class_="result")
@@ -176,9 +191,28 @@ for ipv in sorted_list:
             name = name.replace("CMIPTV", "")
             name = name.replace("内蒙卫视", "内蒙古卫视")
             name = name.replace("CCTVCCTV", "CCTV")
-            infoList.append(f"{name},{urlsp}")
-    except:
-        continue
+            if "http" in urlsp:
+                # 获取锁
+                lock.acquire()
+                infoList.append(f"{name},{urlsp}")
+                # 释放锁
+                lock.release()
+        print(f"=========================>>> Thread {thread_url} save ok")
+    except Exception as e:
+        print(f"=========================>>> Thread {thread_url} caught an exception: {e}")
+    finally:
+        # 确保线程结束时关闭WebDriver实例
+        driver.quit() 
+        print(f"=========================>>> Thread {thread_url}  quiting")
+        # 标记任务完成
+        time.sleep(0)
+
+# 创建一个线程池，限制最大线程数为3
+with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
+    # 提交任务到线程池，并传入参数
+    counter = increment_counter()
+    for i in sorted_list:  # 假设有5个任务需要执行
+        executor.submit(worker, i ,counter)
 
 infoList = set(infoList)  # 去重得到唯一的URL列表
 infoList = sorted(infoList)
