@@ -138,7 +138,7 @@ results = set(results)  # 去重得到唯一的URL列表
 results = sorted(results)
 with open("itv.txt", 'w', encoding='utf-8') as file:
     for result in results:
-        channel_name, channel_url = split(',')
+        channel_name, channel_url = result.split(',')
         file.write(f"{channel_name},{channel_url}\n")
     file.close()
 
@@ -226,7 +226,7 @@ def worker():
 
 
 # 创建多个工作线程
-num_threads = 15
+num_threads = 30
 for _ in range(num_threads):
     t = threading.Thread(target=worker, daemon=True) 
     #t = threading.Thread(target=worker, args=(event,len(channels)))  # 将工作线程设置为守护线程
