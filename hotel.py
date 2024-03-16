@@ -175,6 +175,7 @@ for ipv in sorted_list:
             name = name.replace("CCTV5+体育", "CCTV5+")
             name = name.replace("CMIPTV", "")
             name = name.replace("内蒙卫视", "内蒙古卫视")
+            name = name.replace("CCTVCCTV", "CCTV")
             infoList.append(f"{name},{urlsp}")
     except:
         continue
