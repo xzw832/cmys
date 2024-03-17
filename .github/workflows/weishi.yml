@@ -1,7 +1,7 @@
 name: set sorted all
 on:
-  schedule:
-    - cron: '0 9,15 * * *'  #14-在晚上22点起运行，时区应该是+8
+  # schedule:
+  #  - cron: '0 9,15 * * *'  #14-在晚上22点起运行，时区应该是+8
   # 手动运行
   workflow_dispatch:
 
