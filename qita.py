@@ -112,7 +112,7 @@ def worker():
                             else:
                                 print(f'X\t{channel_url}')
                             break
-            except se.exception.Timeout:
+            except se.Exception.Timeout:
                 # 无法连接并超时的情况下输出“X”
                 print(f'请求超时，已退出 X\t{channel_url}')
                 break
