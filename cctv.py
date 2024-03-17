@@ -95,7 +95,7 @@ with open("myitv.txt", 'r', encoding='utf-8') as file:
                 name = name.replace("揭阳台", "揭阳综合")
                 urlright = channel_url[:4]
                 if urlright == 'http':
-                    if '画中画' not in channel_name or '单音' not in channel_name or '直播' not in channel_name or '测试' not in channel_name or '主视' not in channel_name:
+                    if '画中画' not in channel_name and '单音' not in channel_name and '直播' not in channel_name and '测试' not in channel_name and '主视' not in channel_name:
                         check_name = f"{name}"
                         if not is_first_digit(check_name):
                             results.append(f"{name},{channel_url}")
