@@ -32,6 +32,8 @@ with open("myitv.txt", 'r', encoding='utf-8') as file:
                 channel_name, channel_url = line.split(',')
                 name =(f"{channel_name}")
                 name = name.replace("_", "")
+                name = name.replace("[", "")
+                name = name.replace("]", "")
                 name = name.replace("HD", "")
                 name = name.replace("(高清)", "")
                 name = name.replace("超清", "")
@@ -218,7 +220,6 @@ def worker():
             except:
                 # 无法连接并超时的情况下输出“X”
                 print(f'X\t{channel_url}')
-
         
         # 减少CPU占用
         time.sleep(0)
