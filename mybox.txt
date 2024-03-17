@@ -304,6 +304,15 @@ CCTV世界地理,http://test.tvboxosc.cyou/ipv4_live/8/CCTV世界地理/CCTV
 本港卫视,http://test.tvboxosc.cyou/ipv4_live/7/本港卫视/weishi
 本港卫视,http://test.tvboxosc.cyou/ipv4_live/8/本港卫视/weishi
 
+香港明珠卫视,http://test.tvboxosc.cyou/ipv4_live/1/香港明珠卫视/weishi
+香港明珠卫视,http://test.tvboxosc.cyou/ipv4_live/2/香港明珠卫视/weishi
+香港明珠卫视,http://test.tvboxosc.cyou/ipv4_live/3/香港明珠卫视/weishi
+香港明珠卫视,http://test.tvboxosc.cyou/ipv4_live/4/香港明珠卫视/weishi
+香港明珠卫视,http://test.tvboxosc.cyou/ipv4_live/5/香港明珠卫视/weishi
+香港明珠卫视,http://test.tvboxosc.cyou/ipv4_live/6/香港明珠卫视/weishi
+香港明珠卫视,http://test.tvboxosc.cyou/ipv4_live/7/香港明珠卫视/weishi
+香港明珠卫视,http://test.tvboxosc.cyou/ipv4_live/8/香港明珠卫视/weishi
+
 凤凰卫视,http://test.tvboxosc.cyou/ipv4_live/1/凤凰卫视/weishi
 凤凰卫视,http://test.tvboxosc.cyou/ipv4_live/2/凤凰卫视/weishi
 凤凰卫视,http://test.tvboxosc.cyou/ipv4_live/3/凤凰卫视/weishi
