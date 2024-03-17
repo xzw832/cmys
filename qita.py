@@ -115,6 +115,7 @@ def worker():
             except se.exceptions.Timeout:
                 # 无法连接并超时的情况下输出“X”
                 print(f'请求超时，已退出 X\t{channel_url}')
+                break
 
         
         # 减少CPU占用
