@@ -80,7 +80,7 @@ def worker():
                     for k in res.iter_content(chunk_size=2097152):
                         # 这里的chunk_size是1MB，每次读取1MB测试视频流
                         # 如果能获取视频流，则输出读取的时间以及链接
-                        if k:
+                        if k:    # 检查是否有内容
                             print(f'{time.time()-now:.2f}\t{channel_url}')
                             response_time = (time.time()-now) * 1
                             download_speed = 2097152 / response_time / 1024
@@ -92,9 +92,12 @@ def worker():
                                 print(f'X\t{channel_url}')
                             
                             break
-            except:
+            except res.exceptions.RequestException as e:
                 # 无法连接并超时的情况下输出“X”
-                print(f'X\t{channel_url}')
+                print(f"请求发生错误: {e}")
+                # print(f'X\t{channel_url}')
+            except res.exceptions.Timeout:
+                print("请求超时，已退出迭代。")
         
         # 减少CPU占用
         time.sleep(0)
