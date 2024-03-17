@@ -92,12 +92,9 @@ def worker():
                                 print(f'X\t{channel_url}')
                             
                             break
-            except res.exceptions.RequestException as e:
+            except:
                 # 无法连接并超时的情况下输出“X”
-                print(f"请求发生错误: {e}")
-                # print(f'X\t{channel_url}')
-            except res.exceptions.Timeout:
-                print("请求超时，已退出迭代。")
+                print(f'X\t{channel_url}')
         
         # 减少CPU占用
         time.sleep(0)
