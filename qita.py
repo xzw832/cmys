@@ -13,12 +13,13 @@ def cut_first_chinese_words(text, num=2):
         if char >= '\u4e00' and char <= '\u9fa5':
             return text[:i+2]
     return 'xxxxxxxxxxxxxxxxxx'
-
+    
+all_text = "东莞 中山 佛山 顺德 南海 南方 宝安 岭南 广东 广州 广视 揭西 揭阳 汕头 汕尾 江门 深圳 清远 龙岗 湛江 潮州 珠江 粤语 肇庆 茂名 韶关 云浮 怀化 台球 足球 高尔夫 体育 网球 汽车 象棋 围棋 钓鱼 武术 汽摩 爱上 爱体 爱喜 爱奇 爱宠 爱幼 爱怀 爱悬 爱玩 爱生 爱电 爱科 爱经 爱谍 爱赛 爱都 爱院 爱青 牛哥"
 guangdong_text = "东莞 中山 佛山 顺德 南海 南方 宝安 岭南 广东 广州 广视 揭西 揭阳 汕头 汕尾 江门 深圳 清远 龙岗 湛江 潮州 珠江 粤语 肇庆 茂名 韶关 云浮 怀化"
-tiyu_text = "台球 足球 高尔夫 体育 网球 汽车 象棋 围棋 钓鱼 武术 汽摩"
+tiyu_text = "台球 足球 高尔夫 体育 网球 汽车 象棋 围棋 钓鱼 武术 汽摩 爱上 爱体 爱喜 爱奇 爱宠 爱幼 爱怀 爱悬 爱玩 爱生 爱电 爱科 爱经 爱谍 爱赛 爱都 爱院 爱青 牛哥"
 # 线程安全的队列，用于存储下载任务
 task_queue = Queue()
-
+qita_channels = []
 # 线程安全的列表，用于存储结果
 results = []
 
@@ -36,8 +37,21 @@ with open("itv.txt", 'r', encoding='utf-8') as file:
             if line:
                 channel_name, channel_url = line.split(',')
                 if '卫视' not in channel_name and 'CCTV' not in channel_name and '测试' not in channel_name and '电影' not in channel_name and '影院' not in channel_name and '剧场' not in channel_name and '影视' not in channel_name and '卡通' not in channel_name and '动漫' not in channel_name and '动画' not in channel_name and '少儿' not in channel_name:
-                    channels.append((channel_name, channel_url))
+                    if cut_first_chinese_words(channel_name) in all_text:
+                        channels.append((channel_name, channel_url))
+                    else:
+                        qita_channels.append(f"{channel_name},{channel_url}")
     file.close()
+
+# 写入未用的其他频道
+qita_channels = set(qita_channels)  # 去重得到唯一的URL列表
+qita_channels = sorted(qita_channels)
+with open("qita_all.txt", "w", encoding="utf-8") as file:
+    for result in qita_channels:
+        channel_name, channel_url = result.split(',')
+        file.write(f"{channel_name},{channel_url}\n")
+    file.close()
+    
 # 定义工作线程函数
 def worker():
     while True:
@@ -170,24 +184,9 @@ with open("qita.txt", 'w', encoding='utf-8') as file:
                 else:
                     file.write(f"{channel_name},{channel_url}\n")
                     channel_counters[channel_name] = 1
-                    
-    # 写入其他频道
-    channel_counters = {}
-    file.write('【  其他频道  】,#genre#\n')
-    for result in results:
-        channel_name, channel_url, speed = result
-        if '卫视' not in channel_name and 'CCTV' not in channel_name and '测试' not in channel_name and '电影' not in channel_name and '影院' not in channel_name and '剧场' not in channel_name and '影视' not in channel_name and '卡通' not in channel_name and '动漫' not in channel_name and '动画' not in channel_name and '少儿' not in channel_name:
-            if cut_first_chinese_words(channel_name) not in guangdong_text or cut_first_chinese_words(channel_name) not in tiyu_text:
-                if channel_name in channel_counters:
-                    if channel_counters[channel_name] >= result_counter:
-                        continue
-                    else:
-                        file.write(f"{channel_name},{channel_url}\n")
-                        channel_counters[channel_name] += 1
-                else:
-                    file.write(f"{channel_name},{channel_url}\n")
-                    channel_counters[channel_name] = 1
-    file.close()                
+
+    file.close() 
+
 print(f"{now_today}其他频道更新完成")
 
 # 合并文件内容
