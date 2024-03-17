@@ -143,22 +143,96 @@ CCTV-17农业农村,http://test.tvboxosc.cyou/ipv4_live/5/CCTV17/CCTV
 CCTV-17农业农村,http://test.tvboxosc.cyou/ipv4_live/6/CCTV17/CCTV
 CCTV-17农业农村,http://test.tvboxosc.cyou/ipv4_live/7/CCTV17/CCTV
 CCTV-17农业农村,http://test.tvboxosc.cyou/ipv4_live/8/CCTV17/CCTV
-央视台球,http://test.tvboxosc.cyou/ipv4_live/1/CCTV台球/qita
-央视台球,http://test.tvboxosc.cyou/ipv4_live/2/CCTV台球/qita
-央视台球,http://test.tvboxosc.cyou/ipv4_live/3/CCTV台球/qita
-央视台球,http://test.tvboxosc.cyou/ipv4_live/4/CCTV台球/qita
-央视台球,http://test.tvboxosc.cyou/ipv4_live/5/CCTV台球/qita
-央视台球,http://test.tvboxosc.cyou/ipv4_live/6/CCTV台球/qita
-央视台球,http://test.tvboxosc.cyou/ipv4_live/7/CCTV台球/qita
-央视台球,http://test.tvboxosc.cyou/ipv4_live/8/CCTV台球/qita
-央视文化精品,http://test.tvboxosc.cyou/ipv4_live/1/央视文化精品/qita
-央视文化精品,http://test.tvboxosc.cyou/ipv4_live/2/央视文化精品/qita
-央视文化精品,http://test.tvboxosc.cyou/ipv4_live/3/央视文化精品/qita
-央视文化精品,http://test.tvboxosc.cyou/ipv4_live/4/央视文化精品/qita
-央视文化精品,http://test.tvboxosc.cyou/ipv4_live/5/央视文化精品/qita
-央视文化精品,http://test.tvboxosc.cyou/ipv4_live/6/央视文化精品/qita
-央视文化精品,http://test.tvboxosc.cyou/ipv4_live/7/央视文化精品/qita
-央视文化精品,http://test.tvboxosc.cyou/ipv4_live/8/央视文化精品/qita
+
+CCTV-14 测试,http://test.tvboxosc.cyou/ipv4_live/1/CCTV14测试/CCTV
+CCTV-14 测试,http://test.tvboxosc.cyou/ipv4_live/2/CCTV14测试/CCTV
+CCTV-14 测试,http://test.tvboxosc.cyou/ipv4_live/3/CCTV14测试/CCTV
+CCTV-14 测试,http://test.tvboxosc.cyou/ipv4_live/4/CCTV14测试/CCTV
+CCTV-14 测试,http://test.tvboxosc.cyou/ipv4_live/5/CCTV14测试/CCTV
+CCTV-14 测试,http://test.tvboxosc.cyou/ipv4_live/6/CCTV14测试/CCTV
+CCTV-14 测试,http://test.tvboxosc.cyou/ipv4_live/7/CCTV14测试/CCTV
+CCTV-14 测试,http://test.tvboxosc.cyou/ipv4_live/8/CCTV14测试/CCTV
+
+CCTV-16 4K,http://test.tvboxosc.cyou/ipv4_live/1/CCTV164K/CCTV
+CCTV-16 4K,http://test.tvboxosc.cyou/ipv4_live/2/CCTV164K/CCTV
+CCTV-16 4K,http://test.tvboxosc.cyou/ipv4_live/3/CCTV164K/CCTV
+CCTV-16 4K,http://test.tvboxosc.cyou/ipv4_live/4/CCTV164K/CCTV
+CCTV-16 4K,http://test.tvboxosc.cyou/ipv4_live/5/CCTV164K/CCTV
+CCTV-16 4K,http://test.tvboxosc.cyou/ipv4_live/6/CCTV164K/CCTV
+CCTV-16 4K,http://test.tvboxosc.cyou/ipv4_live/7/CCTV164K/CCTV
+CCTV-16 4K,http://test.tvboxosc.cyou/ipv4_live/8/CCTV164K/CCTV
+
+央视台球,http://test.tvboxosc.cyou/ipv4_live/1/CCTV台球/CCTV
+央视台球,http://test.tvboxosc.cyou/ipv4_live/2/CCTV台球/CCTV
+央视台球,http://test.tvboxosc.cyou/ipv4_live/3/CCTV台球/CCTV
+央视台球,http://test.tvboxosc.cyou/ipv4_live/4/CCTV台球/CCTV
+央视台球,http://test.tvboxosc.cyou/ipv4_live/5/CCTV台球/CCTV
+央视台球,http://test.tvboxosc.cyou/ipv4_live/6/CCTV台球/CCTV
+央视台球,http://test.tvboxosc.cyou/ipv4_live/7/CCTV台球/CCTV
+央视台球,http://test.tvboxosc.cyou/ipv4_live/8/CCTV台球/CCTV
+
+央视文化精品,http://test.tvboxosc.cyou/ipv4_live/1/CCTV文化精品/CCTV
+央视文化精品,http://test.tvboxosc.cyou/ipv4_live/2/CCTV文化精品/CCTV
+央视文化精品,http://test.tvboxosc.cyou/ipv4_live/3/CCTV文化精品/CCTV
+央视文化精品,http://test.tvboxosc.cyou/ipv4_live/4/CCTV文化精品/CCTV
+央视文化精品,http://test.tvboxosc.cyou/ipv4_live/5/CCTV文化精品/CCTV
+央视文化精品,http://test.tvboxosc.cyou/ipv4_live/6/CCTV文化精品/CCTV
+央视文化精品,http://test.tvboxosc.cyou/ipv4_live/7/CCTV文化精品/CCTV
+央视文化精品,http://test.tvboxosc.cyou/ipv4_live/8/CCTV文化精品/CCTV
+
+CCTV电视指南,http://test.tvboxosc.cyou/ipv4_live/1/CCTV电视指南/CCTV
+CCTV电视指南,http://test.tvboxosc.cyou/ipv4_live/2/CCTV电视指南/CCTV
+CCTV电视指南,http://test.tvboxosc.cyou/ipv4_live/3/CCTV电视指南/CCTV
+CCTV电视指南,http://test.tvboxosc.cyou/ipv4_live/4/CCTV电视指南/CCTV
+CCTV电视指南,http://test.tvboxosc.cyou/ipv4_live/5/CCTV电视指南/CCTV
+CCTV电视指南,http://test.tvboxosc.cyou/ipv4_live/6/CCTV电视指南/CCTV
+CCTV电视指南,http://test.tvboxosc.cyou/ipv4_live/7/CCTV电视指南/CCTV
+CCTV电视指南,http://test.tvboxosc.cyou/ipv4_live/8/CCTV电视指南/CCTV
+
+CCTV兵器科技,http://test.tvboxosc.cyou/ipv4_live/1/CCTV兵器科技/CCTV
+CCTV兵器科技,http://test.tvboxosc.cyou/ipv4_live/2/CCTV兵器科技/CCTV
+CCTV兵器科技,http://test.tvboxosc.cyou/ipv4_live/3/CCTV兵器科技/CCTV
+CCTV兵器科技,http://test.tvboxosc.cyou/ipv4_live/4/CCTV兵器科技/CCTV
+CCTV兵器科技,http://test.tvboxosc.cyou/ipv4_live/5/CCTV兵器科技/CCTV
+CCTV兵器科技,http://test.tvboxosc.cyou/ipv4_live/6/CCTV兵器科技/CCTV
+CCTV兵器科技,http://test.tvboxosc.cyou/ipv4_live/7/CCTV兵器科技/CCTV
+CCTV兵器科技,http://test.tvboxosc.cyou/ipv4_live/8/CCTV兵器科技/CCTV
+
+CCTV女性时尚,http://test.tvboxosc.cyou/ipv4_live/1/CCTV女性时尚/CCTV
+CCTV女性时尚,http://test.tvboxosc.cyou/ipv4_live/2/CCTV女性时尚/CCTV
+CCTV女性时尚,http://test.tvboxosc.cyou/ipv4_live/3/CCTV女性时尚/CCTV
+CCTV女性时尚,http://test.tvboxosc.cyou/ipv4_live/4/CCTV女性时尚/CCTV
+CCTV女性时尚,http://test.tvboxosc.cyou/ipv4_live/5/CCTV女性时尚/CCTV
+CCTV女性时尚,http://test.tvboxosc.cyou/ipv4_live/6/CCTV女性时尚/CCTV
+CCTV女性时尚,http://test.tvboxosc.cyou/ipv4_live/7/CCTV女性时尚/CCTV
+CCTV女性时尚,http://test.tvboxosc.cyou/ipv4_live/8/CCTV女性时尚/CCTV
+
+CCTV风云足球,http://test.tvboxosc.cyou/ipv4_live/1/CCTV风云足球/CCTV
+CCTV风云足球,http://test.tvboxosc.cyou/ipv4_live/2/CCTV风云足球/CCTV
+CCTV风云足球,http://test.tvboxosc.cyou/ipv4_live/3/CCTV风云足球/CCTV
+CCTV风云足球,http://test.tvboxosc.cyou/ipv4_live/4/CCTV风云足球/CCTV
+CCTV风云足球,http://test.tvboxosc.cyou/ipv4_live/5/CCTV风云足球/CCTV
+CCTV风云足球,http://test.tvboxosc.cyou/ipv4_live/6/CCTV风云足球/CCTV
+CCTV风云足球,http://test.tvboxosc.cyou/ipv4_live/7/CCTV风云足球/CCTV
+CCTV风云足球,http://test.tvboxosc.cyou/ipv4_live/8/CCTV风云足球/CCTV
+
+CCTV风云音乐,http://test.tvboxosc.cyou/ipv4_live/1/CCTV风云音乐/CCTV
+CCTV风云音乐,http://test.tvboxosc.cyou/ipv4_live/2/CCTV风云音乐/CCTV
+CCTV风云音乐,http://test.tvboxosc.cyou/ipv4_live/3/CCTV风云音乐/CCTV
+CCTV风云音乐,http://test.tvboxosc.cyou/ipv4_live/4/CCTV风云音乐/CCTV
+CCTV风云音乐,http://test.tvboxosc.cyou/ipv4_live/5/CCTV风云音乐/CCTV
+CCTV风云音乐,http://test.tvboxosc.cyou/ipv4_live/6/CCTV风云音乐/CCTV
+CCTV风云音乐,http://test.tvboxosc.cyou/ipv4_live/7/CCTV风云音乐/CCTV
+CCTV风云音乐,http://test.tvboxosc.cyou/ipv4_live/8/CCTV风云音乐/CCTV
+
+CCTV世界地理,http://test.tvboxosc.cyou/ipv4_live/1/CCTV世界地理/CCTV
+CCTV世界地理,http://test.tvboxosc.cyou/ipv4_live/2/CCTV世界地理/CCTV
+CCTV世界地理,http://test.tvboxosc.cyou/ipv4_live/3/CCTV世界地理/CCTV
+CCTV世界地理,http://test.tvboxosc.cyou/ipv4_live/4/CCTV世界地理/CCTV
+CCTV世界地理,http://test.tvboxosc.cyou/ipv4_live/5/CCTV世界地理/CCTV
+CCTV世界地理,http://test.tvboxosc.cyou/ipv4_live/6/CCTV世界地理/CCTV
+CCTV世界地理,http://test.tvboxosc.cyou/ipv4_live/7/CCTV世界地理/CCTV
+CCTV世界地理,http://test.tvboxosc.cyou/ipv4_live/8/CCTV世界地理/CCTV
 【  卫视频道  】,#genre#
 汕头文旅体育,http://test.tvboxosc.cyou/ipv4_live/1/汕头文旅体育/qita
 汕头文旅体育,http://test.tvboxosc.cyou/ipv4_live/2/汕头文旅体育/qita
