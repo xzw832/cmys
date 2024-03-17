@@ -2131,14 +2131,7 @@ DOX电影,http://test.tvboxosc.cyou/ipv4_live/8/DOX电影/yiyang
 珠江,http://test.tvboxosc.cyou/ipv4_live/6/珠江/qita
 珠江,http://test.tvboxosc.cyou/ipv4_live/7/珠江/qita
 珠江,http://test.tvboxosc.cyou/ipv4_live/8/珠江/qita
-珠江BM,http://test.tvboxosc.cyou/ipv4_live/1/珠江BM/qita
-珠江BM,http://test.tvboxosc.cyou/ipv4_live/2/珠江BM/qita
-珠江BM,http://test.tvboxosc.cyou/ipv4_live/3/珠江BM/qita
-珠江BM,http://test.tvboxosc.cyou/ipv4_live/4/珠江BM/qita
-珠江BM,http://test.tvboxosc.cyou/ipv4_live/5/珠江BM/qita
-珠江BM,http://test.tvboxosc.cyou/ipv4_live/6/珠江BM/qita
-珠江BM,http://test.tvboxosc.cyou/ipv4_live/7/珠江BM/qita
-珠江BM,http://test.tvboxosc.cyou/ipv4_live/8/珠江BM/qita
+
 珠江粤语节目1,http://test.tvboxosc.cyou/ipv4_live/1/珠江粤语节目1/qita
 珠江粤语节目1,http://test.tvboxosc.cyou/ipv4_live/2/珠江粤语节目1/qita
 珠江粤语节目1,http://test.tvboxosc.cyou/ipv4_live/3/珠江粤语节目1/qita
@@ -2243,6 +2236,19 @@ DOX电影,http://test.tvboxosc.cyou/ipv4_live/8/DOX电影/yiyang
 粤语节目9,http://test.tvboxosc.cyou/ipv4_live/6/粤语节目9/qita
 粤语节目9,http://test.tvboxosc.cyou/ipv4_live/7/粤语节目9/qita
 粤语节目9,http://test.tvboxosc.cyou/ipv4_live/8/粤语节目9/qita
+
+珠海1,http://test.tvboxosc.cyou/ipv4_live/1/珠海1/qita
+珠海1,http://test.tvboxosc.cyou/ipv4_live/2/珠海1/qita
+珠海1,http://test.tvboxosc.cyou/ipv4_live/3/珠海1/qita
+珠海1,http://test.tvboxosc.cyou/ipv4_live/4/珠海1/qita
+珠海1,http://test.tvboxosc.cyou/ipv4_live/5/珠海1/qita
+
+珠海2,http://test.tvboxosc.cyou/ipv4_live/1/珠海2/qita
+珠海2,http://test.tvboxosc.cyou/ipv4_live/2/珠海2/qita
+珠海2,http://test.tvboxosc.cyou/ipv4_live/3/珠海2/qita
+珠海2,http://test.tvboxosc.cyou/ipv4_live/4/珠海2/qita
+珠海2,http://test.tvboxosc.cyou/ipv4_live/5/珠海2/qita
+
 肇庆生活服务,http://test.tvboxosc.cyou/ipv4_live/1/肇庆生活服务/qita
 肇庆生活服务,http://test.tvboxosc.cyou/ipv4_live/2/肇庆生活服务/qita
 肇庆生活服务,http://test.tvboxosc.cyou/ipv4_live/3/肇庆生活服务/qita
@@ -2405,6 +2411,16 @@ DOX电影,http://test.tvboxosc.cyou/ipv4_live/8/DOX电影/yiyang
 高尔夫网球,http://test.tvboxosc.cyou/ipv4_live/7/高尔夫网球/qita
 高尔夫网球,http://test.tvboxosc.cyou/ipv4_live/8/高尔夫网球/qita
 
+音乐,http://test.tvboxosc.cyou/ipv4_live/1/音乐/qita
+音乐,http://test.tvboxosc.cyou/ipv4_live/2/音乐/qita
+音乐,http://test.tvboxosc.cyou/ipv4_live/3/音乐/qita
+音乐,http://test.tvboxosc.cyou/ipv4_live/4/音乐/qita
+音乐,http://test.tvboxosc.cyou/ipv4_live/5/音乐/qita
+音乐现场,http://test.tvboxosc.cyou/ipv4_live/1/音乐现场/qita
+音乐现场,http://test.tvboxosc.cyou/ipv4_live/2/音乐现场/qita
+音乐现场,http://test.tvboxosc.cyou/ipv4_live/3/音乐现场/qita
+音乐现场,http://test.tvboxosc.cyou/ipv4_live/4/音乐现场/qita
+音乐现场,http://test.tvboxosc.cyou/ipv4_live/5/音乐现场/qita
 【 港澳台频道 】,#genre#
 民视,http://tvbox6.com/tv/tw1.php?id=20074
 台视,http://tvbox6.com/tv/tw1.php?id=20076
