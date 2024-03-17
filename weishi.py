@@ -91,7 +91,7 @@ def worker():
                             else:
                                 print(f'X\t{channel_url}')
                             break
-            except res.exceptions.RequestException as e:
+            except:
                 # 无法连接并超时的情况下输出“X”
                 print(f'X\t{channel_url}')
         
