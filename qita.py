@@ -112,8 +112,6 @@ def worker():
                             else:
                                 print(f'X\t{channel_url}')
                             break
-            except se.exceptions.RequestException as e:
-                print(f"请求发生错误: {e}")
             except se.exceptions.Timeout:
                 # 无法连接并超时的情况下输出“X”
                 print(f'请求超时，已退出 X\t{channel_url}')
