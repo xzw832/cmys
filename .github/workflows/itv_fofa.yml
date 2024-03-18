@@ -42,8 +42,8 @@ jobs:
           pip install selenium requests futures eventlet
           pip install beautifulsoup4
              
-      - name: Run qita
-        run: python ${{ github.workspace }}/qita.py
+      - name: Run itv_fofa
+        run: python ${{ github.workspace }}/itv_fofa.py
         
       - name: 提交更改
         run: |
