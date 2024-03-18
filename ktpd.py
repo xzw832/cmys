@@ -10,7 +10,7 @@ eventlet.monkey_patch()
 
 # 线程安全的队列，用于存储下载任务
 task_queue = Queue()
-
+lock = threading.Lock()
 # 线程安全的列表，用于存储结果
 results = []
 
@@ -65,7 +65,11 @@ def worker():
                     # 删除下载的文件
                     os.remove(ts_lists_0)
                     result = channel_name, channel_url, f"{normalized_speed:.3f} MB/s"
+                    # 获取锁
+                    lock.acquire() 
                     results.append(result)
+                    # 释放锁
+                    lock.release()
                     numberx = (len(results) + len(error_channels)) / len(channels) * 100
                     # print(f"可用频道：{len(results)} 个 , 不可用频道：{len(error_channels)} 个 , 总频道：{len(channels)} 个 ,总进度：{numberx:.2f} %。")
             except:
@@ -87,7 +91,11 @@ def worker():
                             normalized_speed = min(max(download_speed / 1024, 0.001), 100)
                             if response_time > 1:
                                 result = channel_name, channel_url, f"{normalized_speed:.3f} MB/s"
+                                # 获取锁
+                                lock.acquire()
                                 results.append(result)
+                                # 释放锁
+                                lock.release()
                             else:
                                 print(f'X\t{channel_url}')
                             
