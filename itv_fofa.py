@@ -234,6 +234,8 @@ def worker(thread_url,counter_id):
                     continue
             except:
                 continue
+            finally:
+                response.close()
     except Exception as e:
         print(f"=========================>>> Thread {thread_url} caught an exception: {e}")
     finally:
