@@ -134,6 +134,8 @@ def worker(thread_url,counter_id):
         with concurrent.futures.ThreadPoolExecutor(max_workers=20) as executor:
             futures = []
             for url in urls_heard:
+                print("--------------------------------------------------------------------------------")
+                print(url)
                 url = url.strip()
                 modified_urls = modify_urls(url)
                 for modified_url in modified_urls:
@@ -149,6 +151,8 @@ def worker(thread_url,counter_id):
         # 遍历网址列表，获取JSON文件并解析
         for url in valid_urls:
             try:
+                print("======================================================================")
+                print(url)
                 # 发送GET请求获取JSON文件，设置超时时间为0.5秒
                 ip_start_index = url.find("//") + 2
                 ip_dot_start = url.find(".") + 1
@@ -232,15 +236,18 @@ def worker(thread_url,counter_id):
                                     lock.release()
                 except:
                     continue
+                finally:
+                    time.sleep(0)
             except:
                 continue
             finally:
                 response.close()
+                time.sleep(0)
     except Exception as e:
         print(f"=========================>>> Thread {thread_url} caught an exception: {e}")
     finally:
         # 确保线程结束时关闭WebDriver实例
-        # driver.quit() 
+        driver.quit() 
         print(f"=========================>>> Thread {thread_url}  quiting")
         # 标记任务完成
         time.sleep(0)
