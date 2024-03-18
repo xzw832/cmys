@@ -266,4 +266,5 @@ with open("itv_fofa.txt", 'w', encoding='utf-8') as file:
     for result in results:
         file.write(result + "\n")
         # print(result)
+    file.write(f"最近更新时间：{now_today}\n")
     file.close()
