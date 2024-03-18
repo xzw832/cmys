@@ -212,21 +212,26 @@ def worker():
                     for k in res.iter_content(chunk_size=2097152):
                         # 这里的chunk_size是1MB，每次读取1MB测试视频流
                         # 如果能获取视频流，则输出读取的时间以及链接
-                        if k:
-                            print(f'{time.time()-now:.2f}\t{channel_url}')
-                            response_time = (time.time()-now) * 1
-                            download_speed = 2097152 / response_time / 1024
-                            normalized_speed = min(max(download_speed / 1024, 0.001), 100)
-                            if response_time > 1.2:
-                                result = channel_name, channel_url, f"{normalized_speed:.3f} MB/s"
-                                # 获取锁
-                                lock.acquire()
-                                results.append(result)
-                                # 释放锁
-                                lock.release()
-                            else:
-                                print(f'X\t{channel_url}')
+                        if time.time()-now > 15:
+                            res.close()
+                            print(f'Time out\t{channel_url}')
                             break
+                        else:
+                            if k:
+                                print(f'{time.time()-now:.2f}\t{channel_url}')
+                                response_time = (time.time()-now) * 1
+                                download_speed = 2097152 / response_time / 1024
+                                normalized_speed = min(max(download_speed / 1024, 0.001), 100)
+                                if response_time > 1.2:
+                                    result = channel_name, channel_url, f"{normalized_speed:.3f} MB/s"
+                                    # 获取锁
+                                    lock.acquire()
+                                    results.append(result)
+                                    # 释放锁
+                                    lock.release()
+                                else:
+                                    print(f'X\t{channel_url}')
+                                break
             except:
                 # 无法连接并超时的情况下输出“X”
                 print(f'X\t{channel_url}')
