@@ -80,7 +80,7 @@ def is_url_accessible(url):
         pass
     finally:
         time.sleep(0)
-        response.close()
+        # response.close()
     return None
 
 
@@ -105,7 +105,7 @@ def worker(thread_url,counter_id):
         # 获取网页内容
         page_content = driver.page_source
         # 关闭WebDriver
-        driver.quit()
+        # driver.quit()
         time.sleep(0)
         # 查找所有符合指定格式的网址
         pattern = r"http://\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d+"  # 设置匹配的格式，如http://8.8.8.8:8888
@@ -178,7 +178,7 @@ def worker(thread_url,counter_id):
                             if 'http' in urlx:
                                 urld = f"{urlx}"
                             else:
-                                urld = f"{url_x}{urlx}"
+                                urld = f"{url_x}/{urlx}"
     
                             if name and urld:
                                 # 删除特定文字
@@ -252,7 +252,7 @@ def worker(thread_url,counter_id):
         time.sleep(0)
 
 # 创建一个线程池，限制最大线程数为3
-with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
     # 提交任务到线程池，并传入参数
     counter = increment_counter()
     for i in urls:  # 假设有5个任务需要执行
