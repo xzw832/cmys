@@ -111,9 +111,9 @@ def worker(thread_url,counter_id):
         pattern = r"http://\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d+"  # 设置匹配的格式，如http://8.8.8.8:8888
         urls_all = re.findall(pattern, page_content)
         # urls = list(set(urls_all))  # 去重得到唯一的URL列表
-        urls = set(urls_all)  # 去重得到唯一的URL列表
+        urls_heard = set(urls_all)  # 去重得到唯一的URL列表
         x_urls = []
-        for url in urls:  # 对urls进行处理，ip第四位修改为1，并去重
+        for url in urls_heard:  # 对urls进行处理，ip第四位修改为1，并去重
             url = url.strip()
             ip_start_index = url.find("//") + 2
             ip_end_index = url.find(":", ip_start_index)
@@ -127,13 +127,13 @@ def worker(thread_url,counter_id):
             modified_ip = f"{ip_address}{ip_end}"
             x_url = f"{base_url}{modified_ip}{port}"
             x_urls.append(x_url)
-        urls = set(x_urls)  # 去重得到唯一的URL列表
+        urls_heard = set(x_urls)  # 去重得到唯一的URL列表
     
         valid_urls = []
         #   多线程获取可用url
         with concurrent.futures.ThreadPoolExecutor(max_workers=20) as executor:
             futures = []
-            for url in urls:
+            for url in urls_heard:
                 url = url.strip()
                 modified_urls = modify_urls(url)
                 for modified_url in modified_urls:
