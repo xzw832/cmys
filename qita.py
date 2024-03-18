@@ -106,7 +106,7 @@ def worker():
                     for k in res.iter_content(chunk_size=2097152):
                         # 这里的chunk_size是1MB，每次读取1MB测试视频流
                         # 如果能获取视频流，则输出读取的时间以及链接
-                        if time.time()-now > 15:
+                        if time.time()-now > 60:
                             res.close()
                             print(f'Time out\t{channel_url}')
                             break
