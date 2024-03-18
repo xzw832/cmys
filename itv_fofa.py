@@ -131,7 +131,7 @@ def worker(thread_url,counter_id):
     
         valid_urls = []
         #   多线程获取可用url
-        with concurrent.futures.ThreadPoolExecutor(max_workers=100) as executor:
+        with concurrent.futures.ThreadPoolExecutor(max_workers=20) as executor:
             futures = []
             for url in urls:
                 url = url.strip()
