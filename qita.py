@@ -107,7 +107,9 @@ def worker():
                         # 这里的chunk_size是1MB，每次读取1MB测试视频流
                         # 如果能获取视频流，则输出读取的时间以及链接
                         if time.time()-now > 10:
-                            raise TimeoutError("Timeout while reading response content")
+                            res.close()
+                            print("超时退出")
+                            break
                         else:
                             if k:
                                 print(f'{time.time()-now:.2f}\t{channel_url}')
@@ -127,8 +129,6 @@ def worker():
             except:
                 # 无法连接并超时的情况下输出“X”
                 print(f'X\t{channel_url}')
-            finally:
-                res.close()
         
         # 减少CPU占用
         time.sleep(0)
