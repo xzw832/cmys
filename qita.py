@@ -14,11 +14,12 @@ def cut_first_chinese_words(text, num=2):
             return text[:i+2]
     return 'xxxxxxxxxxxxxxxxxx'
     
-all_text = "东莞 中山 佛山 顺德 南海 南方 宝安 岭南 广东 广州 广视 揭西 揭阳 汕头 汕尾 江门 深圳 清远 龙岗 湛江 潮州 珠江 粤语 肇庆 茂名 韶关 云浮 怀化 台球 足球 高尔夫 体育 网球 汽车 象棋 围棋 钓鱼 武术 汽摩 爱上 爱体 爱喜 爱奇 爱宠 爱幼 爱怀 爱悬 爱玩 爱生 爱电 爱科 爱经 爱谍 爱赛 爱都 爱院 爱青 牛哥"
-guangdong_text = "东莞 中山 佛山 顺德 南海 南方 宝安 岭南 广东 广州 广视 揭西 揭阳 汕头 汕尾 江门 深圳 清远 龙岗 湛江 潮州 珠江 粤语 肇庆 茂名 韶关 云浮 怀化"
-tiyu_text = "台球 足球 高尔夫 体育 网球 汽车 象棋 围棋 钓鱼 武术 汽摩 爱上 爱体 爱喜 爱奇 爱宠 爱幼 爱怀 爱悬 爱玩 爱生 爱电 爱科 爱经 爱谍 爱赛 爱都 爱院 爱青 牛哥"
+all_text = "东莞 中山 佛山 顺德 南海 南方 宝安 岭南 广东 广州 广视 揭西 揭阳 汕头 汕尾 江门 深圳 清远 龙岗 湛江 潮州 珠江 粤语 肇庆 茂名 韶关 云浮 怀化 普宁 珠海 台球 足球 高尔夫 体育 网球 汽车 象棋 围棋 钓鱼 武术 汽摩 爱上 爱体 爱喜 爱奇 爱宠 爱幼 爱怀 爱悬 爱玩 爱生 爱电 爱科 爱经 爱谍 爱赛 爱都 爱院 爱青 牛哥 音乐"
+guangdong_text = "东莞 中山 佛山 顺德 南海 南方 宝安 岭南 广东 广州 广视 揭西 揭阳 汕头 汕尾 江门 深圳 清远 龙岗 湛江 潮州 珠江 粤语 肇庆 茂名 韶关 云浮 怀化 普宁 珠海"
+tiyu_text = "台球 足球 高尔夫 体育 网球 汽车 象棋 围棋 钓鱼 武术 汽摩 爱上 爱体 爱喜 爱奇 爱宠 爱幼 爱怀 爱悬 爱玩 爱生 爱电 爱科 爱经 爱谍 爱赛 爱都 爱院 爱青 牛哥 音乐"
 # 线程安全的队列，用于存储下载任务
 task_queue = Queue()
+lock = threading.Lock()
 qita_channels = []
 # 线程安全的列表，用于存储结果
 results = []
@@ -77,16 +78,20 @@ def worker():
                         f.write(content)  # 写入文件
                     file_size = len(content)
                     # print(f"文件大小：{file_size} 字节")
-                    download_speed = file_size / response_time / 1178
+                    download_speed = file_size / response_time / 1024
                     print(f"下载速度：{download_speed:.3f} kB/s")
-                    normalized_speed = min(max(download_speed / 1178, 0.001), 100)  # 将速率从kB/s转换为MB/s并限制在1~100之间
+                    normalized_speed = min(max(download_speed / 1024, 0.001), 100)  # 将速率从kB/s转换为MB/s并限制在1~100之间
                     #print(f'{channel_url}')
                     #print(f"m3u8 标准化后的速率：{normalized_speed:.3f} MB/s")
     
                     # 删除下载的文件
                     os.remove(ts_lists_0)
                     result = channel_name, channel_url, f"{normalized_speed:.3f} MB/s"
+                    # 获取锁
+                    lock.acquire()
                     results.append(result)
+                    # 释放锁
+                    lock.release()
                     numberx = (len(results) + len(error_channels)) / len(channels) * 100
                     # print(f"可用频道：{len(results)} 个 , 不可用频道：{len(error_channels)} 个 , 总频道：{len(channels)} 个 ,总进度：{numberx:.2f} %。")
             except:
@@ -96,7 +101,7 @@ def worker():
         else:
             try:
                 now=time.time()
-                res=se.get(channel_url,headers=headers,timeout=10,stream=True)
+                res=se.get(channel_url,headers=headers,timeout=5,stream=True)
                 if res.status_code==200:
                     for k in res.iter_content(chunk_size=2097152):
                         # 这里的chunk_size是1MB，每次读取1MB测试视频流
@@ -108,14 +113,18 @@ def worker():
                             normalized_speed = min(max(download_speed / 1024, 0.001), 100)
                             if response_time > 1:
                                 result = channel_name, channel_url, f"{normalized_speed:.3f} MB/s"
+                                # 获取锁
+                                lock.acquire()
                                 results.append(result)
+                                # 释放锁
+                                lock.release()
                             else:
                                 print(f'X\t{channel_url}')
                             break
             except:
                 # 无法连接并超时的情况下输出“X”
                 print(f'X\t{channel_url}')
-
+        
         # 减少CPU占用
         time.sleep(0)
         # 标记任务完成
