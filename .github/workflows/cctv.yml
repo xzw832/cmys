@@ -1,7 +1,7 @@
 name: cctv setup
 on:
   schedule:
-    - cron: '0 3 * * *'  #14-在晚上22点起运行，时区应该是+8
+    - cron: '0 1,10,22 * * *'  #14-在晚上22点起运行，时区应该是+8
     #- cron: '0 2,9,16,23 * * *'
   # 手动运行
   workflow_dispatch:
