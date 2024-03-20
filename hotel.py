@@ -1,4 +1,3 @@
-
 import random
 import concurrent.futures
 from selenium.webdriver.chrome.options import Options
@@ -19,6 +18,31 @@ infoList = []
 urls_y = []
 resultslist = []
 urls = [
+    "http://tonkiang.us/hoteliptv.php?page=1&s=凤凰",
+    "http://tonkiang.us/hoteliptv.php?page=2&s=凤凰",
+    "http://tonkiang.us/hoteliptv.php?page=1&s=揭阳",
+    "http://tonkiang.us/hoteliptv.php?page=2&s=揭阳",
+    "http://tonkiang.us/hoteliptv.php?page=1&s=珠海",
+    "http://tonkiang.us/hoteliptv.php?page=1&s=广州",
+    "http://tonkiang.us/hoteliptv.php?page=2&s=广州",
+    "http://tonkiang.us/hoteliptv.php?page=1&s=汕头",
+    "http://tonkiang.us/hoteliptv.php?page=2&s=汕头",
+    "http://tonkiang.us/hoteliptv.php?page=1&s=深圳",
+    "http://tonkiang.us/hoteliptv.php?page=2&s=深圳",
+    "http://tonkiang.us/hoteliptv.php?page=1&s=广东",
+    "http://tonkiang.us/hoteliptv.php?page=2&s=广东",
+    "http://tonkiang.us/hoteliptv.php?page=1&s=新闻",
+    "http://tonkiang.us/hoteliptv.php?page=2&s=新闻",
+    "http://tonkiang.us/hoteliptv.php?page=1&s=综合",
+    "http://tonkiang.us/hoteliptv.php?page=2&s=综合",
+    "http://tonkiang.us/hoteliptv.php?page=1&s=北京",
+    "http://tonkiang.us/hoteliptv.php?page=1&s=上海",
+    "http://tonkiang.us/hoteliptv.php?page=1&s=香港",
+    "http://tonkiang.us/hoteliptv.php?page=2&s=香港",
+    "http://tonkiang.us/hoteliptv.php?page=1&s=重庆",
+    "http://tonkiang.us/hoteliptv.php?page=1&s=苏州",
+    "http://tonkiang.us/hoteliptv.php?page=1&s=成都",
+    "http://tonkiang.us/hoteliptv.php?page=1&s=杭州",
     "http://tonkiang.us/hoteliptv.php?page=1&s=厦门",
     "http://tonkiang.us/hoteliptv.php?page=2&s=厦门",
     "http://tonkiang.us/hoteliptv.php?page=3&s=厦门"
