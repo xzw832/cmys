@@ -26,7 +26,7 @@ results = []
 
 channels = []
 error_channels = []
-headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36'}
+headers={'User-Agent': 'okhttp/3.12.10(Linux;Android9;V2049ABuild/TP1A.220624.014;wv)AppleWebKit/537.36(KHTML,likeGecko)Version/4.0Chrome/116.0.0.0MobileSafari/537.36'}
 se=requests.Session()
 
 with open("itv.txt", 'r', encoding='utf-8') as file:
@@ -61,7 +61,7 @@ def worker():
         if "m3u8" in channel_url or "flv" in channel_url:
             try:
                 channel_url_t = channel_url.rstrip(channel_url.split('/')[-1])  # m3u8链接前缀
-                lines = requests.get(channel_url, timeout=3, stream=True).text.strip().split('\n')  # 获取m3u8文件内容
+                lines = requests.get(channel_url,headers=headers, timeout=3, stream=True).text.strip().split('\n')  # 获取m3u8文件内容
                 ts_lists = [line.split('/')[-1] for line in lines if line.startswith('#') == False]  # 获取m3u8文件下视频流后缀
                 ts_lists_0 = ts_lists[0].rstrip(ts_lists[0].split('.ts')[-1])  # m3u8链接前缀
                 ts_url = channel_url_t + ts_lists[0]  # 拼接单个视频片段下载链接
@@ -69,7 +69,7 @@ def worker():
                 # 多获取的视频数据进行5秒钟限制
                 with eventlet.Timeout(5, False):
                     start_time = time.time()
-                    content = requests.get(ts_url, timeout=(1,4), stream=True).content
+                    content = requests.get(ts_url,headers=headers, timeout=(1,4), stream=True).content
                     end_time = time.time()
                     response_time = (end_time - start_time) * 1
     
