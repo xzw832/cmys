@@ -143,14 +143,14 @@ CCTV5+体育赛事,http://test.tvboxosc.cyou/ipv4_live/5/CCTV5＋/CCTV
 CCTV5+体育赛事,http://test.tvboxosc.cyou/ipv4_live/6/CCTV5＋/CCTV
 CCTV5+体育赛事,http://test.tvboxosc.cyou/ipv4_live/7/CCTV5＋/CCTV
 CCTV5+体育赛事,http://test.tvboxosc.cyou/ipv4_live/8/CCTV5＋/CCTV
-CCTV-14 测试,http://test.tvboxosc.cyou/ipv4_live/1/CCTV14测试/CCTV
-CCTV-14 测试,http://test.tvboxosc.cyou/ipv4_live/2/CCTV14测试/CCTV
-CCTV-14 测试,http://test.tvboxosc.cyou/ipv4_live/3/CCTV14测试/CCTV
-CCTV-14 测试,http://test.tvboxosc.cyou/ipv4_live/4/CCTV14测试/CCTV
-CCTV-14 测试,http://test.tvboxosc.cyou/ipv4_live/5/CCTV14测试/CCTV
-CCTV-14 测试,http://test.tvboxosc.cyou/ipv4_live/6/CCTV14测试/CCTV
-CCTV-14 测试,http://test.tvboxosc.cyou/ipv4_live/7/CCTV14测试/CCTV
-CCTV-14 测试,http://test.tvboxosc.cyou/ipv4_live/8/CCTV14测试/CCTV
+CCTV-04 4K,http://test.tvboxosc.cyou/ipv4_live/1/CCTV4K/CCTV
+CCTV-04 4K,http://test.tvboxosc.cyou/ipv4_live/2/CCTV4K/CCTV
+CCTV-04 4K,http://test.tvboxosc.cyou/ipv4_live/3/CCTV4K/CCTV
+CCTV-04 4K,http://test.tvboxosc.cyou/ipv4_live/4/CCTV4K/CCTV
+CCTV-04 4K,http://test.tvboxosc.cyou/ipv4_live/5/CCTV4K/CCTV
+CCTV-04 4K,http://test.tvboxosc.cyou/ipv4_live/6/CCTV4K/CCTV
+CCTV-04 4K,http://test.tvboxosc.cyou/ipv4_live/7/CCTV4K/CCTV
+CCTV-04 4K,http://test.tvboxosc.cyou/ipv4_live/8/CCTV4K/CCTV
 
 CCTV-16 4K,http://test.tvboxosc.cyou/ipv4_live/1/CCTV164K/CCTV
 CCTV-16 4K,http://test.tvboxosc.cyou/ipv4_live/2/CCTV164K/CCTV
