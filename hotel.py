@@ -45,7 +45,7 @@ urls = [
     "http://tonkiang.us/hoteliptv.php?page=1&s=杭州",
     "http://tonkiang.us/hoteliptv.php?page=1&s=厦门",
     "http://tonkiang.us/hoteliptv.php?page=2&s=厦门",
-    "http://tonkiang.us/hoteliptv.php?page=3&s=厦门"
+    "http://tonkiang.us/hoteliptv.php?page=1&s=美国"
     ]
 # 初始化计数器为0
 counter = -1
