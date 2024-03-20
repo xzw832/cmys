@@ -10,10 +10,7 @@ eventlet.monkey_patch()
 # 判断首位是否为数字，是返回真
 def is_first_digit(s):
     return s[0].isdigit() if s else False
-
-proxies = {
-  "http": "http://152.32.231.214:26888"
-}
+    
 # 线程安全的队列，用于存储下载任务
 task_queue = Queue()
 lock = threading.Lock()
@@ -22,7 +19,7 @@ results = []
 
 channels = []
 error_channels = []
-headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36'}
+headers={'User-Agent': 'okhttp/3.12.10(Linux;Android9;V2049ABuild/TP1A.220624.014;wv)AppleWebKit/537.36(KHTML,likeGecko)Version/4.0Chrome/116.0.0.0MobileSafari/537.36'}
 se=requests.Session()
 
 with open("myitv.txt", 'r', encoding='utf-8') as file:
@@ -98,6 +95,13 @@ with open("myitv.txt", 'r', encoding='utf-8') as file:
                 name = name.replace("揭西台", "揭西")
                 name = name.replace("揭阳台", "揭阳综合")
                 name = name.replace("风云音乐", "音乐风云")
+                name = name.replace("东莞综合", "东莞新闻综合")
+                name = name.replace("东莞资讯", "东莞生活资讯")
+                name = name.replace("凤凰卫视资讯台", "凤凰卫视资讯")
+                name = name.replace("山东教育卫视卫视", "山东教育卫视")
+                name = name.replace("黑龙江卫视清", "黑龙江卫视")
+                name = name.replace("CCTV4K4K50p", "CCTV4K50p")
+                name = name.replace("CCTV4K4K", "CCTV4K")
                 urlright = channel_url[:4]
                 if urlright == 'http':
                     if '画中画' not in channel_name and '单音' not in channel_name and '直播' not in channel_name and '测试' not in channel_name and '主视' not in channel_name:
@@ -167,10 +171,10 @@ def worker():
     while True:
         # 从队列中获取一个任务
         channel_name, channel_url = task_queue.get()
-        if "m3u8" in channel_url or "flv" in channel_url:
+        if ".m3u8" in channel_url or ".flv" in channel_url or ".mp4" in channel_url:
             try:
                 channel_url_t = channel_url.rstrip(channel_url.split('/')[-1])  # m3u8链接前缀
-                lines = requests.get(channel_url, timeout=3, stream=True, proxies=proxies).text.strip().split('\n')  # 获取m3u8文件内容
+                lines = requests.get(channel_url, timeout=3, stream=True).text.strip().split('\n')  # 获取m3u8文件内容
                 ts_lists = [line.split('/')[-1] for line in lines if line.startswith('#') == False]  # 获取m3u8文件下视频流后缀
                 ts_lists_0 = ts_lists[0].rstrip(ts_lists[0].split('.ts')[-1])  # m3u8链接前缀
                 ts_url = channel_url_t + ts_lists[0]  # 拼接单个视频片段下载链接
@@ -178,7 +182,7 @@ def worker():
                 # 多获取的视频数据进行5秒钟限制
                 with eventlet.Timeout(5, False):
                     start_time = time.time()
-                    content = requests.get(ts_url, timeout=(1,4), stream=True, proxies=proxies).content
+                    content = requests.get(ts_url, timeout=(2,5), stream=True).content
                     end_time = time.time()
                     response_time = (end_time - start_time) * 1
     
@@ -210,7 +214,7 @@ def worker():
         else:
             try:
                 now=time.time()
-                res=se.get(channel_url,headers=headers,stream=True,timeout=5, proxies=proxies)
+                res=se.get(channel_url,headers=headers,stream=True,timeout=5)
                 if res.status_code==200:
                     for k in res.iter_content(chunk_size=2097152):
                         # 这里的chunk_size是1MB，每次读取1MB测试视频流
@@ -280,7 +284,7 @@ with open("cctv_all_results.txt", 'w', encoding='utf-8') as file:
         file.write(f"{channel_name},{channel_url},{speed}\n")
     file.close()
     
-result_counter = 8  # 每个频道需要的个数
+result_counter = 15  # 每个频道需要的个数
 
 with open("cctv.txt", 'w', encoding='utf-8') as file:
     channel_counters = {}
