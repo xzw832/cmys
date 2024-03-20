@@ -79,7 +79,7 @@ def worker():
         else:
             try:
                 now=time.time()
-                res=se.get(channel_url,headers=headers,headers=headers,timeout=5,stream=True)
+                res=se.get(channel_url,headers=headers,timeout=5,stream=True)
                 if res.status_code==200:
                     for k in res.iter_content(chunk_size=2097152):
                         # 这里的chunk_size是1MB，每次读取1MB测试视频流
