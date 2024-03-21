@@ -96,8 +96,8 @@ def worker(thread_url,counter_id):
         page_content = BeautifulSoup(driver.page_source, "html.parser")
         # page_content = driver.page_source
         # 关闭WebDriver
-        # driver.quit()
-        time.sleep(0)
+        driver.quit()
+        time.sleep(10)
         # 查找所有符合指定格式的网址
         pattern = r"http://\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d+"  # 设置匹配的格式，如http://8.8.8.8:8888
         urls_all = re.findall(pattern, page_content)
@@ -238,13 +238,13 @@ def worker(thread_url,counter_id):
         print(f"=========================>>> Thread {thread_url} caught an exception: {e}")
     finally:
         # 确保线程结束时关闭WebDriver实例
-        driver.quit() 
+        # driver.quit() 
         print(f"=========================>>> Thread {thread_url}  quiting")
         # 标记任务完成
         time.sleep(0)
 
 # 创建一个线程池，限制最大线程数为3
-with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor:
+with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
     # 提交任务到线程池，并传入参数
     counter = increment_counter()
     for i in urls:  # 假设有5个任务需要执行
