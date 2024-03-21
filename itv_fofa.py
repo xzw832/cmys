@@ -244,7 +244,7 @@ def worker(thread_url,counter_id):
         time.sleep(0)
 
 # 创建一个线程池，限制最大线程数为3
-with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
+with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor:
     # 提交任务到线程池，并传入参数
     counter = increment_counter()
     for i in urls:  # 假设有5个任务需要执行
