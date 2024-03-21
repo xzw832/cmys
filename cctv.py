@@ -284,7 +284,7 @@ with open("cctv_all_results.txt", 'w', encoding='utf-8') as file:
         file.write(f"{channel_name},{channel_url},{speed}\n")
     file.close()
     
-result_counter = 15  # 每个频道需要的个数
+result_counter = 16  # 每个频道需要的个数
 
 with open("cctv.txt", 'w', encoding='utf-8') as file:
     channel_counters = {}
