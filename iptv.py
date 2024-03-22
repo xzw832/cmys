@@ -172,4 +172,4 @@ with open("iptv_all.txt", "w", encoding="utf-8") as file:
     for result in results:
         file.write(result + "\n")
         # print(result)
-    file.close()
+file.close()
