@@ -10,19 +10,7 @@ eventlet.monkey_patch()
 # 判断首位是否为数字，是返回真
 def is_first_digit(s):
     return s[0].isdigit() if s else False
-# 网址带有？时，判断是否有重定向，有重定向时返回最新地址，没有原址返回
-def is_url_history(url):
-    response = requests.get(url, allow_redirects=True, timeout=5)
-    if response.history:
-        # 如果有重定向历史，说明发生了重定向
-        final_url = response.url
-        print(f'发生重定向\t{url},{final_url}')
-        return final_url
-    else:
-        # 如果没有重定向历史，说明没有发生重定向
-        original_url = url
-        return original_url
-        
+
 # 线程安全的队列，用于存储下载任务
 task_queue = Queue()
 lock = threading.Lock()
@@ -185,7 +173,15 @@ def worker():
         # 从队列中获取一个任务
         channel_name, channel_url = task_queue.get()
         if "?" in channel_url:
-           channel_url = is_url_history(channel_url)
+            rese = reqs.get(channel_url, allow_redirects=True, timeout=5)
+            if rese.history:
+                # 如果有重定向历史，说明发生了重定向
+                channel_url = rese.url
+                print(f'发生重定向\t{url},{channel_url}')
+            else:
+                # 如果没有重定向历史，说明没有发生重定向
+                channel_url = url
+
         if ".m3u8" in channel_url or ".flv" in channel_url or ".mp4" in channel_url:
             try:
                 channel_url_t = channel_url.rstrip(channel_url.split('/')[-1])  # m3u8链接前缀
