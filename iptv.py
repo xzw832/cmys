@@ -67,7 +67,7 @@ with open("iptv_all.txt", "w", encoding="utf-8") as output:
     output.write('\n'.join(file_contents))
     output.close()
 
-results ＝ []
+results = []
 with open("iptv_all.txt", 'r', encoding='utf-8') as file:
     lines = file.readlines()
     for line in lines:
