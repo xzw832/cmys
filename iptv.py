@@ -63,13 +63,13 @@ for url in urls:
     print(page_content)    #方便看看是否有执行啊
     file_contents.append(page_content)
     
-with open("iptv_all.txt", "w", encoding="utf-8") as output:
-    output.write('\n'.join(file_contents))
-    output.close()
+# with open("iptv_all.txt", "w", encoding="utf-8") as output:
+#    output.write('\n'.join(file_contents))
+#    output.close()
 
 results = []
 with open("iptv_all.txt", 'r', encoding='utf-8') as file:
-    lines = file.readlines()
+    lines = file_contents.readlines()
     for line in lines:
         line = line.strip()
         count = line.count(',')
@@ -162,17 +162,14 @@ with open("iptv_all.txt", 'r', encoding='utf-8') as file:
                 name = name.replace("BRTV北京卫视", "北京卫视")
                 urlright = channel_url[:4]
                 if urlright == 'http':
-                    if "://[" not in channel_url:
+                    if "[" not in channel_url and "#genre#" not in channel_url:
                         if '画中画' not in channel_name and '单音' not in channel_name and '直播' not in channel_name and '测试' not in channel_name and '主视' not in channel_name:
                             check_name = f"{name}"
                             if not is_first_digit(check_name):
                                 results.append(f"{name},{channel_url}")
-    file.close()
 
-results = set(results)  # 去重得到唯一的URL列表
-results = sorted(results)
-
-with open("iptv_all_new.txt", 'w', encoding='utf-8') as file:
+    results = set(results)  # 去重得到唯一的URL列表
+    results = sorted(results)
     for result in results:
         file.write(result + "\n")
         # print(result)
