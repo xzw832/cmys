@@ -161,7 +161,7 @@ with open("iptv_all.txt", "w", encoding="utf-8") as file:
                 name = name.replace("BRTV北京卫视", "北京卫视")
                 urlright = channel_url[:4]
                 if urlright == 'http':
-                    if "[" not in channel_url and "#genre#" not in channel_url:
+                    if "[" not in channel_url:
                         if '画中画' not in channel_name and '单音' not in channel_name and '直播' not in channel_name and '测试' not in channel_name and '主视' not in channel_name:
                             check_name = f"{name}"
                             if not is_first_digit(check_name):
