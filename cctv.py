@@ -175,7 +175,7 @@ def worker():
         if "?" in channel_url:
             print('－－－－进行判断是否有重定向检测－－－－')
             try:
-                rese = reqs.get(channel_url, allow_redirects=True)
+                rese = reqs.get(channel_url, headers=headers, allow_redirects=True)
                 if rese.history:
                     # 如果有重定向历史，说明发生了重定向
                     new_url = rese.url
