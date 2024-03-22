@@ -183,7 +183,7 @@ def worker():
                     if rese.history:
                         # 如果有重定向历史，说明发生了重定向
                         new_url = rese.url
-                        print(f'发生重定向\t{channel_url},{new_url}')
+                        print(f'--------------------------------------发生重定向\t{channel_url},{new_url}')
                         result_queue.put((new_url))
                         rese.close()
                         time.sleep(0)
