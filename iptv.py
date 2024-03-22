@@ -75,7 +75,6 @@ with open("iptv_all.txt", "w", encoding="utf-8") as file:
         if count == 1:
             if line:
                 channel_name, channel_url = line.split(',')
-                print(f"{channel_name},{channel_url})
                 name =(f"{channel_name}")
                 name = name.replace("「新疆」", "")
                 name = name.replace("「代理」", "")
@@ -160,6 +159,7 @@ with open("iptv_all.txt", "w", encoding="utf-8") as file:
                 name = name.replace("CCTV4K4K50p", "CCTV4K50p")
                 name = name.replace("CCTV4K4K", "CCTV4K")
                 name = name.replace("BRTV北京卫视", "北京卫视")
+                print(f"{name},{channel_url}")
                 urlright = channel_url[:4]
                 if urlright == 'http':
                     if "[" not in channel_url:
