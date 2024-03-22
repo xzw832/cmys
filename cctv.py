@@ -173,8 +173,9 @@ def worker():
         # 从队列中获取一个任务
         channel_name, channel_url = task_queue.get()
         if "?" in channel_url:
+            print('－－－－进行判断是否有重定向检测－－－－')
             try:
-                rese = reqs.get(channel_url, allow_redirects=True, timeout=5)
+                rese = reqs.get(channel_url, allow_redirects=True)
                 if rese.history:
                     # 如果有重定向历史，说明发生了重定向
                     new_url = rese.url
