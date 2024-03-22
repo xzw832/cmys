@@ -69,8 +69,7 @@ for url in urls:
 print("---------------------------------------------------------")
 results = []
 with open("iptv_all.txt", 'w', encoding='utf-8') as file:
-    lines = file_contents.readlines()
-    for line in lines:
+    for line in file_contents:
         line = line.strip()
         count = line.count(',')
         if count == 1:
