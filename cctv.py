@@ -178,20 +178,20 @@ def worker():
             if "?" in channel_url:
                 print(f'检测url是否有重定向－－－－\t{channel_url}')  
                 try:
-                    rese = reqs.get(channel_url, headers=headers, allow_redirects=True, timeout=5)
+                    rese = reqs.get(channel_url, allow_redirects=True, timeout=5)
                     rese.raise_for_status()
                     if rese.history:
                         # 如果有重定向历史，说明发生了重定向
                         new_url = rese.url
                         print(f'发生重定向\t{channel_url},{new_url}')
-                        channel_url = new_url
+                        channel_url = (f"{new_url}")
                     rese.close()
                 except Timeout:
                     print(f'请求超时－－－－\t{channel_url}')
                 except RequestException as e:
                     print(f'请求发生异常:－－－－\t{channel_url}')
                     
-        print(f'当前url－－－－\t{channel_url}')        
+        # print(f'当前url－－－－\t{channel_url}')        
         if ".m3u8" in channel_url or ".flv" in channel_url or ".mp4" in channel_url:
             try:
                 channel_url_t = channel_url.rstrip(channel_url.split('/')[-1])  # m3u8链接前缀
