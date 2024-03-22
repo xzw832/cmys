@@ -1,4 +1,4 @@
-name: itv_fofa setup run
+name: select all iptv
 on:
   # 手动运行
   workflow_dispatch:
@@ -42,8 +42,8 @@ jobs:
           pip install selenium requests futures eventlet
           pip install beautifulsoup4
              
-      - name: Run itv_fofa
-        run: python ${{ github.workspace }}/itv_fofa.py
+      - name: Run iptv.py
+        run: python ${{ github.workspace }}/iptv.py
         
       - name: 提交更改
         run: |
