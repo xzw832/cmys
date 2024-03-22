@@ -12,7 +12,7 @@ def is_first_digit(s):
     return s[0].isdigit() if s else False
 # 网址带有？时，判断是否有重定向，有重定向时返回最新地址，没有原址返回
 def is_url_history(url):
-    response = requests.get(url, allow_redirects=True)
+    response = requests.get(url, allow_redirects=True, timeout=5)
     if response.history:
         # 如果有重定向历史，说明发生了重定向
         final_url = response.url
