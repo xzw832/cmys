@@ -179,7 +179,7 @@ def worker():
             if "?" in channel_url:
                 # print(f'检测url是否有重定向－－－－\t{channel_url}')  
                 try:
-                    rese = reqs.get(channel_url, headers=url_headers, allow_redirects=True, timeout=10)
+                    rese = reqs.get(channel_url, allow_redirects=True, timeout=5)
                     if rese.history:
                         # 如果有重定向历史，说明发生了重定向
                         new_url = rese.url
