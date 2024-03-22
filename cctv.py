@@ -5,6 +5,7 @@ import datetime
 import threading
 from queue import Queue
 import requests
+from requests.exceptions import RequestException, Timeout
 import eventlet
 eventlet.monkey_patch()
 # 判断首位是否为数字，是返回真
@@ -21,6 +22,7 @@ channels = []
 error_channels = []
 headers={'User-Agent': 'okhttp/3.12.10(Linux;Android9;V2049ABuild/TP1A.220624.014;wv)AppleWebKit/537.36(KHTML,likeGecko)Version/4.0Chrome/116.0.0.0MobileSafari/537.36'}
 se=requests.Session()
+reqs=requests.Session()
 
 with open("myitv.txt", 'r', encoding='utf-8') as file:
     lines = file.readlines()
@@ -176,15 +178,19 @@ def worker():
             if "?" in channel_url:
                 print(f'检测url是否有重定向－－－－\t{channel_url}')  
                 try:
-                    rese = reqs.get(channel_url, headers=headers, allow_redirects=True)
+                    rese = reqs.get(channel_url, headers=headers, allow_redirects=True, timeout=5)
+                    rese.raise_for_status()
                     if rese.history:
                         # 如果有重定向历史，说明发生了重定向
                         new_url = rese.url
                         print(f'发生重定向\t{channel_url},{new_url}')
                         channel_url = new_url
                     rese.close()
-                except:
-                    print(f'连接错误－－－－\t{channel_url}')
+                except Timeout:
+                    print(f'请求超时－－－－\t{channel_url}')
+                except RequestException as e:
+                    print(f'请求发生异常:－－－－\t{channel_url}')
+                    
         print(f'当前url－－－－\t{channel_url}')        
         if ".m3u8" in channel_url or ".flv" in channel_url or ".mp4" in channel_url:
             try:
