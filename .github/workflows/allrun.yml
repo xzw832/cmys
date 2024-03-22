@@ -43,7 +43,7 @@ jobs:
           pip install beautifulsoup4
              
       - name: Run cctv
-        run: python ${{ github.workspace }}/cctv.py
+        run: python ${{ github.workspace }}/123.py
         
       - name: 提交更改
         run: |
