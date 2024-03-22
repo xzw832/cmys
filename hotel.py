@@ -12,6 +12,10 @@ from bs4 import BeautifulSoup
 from queue import Queue
 import threading
 
+# 判断首位是否为数字，是返回真
+def is_first_digit(s):
+    return s[0].isdigit() if s else False
+    
 lock = threading.Lock()
 # 查找所有符合指定格式的网址
 infoList = []
