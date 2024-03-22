@@ -180,8 +180,6 @@ def worker():
                     new_url = rese.url
                     print(f'发生重定向\t{channel_url},{new_url}')
                     channel_url = new_url
-                else:
-                    # 如果没有重定向历史，说明没有发生重定向
             except:
                 print(f'连接错误－－－－\t{channel_url}')
             finally:
