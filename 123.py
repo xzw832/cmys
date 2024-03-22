@@ -8,7 +8,7 @@ if response.history:
     # 如果有重定向历史，说明发生了重定向
     print("发生了重定向")
     # 获取最终重定向到的地址
-    final_url = response.channel_url
+    final_url = response.url
     print("最终地址:", final_url)
 else:
     # 如果没有重定向历史，说明没有发生重定向
