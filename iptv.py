@@ -75,7 +75,7 @@ with open("iptv_all.txt", "w", encoding="utf-8") as file:
         if count == 1:
             if line:
                 channel_name, channel_url = line.split(',')
-                print(f"{name},{channel_url})
+                print(f"{channel_name},{channel_url})
                 name =(f"{channel_name}")
                 name = name.replace("「新疆」", "")
                 name = name.replace("「代理」", "")
