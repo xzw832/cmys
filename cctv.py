@@ -5,7 +5,6 @@ import datetime
 import threading
 from queue import Queue
 import requests
-from requests.exceptions import RequestException, Timeout
 import eventlet
 eventlet.monkey_patch()
 # 判断首位是否为数字，是返回真
@@ -179,16 +178,13 @@ def worker():
                 print(f'检测url是否有重定向－－－－\t{channel_url}')  
                 try:
                     rese = reqs.get(channel_url, allow_redirects=True, timeout=5)
-                    rese.raise_for_status()
                     if rese.history:
                         # 如果有重定向历史，说明发生了重定向
                         new_url = rese.url
                         print(f'发生重定向\t{channel_url},{new_url}')
                         channel_url = (f"{new_url}")
                     rese.close()
-                except Timeout:
-                    print(f'请求超时－－－－\t{channel_url}')
-                except RequestException as e:
+                except:
                     print(f'请求发生异常:－－－－\t{channel_url}')
                     
         # print(f'当前url－－－－\t{channel_url}')        
