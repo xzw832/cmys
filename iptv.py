@@ -54,7 +54,7 @@ for url in urls:
     driver.set_script_timeout(50)  # 5秒后超时
     # 使用WebDriver访问网页
     driver.get(url)  # 将网址替换为你要访问的网页地址
-    time.sleep(20)
+    time.sleep(5)
     # 获取网页内容
     page_content = driver.page_source
 
@@ -63,13 +63,14 @@ for url in urls:
     # print(page_content)    #方便看看是否有执行啊
     file_contents.append(page_content)
     
-# with open("iptv_all.txt", "w", encoding="utf-8") as output:
-#    output.write('\n'.join(file_contents))
-#    output.close()
+with open("iptv_all.txt", "w", encoding="utf-8") as output:
+    output.write('\n'.join(file_contents))
+    output.close()
 print("---------------------------------------------------------")
 results = []
-with open("iptv_all.txt", "w", encoding="utf-8") as file:
-    for line in file_contents:
+with open("iptv_all.txt", "r", encoding="utf-8") as file:
+    lines = file.readlines()
+    for line in lines:
         line = line.strip()
         count = line.count(',')
         if count == 1:
@@ -168,9 +169,10 @@ with open("iptv_all.txt", "w", encoding="utf-8") as file:
                             if not is_first_digit(check_name):
                                 results.append(f"{name},{channel_url}")
 
-    results = set(results)  # 去重得到唯一的URL列表
-    results = sorted(results)
+results = set(results)  # 去重得到唯一的URL列表
+results = sorted(results)
+with open("iptv_new_all.txt", 'w', encoding='utf-8') as file:
     for result in results:
         file.write(result + "\n")
         # print(result)
-file.close()
+    file.close()
