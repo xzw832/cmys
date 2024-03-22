@@ -13,6 +13,7 @@ def is_first_digit(s):
 
 # 线程安全的队列，用于存储下载任务
 task_queue = Queue()
+result_queue = Queue()
 lock = threading.Lock()
 # 线程安全的列表，用于存储结果
 results = []
@@ -175,19 +176,18 @@ def worker():
         channel_name, channel_url = task_queue.get()
         if ".m3u8" not in channel_url and ".flv" not in channel_url and ".mp4" not in channel_url:
             if "?" in channel_url:
-                print(f'检测url是否有重定向－－－－\t{channel_url}')  
+                # print(f'检测url是否有重定向－－－－\t{channel_url}')  
                 try:
                     rese = reqs.get(channel_url, allow_redirects=True, timeout=10)
                     if rese.history:
                         # 如果有重定向历史，说明发生了重定向
                         new_url = rese.url
                         print(f'发生重定向\t{channel_url},{new_url}')
-                        channel_url = (f"{new_url}")
-                        rese.close()
-                        time.sleep(1)
+                        result_queue.put((new_url))
                 except:
                     print(f'请求发生异常:－－－－\t{channel_url}')
-                    
+                    result_queue.put((channel_url))
+                channel_url = result_queue.get()
         print(f'当前url－－－－\t{channel_url}')        
         if ".m3u8" in channel_url or ".flv" in channel_url or ".mp4" in channel_url:
             try:
