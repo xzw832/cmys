@@ -172,19 +172,20 @@ def worker():
     while True:
         # 从队列中获取一个任务
         channel_name, channel_url = task_queue.get()
-        if "?" in channel_url:
-            print('－－－－进行判断是否有重定向检测－－－－')
-            try:
-                rese = reqs.get(channel_url, headers=headers, allow_redirects=True)
-                if rese.history:
-                    # 如果有重定向历史，说明发生了重定向
-                    new_url = rese.url
-                    print(f'发生重定向\t{channel_url},{new_url}')
-                    channel_url = new_url
-                rese.close()
-            except:
-                print(f'连接错误－－－－\t{channel_url}')
-                         
+        if ".m3u8" not in channel_url and ".flv" not in channel_url and ".mp4" not in channel_url:
+            if "?" in channel_url:
+                print(f'检测url是否有重定向－－－－\t{channel_url}')  
+                try:
+                    rese = reqs.get(channel_url, headers=headers, allow_redirects=True)
+                    if rese.history:
+                        # 如果有重定向历史，说明发生了重定向
+                        new_url = rese.url
+                        print(f'发生重定向\t{channel_url},{new_url}')
+                        channel_url = new_url
+                    rese.close()
+                except:
+                    print(f'连接错误－－－－\t{channel_url}')
+        print(f'当前url－－－－\t{channel_url}')        
         if ".m3u8" in channel_url or ".flv" in channel_url or ".mp4" in channel_url:
             try:
                 channel_url_t = channel_url.rstrip(channel_url.split('/')[-1])  # m3u8链接前缀
@@ -196,7 +197,7 @@ def worker():
                 # 多获取的视频数据进行5秒钟限制
                 with eventlet.Timeout(5, False):
                     start_time = time.time()
-                    content = requests.get(ts_url,headers=headers, timeout=(2,5), stream=True).content
+                    content = requests.get(ts_url,headers=headers, timeout=(2,4), stream=True).content
                     end_time = time.time()
                     response_time = (end_time - start_time) * 1
     
