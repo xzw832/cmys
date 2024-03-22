@@ -60,15 +60,15 @@ for url in urls:
 
     # 关闭WebDriver
     driver.quit()
-    print(page_content)    #方便看看是否有执行啊
+    # print(page_content)    #方便看看是否有执行啊
     file_contents.append(page_content)
     
 # with open("iptv_all.txt", "w", encoding="utf-8") as output:
 #    output.write('\n'.join(file_contents))
 #    output.close()
-
+print("---------------------------------------------------------")
 results = []
-with open("iptv_all.txt", 'r', encoding='utf-8') as file:
+with open("iptv_all.txt", 'w', encoding='utf-8') as file:
     lines = file_contents.readlines()
     for line in lines:
         line = line.strip()
