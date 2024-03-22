@@ -18,7 +18,12 @@ infoList = []
 urls_y = []
 resultslist = []
 urls = [
-    "https://raw.githubusercontent.com/taijichadao/tv/main/itvlist.txt"
+    "https://raw.githubusercontent.com/taijichadao/tv/main/itvlist.txt",
+    "http://39.101.135.137:8081/ls.txt",
+    "http://api.mcqq.cn/tvbox/zhibo.php",
+    "http://tvbox.nx66.bf:99/tvbox/zhibo.php",
+    "http://mywlkj.ddns.net:754/tv.php",
+    "https://raw.gitcode.com/lionzang/TV/raw/main/channel.txt"
     ]
 # 初始化计数器为0
 counter = -1
@@ -35,7 +40,7 @@ def is_odd_or_even(number):
         return True
     else:
         return False
-
+file_contents = []
 for url in urls:
     # 创建一个Chrome WebDriver实例
     chrome_options = Options()
@@ -57,7 +62,8 @@ for url in urls:
     # 关闭WebDriver
     driver.quit()
     print(page_content)    #方便看看是否有执行啊
-
+    file_contents.append(page_content)
+    
 with open("iptv_all.txt", "w", encoding="utf-8") as output:
-    output.write('\n'.join(page_content))
+    output.write('\n'.join(file_contents))
     output.close()
