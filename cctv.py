@@ -173,15 +173,20 @@ def worker():
         # 从队列中获取一个任务
         channel_name, channel_url = task_queue.get()
         if "?" in channel_url:
-            rese = reqs.get(channel_url, allow_redirects=True, timeout=5)
-            if rese.history:
-                # 如果有重定向历史，说明发生了重定向
-                channel_url = rese.url
-                print(f'发生重定向\t{url},{channel_url}')
-            else:
-                # 如果没有重定向历史，说明没有发生重定向
-                channel_url = url
-
+            try:
+                rese = reqs.get(channel_url, allow_redirects=True, timeout=5)
+                if rese.history:
+                    # 如果有重定向历史，说明发生了重定向
+                    new_url = rese.url
+                    print(f'发生重定向\t{channel_url},{new_url}')
+                    channel_url = new_url
+                else:
+                    # 如果没有重定向历史，说明没有发生重定向
+            except:
+                print(f'连接错误－－－－\t{channel_url}')
+            finally:
+                rese.close()
+                
         if ".m3u8" in channel_url or ".flv" in channel_url or ".mp4" in channel_url:
             try:
                 channel_url_t = channel_url.rstrip(channel_url.split('/')[-1])  # m3u8链接前缀
