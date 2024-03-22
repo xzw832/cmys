@@ -18,7 +18,7 @@ infoList = []
 urls_y = []
 resultslist = []
 urls = [
-    "https://raw.githubusercontent.com/taijichadao/tv/main/itv.txt"
+    "https://raw.githubusercontent.com/taijichadao/tv/main/itvlist.txt"
     ]
 # 初始化计数器为0
 counter = -1
