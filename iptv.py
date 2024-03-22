@@ -19,7 +19,6 @@ urls_y = []
 resultslist = []
 urls = [
     "https://raw.githubusercontent.com/taijichadao/tv/main/itvlist.txt",
-    "http://39.101.135.137:8081/ls.txt",
     "http://api.mcqq.cn/tvbox/zhibo.php",
     "http://tvbox.nx66.bf:99/tvbox/zhibo.php",
     "http://mywlkj.ddns.net:754/tv.php",
