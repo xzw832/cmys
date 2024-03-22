@@ -185,7 +185,6 @@ def worker():
                         new_url = rese.url
                         print(f'--------------------------------------发生重定向\t{channel_url},{new_url}')
                         result_queue.put((new_url))
-                        rese.close()
                         time.sleep(0)
                 except:
                     print(f'请求发生异常:－－－－\t{channel_url}')
