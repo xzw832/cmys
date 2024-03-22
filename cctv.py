@@ -16,6 +16,7 @@ def is_url_history(url):
     if response.history:
         # 如果有重定向历史，说明发生了重定向
         final_url = response.url
+        print(f'发生重定向\t{url},{final_url}')
         return final_url
     else:
         # 如果没有重定向历史，说明没有发生重定向
