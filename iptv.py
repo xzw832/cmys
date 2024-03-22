@@ -68,7 +68,7 @@ for url in urls:
 #    output.close()
 print("---------------------------------------------------------")
 results = []
-with open("iptv_all.txt", 'w', encoding='utf-8') as file:
+with open("iptv_all.txt", "w", encoding="utf-8") as file:
     for line in file_contents:
         line = line.strip()
         count = line.count(',')
