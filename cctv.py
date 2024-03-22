@@ -180,11 +180,10 @@ def worker():
                     new_url = rese.url
                     print(f'发生重定向\t{channel_url},{new_url}')
                     channel_url = new_url
+                rese.close()
             except:
                 print(f'连接错误－－－－\t{channel_url}')
-            finally:
-                rese.close()
-                
+                         
         if ".m3u8" in channel_url or ".flv" in channel_url or ".mp4" in channel_url:
             try:
                 channel_url_t = channel_url.rstrip(channel_url.split('/')[-1])  # m3u8链接前缀
