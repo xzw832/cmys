@@ -187,7 +187,7 @@ def worker():
                 except:
                     print(f'请求发生异常:－－－－\t{channel_url}')
                     
-        # print(f'当前url－－－－\t{channel_url}')        
+        print(f'当前url－－－－\t{channel_url}')        
         if ".m3u8" in channel_url or ".flv" in channel_url or ".mp4" in channel_url:
             try:
                 channel_url_t = channel_url.rstrip(channel_url.split('/')[-1])  # m3u8链接前缀
