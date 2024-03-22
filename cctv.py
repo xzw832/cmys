@@ -122,7 +122,7 @@ with open("newitv.txt", 'w', encoding='utf-8') as file:
 
 # 合并文件内容
 file_contents = []
-file_paths = ["cctv.txt", "weishi.txt", "ktpd.txt", "ysyl.txt","xiangang.txt", "qita.txt", "newitv.txt"]  # 替换为实际的文件路径列表
+file_paths = ["cctv.txt", "weishi.txt", "ktpd.txt", "ysyl.txt","xiangang.txt", "qita.txt", "newitv.txt", "iptv_new_all"]  # 替换为实际的文件路径列表
 for file_path in file_paths:
     with open(file_path, 'r', encoding="utf-8") as file:
         content = file.read()
