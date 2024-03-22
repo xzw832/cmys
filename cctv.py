@@ -177,13 +177,9 @@ def worker():
                 channel_url_t = channel_url.rstrip(channel_url.split('/')[-1])  # m3u8链接前缀
                 lines = requests.get(channel_url,headers=headers, timeout=3, stream=True).text.strip().split('\n')  # 获取m3u8文件内容
                 count = lines.count('#')
-                if count > 0:
-                    ts_lists = [line.split('/')[-1] for line in lines if line.startswith('#') == False]  # 获取m3u8文件下视频流后缀
-                    ts_lists_0 = ts_lists[0].rstrip(ts_lists[0].split('.ts')[-1])  # m3u8链接前缀
-                    ts_url = channel_url_t + ts_lists[0]  # 拼接单个视频片段下载链接
-                else:
-                    print(f"该连接可能是不含m3u8，防止卡死，终止测试\t{channel_url}")
-                    break
+                ts_lists = [line.split('/')[-1] for line in lines if line.startswith('#') == False]  # 获取m3u8文件下视频流后缀
+                ts_lists_0 = ts_lists[0].rstrip(ts_lists[0].split('.ts')[-1])  # m3u8链接前缀
+                ts_url = channel_url_t + ts_lists[0]  # 拼接单个视频片段下载链接
                 # 多获取的视频数据进行5秒钟限制
                 with eventlet.Timeout(5, False):
                     start_time = time.time()
