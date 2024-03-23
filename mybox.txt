@@ -3170,7 +3170,7 @@ dj,https://txmov2.a.kwimgs.com/upic/2022/03/21/19/BMjAyMjAzMjExOTA2MjRfMjYyNzI4M
 《英雄泪》,https://vd3.bdstatic.com/mda-ncnp6tm56ngrxbis/360p/h264_delogo/1648055585617071282/mda-ncnp6tm56ngrxbis.mp4
 2022几首DJ串烧,https://vd3.bdstatic.com/mda-nck3tqzgjvj076vc/sc/cae_h264_delogo/1647833645083560959/mda-nck3tqzgjvj076vc.mp4
 
-高清测试,#genre#
+高清测试_1122,#genre#
 精彩综艺 4M1080,http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226009/index.m3u8
 浙江卫视 3M1080,http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221225798/index.m3u8
 浙江卫视 12M1080,http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226199/index.m3u8
@@ -3208,7 +3208,7 @@ NewTV怡伴健康 4M1080,http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221
 哒啵电竞 4M1080,http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226951/index.m3u8
 哒啵赛事 4M1080,http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226954/index.m3u8
 
-测试4K8K,#genre#
+测试4K8K_1122,#genre#
 以下不要点会闪退,https://vd4.bdstatic.com/mda-pkdyp7s1x9wzhxki/hd/cae_h264/1700086965169438152/mda-pkdyp7s1x9wzhxki.mp4?v_from_s=hkapp-haokan-hbf&auth_key=1703950180-0-0-95248d9569dcd0d4944b021e42507fd0&bcevod_channel=searchbox_feed&pd=1&cr=1&cd=0&pt=4&logid=1780155796&vid=5810612726756105902&abtest=all
 九宫格,http://[2409:8087:7000:20:1000::22]:6060/yinhe/2/ch00000090990000001589/index.m3u8?virtualDomain=yinhe.live_hls.zte.com
 咪咕体育4K,http://[2409:8087:1a01:df::4001]/PLTV/88888888/224/3221225655/index.m3u8
