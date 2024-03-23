@@ -62,6 +62,9 @@ jobs:
              
       - name: Run qita
         run: python ${{ github.workspace }}/qita.py
+
+      - name: Run tv570
+        run: python ${{ github.workspace }}/tv570.py
         
       - name: 提交更改
         run: |
