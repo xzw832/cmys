@@ -62,8 +62,13 @@ for text in texts:
     lines = text.splitlines()
     all_lines.extend(lines)
 
+# 去除重复项
+unique_urls = list(set(all_lines))
+
+# 去除空格
+cleaned_urls = [url.strip() for url in all_lines]
 # 打印获取到的网页文本
-for line in all_lines:
+for line in cleaned_urls:
     print('------------------------------------------------------------------------------------------------------------------------')
     print(line)
 
