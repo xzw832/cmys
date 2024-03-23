@@ -41,7 +41,7 @@ with open("myitv.txt", 'r', encoding='utf-8') as file:
                 if '画中画' in channel_name:
                   name =(f"{channel_name}")
                   name = name.replace("画中画", "")
-                  channels.append((channel_name, channel_url))
+                  channels.append((name, channel_url))
     file.close()
 
 # 定义工作线程函数
