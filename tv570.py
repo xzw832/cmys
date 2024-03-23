@@ -165,17 +165,16 @@ with open("tv570.txt", 'w', encoding='utf-8') as file:
     file.write('【  标清频道  】,#genre#\n')
     for result in results:
         channel_name, channel_url, speed = result
-        if '卫视' not in channel_name and 'CCTV' not in channel_name and '测试' not in channel_name and '电影' not in channel_name and '影院' not in channel_name and '剧场' not in channel_name and '影视' not in channel_name and '卡通' not in channel_name and '动漫' not in channel_name and '动画' not in channel_name and '少儿' not in channel_name:
-            if cut_first_chinese_words(channel_name) in js_txt:
-                if channel_name in channel_counters:
-                    if channel_counters[channel_name] >= result_counter:
-                        continue
-                    else:
-                        file.write(f"{channel_name},{channel_url}\n")
-                        channel_counters[channel_name] += 1
+        if 'CCTV' in channel_name or '卫视' in channel_name:
+            if channel_name in channel_counters:
+                if channel_counters[channel_name] >= result_counter:
+                    continue
                 else:
                     file.write(f"{channel_name},{channel_url}\n")
-                    channel_counters[channel_name] = 1
+                    channel_counters[channel_name] += 1
+            else:
+                file.write(f"{channel_name},{channel_url}\n")
+                channel_counters[channel_name] = 1
     file.close() 
 
 print(f"{now_today}标清频道更新完成")
