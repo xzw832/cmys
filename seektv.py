@@ -79,7 +79,7 @@ def get_with_retries(url, user_agent, timeout=10, retries=3):
     if count == 1:
         if line:
             channel_name, channel_url = line.split(',')
-            if "http" in channel_url and "[" not in channel_url:
+            if "http" in channel_url and "[" not in channel_url and "?" in channel_url:
                 for _ in range(retries):
                     try:
                         response = session.get(channel_url, allow_redirects=True, headers=headers, timeout=timeout)
@@ -123,7 +123,7 @@ def concurrent_get_with_retries(urls, user_agent, max_workers, timeout=10, retri
 
 # 设置URL列表和User-Agent
 user_agent = "okhttp/3.12.11 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
-max_workers = 5  # 设置线程数量
+max_workers = 20  # 设置线程数量
 
 # 调用并发函数并打印结果
 results = concurrent_get_with_retries(cleaned_urls, user_agent, max_workers)
