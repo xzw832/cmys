@@ -126,7 +126,7 @@ def concurrent_get_with_retries(urls, user_agent, max_workers, timeout=5, retrie
 max_workers = 5  # 设置线程数量
 
 # 调用并发函数并打印结果
-results = concurrent_get_with_retries(cleaned_urls, user_agent, max_workers)
+results = concurrent_get_with_retries(cleaned_urls, USER_AGENT, max_workers)
 print("======================================================================================================")
 for url, redirected_url in zip(cleaned_urls, results):
     print(f"Original URL: {url}, Redirected URL: {redirected_url} if any")
