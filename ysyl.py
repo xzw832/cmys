@@ -49,9 +49,6 @@ def worker():
                     content = requests.get(ts_url,headers=headers, timeout=(1,4), stream=True).content
                     end_time = time.time()
                     response_time = (end_time - start_time) * 1
-                    if response_time > 10:
-                        print(f'－－－－－－－－－－－－－－－Time out\t{channel_url}')
-                        break
                 if content:
                     with open(ts_lists_0, 'ab') as f:
                         f.write(content)  # 写入文件
@@ -61,7 +58,7 @@ def worker():
                     # print(f"下载速度：{download_speed:.3f} kB/s")
                     normalized_speed = min(max(download_speed / 1024, 0.001), 100)  # 将速率从kB/s转换为MB/s并限制在1~100之间
                     #print(f'{channel_url}')
-                    #print(f"m3u8 标准化后的速率：{normalized_speed:.3f} MB/s")
+                    print(f"m3u8 标准化后的速率：{normalized_speed:.3f} MB/s {channel_url}")
     
                     # 删除下载的文件
                     os.remove(ts_lists_0)
