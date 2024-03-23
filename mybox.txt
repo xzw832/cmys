@@ -2739,6 +2739,7 @@ TVB亞洲劇,http://104.233.187.235:2082/r-proxy?user=tianya666&url=https://z88.
 TVB粵語片,http://104.233.187.235:2082/r-proxy?user=tianya666&url=https://z88.ubtvfans.com/live/rx1/1589/f69ec211e7b1001aba0bab74ae0b038f/index.m3u8
 TVB功夫台,http://104.233.187.235:2082/r-proxy?user=tianya666&url=https://z88.ubtvfans.com/live/rx1/168/83b003eeef5ee14257bc64c8a32eb617/index.m3u8
 亞美卫视,http://104.233.187.235:2082/r-proxy?user=tianya666&url=https://z88.ubtvfans.com/live/rx3/8/8ed229cc95262c1c1b7c2fe89267f910/index.m3u8
+
 标清频道,#genre#
 CCTV1,http://test.tvboxosc.cyou/ipv4_live/1/CCTV1/tv570
 CCTV1,http://test.tvboxosc.cyou/ipv4_live/2/CCTV1/tv570
