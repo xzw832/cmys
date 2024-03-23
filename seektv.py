@@ -96,7 +96,7 @@ def get_with_retries(url, USER_AGENT, timeout=10, retries=3):
                         print(f"No more retries for URL {channel_url}")
                         return url  # 没有更多重试，返回None
     
-    session.close()  # 关闭session
+            session.close()  # 关闭session
     return url
 
 # 主函数，用于并发执行GET请求
