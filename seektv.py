@@ -57,8 +57,8 @@ urls = [
 
 # 并发获取网页文本
 texts = concurrent_get_text(urls, max_workers=3)
-
+lines = '\n'.join(texts)
 # 打印获取到的网页文本
-for text in texts:
+for line in lines:
     print('------------------------------------------------------------------------------------------------------------------------')
-    print(text)
+    print(line)
