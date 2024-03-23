@@ -125,7 +125,7 @@ def concurrent_get_with_retries(urls, user_agent, max_workers, timeout=5, retrie
 
 # 设置URL列表和User-Agent
 user_agent = "okhttp/3.12.11 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
-max_workers = 20  # 设置线程数量
+max_workers = 10  # 设置线程数量
 
 # 调用并发函数并打印结果
 results = concurrent_get_with_retries(cleaned_urls, user_agent, max_workers)
