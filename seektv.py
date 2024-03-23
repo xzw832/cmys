@@ -9,7 +9,7 @@ RETRIES = 3
 TIMEOUT = 5
 
 # 自定义User-Agent标识
-USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36'
+USER_AGENT = 'okhttp/3.12.11 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36'
 
 # 重试逻辑函数
 def retry_request(url, session, retries=RETRIES, backoff_factor=0.3, timeout=TIMEOUT):
@@ -57,7 +57,8 @@ urls = [
 
 # 并发获取网页文本
 texts = concurrent_get_text(urls, max_workers=10)
+lines = texts.splitlines()
 # 打印获取到的网页文本
-for text in texts:
+for line in lines:
     print('------------------------------------------------------------------------------------------------------------------------')
-    print(text)
+    print(line)
