@@ -89,8 +89,7 @@ def get_with_retries(url, USER_AGENT, timeout=10, retries=3):
                         new_url = f"{channel_name},{next_url}"
                         return new_url  # 返回重定向后的URL
                     else:
-                        # response.raise_for_status()  # 如果HTTP请求返回了不成功的状态码，将引发HTTPError异常
-                        return url
+                        response.raise_for_status()  # 如果HTTP请求返回了不成功的状态码，将引发HTTPError异常
                 except (requests.exceptions.RequestException, requests.exceptions.HTTPError) as e:
                     print(f"Error occurred for URL {channel_url}: {e}")
                     if retries > 1:  # 如果还有重试次数，则等待后重试
