@@ -51,7 +51,7 @@ def worker():
                     end_time = time.time()
                     response_time = (end_time - start_time) * 1
                     if response_time > 10:
-                        print(f'Time out\t{channel_url}')
+                        print(f'－－－－－－－－－－－－Time out\t{channel_url}')
                         break
                 if content:
                     with open(ts_lists_0, 'ab') as f:
@@ -75,9 +75,11 @@ def worker():
                     numberx = (len(results) + len(error_channels)) / len(channels) * 100
                     # print(f"可用频道：{len(results)} 个 , 不可用频道：{len(error_channels)} 个 , 总频道：{len(channels)} 个 ,总进度：{numberx:.2f} %。")
             except:
-                error_channel = channel_name, channel_url
-                error_channels.append(error_channel)
-                numberx = (len(results) + len(error_channels)) / len(channels) * 100
+                # error_channel = channel_name, channel_url
+                # error_channels.append(error_channel)
+                # numberx = (len(results) + len(error_channels)) / len(channels) * 100
+                print(f'＝＝＝＝＝＝＝＝＝＝＝＝＝＝Time out\t{channel_url}')
+                break
         else:
             try:
                 now=time.time()
