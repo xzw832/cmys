@@ -1,6 +1,7 @@
 import concurrent.futures
 import requests
 import time
+import threading
 
 # 自定义请求重试次数
 RETRIES = 3
@@ -68,7 +69,63 @@ unique_urls = list(set(all_lines))
 # 去除空格
 cleaned_urls = [url.strip() for url in all_lines]
 # 打印获取到的网页文本
-for line in cleaned_urls:
-    print('------------------------------------------------------------------------------------------------------------------------')
-    print(line)
 
+# 定义执行GET请求的函数
+def get_with_retries(url, user_agent, timeout=10, retries=3):
+    headers = {'User-Agent': user_agent}
+    session = requests.Session()
+        line = url.strip()
+        count = line.count(',')
+        if count == 1:
+            if line:
+                channel_name, channel_url = line.split(',')
+                if "http" in channel_url and "[" not in channel_url:
+                    for _ in range(retries):
+                        try:
+                            response = session.get(channel_url, allow_redirects=True, headers=headers, timeout=timeout)
+                            response.raise_for_status()  # 如果HTTP请求返回了不成功的状态码，将引发HTTPError异常
+                            next_url = response.url
+                            new_url = f"{channel_name},{next_url}"
+                            return new_url  # 返回重定向后的URL
+                        except (requests.exceptions.RequestException, requests.exceptions.HTTPError) as e:
+                            print(f"Error occurred for URL {channel_url}: {e}")
+                            if retries > 1:  # 如果还有重试次数，则等待后重试
+                                time.sleep(1)  # 等待1秒后再重试
+                            else:
+                                print(f"No more retries for URL {channel_url}")
+                                return url  # 没有更多重试，返回None
+    
+    session.close()  # 关闭session
+    return url
+
+# 主函数，用于并发执行GET请求
+def concurrent_get_with_retries(urls, user_agent, max_workers, timeout=10, retries=3):
+    threads = []
+    results = []
+
+    # 创建线程池
+    for url in urls:
+        thread = threading.Thread(target=get_with_retries, args=(url, user_agent, timeout, retries))
+        thread.start()
+        threads.append(thread)
+
+        # 当线程数量达到最大工作线程数时，等待一个线程完成
+        if len(threads) >= max_workers:
+            for thread in threads:
+                thread.join()
+            threads = []
+
+    # 等待所有剩余的线程完成
+    for thread in threads:
+        thread.join()
+
+    return results
+
+# 设置URL列表和User-Agent
+user_agent = "okhttp/3.12.11 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
+max_workers = 5  # 设置线程数量
+
+# 调用并发函数并打印结果
+results = concurrent_get_with_retries(cleaned_urls, user_agent, max_workers)
+for url, redirected_url in zip(cleaned_urls, results):
+    print(f"Original URL: {url}, Redirected URL: {redirected_url} if any")
