@@ -101,7 +101,7 @@ def get_with_retries(url, user_agent, timeout=10, retries=3):
     return url
 
 # 主函数，用于并发执行GET请求
-def concurrent_get_with_retries(urls, user_agent, max_workers, timeout=10, retries=3):
+def concurrent_get_with_retries(urls, user_agent, max_workers, timeout=5, retries=3):
     threads = []
     results = []
 
