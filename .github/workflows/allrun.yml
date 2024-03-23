@@ -43,7 +43,7 @@ jobs:
           pip install beautifulsoup4
              
       - name: Run qita
-        run: python ${{ github.workspace }}/qita.py
+        run: python ${{ github.workspace }}/tv570.py
         
       - name: 提交更改
         run: |
