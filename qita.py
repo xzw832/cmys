@@ -103,7 +103,6 @@ def worker():
                 # 释放锁
                 lock.release()
                 numberx = (len(results) + len(error_channels)) / len(channels) * 100
-                break
         else:
             try:
                 now=time.time()
