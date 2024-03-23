@@ -187,6 +187,7 @@ def worker():
                     end_time = time.time()
                     response_time = (end_time - start_time) * 1
                     if response_time > 10:
+                        requests.close()
                         print(f'Time out\t{channel_url}')
                         break
                 if content:
