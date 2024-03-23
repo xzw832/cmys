@@ -47,11 +47,18 @@ def concurrent_get_text(urls, max_workers=10):
     return results
 
 # 示例URL列表
-urls = ['http://example.com/page1', 'http://example.com/page2', 'http://example.com/page3']
+urls = [
+    "https://raw.githubusercontent.com/taijichadao/tv/main/itvlist.txt",
+    "http://api.mcqq.cn/tvbox/zhibo.php",
+    "http://tvbox.nx66.bf:99/tvbox/zhibo.php",
+    "http://mywlkj.ddns.net:754/tv.php",
+    "https://raw.gitcode.com/lionzang/TV/raw/main/channel.txt"
+    ]
 
 # 并发获取网页文本
 texts = concurrent_get_text(urls, max_workers=3)
 
 # 打印获取到的网页文本
 for text in texts:
+    print('------------------------------------------------------------------------------------------------------------------------')
     print(text)
