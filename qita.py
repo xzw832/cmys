@@ -80,10 +80,10 @@ def worker():
                     file_size = len(content)
                     # print(f"文件大小：{file_size} 字节")
                     download_speed = file_size / response_time / 1024
-                    print(f"下载速度：{download_speed:.3f} kB/s")
+                    # print(f"下载速度：{download_speed:.3f} kB/s")
                     normalized_speed = min(max(download_speed / 1024, 0.001), 100)  # 将速率从kB/s转换为MB/s并限制在1~100之间
                     #print(f'{channel_url}')
-                    #print(f"m3u8 标准化后的速率：{normalized_speed:.3f} MB/s")
+                    print(f"m3u8 标准化后的速率：{normalized_speed:.3f} MB/s {channel_url}")
     
                     # 删除下载的文件
                     os.remove(ts_lists_0)
