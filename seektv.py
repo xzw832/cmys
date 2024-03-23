@@ -80,7 +80,7 @@ def get_with_retries(url, user_agent, timeout=10, retries=3):
         if line:
             channel_name, channel_url = line.split(',')
             if "http" in channel_url and "[" not in channel_url and "?" in channel_url:
-                if ".m3u8" not in channel_url or ".flv" not in channel_url or ".mp4" not in channel_url:
+                if ".m3u8" not in channel_url and ".flv" not in channel_url and ".mp4" not in channel_url:
                     print(f'进行测试是否有重定向 t\t{channel_name}，{channel_url}')
                     for _ in range(retries):
                         try:
