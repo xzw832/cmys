@@ -12,42 +12,33 @@ from bs4 import BeautifulSoup
 from queue import Queue
 import threading
 
-# 判断首位是否为数字，是返回真
-def is_first_digit(s):
-    return s[0].isdigit() if s else False
-    
 lock = threading.Lock()
 # 查找所有符合指定格式的网址
 infoList = []
 urls_y = []
 resultslist = []
 urls = [
-    "http://tonkiang.us/hoteliptv.php?page=1&s=凤凰",
-    "http://tonkiang.us/hoteliptv.php?page=2&s=凤凰",
-    "http://tonkiang.us/hoteliptv.php?page=3&s=凤凰",
-    "http://tonkiang.us/hoteliptv.php?page=4&s=凤凰",
-    "http://tonkiang.us/hoteliptv.php?page=5&s=凤凰",
-    "http://tonkiang.us/hoteliptv.php?page=6&s=凤凰",
-    "http://tonkiang.us/hoteliptv.php?page=7&s=凤凰",
-    "http://tonkiang.us/hoteliptv.php?page=8&s=凤凰",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=翡翠",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=汕头",
-    "http://tonkiang.us/hoteliptv.php?page=2&s=汕头",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=IPTV",
-    "http://tonkiang.us/hoteliptv.php?page=2&s=IPTV",
-    "http://tonkiang.us/hoteliptv.php?page=3&s=IPTV",
-    "http://tonkiang.us/hoteliptv.php?page=4&s=IPTV",
-    "http://tonkiang.us/hoteliptv.php?page=5&s=IPTV",
-    "http://tonkiang.us/hoteliptv.php?page=6&s=IPTV",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=电信",
-    "http://tonkiang.us/hoteliptv.php?page=2&s=电信",
-    "http://tonkiang.us/hoteliptv.php?page=3&s=电信",
-    "http://tonkiang.us/hoteliptv.php?page=4&s=电信",
-    "http://tonkiang.us/hoteliptv.php?page=5&s=电信",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=TVB",
-    "http://tonkiang.us/hoteliptv.php?page=2&s=TVB",
-    "http://tonkiang.us/hoteliptv.php?page=3&s=TVB",
-    "http://tonkiang.us/hoteliptv.php?page=4&s=TVB"
+    "http://tonkiang.us/hoteliptv.php?page=1&s=江苏",
+    "http://tonkiang.us/hoteliptv.php?page=2&s=江苏",
+    "http://tonkiang.us/hoteliptv.php?page=3&s=江苏",
+    "http://tonkiang.us/hoteliptv.php?page=4&s=江苏",
+    "http://tonkiang.us/hoteliptv.php?page=5&s=江苏",
+    "http://tonkiang.us/hoteliptv.php?page=6&s=江苏",
+    "http://tonkiang.us/hoteliptv.php?page=7&s=江苏",
+    "http://tonkiang.us/hoteliptv.php?page=8&s=江苏",
+    "http://tonkiang.us/hoteliptv.php?page=9&s=江苏",
+    "http://tonkiang.us/hoteliptv.php?page=10&s=江苏",
+    "http://tonkiang.us/hoteliptv.php?page=11&s=江苏",
+    "http://tonkiang.us/hoteliptv.php?page=12&s=江苏",
+    "http://tonkiang.us/hoteliptv.php?page=13&s=江苏",
+    "http://tonkiang.us/hoteliptv.php?page=14&s=江苏",
+    "http://tonkiang.us/hoteliptv.php?page=15&s=江苏",
+    "http://tonkiang.us/hoteliptv.php?page=16&s=江苏",
+    "http://tonkiang.us/hoteliptv.php?page=17&s=江苏",
+    "http://tonkiang.us/hoteliptv.php?page=18&s=江苏",
+    "http://tonkiang.us/hoteliptv.php?page=19&s=江苏",
+    "http://tonkiang.us/hoteliptv.php?page=20&s=江苏",
+    "http://tonkiang.us/hoteliptv.php?page=21&s=江苏"
     ]
 # 初始化计数器为0
 counter = -1
@@ -242,78 +233,4 @@ with open("myitv.txt", 'w', encoding='utf-8') as file:
     for info in infoList:
         file.write(info + "\n")
         print(info)
-    file.close()
-
-# 收集其他人接口数据源
-urls = [
-    "https://raw.githubusercontent.com/taijichadao/tv/main/itvlist.txt",
-    "http://api.mcqq.cn/tvbox/zhibo.php",
-    "http://tvbox.nx66.bf:99/tvbox/zhibo.php",
-    "https://raw.gitcode.com/lionzang/TV/raw/main/channel.txt"
-    ]
-
-file_contents = []
-for url in urls:
-    # 创建一个Chrome WebDriver实例
-    chrome_options = Options()
-    chrome_options.add_argument('--headless')
-    chrome_options.add_argument('--no-sandbox')
-    chrome_options.add_argument('--disable-dev-shm-usage')
-    chrome_options.add_experimental_option("useAutomationExtension", False)
-    chrome_options.add_argument("blink-settings=imagesEnabled=false")
-    driver = webdriver.Chrome(options=chrome_options)
-    driver.set_page_load_timeout(60)  # 10秒后超时
-    # 设置脚本执行超时
-    driver.set_script_timeout(50)  # 5秒后超时
-    # 使用WebDriver访问网页
-    driver.get(url)  # 将网址替换为你要访问的网页地址
-    time.sleep(5)
-    # 获取网页内容
-    page_content = driver.page_source
-
-    # 关闭WebDriver
-    driver.quit()
-    # print(page_content)    #方便看看是否有执行啊
-    file_contents.append(page_content)
-    
-with open("iptv_all.txt", "w", encoding="utf-8") as output:
-    output.write('\n'.join(file_contents))
-    output.close()
-print("---------------------------------------------------------")
-results = []
-with open("iptv_all.txt", "r", encoding="utf-8") as file:
-    lines = file.readlines()
-    for line in lines:
-        line = line.strip()
-        count = line.count(',')
-        if count == 1:
-            if line:
-                channel_name, channel_url = line.split(',')
-                name =(f"{channel_name}")
-                name = name.replace("「新疆」", "")
-                name = name.replace("「代理」", "")
-                name = name.replace("「IPV6」", "")
-                name = name.replace("「移动」", "")
-                name = name.replace("「官方」", "")
-                name = name.replace("「电信」", "")
-                name = name.replace("「联通」", "")
-                name = name.replace("「河北有线」", "")
-                name = name.replace("「北方广电」", "")
-                name = name.replace("「辽宁联通」", "")
-                name = name.replace("1920*1080", "")
-                print(f"{name},{channel_url}")
-                urlright = channel_url[:4]
-                if urlright == 'http':
-                    if "[" not in channel_url:
-                        if '画中画' not in channel_name and '单音' not in channel_name and '直播' not in channel_name and '测试' not in channel_name and '主视' not in channel_name:
-                            check_name = f"{name}"
-                            if not is_first_digit(check_name):
-                                results.append(f"{name},{channel_url}")
-
-results = set(results)  # 去重得到唯一的URL列表
-results = sorted(results)
-with open("iptv_new_all.txt", 'w', encoding='utf-8') as file:
-    for result in results:
-        file.write(result + "\n")
-        # print(result)
     file.close()
