@@ -57,8 +57,13 @@ urls = [
 
 # 并发获取网页文本
 texts = concurrent_get_text(urls, max_workers=10)
-lines = texts.splitlines()
+all_lines = []
+for text in texts:
+    lines = text.splitlines()
+    all_lines.extend(lines)
+
 # 打印获取到的网页文本
-for line in lines:
+for line in all_lines:
     print('------------------------------------------------------------------------------------------------------------------------')
     print(line)
+
