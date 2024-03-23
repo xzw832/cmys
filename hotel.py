@@ -249,7 +249,6 @@ urls = [
     "https://raw.githubusercontent.com/taijichadao/tv/main/itvlist.txt",
     "http://api.mcqq.cn/tvbox/zhibo.php",
     "http://tvbox.nx66.bf:99/tvbox/zhibo.php",
-    "http://mywlkj.ddns.net:754/tv.php",
     "https://raw.gitcode.com/lionzang/TV/raw/main/channel.txt"
     ]
 
