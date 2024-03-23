@@ -50,9 +50,6 @@ def worker():
                     content = requests.get(ts_url,headers=headers, timeout=(1,4), stream=True).content
                     end_time = time.time()
                     response_time = (end_time - start_time) * 1
-                    if response_time > 10:
-                        print(f'－－－－－－－－－－－－Time out\t{channel_url}')
-                        break
                 if content:
                     with open(ts_lists_0, 'ab') as f:
                         f.write(content)  # 写入文件
@@ -81,8 +78,7 @@ def worker():
                 error_channels.append(error_channel)
                 # 释放锁
                 lock.release()
-                print(f'＝＝＝＝＝＝＝＝＝＝＝＝＝＝Time out\t{channel_url}')
-                break
+                numberx = (len(results) + len(error_channels)) / len(channels) * 100
         else:
             try:
                 now=time.time()
