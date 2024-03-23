@@ -74,6 +74,7 @@ for cleaned_url in cleaned_urls:
 def get_with_retries(url, user_agent, timeout=10, retries=3):
     headers = {'User-Agent': user_agent}
     session = requests.Session()
+    print(f'传入测试的参数 t\t{url}')
     line = url.strip()
     count = line.count(',')
     if count == 1:
