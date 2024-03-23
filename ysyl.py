@@ -80,8 +80,7 @@ def worker():
                 error_channels.append(error_channel)
                 # 释放锁
                 lock.release()
-                print(f'＝＝＝＝＝＝＝＝＝＝＝＝＝＝Time out\t{channel_url}')
-                break
+                numberx = (len(results) + len(error_channels)) / len(channels) * 100
         else:
             try:
                 now=time.time()
