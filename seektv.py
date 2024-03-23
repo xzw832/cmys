@@ -49,13 +49,12 @@ def concurrent_get_text(urls, max_workers=10):
 
 # 示例URL列表
 urls = [
-    "https://raw.githubusercontent.com/taijichadao/tv/main/itvlist.txt",
-    "http://api.mcqq.cn/tvbox/zhibo.php",
-    "http://tvbox.nx66.bf:99/tvbox/zhibo.php",
-    "http://mywlkj.ddns.net:754/tv.php",
-    "https://raw.gitcode.com/lionzang/TV/raw/main/channel.txt"
+    "http://mywlkj.ddns.net:754/tv.php"
     ]
-
+# "https://raw.gitcode.com/lionzang/TV/raw/main/channel.txt"
+# "http://tvbox.nx66.bf:99/tvbox/zhibo.php",
+# "http://api.mcqq.cn/tvbox/zhibo.php",
+# "https://raw.githubusercontent.com/taijichadao/tv/main/itvlist.txt",
 # 并发获取网页文本
 texts = concurrent_get_text(urls, max_workers=10)
 all_lines = []
@@ -69,7 +68,8 @@ unique_urls = list(set(all_lines))
 # 去除空格
 cleaned_urls = [url.strip() for url in all_lines]
 # 打印获取到的网页文本
-
+for cleaned_url in cleaned_urls:
+    print(cleaned_url)
 # 定义执行GET请求的函数
 def get_with_retries(url, user_agent, timeout=10, retries=3):
     headers = {'User-Agent': user_agent}
