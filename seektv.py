@@ -95,12 +95,14 @@ def get_with_retries(url, USER_AGENT, timeout=10, retries=3):
                     else:
                         print(f"No more retries for URL {channel_url}")
                         return url  # 没有更多重试，返回None
-    
             session.close()  # 关闭session
-    return url
+        else:
+            return url
+    else:
+        return url
 
 # 主函数，用于并发执行GET请求
-def concurrent_get_with_retries(urls, user_agent, max_workers, timeout=15, retries=2):
+def concurrent_get_with_retries(urls, user_agent, max_workers, timeout=10, retries=2):
     threads = []
     results = []
 
