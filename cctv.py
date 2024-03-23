@@ -186,7 +186,9 @@ def worker():
                     content = requests.get(ts_url,headers=headers, timeout=(2,5), stream=True).content
                     end_time = time.time()
                     response_time = (end_time - start_time) * 1
-    
+                    if response_time > 10:
+                        print(f'Time out\t{channel_url}')
+                        break
                 if content:
                     with open(ts_lists_0, 'ab') as f:
                         f.write(content)  # 写入文件
