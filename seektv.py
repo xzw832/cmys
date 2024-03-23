@@ -98,8 +98,10 @@ def get_with_retries(url, USER_AGENT, timeout=10, retries=3):
             session.close()  # 关闭session
             return url
         else:
+            session.close()  # 关闭session
             return url
     else:
+        session.close()  # 关闭session
         return url
 
 # 主函数，用于并发执行GET请求
