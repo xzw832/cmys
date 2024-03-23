@@ -84,10 +84,13 @@ def get_with_retries(url, USER_AGENT, timeout=10, retries=3):
             for _ in range(retries):
                 try:
                     response = session.get(channel_url, allow_redirects=True, headers=headers, timeout=timeout)
-                    response.raise_for_status()  # 如果HTTP请求返回了不成功的状态码，将引发HTTPError异常
-                    next_url = response.url
-                    new_url = f"{channel_name},{next_url}"
-                    return new_url  # 返回重定向后的URL
+                    if response.status_code == 302:
+                        next_url = response.url
+                        new_url = f"{channel_name},{next_url}"
+                        return new_url  # 返回重定向后的URL
+                    else:
+                        # response.raise_for_status()  # 如果HTTP请求返回了不成功的状态码，将引发HTTPError异常
+                        return url
                 except (requests.exceptions.RequestException, requests.exceptions.HTTPError) as e:
                     print(f"Error occurred for URL {channel_url}: {e}")
                     if retries > 1:  # 如果还有重试次数，则等待后重试
@@ -95,13 +98,13 @@ def get_with_retries(url, USER_AGENT, timeout=10, retries=3):
                     else:
                         print(f"No more retries for URL {channel_url}")
                         return url  # 没有更多重试，返回None
-            session.close()  # 关闭session
+            # session.close()  # 关闭session
             return url
         else:
-            session.close()  # 关闭session
+            # session.close()  # 关闭session
             return url
     else:
-        session.close()  # 关闭session
+        # session.close()  # 关闭session
         return url
 
 # 主函数，用于并发执行GET请求
