@@ -43,7 +43,17 @@ with open("myitv.txt", 'r', encoding='utf-8') as file:
                   name = name.replace("画中画", "")
                   channels.append((name, channel_url))
     file.close()
-
+    
+with open("tv570.txt", 'r', encoding='utf-8') as file:
+    lines = file.readlines()
+    for line in lines:
+        line = line.strip()
+        count = line.count(',')
+        if count == 1:
+            if line:
+                channel_name, channel_url = line.split(',')
+                channels.append((channel_name, channel_url))
+    file.close()
 # 定义工作线程函数
 def worker():
     while True:
@@ -153,6 +163,7 @@ def channel_key(channel_name):
         return float('inf')  # 返回一个无穷大的数字作为关键字
 
 # 对频道进行排序
+results = set(results)  # 去重得到唯一的URL列表
 results.sort(key=lambda x: (x[0], -float(x[2].split()[0])))
 #results.sort(key=lambda x: channel_key(x[0]))
 now_today = datetime.date.today()
