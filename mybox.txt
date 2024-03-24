@@ -1324,14 +1324,6 @@ CCTV高网高清,http://test.tvboxosc.cyou/ipv4_live/8/CCTV高网高清/CCTV
 河南卫视高清,http://test.tvboxosc.cyou/ipv4_live/6/河南卫视高清/weishi
 河南卫视高清,http://test.tvboxosc.cyou/ipv4_live/7/河南卫视高清/weishi
 河南卫视高清,http://test.tvboxosc.cyou/ipv4_live/8/河南卫视高清/weishi
-浙江卫视超高清,http://test.tvboxosc.cyou/ipv4_live/1/浙江卫视超高清/weishi
-浙江卫视超高清,http://test.tvboxosc.cyou/ipv4_live/2/浙江卫视超高清/weishi
-浙江卫视超高清,http://test.tvboxosc.cyou/ipv4_live/3/浙江卫视超高清/weishi
-浙江卫视超高清,http://test.tvboxosc.cyou/ipv4_live/4/浙江卫视超高清/weishi
-浙江卫视超高清,http://test.tvboxosc.cyou/ipv4_live/5/浙江卫视超高清/weishi
-浙江卫视超高清,http://test.tvboxosc.cyou/ipv4_live/6/浙江卫视超高清/weishi
-浙江卫视超高清,http://test.tvboxosc.cyou/ipv4_live/7/浙江卫视超高清/weishi
-浙江卫视超高清,http://test.tvboxosc.cyou/ipv4_live/8/浙江卫视超高清/weishi
 浙江卫视高清,http://test.tvboxosc.cyou/ipv4_live/1/浙江卫视高清/weishi
 浙江卫视高清,http://test.tvboxosc.cyou/ipv4_live/2/浙江卫视高清/weishi
 浙江卫视高清,http://test.tvboxosc.cyou/ipv4_live/3/浙江卫视高清/weishi
