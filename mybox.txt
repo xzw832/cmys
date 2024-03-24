@@ -376,7 +376,7 @@ CCTV世界地理,http://test.tvboxosc.cyou/ipv4_live/5/CCTV世界地理/CCTV
 CCTV世界地理,http://test.tvboxosc.cyou/ipv4_live/6/CCTV世界地理/CCTV
 CCTV世界地理,http://test.tvboxosc.cyou/ipv4_live/7/CCTV世界地理/CCTV
 CCTV世界地理,http://test.tvboxosc.cyou/ipv4_live/8/CCTV世界地理/CCTV
-【  央视高清  】,#genre#
+【央视高清】,#genre#
 CCTV1高清,http://test.tvboxosc.cyou/ipv4_live/1/CCTV1高清/CCTV
 CCTV1高清,http://test.tvboxosc.cyou/ipv4_live/2/CCTV1高清/CCTV
 CCTV1高清,http://test.tvboxosc.cyou/ipv4_live/3/CCTV1高清/CCTV
