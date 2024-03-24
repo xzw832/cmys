@@ -19,6 +19,10 @@ CCTV5,http://test.tvboxosc.cyou/ipv4_live/1/CCTV5/tv570
 CCTV5,http://test.tvboxosc.cyou/ipv4_live/2/CCTV5/tv570
 CCTV5,http://test.tvboxosc.cyou/ipv4_live/3/CCTV5/tv570
 CCTV5,http://test.tvboxosc.cyou/ipv4_live/4/CCTV5/tv570
+CCTV7,http://test.tvboxosc.cyou/ipv4_live/1/CCTV7/tv570
+CCTV7,http://test.tvboxosc.cyou/ipv4_live/2/CCTV7/tv570
+CCTV7,http://test.tvboxosc.cyou/ipv4_live/3/CCTV7/tv570
+CCTV7,http://test.tvboxosc.cyou/ipv4_live/4/CCTV7/tv570
 CCTV9,http://test.tvboxosc.cyou/ipv4_live/1/CCTV9/tv570
 CCTV9,http://test.tvboxosc.cyou/ipv4_live/2/CCTV9/tv570
 CCTV9,http://test.tvboxosc.cyou/ipv4_live/3/CCTV9/tv570
