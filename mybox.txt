@@ -3413,24 +3413,6 @@ DOX电影,http://test.tvboxosc.cyou/ipv4_live/8/DOX电影/yiyang
 小品轮播,http://159.75.85.63:35455/douyu/10153463
 港台电影,http://159.75.85.63:35455/douyu/3637778
 
-港台频道,#genre#
-台視HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1047
-中視HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1048
-華視HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1049
-民視HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1050
-公視,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1201
-八大第一HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1043
-八大綜合HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1019
-三立台灣HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1021
-三立都會HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1020
-年代新聞,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1192
-東森新聞HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1014
-中天新聞,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1675
-民視新聞,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1204
-三立新聞HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1016
-TVBS新聞HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1052
-TVBS HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1668
-
 歌星金曲,#genre#
 歌MV1,http://15799848.s21v.faiusr.com/58/ABUIABA6GAAgypLV4gUo-ZmUhwc.mp4
 歌MV2,http://15799848.s21v.faiusr.com/58/ABUIABA6GAAglZTV4gUo1tiHrgM.mp4
