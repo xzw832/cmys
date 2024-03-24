@@ -433,14 +433,6 @@ CCTV5高清,http://test.tvboxosc.cyou/ipv4_live/5/CCTV5高清/CCTV
 CCTV5高清,http://test.tvboxosc.cyou/ipv4_live/6/CCTV5高清/CCTV
 CCTV5高清,http://test.tvboxosc.cyou/ipv4_live/7/CCTV5高清/CCTV
 CCTV5高清,http://test.tvboxosc.cyou/ipv4_live/8/CCTV5高清/CCTV
-CCTV5高清卡,http://test.tvboxosc.cyou/ipv4_live/1/CCTV5高清卡/CCTV
-CCTV5高清卡,http://test.tvboxosc.cyou/ipv4_live/2/CCTV5高清卡/CCTV
-CCTV5高清卡,http://test.tvboxosc.cyou/ipv4_live/3/CCTV5高清卡/CCTV
-CCTV5高清卡,http://test.tvboxosc.cyou/ipv4_live/4/CCTV5高清卡/CCTV
-CCTV5高清卡,http://test.tvboxosc.cyou/ipv4_live/5/CCTV5高清卡/CCTV
-CCTV5高清卡,http://test.tvboxosc.cyou/ipv4_live/6/CCTV5高清卡/CCTV
-CCTV5高清卡,http://test.tvboxosc.cyou/ipv4_live/7/CCTV5高清卡/CCTV
-CCTV5高清卡,http://test.tvboxosc.cyou/ipv4_live/8/CCTV5高清卡/CCTV
 CCTV6高清,http://test.tvboxosc.cyou/ipv4_live/1/CCTV6高清/CCTV
 CCTV6高清,http://test.tvboxosc.cyou/ipv4_live/2/CCTV6高清/CCTV
 CCTV6高清,http://test.tvboxosc.cyou/ipv4_live/3/CCTV6高清/CCTV
