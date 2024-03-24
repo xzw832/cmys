@@ -231,7 +231,7 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
         executor.submit(worker, i ,counter)
 
 infoList = set(infoList)  # 去重得到唯一的URL列表
-infoList = sorted(infoList)
+# infoList = sorted(infoList)
 
 with open("myitv.txt", 'w', encoding='utf-8') as file:
     for info in infoList:
