@@ -16,7 +16,7 @@ results = []
 
 channels = []
 error_channels = []
-headers={'User-Agent': 'okhttp/3.12.10(Linux;Android9;V2049ABuild/TP1A.220624.014;wv)AppleWebKit/537.36(KHTML,likeGecko)Version/4.0Chrome/116.0.0.0MobileSafari/537.36'}
+headers={'User-Agent': 'okhttp/3.15 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36'}
 se=requests.Session()
 
 with open("itv.txt", 'r', encoding='utf-8') as file:
@@ -36,7 +36,7 @@ def worker():
     while True:
         # 从队列中获取一个任务
         channel_name, channel_url = task_queue.get()
-        if "m3u8" in channel_url or "flv" in channel_url or "mp4" in channel_url:
+        if ".m3u8" in channel_url or ".flv" in channel_url or ".mp4" in channel_url:
             try:
                 channel_url_t = channel_url.rstrip(channel_url.split('/')[-1])  # m3u8链接前缀
                 lines = requests.get(channel_url,headers=headers, timeout=3, stream=True).text.strip().split('\n')  # 获取m3u8文件内容
@@ -47,9 +47,10 @@ def worker():
                 # 多获取的视频数据进行5秒钟限制
                 with eventlet.Timeout(5, False):
                     start_time = time.time()
-                    content = requests.get(ts_url,headers=headers, timeout=(1,4), stream=True).content
+                    content = requests.get(ts_url,headers=headers, timeout=(2,5), stream=True).content
                     end_time = time.time()
                     response_time = (end_time - start_time) * 1
+    
                 if content:
                     with open(ts_lists_0, 'ab') as f:
                         f.write(content)  # 写入文件
@@ -59,7 +60,7 @@ def worker():
                     # print(f"下载速度：{download_speed:.3f} kB/s")
                     normalized_speed = min(max(download_speed / 1024, 0.001), 100)  # 将速率从kB/s转换为MB/s并限制在1~100之间
                     #print(f'{channel_url}')
-                    print(f"m3u8 标准化后的速率：{normalized_speed:.3f} MB/s {channel_url}")
+                    #print(f"m3u8 标准化后的速率：{normalized_speed:.3f} MB/s")
     
                     # 删除下载的文件
                     os.remove(ts_lists_0)
@@ -73,11 +74,7 @@ def worker():
                     # print(f"可用频道：{len(results)} 个 , 不可用频道：{len(error_channels)} 个 , 总频道：{len(channels)} 个 ,总进度：{numberx:.2f} %。")
             except:
                 error_channel = channel_name, channel_url
-                # 获取锁
-                lock.acquire()
-                error_channels.append(error_channel)
-                # 释放锁
-                lock.release()
+                # error_channels.append(error_channel)
                 numberx = (len(results) + len(error_channels)) / len(channels) * 100
         else:
             try:
@@ -87,7 +84,7 @@ def worker():
                     for k in res.iter_content(chunk_size=2097152):
                         # 这里的chunk_size是1MB，每次读取1MB测试视频流
                         # 如果能获取视频流，则输出读取的时间以及链接
-                        if time.time()-now > 30:
+                        if time.time()-now > 15:
                             res.close()
                             print(f'Time out\t{channel_url}')
                             break
@@ -145,14 +142,14 @@ results.sort(key=lambda x: (x[0], -float(x[2].split()[0])))
 now_today = datetime.date.today()
 # 将结果写入文件
 
-result_counter = 16  # 每个频道需要的个数
+result_counter = 15  # 每个频道需要的个数
 
 with open("weishi.txt", 'w', encoding='utf-8') as file:
     channel_counters = {}
     file.write('【  卫视频道  】,#genre#\n')
     for result in results:
         channel_name, channel_url, speed = result
-        if '卫视' in channel_name:
+        if '卫视' in channel_name and '高清' not in channel_name:
             if channel_name in channel_counters:
                 if channel_counters[channel_name] >= result_counter:
                     continue
@@ -163,4 +160,18 @@ with open("weishi.txt", 'w', encoding='utf-8') as file:
                 file.write(f"{channel_name},{channel_url}\n")
                 channel_counters[channel_name] = 1
 
+    channel_counters = {}
+    file.write('【  卫视高清频道  】,#genre#\n')
+    for result in results:
+        channel_name, channel_url, speed = result
+        if '卫视' in channel_name and '高清' in channel_name:
+            if channel_name in channel_counters:
+                if channel_counters[channel_name] >= result_counter:
+                    continue
+                else:
+                    file.write(f"{channel_name},{channel_url}\n")
+                    channel_counters[channel_name] += 1
+            else:
+                file.write(f"{channel_name},{channel_url}\n")
+                channel_counters[channel_name] = 1
     file.close()
