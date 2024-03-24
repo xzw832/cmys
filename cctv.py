@@ -112,7 +112,7 @@ with open("myitv.txt", 'r', encoding='utf-8') as file:
     file.close()
 
 results = set(results)  # 去重得到唯一的URL列表
-results = sorted(results)
+# results = sorted(results)
 
 with open("newitv.txt", 'w', encoding='utf-8') as file:
     for result in results:
