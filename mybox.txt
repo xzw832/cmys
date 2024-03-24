@@ -2837,14 +2837,6 @@ DOX电影,http://test.tvboxosc.cyou/ipv4_live/8/DOX电影/yiyang
 汕头文旅体育,http://test.tvboxosc.cyou/ipv4_live/6/汕头文旅体育/qita
 汕头文旅体育,http://test.tvboxosc.cyou/ipv4_live/7/汕头文旅体育/qita
 汕头文旅体育,http://test.tvboxosc.cyou/ipv4_live/8/汕头文旅体育/qita
-汕头生活,http://test.tvboxosc.cyou/ipv4_live/1/汕头生活/qita
-汕头生活,http://test.tvboxosc.cyou/ipv4_live/2/汕头生活/qita
-汕头生活,http://test.tvboxosc.cyou/ipv4_live/3/汕头生活/qita
-汕头生活,http://test.tvboxosc.cyou/ipv4_live/4/汕头生活/qita
-汕头生活,http://test.tvboxosc.cyou/ipv4_live/5/汕头生活/qita
-汕头生活,http://test.tvboxosc.cyou/ipv4_live/6/汕头生活/qita
-汕头生活,http://test.tvboxosc.cyou/ipv4_live/7/汕头生活/qita
-汕头生活,http://test.tvboxosc.cyou/ipv4_live/8/汕头生活/qita
 汕头经济生活,http://test.tvboxosc.cyou/ipv4_live/1/汕头经济生活/qita
 汕头经济生活,http://test.tvboxosc.cyou/ipv4_live/2/汕头经济生活/qita
 汕头经济生活,http://test.tvboxosc.cyou/ipv4_live/3/汕头经济生活/qita
