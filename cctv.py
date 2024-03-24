@@ -35,45 +35,27 @@ with open("myitv.txt", 'r', encoding='utf-8') as file:
                 name = name.replace("[", "")
                 name = name.replace("]", "")
                 name = name.replace("HD", "")
-                name = name.replace("(高清)", "")
-                name = name.replace("超清", "")
-                name = name.replace("厦门卫视高清", "厦门卫视")
-                name = name.replace("吉林卫视高清", "吉林卫视")
-                name = name.replace("四川卫视高清", "四川卫视")
-                name = name.replace("天津卫视高清", "天津卫视")
-                name = name.replace("天津高清", "天津卫视")
-                name = name.replace("安徽卫视高清", "安徽卫视")
-                name = name.replace("广东卫视高清", "广东卫视")
-                name = name.replace("广东高清", "广东卫视")
-                name = name.replace("江苏卫视高清", "江苏卫视")
-                name = name.replace("河北卫视高清", "河北卫视")
-                name = name.replace("浙江卫视高清", "浙江卫视")
-                name = name.replace("深圳高清", "深圳卫视")
-                name = name.replace("深圳卫视高清", "深圳卫视")
-                name = name.replace("湖北卫视高清", "湖北卫视")
-                name = name.replace("湖北高清", "湖北卫视")
-                name = name.replace("湖南卫视高清", "湖南卫视")
-                name = name.replace("湖南高清", "湖南卫视")
-                name = name.replace("福建东南卫视高清", "福建东南卫视")
-                name = name.replace("辽宁卫视高清", "辽宁卫视")
-                name = name.replace("黑龙江卫视高清", "黑龙江卫视")
+                name = name.replace("(", "")
+                name = name.replace(")", "")
+                name = name.replace("天津高清", "天津卫视高清")
+                name = name.replace("广东高清", "广东卫视高清")
+                name = name.replace("深圳高清", "深圳卫视高清")
+                name = name.replace("湖北高清", "湖北卫视高清")
+                name = name.replace("湖南高清", "湖南卫视高清")
+                name = name.replace("福建东南卫视高清", "东南卫视高清")
                 name = name.replace("山东教育", "山东教育卫视")
-                name = name.replace("山东高清", "山东卫视")
-                name = name.replace("广东体育高清", "广东体育卫视")
-                name = name.replace("广东珠江高清", "广东珠江卫视")
-                name = name.replace("广东高清", "广东卫视")
-                name = name.replace("浙江高清", "浙江卫视")
-                name = name.replace("深圳高清", "深圳卫视")
-                name = name.replace("湖北高清", "湖北卫视")
-                name = name.replace("湖南高清", "湖南卫视")
-                name = name.replace("江苏高清", "江苏卫视")
-                name = name.replace("北京卫视高清", "北京卫视")
-                name = name.replace("北京高清", "北京卫视")
+                name = name.replace("山东高清", "山东卫视高清")
+                name = name.replace("广东体育高清", "广东体育卫视高清")
+                name = name.replace("广东珠江高清", "广东珠江卫视高清")
+                name = name.replace("广东高清", "广东卫视高清")
+                name = name.replace("浙江高清", "浙江卫视高清")
+                name = name.replace("深圳高清", "深圳卫视高清")
+                name = name.replace("湖北高清", "湖北卫视高清")
+                name = name.replace("湖南高清", "湖南卫视高清")
+                name = name.replace("江苏高清", "江苏卫视高清")
+                name = name.replace("北京卫视高清", "北京卫视高清")
+                name = name.replace("北京高清", "北京卫视高清")
                 name = name.replace("福建东南卫视", "东南卫视")
-                name = name.replace("汕头综合高清", "汕头综合")
-                name = name.replace("汕头文旅体育高清", "汕头文旅体育")
-                name = name.replace("汕头文旅体育高清", "汕头文旅体育")
-                name = name.replace("高清", "")
                 name = name.replace("凤凰中文", "凤凰卫视中文")
                 name = name.replace("凤凰资讯", "凤凰卫视资讯")
                 name = name.replace("凤凰香港", "凤凰香港卫视")
@@ -81,8 +63,7 @@ with open("myitv.txt", 'r', encoding='utf-8') as file:
                 name = name.replace("香港明珠", "香港明珠卫视")
                 name = name.replace("香港翡翠", "香港翡翠卫视")
                 name = name.replace("香港音乐", "香港音乐卫视")
-                name = name.replace("高请", "")
-                name = name.replace("超", "")
+                name = name.replace("高请", "高清")
                 name = name.replace("CCTVCCTV", "CCTV")
                 name = name.replace("汕头二台", "汕头经济生活")
                 name = name.replace("汕头二", "汕头经济生活")
@@ -99,7 +80,6 @@ with open("myitv.txt", 'r', encoding='utf-8') as file:
                 name = name.replace("东莞资讯", "东莞生活资讯")
                 name = name.replace("凤凰卫视资讯台", "凤凰卫视资讯")
                 name = name.replace("山东教育卫视卫视", "山东教育卫视")
-                name = name.replace("黑龙江卫视清", "黑龙江卫视")
                 name = name.replace("CCTV4K4K50p", "CCTV4K50p")
                 name = name.replace("CCTV4K4K", "CCTV4K")
                 name = name.replace("BRTV北京卫视", "北京卫视")
@@ -147,7 +127,7 @@ with open("itv.txt", 'r', encoding='utf-8') as file:
                 results.append(f"{channel_name},{channel_url}")
                 
 results = set(results)  # 去重得到唯一的URL列表
-results = sorted(results)
+# results = sorted(results)
 with open("itv.txt", 'w', encoding='utf-8') as file:
     for result in results:
         channel_name, channel_url = result.split(',')
@@ -196,7 +176,7 @@ def worker():
                     # print(f"下载速度：{download_speed:.3f} kB/s")
                     normalized_speed = min(max(download_speed / 1178, 0.001), 100)  # 将速率从kB/s转换为MB/s并限制在1~100之间
                     #print(f'{channel_url}')
-                    print(f"m3u8 标准化后的速率：{normalized_speed:.3f} MB/s {channel_url}")
+                    #print(f"m3u8 标准化后的速率：{normalized_speed:.3f} MB/s")
     
                     # 删除下载的文件
                     os.remove(ts_lists_0)
@@ -210,11 +190,7 @@ def worker():
                     # print(f"可用频道：{len(results)} 个 , 不可用频道：{len(error_channels)} 个 , 总频道：{len(channels)} 个 ,总进度：{numberx:.2f} %。")
             except:
                 error_channel = channel_name, channel_url
-                # 获取锁
-                lock.acquire()
-                error_channels.append(error_channel)
-                # 释放锁
-                lock.release()
+                # error_channels.append(error_channel)
                 numberx = (len(results) + len(error_channels)) / len(channels) * 100
         else:
             try:
@@ -234,7 +210,7 @@ def worker():
                                 response_time = (time.time()-now) * 1
                                 download_speed = 2097152 / response_time / 1024
                                 normalized_speed = min(max(download_speed / 1024, 0.001), 100)
-                                if response_time > 1.4:
+                                if response_time > 1.2:
                                     result = channel_name, channel_url, f"{normalized_speed:.3f} MB/s"
                                     # 获取锁
                                     lock.acquire()
@@ -296,7 +272,7 @@ with open("cctv.txt", 'w', encoding='utf-8') as file:
     file.write('【  央视频道  】,#genre#\n')
     for result in results:
         channel_name, channel_url, speed = result
-        if 'CCTV' in channel_name:
+        if 'CCTV' in channel_name and '高清' not in channel_name:
             if channel_name in channel_counters:
                 if channel_counters[channel_name] >= result_counter:
                     continue
@@ -307,4 +283,18 @@ with open("cctv.txt", 'w', encoding='utf-8') as file:
                 file.write(f"{channel_name},{channel_url}\n")
                 channel_counters[channel_name] = 1
 
+    channel_counters = {}
+    file.write('【  央视高清频道  】,#genre#\n')
+    for result in results:
+        channel_name, channel_url, speed = result
+        if 'CCTV' in channel_name and '高清' in channel_name:
+            if channel_name in channel_counters:
+                if channel_counters[channel_name] >= result_counter:
+                    continue
+                else:
+                    file.write(f"{channel_name},{channel_url}\n")
+                    channel_counters[channel_name] += 1
+            else:
+                file.write(f"{channel_name},{channel_url}\n")
+                channel_counters[channel_name] = 1
     file.close()
