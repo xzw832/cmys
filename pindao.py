@@ -51,6 +51,11 @@ for url in urls:
     driver.set_script_timeout(50)  # 5秒后超时
     # 使用WebDriver访问网页
     driver.get(url)  # 将网址替换为你要访问的网页地址
+    WebDriverWait(driver, 45).until(
+        EC.presence_of_element_located(
+            (By.CSS_SELECTOR, "div.tables")
+            )
+    )
     time.sleep(20)
     soup = BeautifulSoup(driver.page_source, "html.parser")
 
@@ -98,11 +103,9 @@ for url in urls:
 
 resultslist = set(resultslist)    # 去重得到唯一的URL列表
 
-now_today = datetime.date.today()
 with open("pingdao.txt", 'w', encoding='utf-8') as file:
     for iplist in resultslist:
         file.write(iplist + "\n")
         print(iplist)
-    file.write(f"更新完成：{now_today}" + "\n")
     file.close()
 sorted_list = sorted(resultslist)
