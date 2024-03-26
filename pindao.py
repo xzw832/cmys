@@ -18,7 +18,7 @@ infoList = []
 urls_y = []
 resultslist = []
 urls = [
-    "http://tonkiang.us/?page=2&s=无线财经"
+    "https://tonkiang.us/?page=1&s=%E6%97%A0%E7%BA%BF%E8%B4%A2%E7%BB%8F"
     ]
 # 初始化计数器为0
 counter = -1
