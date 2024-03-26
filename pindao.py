@@ -103,9 +103,11 @@ for url in urls:
 
 resultslist = set(resultslist)    # 去重得到唯一的URL列表
 
+now_today = datetime.date.today()
 with open("pingdao.txt", 'w', encoding='utf-8') as file:
     for iplist in resultslist:
         file.write(iplist + "\n")
         print(iplist)
+    file.write(f"更新完成：{now_today}" + "\n")
     file.close()
 sorted_list = sorted(resultslist)
