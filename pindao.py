@@ -18,7 +18,7 @@ infoList = []
 urls_y = []
 resultslist = []
 urls = [
-    "https://tonkiang.us/?page=1&s=%E6%97%A0%E7%BA%BF%E8%B4%A2%E7%BB%8F"
+    "http://foodieguide.com/iptvsearch/?page=1&s=%E6%97%A0%E7%BA%BF%E8%B4%A2%E7%BB%8F"
     ]
 # 初始化计数器为0
 counter = -1
