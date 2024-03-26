@@ -18,46 +18,7 @@ infoList = []
 urls_y = []
 resultslist = []
 urls = [
-    "http://tonkiang.us/hoteliptv.php?page=1&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=2&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=3&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=4&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=5&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=6&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=7&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=8&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=9&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=10&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=11&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=12&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=13&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=14&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=15&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=16&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=17&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=18&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=19&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=20&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=21&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=22&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=23&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=24&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=25&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=东海新闻",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=南京",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=响水",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=宿迁",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=常州",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=徐州",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=江苏体育",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=沛县",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=泗洪",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=泰州",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=淮安",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=睢宁",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=赣榆",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=连云",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=高淳"
+    "http://tonkiang.us/?page=2&s=无线财经"
     ]
 # 初始化计数器为0
 counter = -1
