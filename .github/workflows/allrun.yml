@@ -42,8 +42,8 @@ jobs:
           pip install selenium requests futures eventlet
           pip install beautifulsoup4
              
-      - name: Run qita
-        run: python ${{ github.workspace }}/tv570.py
+      - name: Run pindao
+        run: python ${{ github.workspace }}/pindao.py
         
       - name: 提交更改
         run: |
