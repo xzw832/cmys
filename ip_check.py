@@ -29,9 +29,7 @@ with open("cfg_ip.txt", 'r', encoding='utf-8') as file:
                 channel_name, channel_url = line.split(',')
                 if 'http' in channel_url:
                     channels.append((channel_name, channel_url))
-                else:
-                  if '有效' in channel_name:
-                    break
+
     file.close()
 channels = set(channels)
 # 定义工作线程函数
