@@ -42,9 +42,8 @@ urls = [
     "南京娱乐,http://180.113.159.91:8800/rtp/239.49.8.229:6000"
     ]
 
-
+modified_urls = []
 def modify_urls(http_url):
-    modified_urls = []
     channel,url = http_url.split(',')
     ip_start_index = url.find("//") + 2
     ip_end_index = url.find("/", ip_start_index)  # 查找下一个"/"的位置，用来确定IP地址的结束位置
@@ -70,7 +69,6 @@ def modify_urls(http_url):
         modified_url = f"{channel},{ip_start}{modified_ip}:{port}{ip_end}"
         print(modified_url)
         modified_urls.append(modified_url)
-    return modified_urls
 
 def is_url_accessible(url):
     try:
@@ -92,11 +90,10 @@ valid_urls = []
 #   多线程获取可用url
 for ipv in urls:
     url = ipv.strip()
-    modified_urls = modify_urls(url)
-    valid_urls.append(modified_urls)
+    modify_urls(url)
 
 with open("seekip.txt", 'w', encoding='utf-8') as file:
-    for iplist in valid_urls:
+    for iplist in modified_urls:
         file.write(iplist + "\n")
     file.write(f"{now_today}更新IP组\n")
     file.close()
