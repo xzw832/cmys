@@ -15,16 +15,6 @@ import re
 from bs4 import BeautifulSoup
 import requests
 
-from urllib.parse import urlparse
-import socket
-
-def connection_string (url):
-  parsed_url = urlparse(url)
-  host_port = parsed_url.netloc
-  ip_address, port = socket.gethostbyname(host_port).split(':')
-  print("IP地址:", ip_address)
-  print("端口号:", port)
-
 lock = threading.Lock()
 now_today = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 # 查找所有符合指定格式的网址
@@ -56,14 +46,27 @@ urls = [
 def modify_urls(url):
     modified_urls = []
     ip_start_index = url.find("//") + 2
-    ip_end_index = url.find(":", ip_start_index)
-    base_url = url[:ip_start_index]  # http:// or https://
-    ip_address = url[ip_start_index:ip_end_index]
-    port = url[ip_end_index:]
-    ip_end = ""
+    ip_end_index = url.find("/", ip_start_index)  # 查找下一个"/"的位置，用来确定IP地址的结束位置
+    
+    # 提取IP地址
+    if ip_end_index != -1:
+        ip_address = url[ip_start_index:ip_end_index]
+    else:
+        # 如果没有找到下一个"/"，则假设URL的末尾就是IP地址的结束位置
+        ip_address = url[ip_start_index:]
+    # 分割IP地址和端口
+    new_ip_address, port = ip_address.split(':')
+    # 分割IP地址的各个部分
+    new_ip_address = new_ip_address.split('.')
+    # 把尾位（最后一个部分）变成1
+    new_ip_address[-1] = '1'
+    # 重新组合IP地址的各个部分
+    ip_address = '.'.join(new_ip_address)
+
+    ip_end = url[ip_end_index:]
     for i in range(1, 255):
         modified_ip = f"{ip_address[:-1]}{i}"
-        modified_url = f"{modified_ip}{port}"
+        modified_url = f"{modified_ip}{port}{ip_end}"
         modified_urls.append(modified_url)
     return modified_urls
 
@@ -101,7 +104,7 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=100) as executor:
 sorted_list = set(valid_urls)    # 去重得到唯一的URL列表
 resultslist = sorted(sorted_list)
 
-with open("iplist.txt", 'w', encoding='utf-8') as file:
+with open("seekip.txt", 'w', encoding='utf-8') as file:
     for iplist in resultslist:
         file.write(iplist + "\n")
         print(iplist)
