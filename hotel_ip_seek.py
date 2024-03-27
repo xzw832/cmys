@@ -24,6 +24,7 @@ headers={'User-Agent': 'okhttp/3.12.10(Linux;Android9;V2049ABuild/TP1A.220624.01
 se=requests.Session()
 
 js_txt="江苏 聚鲨 南京 盱眙 沛县 泰州 徐州 淮安 泗洪 东海 宿迁 常州 东海 响水 高淳 新沂 邳州 连云 睢宁 赣榆 水韵 贾汪"
+urls = []
 with open("qita.txt", 'r', encoding='utf-8') as file:
     lines = file.readlines()
     for line in lines:
@@ -104,7 +105,7 @@ def worker():
     while True:
         # 从队列中获取一个任务
         channel_name, channel_url = task_queue.get()
-        print(channel_name, channel_url)
+        # print(channel_name, channel_url)
         if "m3u8" in channel_url or "flv" in channel_url:
             try:
                 channel_url_t = channel_url.rstrip(channel_url.split('/')[-1])  # m3u8链接前缀
