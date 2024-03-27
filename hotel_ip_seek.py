@@ -47,9 +47,7 @@ with open("cfg_ip.txt", 'r', encoding='utf-8') as file:
         if count == 1:
             if line:
                 channel_name, channel_url = line.split(',')
-                if '卫视' not in channel_name and 'CCTV' not in channel_name and '测试' not in channel_name and '电影' not in channel_name and '影院' not in channel_name and '剧场' not in channel_name and '影视' not in channel_name and '卡通' not in channel_name and '动漫' not in channel_name and '动画' not in channel_name and '少儿' not in channel_name:
-                    if cut_first_chinese_words(channel_name) in js_txt:
-                        urls.append(f"{channel_name},{channel_url}")
+                urls.append(f"{channel_name},{channel_url}")
     file.close()
 def modify_urls(http_url):
     channel,url = http_url.split(',')
