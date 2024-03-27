@@ -3,6 +3,7 @@ CCTV2_电信,http://119.125.134.209:9901/tsfile/live/1141_1.m3u8
 CCTV3_电信,http://119.125.134.209:9901/tsfile/live/1142_1.m3u8
 CCTV4_电信,http://119.125.134.209:9901/tsfile/live/1144_1.m3u8
 
+CCTV6_电信,http://119.125.134.209:9901/tsfile/live/1139_1.m3u8
 CCTV7_电信,http://119.125.134.209:9901/tsfile/live/1145_1.m3u8
 CCTV8_电信,http://119.125.134.209:9901/tsfile/live/1146_1.m3u8
 CCTV9_电信,http://119.125.134.209:9901/tsfile/live/1147_1.m3u8
@@ -21,6 +22,7 @@ CCTV2_联通,http://119.125.134.209:9901/tsfile/live/1141_1.m3u8
 CCTV3_联通,http://119.125.134.209:9901/tsfile/live/1142_1.m3u8
 CCTV4_联通,http://119.125.134.209:9901/tsfile/live/1144_1.m3u8
 
+CCTV6_联通,http://119.125.134.209:9901/tsfile/live/1139_1.m3u8
 CCTV7_联通,http://119.125.134.209:9901/tsfile/live/1145_1.m3u8
 CCTV8_联通,http://119.125.134.209:9901/tsfile/live/1146_1.m3u8
 CCTV9_联通,http://119.125.134.209:9901/tsfile/live/1147_1.m3u8
@@ -41,6 +43,7 @@ CCTV2_电信,http://119.125.134.213:9901/tsfile/live/1141_1.m3u8
 CCTV3_电信,http://119.125.134.213:9901/tsfile/live/1142_1.m3u8
 CCTV4_电信,http://119.125.134.213:9901/tsfile/live/1144_1.m3u8
 
+CCTV6_电信,http://119.125.134.213:9901/tsfile/live/1139_1.m3u8
 CCTV7_电信,http://119.125.134.213:9901/tsfile/live/1145_1.m3u8
 CCTV8_电信,http://119.125.134.213:9901/tsfile/live/1146_1.m3u8
 CCTV9_电信,http://119.125.134.213:9901/tsfile/live/1147_1.m3u8
@@ -59,6 +62,7 @@ CCTV2_联通,http://119.125.134.213:9901/tsfile/live/1141_1.m3u8
 CCTV3_联通,http://119.125.134.213:9901/tsfile/live/1142_1.m3u8
 CCTV4_联通,http://119.125.134.213:9901/tsfile/live/1144_1.m3u8
 
+CCTV6_联通,http://119.125.134.213:9901/tsfile/live/1139_1.m3u8
 CCTV7_联通,http://119.125.134.213:9901/tsfile/live/1145_1.m3u8
 CCTV8_联通,http://119.125.134.213:9901/tsfile/live/1146_1.m3u8
 CCTV9_联通,http://119.125.134.213:9901/tsfile/live/1147_1.m3u8
