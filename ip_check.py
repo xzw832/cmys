@@ -141,6 +141,8 @@ for channel in channels:
 # 等待所有任务完成
 task_queue.join()
 
+now_today = datetime.date.today()
+
 # 将结果写入文件
 with open("cfg_ip.txt", 'w', encoding='utf-8') as file:
     file.write('失效连接,#genre#\n')
