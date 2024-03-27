@@ -195,6 +195,7 @@ for _ in range(num_threads):
 
 # 添加下载任务到队列
 for channel in channels:
+    print(channel)
     task_queue.put(channel)
 
 # 等待所有任务完成
