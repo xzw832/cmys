@@ -51,7 +51,6 @@ urls = [
     "南京娱乐,http://180.113.159.91:8800/rtp/239.49.8.229:6000"
     ]
 
-modified_urls = []
 def modify_urls(http_url):
     channel,url = http_url.split(',')
     ip_start_index = url.find("//") + 2
@@ -77,7 +76,7 @@ def modify_urls(http_url):
         modified_ip = f"{ip_address[:-1]}{i}"
         modified_url = f"{channel},{ip_start}{modified_ip}:{port}{ip_end}"
         print(modified_url)
-        modified_urls.append(modified_url)
+        channels.append((channel, modified_url))
 
 def is_url_accessible(url):
     try:
@@ -102,9 +101,9 @@ for ipv in urls:
     modify_urls(url)
 
 with open("seekip.txt", 'w', encoding='utf-8') as file:
-    for iplist in modified_urls:
-        file.write(iplist + "\n")
-    file.write(f"{now_today}更新IP组\n")
+    for result in channels:
+        channel_name, channel_url = result.split(',')
+        file.write(f"{channel_name},{channel_url}\n")
     file.close()
 
 # 定义工作线程函数
@@ -202,7 +201,7 @@ for _ in range(num_threads):
     #event.set()
 
 # 添加下载任务到队列
-for channel in valid_urls:
+for channel in channels:
     task_queue.put(channel)
 
 # 等待所有任务完成
