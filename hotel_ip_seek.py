@@ -104,8 +104,9 @@ def worker():
     while True:
         # 从队列中获取一个任务
         channel_name, channel_url = task_queue.get()
-        # print(channel_name, channel_url)
+        print(channel_name, channel_url)
         if "m3u8" in channel_url or "flv" in channel_url:
+            print(“-----------------------------------------”)
             try:
                 channel_url_t = channel_url.rstrip(channel_url.split('/')[-1])  # m3u8链接前缀
                 lines = requests.get(channel_url,headers=headers, timeout=3, stream=True).text.strip().split('\n')  # 获取m3u8文件内容
@@ -196,7 +197,7 @@ for _ in range(num_threads):
 
 # 添加下载任务到队列
 for channel in channels:
-    print(channel)
+    # print(channel)
     task_queue.put(channel)
 
 # 等待所有任务完成
