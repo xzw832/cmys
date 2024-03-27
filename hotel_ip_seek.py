@@ -233,6 +233,7 @@ with open("seekip_ok.txt", 'w', encoding='utf-8') as file:
         else:
             file.write(f"{channel_name},{channel_url}\n")
             channel_counters[channel_name] = 1
+    file.write(f"测试完成时间,{now_today}\n")
     file.close() 
     
 print(f"{now_today}ip测试完成")
