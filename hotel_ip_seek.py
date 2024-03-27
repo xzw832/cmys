@@ -49,6 +49,7 @@ with open("cfg_ip.txt", 'r', encoding='utf-8') as file:
                 channel_name, channel_url = line.split(',')
                 urls.append(f"{channel_name},{channel_url}")
     file.close()
+ip_list = []
 def modify_urls(http_url):
     channel,url = http_url.split(',')
     ip_start_index = url.find("//") + 2
@@ -70,11 +71,13 @@ def modify_urls(http_url):
     ip_address = '.'.join(new_ip_address)
     ip_start = url[:ip_start_index]
     ip_end = url[ip_end_index:]
-    for i in range(1, 255):
-        modified_ip = f"{ip_address[:-1]}{i}"
-        modified_url = f"{ip_start}{modified_ip}:{port}{ip_end}"
-        print(modified_url)
-        channels.append((channel, modified_url))
+    if ip_address not in ip_list:
+        ip_list.append((ip_list))
+        for i in range(1, 255):
+            modified_ip = f"{ip_address[:-1]}{i}"
+            modified_url = f"{ip_start}{modified_ip}:{port}{ip_end}"
+            print(modified_url)
+            channels.append((channel, modified_url))
 
 def is_url_accessible(url):
     try:
