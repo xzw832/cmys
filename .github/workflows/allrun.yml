@@ -44,6 +44,9 @@ jobs:
              
       - name: Run ip_check.py
         run: python ${{ github.workspace }}/ip_check.py
+
+      - name: Run hotel_ip_seek
+        run: python ${{ github.workspace }}/hotel_ip_seek.py
         
       - name: 提交更改
         run: |
