@@ -104,9 +104,8 @@ def worker():
     while True:
         # 从队列中获取一个任务
         channel_name, channel_url = task_queue.get()
-        print(channel_name, channel_url)
+        # print(channel_name, channel_url)
         if "m3u8" in channel_url or "flv" in channel_url:
-            print("+++++++++++++++++++++++++++++++++")
             try:
                 channel_url_t = channel_url.rstrip(channel_url.split('/')[-1])  # m3u8链接前缀
                 lines = requests.get(channel_url,headers=headers, timeout=3, stream=True).text.strip().split('\n')  # 获取m3u8文件内容
@@ -144,6 +143,7 @@ def worker():
                     # print(f"可用频道：{len(results)} 个 , 不可用频道：{len(error_channels)} 个 , 总频道：{len(channels)} 个 ,总进度：{numberx:.2f} %。")
             except:
                 error_channel = channel_name, channel_url
+                print(f'X Error \t{channel_name},{channel_url}')
                 # 获取锁
                 lock.acquire()
                 error_channels.append(error_channel)
