@@ -43,8 +43,9 @@ urls = [
     ]
 
 
-def modify_urls(url):
+def modify_urls(http_url):
     modified_urls = []
+    channel,url = http_url.split('.')
     ip_start_index = url.find("//") + 2
     ip_end_index = url.find("/", ip_start_index)  # 查找下一个"/"的位置，用来确定IP地址的结束位置
     
@@ -66,7 +67,7 @@ def modify_urls(url):
     ip_end = url[ip_end_index:]
     for i in range(1, 255):
         modified_ip = f"{ip_address[:-1]}{i}"
-        modified_url = f"{modified_ip}{port}{ip_end}"
+        modified_url = f"{channel},{modified_ip}{port}{ip_end}"
         modified_urls.append(modified_url)
     return modified_urls
 
@@ -88,18 +89,11 @@ def increment_counter():
 
 valid_urls = []
 #   多线程获取可用url
-with concurrent.futures.ThreadPoolExecutor(max_workers=100) as executor:
-    futures = []
-    for ipv in urls:
-        url = ipv.strip()
-        modified_urls = modify_urls(url)
-        for modified_url in modified_urls:
-            futures.append(executor.submit(is_url_accessible, modified_url))
-
-    for future in concurrent.futures.as_completed(futures):
-        result = future.result()
-        if result:
-            valid_urls.append(result)
+for ipv in urls:
+    url = ipv.strip()
+    modified_urls = modify_urls(url)
+    valid_urls.append(modified_urls)
+    
             
 sorted_list = set(valid_urls)    # 去重得到唯一的URL列表
 resultslist = sorted(sorted_list)
