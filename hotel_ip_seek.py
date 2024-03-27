@@ -100,12 +100,6 @@ for ipv in urls:
     url = ipv.strip()
     modify_urls(url)
 
-with open("seekip.txt", 'w', encoding='utf-8') as file:
-    for result in channels:
-        channel_name, channel_url = result.split(',')
-        file.write(f"{channel_name},{channel_url}\n")
-    file.close()
-
 # 定义工作线程函数
 def worker():
     while True:
