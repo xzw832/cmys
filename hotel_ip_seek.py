@@ -25,7 +25,19 @@ se=requests.Session()
 
 js_txt="江苏 聚鲨 南京 盱眙 沛县 泰州 徐州 淮安 泗洪 东海 宿迁 常州 东海 响水 高淳 新沂 邳州 连云 睢宁 赣榆 水韵 贾汪"
 urls = []
-
+# 返回IP地址+端口
+def ret_urls(http_url):
+    channel,url = http_url.split(',')
+    ip_start_index = url.find("//") + 2
+    ip_end_index = url.find("/", ip_start_index)  # 查找下一个"/"的位置，用来确定IP地址的结束位置
+    
+    # 提取IP地址
+    if ip_end_index != -1:
+        ip_address = url[ip_start_index:ip_end_index]
+    else:
+        # 如果没有找到下一个"/"，则假设URL的末尾就是IP地址的结束位置
+        ip_address = url[ip_start_index:]
+    return ip_address
 
 def cut_first_chinese_words(text, num=2):
     for i, char in enumerate(text):
@@ -210,6 +222,18 @@ for channel in channels:
 
 # 等待所有任务完成
 task_queue.join()
+for result in results:
+    channel_name, channel_url, speed = result
+    if '央卫秒开' in channel_name:
+        url = ret_urls(channel_url)
+        if len(url) > 0:
+            with open("cctv.index", 'w', encoding='utf-8') as file:
+                filedata = file.read()
+                filedata = filedata.replace('央卫秒开', url)
+            file.close()
+            with open('new_file.txt', 'w', encoding='utf-8') as file:
+                file.write(filedata)
+            file.close()
 
 now_today = datetime.date.today()
 # 将结果写入文件
