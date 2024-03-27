@@ -222,5 +222,10 @@ with open("seekip_ok.txt", 'w', encoding='utf-8') as file:
             file.write(f"{channel_name},{channel_url}\n")
             channel_counters[channel_name] = 1
     file.close() 
-
+    
+with open("seekip.txt", 'w', encoding='utf-8') as file:
+    for iplist in results:
+        file.write(iplist + "\n")
+    file.write(f"{now_today}更新IP组\n")
+    file.close()
 print(f"{now_today}ip测试完成")
