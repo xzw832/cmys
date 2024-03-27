@@ -106,7 +106,7 @@ def worker():
         channel_name, channel_url = task_queue.get()
         print(channel_name, channel_url)
         if "m3u8" in channel_url or "flv" in channel_url:
-            print(“-----------------------------------------”)
+            print("+++++++++++++++++++++++++++++++++")
             try:
                 channel_url_t = channel_url.rstrip(channel_url.split('/')[-1])  # m3u8链接前缀
                 lines = requests.get(channel_url,headers=headers, timeout=3, stream=True).text.strip().split('\n')  # 获取m3u8文件内容
