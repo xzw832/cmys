@@ -23,6 +23,8 @@ urls_y = []
 resultslist = []
 # 线程安全的队列，用于存储下载任务
 task_queue = Queue()
+results = []
+channels = []
 
 def cut_first_chinese_words(text, num=2):
     for i, char in enumerate(text):
