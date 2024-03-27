@@ -95,6 +95,7 @@ def worker():
     while True:
         # 从队列中获取一个任务
         channel_name, channel_url = task_queue.get()
+        print(channel_name, channel_url)
         if "m3u8" in channel_url or "flv" in channel_url:
             try:
                 channel_url_t = channel_url.rstrip(channel_url.split('/')[-1])  # m3u8链接前缀
@@ -177,7 +178,7 @@ def worker():
         task_queue.task_done()
 
 # 创建多个工作线程
-num_threads = 30
+num_threads = 50
 for _ in range(num_threads):
     t = threading.Thread(target=worker, daemon=True) 
     #t = threading.Thread(target=worker, args=(event,len(channels)))  # 将工作线程设置为守护线程
@@ -186,7 +187,6 @@ for _ in range(num_threads):
 
 # 添加下载任务到队列
 for channel in channels:
-    print(channel)
     task_queue.put(channel)
 
 # 等待所有任务完成
