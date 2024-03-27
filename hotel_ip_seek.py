@@ -47,7 +47,11 @@ with open("cfg_ip.txt", 'r', encoding='utf-8') as file:
         if count == 1:
             if line:
                 channel_name, channel_url = line.split(',')
-                urls.append(f"{channel_name},{channel_url}")
+                if 'http' in channel_url:
+                    urls.append(f"{channel_name},{channel_url}")
+                else:
+                    if '有效' in channel_name:
+                        break
     file.close()
 ip_list = []
 def modify_urls(http_url):
@@ -207,36 +211,14 @@ for channel in channels:
 # 等待所有任务完成
 task_queue.join()
 
-
-def channel_key(channel_name):
-    match = re.search(r'\d+', channel_name)
-    if match:
-        return int(match.group())
-    else:
-        return float('inf')  # 返回一个无穷大的数字作为关键字
-
-# 对频道进行排序
-results.sort(key=lambda x: (x[0], -float(x[2].split()[0])))
-#results.sort(key=lambda x: channel_key(x[0]))
 now_today = datetime.date.today()
 # 将结果写入文件
 
-result_counter = 16  # 每个频道需要的个数
-
 with open("seekip_ok.txt", 'w', encoding='utf-8') as file:
-    channel_counters = {}
     for result in results:
         channel_name, channel_url, speed = result
-        if channel_name in channel_counters:
-            if channel_counters[channel_name] >= result_counter:
-                continue
-            else:
-                file.write(f"{channel_name},{channel_url}\n")
-                channel_counters[channel_name] += 1
-        else:
-            file.write(f"{channel_name},{channel_url}\n")
-            channel_counters[channel_name] = 1
+        file.write(f"{channel_name},{channel_url}\n")
     file.write(f"测试完成时间,{now_today}\n")
-    file.close() 
-    
+    file.close()
+
 print(f"{now_today}ip测试完成")
