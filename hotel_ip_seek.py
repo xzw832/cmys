@@ -72,7 +72,7 @@ def modify_urls(http_url):
     ip_start = url[:ip_start_index]
     ip_end = url[ip_end_index:]
     if ip_address not in ip_list:
-        ip_list.append((ip_list))
+        ip_list.append((ip_address))
         for i in range(1, 255):
             modified_ip = f"{ip_address[:-1]}{i}"
             modified_url = f"{ip_start}{modified_ip}:{port}{ip_end}"
