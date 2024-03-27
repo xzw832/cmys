@@ -39,7 +39,7 @@ def is_odd_or_even(number):
 urls = [
     "东海新闻,http://49.75.132.37:4022/rtp/239.49.1.158:6000",
     "南京娱乐,http://110.85.30.16:4022/rtp/239.61.3.60:9878",
-    "CCTV1,http://61.52.156.194:808/hls/1/index.m3u8",
+    "娱乐,http://61.52.156.194:808/hls/1/index.m3u8"
     ]
 
 def modify_urls(http_url):
@@ -66,7 +66,6 @@ def modify_urls(http_url):
     for i in range(1, 255):
         modified_ip = f"{ip_address[:-1]}{i}"
         modified_url = f"{channel},{ip_start}{modified_ip}:{port}{ip_end}"
-        print(modified_url)
         channels.append((channel, modified_url))
 
 def is_url_accessible(url):
@@ -178,7 +177,7 @@ def worker():
         task_queue.task_done()
 
 # 创建多个工作线程
-num_threads = 40
+num_threads = 30
 for _ in range(num_threads):
     t = threading.Thread(target=worker, daemon=True) 
     #t = threading.Thread(target=worker, args=(event,len(channels)))  # 将工作线程设置为守护线程
@@ -187,6 +186,7 @@ for _ in range(num_threads):
 
 # 添加下载任务到队列
 for channel in channels:
+    print(channel)
     task_queue.put(channel)
 
 # 等待所有任务完成
