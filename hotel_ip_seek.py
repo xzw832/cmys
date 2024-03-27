@@ -26,8 +26,7 @@ se=requests.Session()
 js_txt="江苏 聚鲨 南京 盱眙 沛县 泰州 徐州 淮安 泗洪 东海 宿迁 常州 东海 响水 高淳 新沂 邳州 连云 睢宁 赣榆 水韵 贾汪"
 urls = []
 # 返回IP地址+端口
-def ret_urls(http_url):
-    channel,url = http_url.split(',')
+def ret_urls(url):
     ip_start_index = url.find("//") + 2
     ip_end_index = url.find("/", ip_start_index)  # 查找下一个"/"的位置，用来确定IP地址的结束位置
     
