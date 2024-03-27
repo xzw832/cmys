@@ -23,6 +23,20 @@ error_channels = []
 headers={'User-Agent': 'okhttp/3.12.10(Linux;Android9;V2049ABuild/TP1A.220624.014;wv)AppleWebKit/537.36(KHTML,likeGecko)Version/4.0Chrome/116.0.0.0MobileSafari/537.36'}
 se=requests.Session()
 
+js_txt="江苏 聚鲨 南京 盱眙 沛县 泰州 徐州 淮安 泗洪 东海 宿迁 常州 东海 响水 高淳 新沂 邳州 连云 睢宁 赣榆 水韵 贾汪"
+with open("qita.txt", 'r', encoding='utf-8') as file:
+    lines = file.readlines()
+    for line in lines:
+        line = line.strip()
+        count = line.count(',')
+        if count == 1:
+            if line:
+                channel_name, channel_url = line.split(',')
+                if '卫视' not in channel_name and 'CCTV' not in channel_name and '测试' not in channel_name and '电影' not in channel_name and '影院' not in channel_name and '剧场' not in channel_name and '影视' not in channel_name and '卡通' not in channel_name and '动漫' not in channel_name and '动画' not in channel_name and '少儿' not in channel_name:
+                    if cut_first_chinese_words(channel_name) in js_txt:
+                        urls.append((channel_name, channel_url))
+    file.close()
+
 def cut_first_chinese_words(text, num=2):
     for i, char in enumerate(text):
         if char >= '\u4e00' and char <= '\u9fa5':
@@ -35,13 +49,6 @@ def is_odd_or_even(number):
         return True
     else:
         return False
-
-urls = [
-    "东海新闻,http://117.95.240.246:6000/rtp/239.49.1.141:6000",
-    "南京娱乐,http://110.85.30.16:4022/rtp/239.61.3.60:9878",
-    "南京,http://58.219.81.227:4022/rtp/239.49.1.141:6000",
-    "娱乐,http://61.52.156.194:808/hls/1/index.m3u8"
-    ]
 
 def modify_urls(http_url):
     channel,url = http_url.split(',')
@@ -89,7 +96,8 @@ valid_urls = []
 #   多线程获取可用url
 for ipv in urls:
     url = ipv.strip()
-    modify_urls(url)
+    if "http" in url:
+        modify_urls(url)
 
 # 定义工作线程函数
 def worker():
