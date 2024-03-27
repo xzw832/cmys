@@ -15,6 +15,9 @@ import re
 from bs4 import BeautifulSoup
 import requests
 
+import eventlet
+eventlet.monkey_patch()
+
 lock = threading.Lock()
 now_today = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 # 查找所有符合指定格式的网址
