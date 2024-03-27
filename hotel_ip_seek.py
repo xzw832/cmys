@@ -94,14 +94,9 @@ for ipv in urls:
     url = ipv.strip()
     modified_urls = modify_urls(url)
     valid_urls.append(modified_urls)
-    
-            
-sorted_list = list(set(valid_urls))    # 去重得到唯一的URL列表
-resultslist = sorted(sorted_list)
 
 with open("seekip.txt", 'w', encoding='utf-8') as file:
-    for iplist in resultslist:
+    for iplist in valid_urls:
         file.write(iplist + "\n")
-        print(iplist)
     file.write(f"{now_today}更新IP组\n")
     file.close()
