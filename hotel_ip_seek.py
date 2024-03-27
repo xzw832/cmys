@@ -1,18 +1,9 @@
-import random
-import concurrent.futures
-from selenium.webdriver.chrome.options import Options
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from queue import Queue
-import threading
-from concurrent.futures import ThreadPoolExecutor
-import datetime
-import time
 import os
 import re
-from bs4 import BeautifulSoup
+import time
+import datetime
+import threading
+from queue import Queue
 import requests
 import eventlet
 eventlet.monkey_patch()
