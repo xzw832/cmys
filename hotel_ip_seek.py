@@ -98,7 +98,7 @@ for ipv in urls:
     url = ipv.strip()
     if "http" in url:
         modify_urls(url)
-
+channels = set(channels)
 # 定义工作线程函数
 def worker():
     while True:
