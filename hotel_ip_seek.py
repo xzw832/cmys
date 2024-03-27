@@ -67,7 +67,7 @@ def modify_urls(http_url):
     ip_end = url[ip_end_index:]
     for i in range(1, 255):
         modified_ip = f"{ip_address[:-1]}{i}"
-        modified_url = f"{channel},{modified_ip}{port}{ip_end}"
+        modified_url = f"{channel},{modified_ip}:{port}{ip_end}"
         print(modified_url)
         modified_urls.append(modified_url)
     return modified_urls
