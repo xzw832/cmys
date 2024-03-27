@@ -25,18 +25,7 @@ se=requests.Session()
 
 js_txt="江苏 聚鲨 南京 盱眙 沛县 泰州 徐州 淮安 泗洪 东海 宿迁 常州 东海 响水 高淳 新沂 邳州 连云 睢宁 赣榆 水韵 贾汪"
 urls = []
-with open("qita.txt", 'r', encoding='utf-8') as file:
-    lines = file.readlines()
-    for line in lines:
-        line = line.strip()
-        count = line.count(',')
-        if count == 1:
-            if line:
-                channel_name, channel_url = line.split(',')
-                if '卫视' not in channel_name and 'CCTV' not in channel_name and '测试' not in channel_name and '电影' not in channel_name and '影院' not in channel_name and '剧场' not in channel_name and '影视' not in channel_name and '卡通' not in channel_name and '动漫' not in channel_name and '动画' not in channel_name and '少儿' not in channel_name:
-                    if cut_first_chinese_words(channel_name) in js_txt:
-                        urls.append((channel_name, channel_url))
-    file.close()
+
 
 def cut_first_chinese_words(text, num=2):
     for i, char in enumerate(text):
@@ -50,7 +39,18 @@ def is_odd_or_even(number):
         return True
     else:
         return False
-
+with open("qita.txt", 'r', encoding='utf-8') as file:
+    lines = file.readlines()
+    for line in lines:
+        line = line.strip()
+        count = line.count(',')
+        if count == 1:
+            if line:
+                channel_name, channel_url = line.split(',')
+                if '卫视' not in channel_name and 'CCTV' not in channel_name and '测试' not in channel_name and '电影' not in channel_name and '影院' not in channel_name and '剧场' not in channel_name and '影视' not in channel_name and '卡通' not in channel_name and '动漫' not in channel_name and '动画' not in channel_name and '少儿' not in channel_name:
+                    if cut_first_chinese_words(channel_name) in js_txt:
+                        urls.append((channel_name, channel_url))
+    file.close()
 def modify_urls(http_url):
     channel,url = http_url.split(',')
     ip_start_index = url.find("//") + 2
