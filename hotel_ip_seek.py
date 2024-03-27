@@ -227,7 +227,7 @@ with open("seekip_ok.txt", 'w', encoding='utf-8') as file:
                 channel_counters[channel_name] += 1
         else:
             file.write(f"{channel_name},{channel_url}\n")
-             channel_counters[channel_name] = 1
+            channel_counters[channel_name] = 1
     file.close() 
 
 print(f"{now_today}ip测试完成")
