@@ -39,7 +39,7 @@ def is_odd_or_even(number):
         return True
     else:
         return False
-with open("qita.txt", 'r', encoding='utf-8') as file:
+with open("cfg_ip.txt", 'r', encoding='utf-8') as file:
     lines = file.readlines()
     for line in lines:
         line = line.strip()
