@@ -45,7 +45,7 @@ urls = [
 
 def modify_urls(http_url):
     modified_urls = []
-    channel,url = http_url.split('.')
+    channel,url = http_url.split(',')
     ip_start_index = url.find("//") + 2
     ip_end_index = url.find("/", ip_start_index)  # 查找下一个"/"的位置，用来确定IP地址的结束位置
     
