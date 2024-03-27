@@ -65,7 +65,7 @@ def modify_urls(http_url):
     ip_end = url[ip_end_index:]
     for i in range(1, 255):
         modified_ip = f"{ip_address[:-1]}{i}"
-        modified_url = f"{channel},{ip_start}{modified_ip}:{port}{ip_end}"
+        modified_url = f"{ip_start}{modified_ip}:{port}{ip_end}"
         channels.append((channel, modified_url))
 
 def is_url_accessible(url):
