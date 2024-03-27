@@ -146,11 +146,11 @@ with open("cfg_ip.txt", 'w', encoding='utf-8') as file:
     file.write('失效连接,#genre#\n')
     for result in error_channels:
         channel_name, channel_url = result
-        file.write(f"{channel_name},{channel_url},{speed}\n")
+        file.write(f"{channel_name},{channel_url}\n")
 
     file.write('有效连接,#genre#\n')
     for result in results:
         channel_name, channel_url, speed = result
-        file.write(f"{channel_name},{channel_url},{speed}\n")
+        file.write(f"{channel_name},{channel_url}\n")
     file.write(f"测试完成时间,{now_today}\n")
     file.close()
