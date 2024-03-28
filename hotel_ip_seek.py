@@ -181,7 +181,7 @@ def worker():
                     for k in res.iter_content(chunk_size=2097152):
                         # 这里的chunk_size是1MB，每次读取1MB测试视频流
                         # 如果能获取视频流，则输出读取的时间以及链接
-                        if time.time()-now > 30:
+                        if time.time()-now > 60:
                             res.close()
                             print(f'Time out\t{channel_url}')
                             break
@@ -269,9 +269,8 @@ for result in results:
             
 if counter > 0:
     with open('S_CCTV.txt', 'w', encoding='utf-8') as file:
-        liinest = [line.split('\n') for line in cctv_files]
-        myliinest = liinest.split(',')
-        for result in myliinest:
+        liinest = [line.strip() for line in cctv_files]
+        for result in liinest:
             print("------------------------------------------------------0_0")
             count = result.count(',')
             if count == 1:
@@ -282,9 +281,8 @@ if counter > 0:
     file.close()
     
     with open('S_weishi.txt', 'w', encoding='utf-8') as file:
-        liinest = [line.split('\n') for line in weishi_files]
-        myliinest = liinest.split(',')
-        for result in myliinest:
+        liinest = [line.strip() for line in weishi_files]
+        for result in liinest:
             count = result.count(',')
             if count == 1:
                 channel_name, channel_url = result.split(',')
