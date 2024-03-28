@@ -240,21 +240,52 @@ for result in results:
             with open("prv_cctv.txt", 'r', encoding='utf-8') as file:
                 filedata = file.read()
             file.close()
-            filedata = filedata.replace('央卫秒开', url)
+            filedata = filedata.replace('0_央卫秒开', url)
             cctv_files.append(filedata)
 
             with open("prv_weishi.txt", 'r', encoding='utf-8') as file:
                 weishi_filedata = file.read()
             file.close()
-            weishi_filedata = weishi_filedata.replace('央卫秒开', url)
+            weishi_filedata = weishi_filedata.replace('0_央卫秒开', url)
+            weishi_files.append(weishi_filedata)
+
+    elif '1_央卫秒开' in channel_name:
+        url = ret_urls(channel_url)
+        print(url)
+        if len(url) > 0:
+            print("------------------------------------------------------")
+            increment_counter()
+            with open("prv_cctv.txt", 'r', encoding='utf-8') as file:
+                filedata = file.read()
+            file.close()
+            filedata = filedata.replace('1_央卫秒开', url)
+            cctv_files.append(filedata)
+
+            with open("prv_weishi.txt", 'r', encoding='utf-8') as file:
+                weishi_filedata = file.read()
+            file.close()
+            weishi_filedata = weishi_filedata.replace('1_央卫秒开', url)
             weishi_files.append(weishi_filedata)
             
 if counter > 0:
     with open('S_CCTV.txt', 'w', encoding='utf-8') as file:
-        file.write('\n'.join(cctv_files))
+        lines = file.readlines()
+        results = lines.splitlines()
+        for result in results:
+            channel_name, channel_url = result
+            if '央卫秒开' not in channel_url:
+                file.write(f"{channel_name},{channel_url}\n")
+        #file.write('\n'.join(cctv_files))
     file.close()
+    
     with open('S_weishi.txt', 'w', encoding='utf-8') as file:
-        file.write('\n'.join(weishi_files))
+        lines = file.readlines()
+        results = lines.splitlines()
+        for result in results:
+            channel_name, channel_url = result
+            if '央卫秒开' not in channel_url:
+                file.write(f"{channel_name},{channel_url}\n") 
+        # file.write('\n'.join(weishi_files))
     file.close()
 
 now_today = datetime.date.today()
