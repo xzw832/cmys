@@ -1,4 +1,4 @@
-name: set sorted all
+name: set hotel_duli_ip
 on:
   # schedule:
   #  - cron: '0 9,15 * * *'  #14-在晚上22点起运行，时区应该是+8
@@ -43,21 +43,9 @@ jobs:
         run: |
           pip install selenium requests futures eventlet
           pip install beautifulsoup4
-
-      - name: Run cctv
-        run: python ${{ github.workspace }}/cctv.py
-          
-      - name: Run weishi
-        run: python ${{ github.workspace }}/weishi.py
-          
-      - name: Run ktpd
-        run: python ${{ github.workspace }}/ktpd.py
-          
-      - name: Run ysyl
-        run: python ${{ github.workspace }}/ysyl.py
              
-      - name: Run qita
-        run: python ${{ github.workspace }}/qita.py
+      - name: Run hotel_duli_ip
+        run: python ${{ github.workspace }}/hotel_duli_ip.py
         
       - name: 提交更改
         run: |
