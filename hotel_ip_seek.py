@@ -20,11 +20,23 @@ lock = threading.Lock()
 results = []
 channels = []
 error_channels = []
+cctv_files = []
+weishi_files = []
 headers={'User-Agent': 'okhttp/3.12.10(Linux;Android9;V2049ABuild/TP1A.220624.014;wv)AppleWebKit/537.36(KHTML,likeGecko)Version/4.0Chrome/116.0.0.0MobileSafari/537.36'}
 se=requests.Session()
 
 js_txt="江苏 聚鲨 南京 盱眙 沛县 泰州 徐州 淮安 泗洪 东海 宿迁 常州 东海 响水 高淳 新沂 邳州 连云 睢宁 赣榆 水韵 贾汪"
 urls = []
+
+# 初始化计数器为0
+counter = 0
+ 
+# 每次调用该函数时将计数器加1并返回结果
+def increment_counter():
+    global counter
+    counter += 1
+    return counter
+    
 # 返回IP地址+端口
 def ret_urls(url):
     ip_start_index = url.find("//") + 2
@@ -222,9 +234,6 @@ for channel in channels:
 # 等待所有任务完成
 task_queue.join()
 
-cctv_files = []
-weishi_files = []
-
 results = sorted(results)
 
 for result in results:
@@ -232,6 +241,7 @@ for result in results:
     if '0_央卫秒开' in channel_name:
         url = ret_urls(channel_url)
         if len(url) > 0:
+            increment_counter()
             with open("prv_cctv.txt", 'r', encoding='utf-8') as file:
                 filedata = file.read()
             file.close()
@@ -244,12 +254,10 @@ for result in results:
             weishi_filedata = weishi_filedata.replace('央卫秒开', url)
             weishi_files = weishi_files.append(weishi_filedata)
             
-if "http" in cctv_files:
+if counter > 0:
     with open('S_CCTV.txt', 'w', encoding='utf-8') as file:
         file.write('\n'.join(cctv_files))
     file.close()
-    
-if "http" in weishi_files:   
     with open('S_weishi.txt', 'w', encoding='utf-8') as file:
         file.write('\n'.join(weishi_files))
     file.close()
