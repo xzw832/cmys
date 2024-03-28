@@ -281,7 +281,7 @@ for result in results:
             weishi_filedata = weishi_filedata.replace('0_央卫秒开', url)
             weishi_files.append(weishi_filedata)
             
-if counter > 0:
+if len(cctv_files) > 0:
     with open('S_CCTV.txt', 'w', encoding='utf-8') as file:
         all_lines = [line for line_str in cctv_files for line in line_str.split('\n')]
         for result in all_lines:
@@ -293,6 +293,7 @@ if counter > 0:
         #file.write('\n'.join(cctv_files))
     file.close()
     
+if len(weishi_files) > 0:
     with open('S_weishi.txt', 'w', encoding='utf-8') as file:
         all_lines = [line for line_str in weishi_files for line in line_str.split('\n')]
         for result in all_lines:
@@ -307,6 +308,7 @@ if counter > 0:
 now_today = datetime.date.today()
 
 file_path = "cfg_ip.txt"
+if len(cctv_files) > 0 or len(weishi_files) > 0:
 # 将结果写入文件
 with open("seekip_ok.txt", 'w', encoding='utf-8') as file:
     for result in results:
