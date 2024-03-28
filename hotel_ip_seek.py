@@ -309,15 +309,15 @@ now_today = datetime.date.today()
 
 file_path = "cfg_ip.txt"
 if len(cctv_files) > 0 or len(weishi_files) > 0:
-# 将结果写入文件
-with open("seekip_ok.txt", 'w', encoding='utf-8') as file:
-    for result in results:
-        channel_name, channel_url, speed = result
-        file.write(f"{channel_name},{channel_url}\n")
-        new_line = f"{channel_name},{channel_url}"
-        replace_line_in_file(file_path, channel_name, new_line)
-    file.write(f"测试完成时间,{now_today}\n")
-    file.close()
+    # 将结果写入文件
+    with open("seekip_ok.txt", 'w', encoding='utf-8') as file:
+        for result in results:
+            channel_name, channel_url, speed = result
+            file.write(f"{channel_name},{channel_url}\n")
+            new_line = f"{channel_name},{channel_url}"
+            replace_line_in_file(file_path, channel_name, new_line)
+        file.write(f"测试完成时间,{now_today}\n")
+        file.close()
 
 
 # 使用示例
