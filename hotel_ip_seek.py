@@ -235,14 +235,14 @@ for result in results:
             with open("prv_cctv.txt", 'r', encoding='utf-8') as file:
                 filedata = file.read()
             file.close()
-            cctv_tmp = filedata.replace('央卫秒开', url)
-            cctv_files = cctv_files.append(cctv_tmp)
+            filedata = filedata.replace('央卫秒开', url)
+            cctv_files = cctv_files.append(filedata)
 
             with open("prv_weishi.txt", 'r', encoding='utf-8') as file:
                 weishi_filedata = file.read()
             file.close()
-            weishi_tmp = weishi_filedata.replace('央卫秒开', url)
-            weishi_files = weishi_files.append(weishi_tmp)
+            weishi_filedata = weishi_filedata.replace('央卫秒开', url)
+            weishi_files = weishi_files.append(weishi_filedata)
             
 if cctv_files:
     with open('S_CCTV.txt', 'w', encoding='utf-8') as file:
