@@ -224,28 +224,26 @@ task_queue.join()
 
 cctv_files = []
 weishi_files = []
-filedata = []
-weishi_filedata = []
 
 results = sorted(results)
-with open("prv_cctv.txt", 'r', encoding='utf-8') as file:
-    filedata = file.read()
-file.close()
-
-with open("prv_weishi.txt", 'r', encoding='utf-8') as file:
-    weishi_filedata = file.read()
-file.close()
 
 for result in results:
     channel_name, channel_url, speed = result
-    if '央卫秒开' in channel_name:
+    if '0_央卫秒开' in channel_name:
         url = ret_urls(channel_url)
         if len(url) > 0:
+            with open("prv_cctv.txt", 'r', encoding='utf-8') as file:
+                filedata = file.read()
+            file.close()
             cctv_tmp = filedata.replace('央卫秒开', url)
             cctv_files = cctv_files.append(cctv_tmp)
-            
+
+            with open("prv_weishi.txt", 'r', encoding='utf-8') as file:
+                weishi_filedata = file.read()
+            file.close()
             weishi_tmp = weishi_filedata.replace('央卫秒开', url)
             weishi_files = weishi_files.append(weishi_tmp)
+            
 if cctv_files:
     with open('S_CCTV.txt', 'w', encoding='utf-8') as file:
         file.write('\n'.join(cctv_files))
