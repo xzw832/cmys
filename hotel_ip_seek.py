@@ -230,8 +230,15 @@ for result in results:
                 filedata = file.read()
                 filedata = filedata.replace('央卫秒开', url)
             file.close()
+            with open("prv_weishi.txt", 'r', encoding='utf-8') as file:
+                weishi_filedata = file.read()
+                weishi_filedata = weishi_filedata.replace('央卫秒开', url)
+            file.close()            
             with open('S_CCTV.txt', 'w', encoding='utf-8') as file:
                 file.write(filedata)
+            file.close()
+            with open('S_weishi.txt', 'w', encoding='utf-8') as file:
+                file.write(weishi_filedata)
             file.close()
 
 now_today = datetime.date.today()
