@@ -249,13 +249,13 @@ for result in results:
                 filedata = file.read()
             file.close()
             filedata = filedata.replace('央卫秒开', url)
-            cctv_files = cctv_files.append(filedata)
+            cctv_files.append(filedata)
 
             with open("prv_weishi.txt", 'r', encoding='utf-8') as file:
                 weishi_filedata = file.read()
             file.close()
             weishi_filedata = weishi_filedata.replace('央卫秒开', url)
-            weishi_files = weishi_files.append(weishi_filedata)
+            weishi_files.append(weishi_filedata)
             
 if counter > 0:
     with open('S_CCTV.txt', 'w', encoding='utf-8') as file:
