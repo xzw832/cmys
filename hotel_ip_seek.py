@@ -230,7 +230,7 @@ for result in results:
                 filedata = file.read()
                 filedata = filedata.replace('央卫秒开', url)
             file.close()
-            with open('new_file.txt', 'w', encoding='utf-8') as file:
+            with open('S_CCTV.txt', 'w', encoding='utf-8') as file:
                 file.write(filedata)
             file.close()
 
