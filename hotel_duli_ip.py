@@ -37,7 +37,7 @@ def is_odd_or_even(number):
 
     
 sorted_list = [
-  "175.9.162.245:9999"
+  "182.117.77.177:808"
 ]
 
 
@@ -103,7 +103,8 @@ def worker(thread_url,counter_id):
             name = name.replace("cctv", "CCTV")
             name = name.replace("中央", "CCTV")
             name = name.replace("央视", "CCTV")
-            name = name.replace("HD", "高清")
+            name = name.replace("高清", "")
+            name = name.replace("HD", "")
             name = name.replace("标清", "")
             name = name.replace("频道", "")
             name = name.replace("-", "")
