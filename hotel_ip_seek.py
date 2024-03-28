@@ -269,7 +269,7 @@ for result in results:
             
 if counter > 0:
     with open('S_CCTV.txt', 'w', encoding='utf-8') as file:
-        liinest = [line.strip('\n') for line in cctv_files]
+        liinest = [line.split('\n') for line in cctv_files]
         for result in liinest:
             print("------------------------------------------------------0_0")
             print(result)
@@ -282,7 +282,7 @@ if counter > 0:
     file.close()
     
     with open('S_weishi.txt', 'w', encoding='utf-8') as file:
-        liinest = [line.strip('\n') for line in weishi_files]
+        liinest = [line.split('\n') for line in weishi_files]
         for result in liinest:
             count = result.count(',')
             if count == 1:
