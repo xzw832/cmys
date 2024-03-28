@@ -238,13 +238,13 @@ for result in results:
             print("------------------------------------------------------")
             increment_counter()
             with open("prv_cctv.txt", 'r', encoding='utf-8') as file:
-                filedata = file.read()
+                filedata = file.readlines()
             file.close()
             filedata = filedata.replace('0_央卫秒开', url)
             cctv_files.append(filedata)
 
             with open("prv_weishi.txt", 'r', encoding='utf-8') as file:
-                weishi_filedata = file.read()
+                weishi_filedata = file.readlines()
             file.close()
             weishi_filedata = weishi_filedata.replace('0_央卫秒开', url)
             weishi_files.append(weishi_filedata)
@@ -256,13 +256,13 @@ for result in results:
             print("------------------------------------------------------")
             increment_counter()
             with open("prv_cctv.txt", 'r', encoding='utf-8') as file:
-                filedata = file.read()
+                filedata = file.readlines()
             file.close()
             filedata = filedata.replace('1_央卫秒开', url)
             cctv_files.append(filedata)
 
             with open("prv_weishi.txt", 'r', encoding='utf-8') as file:
-                weishi_filedata = file.read()
+                weishi_filedata = file.readlines()
             file.close()
             weishi_filedata = weishi_filedata.replace('1_央卫秒开', url)
             weishi_files.append(weishi_filedata)
