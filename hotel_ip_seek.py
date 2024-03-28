@@ -235,7 +235,7 @@ for result in results:
         url = ret_urls(channel_url)
         print(url)
         if len(url) > 0:
-            print("------------------------------------------------------")
+            print("------------------------------------------------------0_央卫秒开")
             increment_counter()
             with open("prv_cctv.txt", 'r', encoding='utf-8') as file:
                 filedata = file.read()
@@ -253,7 +253,7 @@ for result in results:
         url = ret_urls(channel_url)
         print(url)
         if len(url) > 0:
-            print("------------------------------------------------------")
+            print("------------------------------------------------------1_央卫秒开")
             increment_counter()
             with open("prv_cctv.txt", 'r', encoding='utf-8') as file:
                 filedata = file.read()
@@ -271,6 +271,8 @@ if counter > 0:
     with open('S_CCTV.txt', 'w', encoding='utf-8') as file:
         liinest = [line.split('\n') for line in cctv_files]
         for result in liinest:
+             print("------------------------------------------------------0_0")
+            print(result)
             count = result.count(',')
             if count == 1:
                 channel_name, channel_url = result.split(',')
