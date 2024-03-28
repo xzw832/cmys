@@ -244,12 +244,12 @@ for result in results:
             weishi_filedata = weishi_filedata.replace('央卫秒开', url)
             weishi_files = weishi_files.append(weishi_filedata)
             
-if cctv_files:
+if len(cctv_files) > 0:
     with open('S_CCTV.txt', 'w', encoding='utf-8') as file:
         file.write('\n'.join(cctv_files))
     file.close()
     
-if weishi_files:   
+if len(weishi_files) > 0:   
     with open('S_weishi.txt', 'w', encoding='utf-8') as file:
         file.write('\n'.join(weishi_files))
     file.close()
