@@ -246,7 +246,7 @@ for result in results:
             with open("prv_weishi.txt", 'r', encoding='utf-8') as file:
                 weishi_filedata = file.read()
             file.close()
-            weishi_filedata = weishi_filedata.replace('0_央卫秒开', url)
+            weishi_filedata = weishi_filedata.replace('1_央卫秒开', url)
             weishi_files.append(weishi_filedata)
 
     elif '0_央卫秒开' in channel_name:
@@ -264,7 +264,7 @@ for result in results:
             with open("prv_weishi.txt", 'r', encoding='utf-8') as file:
                 weishi_filedata = file.read()
             file.close()
-            weishi_filedata = weishi_filedata.replace('1_央卫秒开', url)
+            weishi_filedata = weishi_filedata.replace('0_央卫秒开', url)
             weishi_files.append(weishi_filedata)
             
 if counter > 0:
