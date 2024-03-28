@@ -269,7 +269,7 @@ for result in results:
             
 if counter > 0:
     with open('S_CCTV.txt', 'w', encoding='utf-8') as file:
-        results = cctv_files.split('\n')
+        results = [line.split('\n') for line in cctv_files]
         for result in results:
             channel_name, channel_url = result.split(',')
             if '央卫秒开' not in channel_url:
@@ -278,7 +278,7 @@ if counter > 0:
     file.close()
     
     with open('S_weishi.txt', 'w', encoding='utf-8') as file:
-        results = weishi_files.split('\n')
+        results = [line.split('\n') for line in weishi_files]
         for result in results:
             channel_name, channel_url = result.split(',')
             if '央卫秒开' not in channel_url:
