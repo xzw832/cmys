@@ -241,17 +241,17 @@ for result in results:
     if '央卫秒开' in channel_name:
         url = ret_urls(channel_url)
         if len(url) > 0:
-            cctv_tem = filedata.replace('央卫秒开', url)
-            cctv_files = cctv_files.append(cctv_tem)
+            cctv_tmp = filedata.replace('央卫秒开', url)
+            cctv_files = cctv_files.append(cctv_tmp)
             
             weishi_tmp = weishi_filedata.replace('央卫秒开', url)
             weishi_files = weishi_files.append(weishi_tmp)
-if len(cctv_files) > 0:
+if cctv_files:
     with open('S_CCTV.txt', 'w', encoding='utf-8') as file:
         file.write('\n'.join(cctv_files))
     file.close()
     
-if len(weishi_files) > 0:   
+if weishi_files:   
     with open('S_weishi.txt', 'w', encoding='utf-8') as file:
         file.write('\n'.join(weishi_files))
     file.close()
