@@ -27,6 +27,20 @@ se=requests.Session()
 
 js_txt="江苏 聚鲨 南京 盱眙 沛县 泰州 徐州 淮安 泗洪 东海 宿迁 常州 东海 响水 高淳 新沂 邳州 连云 睢宁 赣榆 水韵 贾汪"
 urls = []
+# 更新文件数据
+def replace_line_in_file(file_path, target_string, new_line):
+    # 读取文件内容到列表中，每行是一个元素
+    with open(file_path, 'r', encoding='utf-8') as file:
+        lines = file.readlines()
+    # 遍历每一行，如果找到目标字符串，就替换整行
+    for i, line in enumerate(lines):
+        if target_string in line:
+            lines[i] = new_line + '\n'  # 确保新行以换行符结尾
+
+    # 将修改后的内容写回文件
+    with open(file_path, 'w', encoding='utf-8') as file:
+        file.writelines(lines)
+        file.close()
 
 # 初始化计数器为0
 counter = 0
@@ -291,14 +305,21 @@ if counter > 0:
     file.close()
 
 now_today = datetime.date.today()
-# 将结果写入文件
 
+file_path = "cfg_ip.txt"
+# 将结果写入文件
 with open("seekip_ok.txt", 'w', encoding='utf-8') as file:
     for result in results:
         channel_name, channel_url, speed = result
         file.write(f"{channel_name},{channel_url}\n")
+        new_line = f"{channel_name},{channel_url}"
+        replace_line_in_file(file_path, channel_name, new_line)
     file.write(f"测试完成时间,{now_today}\n")
     file.close()
+
+
+# 使用示例
+
 
 
 print(f"{now_today}ip测试完成")
