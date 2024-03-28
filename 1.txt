@@ -1,224 +1,25 @@
-【  其他频道  】,#genre#
-BTV冬奥纪实,http://111.225.114.162:808/tsfile/live/1035_1.m3u8?key=txiptv&playlive=1&authid=0
-CETV1,http://111.225.114.162:808/tsfile/live/1034_1.m3u8?key=txiptv&playlive=1&authid=0
-CETV2,http://111.225.114.162:808/tsfile/live/1037_1.m3u8?key=txiptv&playlive=1&authid=0
-CETV4,http://111.225.114.162:808/tsfile/live/1038_1.m3u8?key=txiptv&playlive=1&authid=0
-CGTN,http://123.183.24.27:6666/tsfile/live/0008_1.m3u8?key=txiptv&playlive=1&authid=0
-CGTN,http://61.141.202.118:9901/tsfile/live/0019_1.m3u8?key=txiptv&playlive=1&authid=0
-KBS韩国广播电视,http://180.167.104.105:9901/tsfile/live/1026_1.m3u8?key=txiptv&playlive=1&authid=0
-TVB星河,http://180.167.104.105:9901/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0
-三明综合,http://117.27.190.42:9901/tsfile/live/23298_1.m3u8?key=txiptv&playlive=1&authid=0
-上海ICS,http://180.167.104.105:9901/tsfile/live/1009_1.m3u8?key=txiptv&playlive=1&authid=0
-上海娱乐,http://180.167.104.105:9901/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0
-上海电视剧,http://61.170.164.195:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
-上海纪实,http://180.167.104.105:9901/tsfile/live/1007_1.m3u8?key=txiptv&playlive=1&authid=0
-上海纪实,http://61.170.164.195:9901/tsfile/live/1003_1.m3u8?key=txiptv&playlive=1&authid=0
-东方购物,http://180.167.104.105:9901/tsfile/live/1010_1.m3u8?key=txiptv&playlive=1&authid=0
-中国交通,http://111.225.114.162:808/tsfile/live/1039_1.m3u8?key=txiptv&playlive=1&authid=0
-中国交通,http://121.19.134.153:808/tsfile/live/1031_1.m3u8?key=txiptv&playlive=1&authid=0
-五星体育,http://180.167.104.105:9901/tsfile/live/1005_1.m3u8?key=txiptv&playlive=1&authid=0
-五星体育,http://61.170.164.195:9901/tsfile/live/1007_1.m3u8?key=txiptv&playlive=1&authid=0
-五星体育,http://61.172.255.69:3333/tsfile/live/0127_1.m3u8?key=txiptv&playlive=1&authid=0
-保定公共,http://111.225.114.162:808/tsfile/live/1007_1.m3u8?key=txiptv&playlive=1&authid=0
-保定公共,http://121.19.134.153:808/tsfile/live/1008_1.m3u8?key=txiptv&playlive=1&authid=0
-保定新闻综合,http://111.225.114.162:808/tsfile/live/1006_1.m3u8?key=txiptv&playlive=1&authid=0
-保定新闻综合,http://121.19.134.153:808/tsfile/live/1007_1.m3u8?key=txiptv&playlive=1&authid=0
-保定生活健康,http://111.225.114.162:808/tsfile/live/1008_1.m3u8?key=txiptv&playlive=1&authid=0
-保定生活健康,http://121.19.134.153:808/tsfile/live/1009_1.m3u8?key=txiptv&playlive=1&authid=0
-北京,http://112.235.200.61:9901/tsfile/live/1009_1.m3u8?key=txiptv&playlive=1&authid=0
-北京,http://112.235.202.127:9901/tsfile/live/1009_1.m3u8?key=txiptv&playlive=1&authid=0
-北京,http://112.235.200.85:9901/tsfile/live/1009_1.m3u8?key=txiptv&playlive=1&authid=0
-北京,http://112.235.200.153:9901/tsfile/live/1009_1.m3u8?key=txiptv&playlive=1&authid=0
-北京,http://112.235.202.197:9901/tsfile/live/1009_1.m3u8?key=txiptv&playlive=1&authid=0
-北京,http://112.235.202.159:9901/tsfile/live/1009_1.m3u8?key=txiptv&playlive=1&authid=0
-十堰新闻,http://58.53.154.26:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
-十堰经济旅游,http://58.53.154.26:9901/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0
-南平综合,http://117.27.190.42:9901/tsfile/live/23295_1.m3u8?key=txiptv&playlive=1&authid=0
-厦门1,http://117.27.190.42:9901/tsfile/live/23293_1.m3u8?key=txiptv&playlive=1&authid=0
-厦门2,http://117.27.190.42:9901/tsfile/live/23294_1.m3u8?key=txiptv&playlive=1&authid=0
-唐山新闻综合,http://121.19.134.153:808/tsfile/live/1045_1.m3u8?key=txiptv&playlive=1&authid=0
-天津公共,http://111.161.149.171:9901/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0
-天津新闻,http://111.161.149.171:9901/tsfile/live/0017_1.m3u8?key=txiptv&playlive=1&authid=0
-天津科教,http://111.161.149.171:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
-天津都市,http://111.161.149.171:9901/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&authid=0
-宁德综合,http://117.27.190.42:9901/tsfile/live/23296_1.m3u8?key=txiptv&playlive=1&authid=0
-山东体育,http://112.235.202.127:9901/tsfile/live/1005_1.m3u8?key=txiptv&playlive=1&authid=0
-山东体育,http://112.235.200.61:9901/tsfile/live/1005_1.m3u8?key=txiptv&playlive=1&authid=0
-山东体育,http://112.235.200.195:9901/tsfile/live/1005_1.m3u8?key=txiptv&playlive=1&authid=0
-山东体育,http://112.235.200.85:9901/tsfile/live/1005_1.m3u8?key=txiptv&playlive=1&authid=0
-山东体育,http://112.235.202.159:9901/tsfile/live/1005_1.m3u8?key=txiptv&playlive=1&authid=0
-山东体育,http://112.235.202.197:9901/tsfile/live/1005_1.m3u8?key=txiptv&playlive=1&authid=0
-山东体育,http://222.173.134.150:8888/tsfile/live/1006_1.m3u8?key=txiptv&playlive=1&authid=0
-山东农科,http://112.235.200.85:9901/tsfile/live/1007_1.m3u8?key=txiptv&playlive=1&authid=0
-山东农科,http://112.235.202.159:9901/tsfile/live/1007_1.m3u8?key=txiptv&playlive=1&authid=0
-山东农科,http://112.235.202.127:9901/tsfile/live/1007_1.m3u8?key=txiptv&playlive=1&authid=0
-山东农科,http://112.235.200.61:9901/tsfile/live/1007_1.m3u8?key=txiptv&playlive=1&authid=0
-山东农科,http://112.235.202.197:9901/tsfile/live/1007_1.m3u8?key=txiptv&playlive=1&authid=0
-山东文旅,http://112.235.200.85:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
-山东文旅,http://112.235.200.195:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
-山东文旅,http://112.235.200.153:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
-山东文旅,http://112.235.200.61:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
-山东文旅,http://112.235.202.127:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
-山东文旅,http://112.235.202.159:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
-山东文旅,http://112.235.202.197:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
-山东新闻,http://112.235.200.61:9901/tsfile/live/1006_1.m3u8?key=txiptv&playlive=1&authid=0
-山东新闻,http://112.235.202.127:9901/tsfile/live/1006_1.m3u8?key=txiptv&playlive=1&authid=0
-山东新闻,http://112.235.200.85:9901/tsfile/live/1006_1.m3u8?key=txiptv&playlive=1&authid=0
-山东新闻,http://112.235.200.153:9901/tsfile/live/1006_1.m3u8?key=txiptv&playlive=1&authid=0
-山东新闻,http://112.235.202.159:9901/tsfile/live/1006_1.m3u8?key=txiptv&playlive=1&authid=0
-山东新闻,http://222.173.134.150:8888/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
-山东生活,http://112.235.200.61:9901/tsfile/live/1003_1.m3u8?key=txiptv&playlive=1&authid=0
-山东生活,http://112.235.200.153:9901/tsfile/live/1003_1.m3u8?key=txiptv&playlive=1&authid=0
-山东生活,http://222.173.134.150:8888/tsfile/live/1005_1.m3u8?key=txiptv&playlive=1&authid=0
-山东生活,http://112.235.200.195:9901/tsfile/live/1003_1.m3u8?key=txiptv&playlive=1&authid=0
-山东生活,http://112.235.200.85:9901/tsfile/live/1003_1.m3u8?key=txiptv&playlive=1&authid=0
-山东生活,http://112.235.202.127:9901/tsfile/live/1003_1.m3u8?key=txiptv&playlive=1&authid=0
-山东生活,http://112.235.202.159:9901/tsfile/live/1003_1.m3u8?key=txiptv&playlive=1&authid=0
-山东综艺,http://112.235.200.195:9901/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0
-山东综艺,http://222.173.134.150:8888/tsfile/live/1003_1.m3u8?key=txiptv&playlive=1&authid=0
-山东综艺,http://112.235.200.85:9901/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0
-山东综艺,http://112.235.200.61:9901/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0
-山东综艺,http://112.235.202.127:9901/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0
-山东综艺,http://112.235.202.197:9901/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0
-山东齐鲁,http://112.235.200.195:9901/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0
-山东齐鲁,http://112.235.202.197:9901/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0
-山东齐鲁,http://112.235.200.153:9901/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0
-山东齐鲁,http://112.235.200.61:9901/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0
-山东齐鲁,http://112.235.200.85:9901/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0
-山东齐鲁,http://112.235.202.127:9901/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0
-平潭综合,http://117.27.190.42:9901/tsfile/live/23299_1.m3u8?key=txiptv&playlive=1&authid=0
-广东体育,http://219.137.29.178:4433/tsfile/live/0142_1.m3u8?key=txiptv&playlive=1&authid=0
-广东体育,http://219.135.208.218:8083/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&authid=0
-广东公共,http://219.135.208.218:8083/tsfile/live/0019_1.m3u8?key=txiptv&playlive=1&authid=0
-广东新闻,http://219.135.208.218:8083/tsfile/live/0018_1.m3u8?key=txiptv&playlive=1&authid=0
-广东珠江,http://219.135.208.218:8083/tsfile/live/0017_1.m3u8?key=txiptv&playlive=1&authid=0
-广东珠江,http://61.141.202.118:9901/tsfile/live/0125_3.m3u8?key=txiptv&playlive=0&authid=0
-广东经济科教,http://219.135.208.218:8083/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
-廊坊新闻,http://121.19.134.153:808/tsfile/live/1043_1.m3u8?key=txiptv&playlive=1&authid=0
-张家口1,http://121.19.134.153:808/tsfile/live/1046_1.m3u8?key=txiptv&playlive=1&authid=0
-快乐垂钓,http://183.94.212.30:9901/tsfile/live/1015_1.m3u8?key=txiptv&playlive=1&authid=0
-快乐垂钓,http://121.19.134.153:808/tsfile/live/1042_1.m3u8?key=txiptv&playlive=1&authid=0
-教育电视1,http://115.171.86.183:9901/tsfile/live/16058_1.m3u8?key=txiptv&playlive=1&authid=0
-新闻,http://123.160.233.118:85/tsfile/live/1003_1.m3u8?key=txiptv&playlive=1&authid=0
-新闻综合,http://180.167.104.105:9901/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&authid=0
-新闻综合,http://61.170.164.195:9901/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&authid=0
-曲周新闻,http://123.182.208.248:8088/tsfile/live/1015_1.m3u8?key=txiptv&playlive=1&authid=0
-枫叶,http://180.167.104.105:9901/tsfile/live/1012_1.m3u8?key=txiptv&playlive=1&authid=0
-梨园,http://123.160.233.118:85/tsfile/live/1006_1.m3u8?key=txiptv&playlive=1&authid=0
-梨园,http://123.182.208.248:8088/tsfile/live/1014_1.m3u8?key=txiptv&playlive=1&authid=0
-武术世界,http://121.19.134.153:808/tsfile/live/1032_1.m3u8?key=txiptv&playlive=1&authid=0
-民生,http://123.160.233.118:85/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0
-江苏体育休闲,http://221.226.4.10:9901/tsfile/live/1009_1.m3u8?key=txiptv&playlive=1&authid=0
-江苏公共新闻,http://221.226.4.10:9901/tsfile/live/1011_1.m3u8?key=txiptv&playlive=1&authid=0
-江苏城市,http://222.92.7.170:3334/tsfile/live/0109_1.m3u8?key=txiptv&playlive=1&authid=0
-江苏城市,http://222.92.7.170:3333/tsfile/live/0120_3.m3u8?key=txiptv&playlive=1&authid=0
-江苏城市,http://222.185.245.194:9901/tsfile/live/0120_3.m3u8?key=txiptv&playlive=1&authid=0
-江苏城市,http://58.210.60.226:9901/tsfile/live/0120_3.m3u8?key=txiptv&playlive=1&authid=0
-江苏城市,http://58.220.219.14:9901/tsfile/live/0120_3.m3u8?key=txiptv&playlive=1&authid=0
-江苏城市,http://221.226.4.10:9901/tsfile/live/1007_1.m3u8?key=txiptv&playlive=1&authid=0
-江苏综艺,http://222.92.7.170:3334/tsfile/live/0140_1.m3u8?key=txiptv&playlive=1&authid=0
-江苏综艺,http://222.92.7.170:3333/tsfile/live/0120_4.m3u8?key=txiptv&playlive=1&authid=0
-江苏综艺,http://58.220.219.14:9901/tsfile/live/0120_4.m3u8?key=txiptv&playlive=1&authid=0
-江苏综艺,http://222.185.245.194:9901/tsfile/live/0120_4.m3u8?key=txiptv&playlive=1&authid=0
-江苏综艺,http://221.226.4.10:9901/tsfile/live/1008_1.m3u8?key=txiptv&playlive=1&authid=0
-江苏综艺,http://58.210.60.226:9901/tsfile/live/0120_4.m3u8?key=txiptv&playlive=1&authid=0
-江西公共农,http://111.74.155.231:9901/tsfile/live/1022_1.m3u8?key=txiptv&playlive=0&authid=0
-江西教育标,http://111.74.155.231:9901/tsfile/live/1025_1.m3u8?key=txiptv&playlive=0&authid=0
-江西新闻,http://111.74.155.231:9901/tsfile/live/1024_1.m3u8?key=txiptv&playlive=0&authid=0
-江西经济生活,http://111.74.155.231:9901/tsfile/live/0018_1.m3u8?key=txiptv&playlive=0&authid=0
-江西都市频,http://111.74.155.231:9901/tsfile/live/0017_1.m3u8?key=txiptv&playlive=0&authid=0
-河北公共,http://111.225.114.162:808/tsfile/live/1003_1.m3u8?key=txiptv&playlive=1&authid=0
-河北公共,http://121.19.134.153:808/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0
-河北公共,http://123.182.208.248:8088/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0
-河北农民,http://111.225.114.162:808/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0
-河北农民,http://121.19.134.153:808/tsfile/live/1005_1.m3u8?key=txiptv&playlive=1&authid=0
-河北农民,http://123.182.208.248:8088/tsfile/live/1005_1.m3u8?key=txiptv&playlive=1&authid=0
-河北杂技,http://111.225.114.162:808/tsfile/live/1005_1.m3u8?key=txiptv&playlive=1&authid=0
-河北杂技,http://121.19.134.153:808/tsfile/live/1006_1.m3u8?key=txiptv&playlive=1&authid=0
-河北经济,http://123.182.208.248:8088/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&authid=0
-河北经济生活,http://111.225.114.162:808/tsfile/live/0019_1.m3u8?key=txiptv&playlive=1&authid=0
-河北经济生活,http://121.19.134.153:808/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&authid=0
-河北都市,http://123.182.208.248:8088/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0
-河北都市,http://111.225.114.162:808/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&authid=0
-河北都市,http://121.19.134.153:808/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0
-泉州综合,http://117.27.190.42:9901/tsfile/live/23300_1.m3u8?key=txiptv&playlive=1&authid=0
-法制,http://123.160.233.118:85/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
-法制,http://123.52.43.144:8888/tsfile/live/0019_1.m3u8?key=txiptv&playlive=1&authid=0
-法治天下,http://180.167.104.105:9901/tsfile/live/1014_1.m3u8?key=txiptv&playlive=1&authid=0
-法治天地,http://221.226.4.10:9901/tsfile/live/1031_1.m3u8?key=txiptv&playlive=1&authid=0
-浦东,http://180.167.104.105:9901/tsfile/live/1008_1.m3u8?key=txiptv&playlive=1&authid=0
-深圳电视剧,http://61.141.202.118:9901/tsfile/live/0126_3.m3u8?key=txiptv&playlive=1&authid=0
-深圳都市,http://61.141.202.118:9901/tsfile/live/0126_2.m3u8?key=txiptv&playlive=1&authid=0
-游戏风云,http://61.170.164.195:9901/tsfile/live/1009_1.m3u8?key=txiptv&playlive=1&authid=0
-游戏风云,http://180.167.104.105:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
-湖北公共新闻,http://58.53.154.26:9901/tsfile/live/faacts/1015_1.m3u8?key=txiptv&playlive=1&authid=0
-湖北垄上,http://113.57.103.216:9000/tsfile/live/1015_1.m3u8?key=txiptv&playlive=1&authid=0
-湖北垄上,http://58.53.154.26:9901/tsfile/live/faacts/1013_1.m3u8?key=txiptv&playlive=1&authid=0
-湖北电视,http://58.53.154.26:9901/tsfile/live/faacts/1014_1.m3u8?key=txiptv&playlive=1&authid=0
-湖北经视,http://58.53.154.26:9901/tsfile/live/faacts/1017_1.m3u8?key=txiptv&playlive=1&authid=0
-湖北经视,http://113.57.103.216:9000/tsfile/live/1017_1.m3u8?key=txiptv&playlive=1&authid=0
-湖南公共,http://175.0.50.196:8899/tsfile/live/0012_1.m3u8?key=txiptv&playlive=1&authid=0
-湖南国际,http://175.0.50.196:8899/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
-湖南娱乐,http://175.0.50.196:8899/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0
-湖南电视剧,http://175.0.50.196:8899/tsfile/live/1043_1.m3u8?key=txiptv&playlive=1&authid=0
-湖南经视,http://175.0.50.196:8899/tsfile/live/1042_1.m3u8?key=txiptv&playlive=1&authid=0
-湖南都市,http://175.0.50.196:8899/tsfile/live/1044_1.m3u8?key=txiptv&playlive=1&authid=0
-湖南都市,http://113.218.218.97:8001/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
-漳州综合,http://117.27.190.42:9901/tsfile/live/23303_1.m3u8?key=txiptv&playlive=1&authid=0
-电视剧,http://180.167.104.105:9901/tsfile/live/1003_1.m3u8?key=txiptv&playlive=1&authid=0
-石家庄娱乐,http://123.182.208.248:8088/tsfile/live/1019_1.m3u8?key=txiptv&playlive=1&authid=0
-石家庄新闻,http://123.182.208.248:8088/tsfile/live/1013_1.m3u8?key=txiptv&playlive=1&authid=0
-石家庄生活,http://123.182.208.248:8088/tsfile/live/1022_1.m3u8?key=txiptv&playlive=1&authid=0
-石家庄生活,http://123.183.24.27:6666/tsfile/live/faacts/1005_1.m3u8?key=txiptv&playlive=1&authid=0
-石家庄都市,http://123.182.208.248:8088/tsfile/live/1017_1.m3u8?key=txiptv&playlive=1&authid=0
-福州综合,http://117.27.190.42:9901/tsfile/live/23301_1.m3u8?key=txiptv&playlive=1&authid=0
-福建公共,http://117.27.190.42:9901/tsfile/live/23285_1.m3u8?key=txiptv&playlive=1&authid=0
-福建教育,http://117.27.190.42:9901/tsfile/live/23292_1.m3u8?key=txiptv&playlive=1&authid=0
-福建文体,http://117.27.190.42:9901/tsfile/live/23291_1.m3u8?key=txiptv&playlive=1&authid=0
-福建新闻,http://117.27.190.42:9901/tsfile/live/23286_1.m3u8?key=txiptv&playlive=1&authid=0
-福建旅游,http://117.27.190.42:9901/tsfile/live/23288_1.m3u8?key=txiptv&playlive=1&authid=0
-福建电视剧,http://117.27.190.42:9901/tsfile/live/23287_1.m3u8?key=txiptv&playlive=1&authid=0
-福建经济,http://117.27.190.42:9901/tsfile/live/23289_1.m3u8?key=txiptv&playlive=1&authid=0
-福建综合,http://117.27.190.42:9901/tsfile/live/23284_1.m3u8?key=txiptv&playlive=1&authid=0
-秦皇岛1,http://121.19.134.153:808/tsfile/live/1044_1.m3u8?key=txiptv&playlive=1&authid=0
-移动戏曲,http://123.160.233.118:85/tsfile/live/1005_1.m3u8?key=txiptv&playlive=1&authid=0
-第一财经,http://61.170.164.195:9901/tsfile/live/1006_1.m3u8?key=txiptv&playlive=1&authid=0
-第一财经,http://180.167.104.105:9901/tsfile/live/1006_1.m3u8?key=txiptv&playlive=1&authid=0
-纪实人文,http://111.225.114.162:808/tsfile/live/1033_1.m3u8?key=txiptv&playlive=1&authid=0
-老故事,http://123.182.208.248:8088/tsfile/live/1012_1.m3u8?key=txiptv&playlive=1&authid=0
-莆田综合,http://117.27.190.42:9901/tsfile/live/23302_1.m3u8?key=txiptv&playlive=1&authid=0
-西安二套,http://219.145.93.74:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
-邯郸公共,http://123.182.208.248:8088/tsfile/live/1008_1.m3u8?key=txiptv&playlive=1&authid=0
-邯郸新闻,http://123.182.208.248:8088/tsfile/live/1006_1.m3u8?key=txiptv&playlive=1&authid=0
-邯郸民生都市,http://123.182.208.248:8088/tsfile/live/1007_1.m3u8?key=txiptv&playlive=1&authid=0
-都市,http://123.160.233.118:85/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&authid=0
-都市,http://123.52.43.144:8888/tsfile/live/0017_1.m3u8?key=txiptv&playlive=1&authid=0
-金色,http://180.167.104.105:9901/tsfile/live/1029_1.m3u8?key=txiptv&playlive=1&authid=0
-金鹰纪实,http://111.225.114.162:808/tsfile/live/1036_1.m3u8?key=txiptv&playlive=1&authid=0
-金鹰纪实,http://183.94.212.30:9901/tsfile/live/1014_1.m3u8?key=txiptv&playlive=1&authid=0
-金鹰纪实,http://123.182.208.248:8088/tsfile/live/faacts/1020_1.m3u8?key=txiptv&playlive=1&authid=0
-金鹰纪实,http://117.27.190.42:9901/tsfile/live/23278_1.m3u8?key=txiptv&playlive=1&authid=0
-金鹰纪实,http://121.19.134.153:808/tsfile/live/1028_1.m3u8?key=txiptv&playlive=1&authid=0
-陕西一套,http://219.145.93.74:9901/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&authid=0
-陕西二套,http://219.145.93.74:9901/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0
-陕西生活,http://219.145.20.213:1023/tsfile/live/1002_1.m3u8?key=txiptv&playlive=0&authid=0
-陕西生活,http://219.145.20.213:1741/tsfile/live/1002_1.m3u8?key=txiptv&playlive=0&authid=0
-陕西生活,http://219.145.20.213:18081/tsfile/live/1002_1.m3u8?key=txiptv&playlive=0&authid=0
-陕西生活,http://219.145.20.213:1985/tsfile/live/1002_1.m3u8?key=txiptv&playlive=0&authid=0
-陕西生活,http://219.145.20.213:2002/tsfile/live/1002_1.m3u8?key=txiptv&playlive=0&authid=0
-陕西生活,http://219.145.20.213:311/tsfile/live/1002_1.m3u8?key=txiptv&playlive=0&authid=0
-陕西生活,http://219.145.20.213:3443/tsfile/live/1002_1.m3u8?key=txiptv&playlive=0&authid=0
-陕西生活,http://219.145.20.213:9030/tsfile/live/1002_1.m3u8?key=txiptv&playlive=0&authid=0
-陕西都市青春,http://219.145.20.213:1023/tsfile/live/1001_1.m3u8?key=txiptv&playlive=0&authid=0
-陕西都市青春,http://219.145.20.213:1741/tsfile/live/1001_1.m3u8?key=txiptv&playlive=0&authid=0
-陕西都市青春,http://219.145.20.213:18081/tsfile/live/1001_1.m3u8?key=txiptv&playlive=0&authid=0
-陕西都市青春,http://219.145.20.213:1985/tsfile/live/1001_1.m3u8?key=txiptv&playlive=0&authid=0
-陕西都市青春,http://219.145.20.213:2002/tsfile/live/1001_1.m3u8?key=txiptv&playlive=0&authid=0
-陕西都市青春,http://219.145.20.213:311/tsfile/live/1001_1.m3u8?key=txiptv&playlive=0&authid=0
-陕西都市青春,http://219.145.20.213:3443/tsfile/live/1001_1.m3u8?key=txiptv&playlive=0&authid=0
-陕西都市青春,http://219.145.20.213:7288/tsfile/live/1001_1.m3u8?key=txiptv&playlive=0&authid=0
-靓妆,http://123.182.208.248:8088/tsfile/live/1023_1.m3u8?key=txiptv&playlive=1&authid=0
-风云足球,http://183.94.212.30:9901/tsfile/live/1016_1.m3u8?key=txiptv&playlive=1&authid=0
-高碑店1,http://121.19.134.153:808/tsfile/live/1039_1.m3u8?key=txiptv&playlive=1&authid=0
-龙岩综合,http://117.27.190.42:9901/tsfile/live/23297_1.m3u8?key=txiptv&playlive=1&authid=0
->>>>>>> 5260aef (Add generated file)
+channel_line = []
+with open("cfg_ip.txt", 'r', encoding='utf-8') as file:
+    lines = file.readlines()
+    for line in lines:
+        line = line.strip()
+        count = line.count(',')
+        if count == 1:
+            if line:
+                channel_name, channel_url = line.split(',')
+                if 'http' in channel_url:        # 读出原来的配置IP表
+                   for result in results:        # 占时循环进行判断名称是否相同，相同时，替代有效的IP
+                       ok_name, ok_url, speed = result
+                       if channel_name == ok_name:
+                           channel_line.append(f"{channel_name},{ok_url}")
+                       else:
+                           channel_line.append(f"{channel_name},{channel_url}")
+                else:
+                    channel_line.append(f"{channel_name},{channel_url}")
+    file.close()
+
+with open("cfg_ip.txt", 'w', encoding='utf-8') as file:
+    for line in channel_line:
+        channel_name, channel_url = line.split(',')
+        file.write(f"{channel_name},{channel_url}\n")
+file.close()
