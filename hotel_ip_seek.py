@@ -271,18 +271,22 @@ if counter > 0:
     with open('S_CCTV.txt', 'w', encoding='utf-8') as file:
         results = [line.split('\n') for line in cctv_files]
         for result in results:
-            channel_name, channel_url = result.split(',')
-            if '央卫秒开' not in channel_url:
-                file.write(f"{channel_name},{channel_url}\n")
+            count = result.count(',')
+            if count == 1:
+                channel_name, channel_url = result.split(',')
+                if '央卫秒开' not in channel_url:
+                    file.write(f"{channel_name},{channel_url}\n")
         #file.write('\n'.join(cctv_files))
     file.close()
     
     with open('S_weishi.txt', 'w', encoding='utf-8') as file:
         results = [line.split('\n') for line in weishi_files]
         for result in results:
-            channel_name, channel_url = result.split(',')
-            if '央卫秒开' not in channel_url:
-                file.write(f"{channel_name},{channel_url}\n") 
+            count = result.count(',')
+            if count == 1:
+                channel_name, channel_url = result.split(',')
+                if '央卫秒开' not in channel_url:
+                    file.write(f"{channel_name},{channel_url}\n") 
         # file.write('\n'.join(weishi_files))
     file.close()
 
