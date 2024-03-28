@@ -226,7 +226,7 @@ for result in results:
     if '央卫秒开' in channel_name:
         url = ret_urls(channel_url)
         if len(url) > 0:
-            with open("cctv.index", 'w', encoding='utf-8') as file:
+            with open("prv_cctv.txt", 'w', encoding='utf-8') as file:
                 filedata = file.read()
                 filedata = filedata.replace('央卫秒开', url)
             file.close()
