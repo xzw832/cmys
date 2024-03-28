@@ -238,9 +238,12 @@ results = sorted(results)
 
 for result in results:
     channel_name, channel_url, speed = result
+    print(result)
     if '0_央卫秒开' in channel_name:
         url = ret_urls(channel_url)
+        print(url)
         if len(url) > 0:
+            print("------------------------------------------------------")
             increment_counter()
             with open("prv_cctv.txt", 'r', encoding='utf-8') as file:
                 filedata = file.read()
