@@ -221,25 +221,40 @@ for channel in channels:
 
 # 等待所有任务完成
 task_queue.join()
+
+cctv_files = []
+weishi_files = []
+filedata = []
+weishi_filedata = []
+
+results = sorted(results)
+with open("prv_cctv.txt", 'r', encoding='utf-8') as file:
+    filedata = file.read()
+file.close()
+
+with open("prv_weishi.txt", 'r', encoding='utf-8') as file:
+    weishi_filedata = file.read()
+file.close()
+
 for result in results:
     channel_name, channel_url, speed = result
     if '央卫秒开' in channel_name:
         url = ret_urls(channel_url)
         if len(url) > 0:
-            with open("prv_cctv.txt", 'r', encoding='utf-8') as file:
-                filedata = file.read()
-                filedata = filedata.replace('央卫秒开', url)
-            file.close()
-            with open("prv_weishi.txt", 'r', encoding='utf-8') as file:
-                weishi_filedata = file.read()
-                weishi_filedata = weishi_filedata.replace('央卫秒开', url)
-            file.close()            
-            with open('S_CCTV.txt', 'w', encoding='utf-8') as file:
-                file.write(filedata)
-            file.close()
-            with open('S_weishi.txt', 'w', encoding='utf-8') as file:
-                file.write(weishi_filedata)
-            file.close()
+            cctv_tem = filedata.replace('央卫秒开', url)
+            cctv_files = cctv_files.append(cctv_tem)
+            
+            weishi_tmp = weishi_filedata.replace('央卫秒开', url)
+            weishi_files = weishi_files.append(weishi_tmp)
+if len(cctv_files) > 0:
+    with open('S_CCTV.txt', 'w', encoding='utf-8') as file:
+        file.write('\n'.join(cctv_files))
+    file.close()
+    
+if len(weishi_files) > 0:   
+    with open('S_weishi.txt', 'w', encoding='utf-8') as file:
+        file.write('\n'.join(weishi_files))
+    file.close()
 
 now_today = datetime.date.today()
 # 将结果写入文件
