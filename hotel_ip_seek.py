@@ -273,6 +273,7 @@ if counter > 0:
         split_list = [item.split(',') for item in liinest]
         for result in split_list:
             print("------------------------------------------------------0_0")
+            print(result)
             count = result.count(',')
             if count == 1:
                 channel_name, channel_url = result.split(',')
