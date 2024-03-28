@@ -71,7 +71,7 @@ def worker(thread_url,counter_id):
                 (By.CSS_SELECTOR, "div.tables")
                 )
         )
-        time.sleep(1)
+        time.sleep(10)
         soup = BeautifulSoup(driver.page_source, "html.parser")
         tables_div = soup.find("div", class_="tables")
         results = (
@@ -171,7 +171,7 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
         executor.submit(worker, i ,counter)
 
 infoList = set(infoList)  # 去重得到唯一的URL列表
-# infoList = sorted(infoList)
+infoList = sorted(infoList)
 
 with open("duliip.txt", 'w', encoding='utf-8') as file:
     for info in infoList:
