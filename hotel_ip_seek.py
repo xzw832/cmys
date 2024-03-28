@@ -269,8 +269,8 @@ for result in results:
             
 if counter > 0:
     with open('S_CCTV.txt', 'w', encoding='utf-8') as file:
-        results = [line.split('\n') for line in cctv_files]
-        for result in results:
+        liinest = [line.split('\n') for line in cctv_files]
+        for result in liinest:
             count = result.count(',')
             if count == 1:
                 channel_name, channel_url = result.split(',')
@@ -280,8 +280,8 @@ if counter > 0:
     file.close()
     
     with open('S_weishi.txt', 'w', encoding='utf-8') as file:
-        results = [line.split('\n') for line in weishi_files]
-        for result in results:
+        liinest = [line.split('\n') for line in weishi_files]
+        for result in liinest:
             count = result.count(',')
             if count == 1:
                 channel_name, channel_url = result.split(',')
