@@ -240,7 +240,7 @@ for result in results:
             with open("prv_cctv.txt", 'r', encoding='utf-8') as file:
                 filedata = file.read()
             file.close()
-            filedata = filedata.replace('0_央卫秒开', url)
+            filedata = filedata.replace('1_央卫秒开', url)
             cctv_files.append(filedata)
 
             with open("prv_weishi.txt", 'r', encoding='utf-8') as file:
@@ -258,7 +258,7 @@ for result in results:
             with open("prv_cctv.txt", 'r', encoding='utf-8') as file:
                 filedata = file.read()
             file.close()
-            filedata = filedata.replace('1_央卫秒开', url)
+            filedata = filedata.replace('0_央卫秒开', url)
             cctv_files.append(filedata)
 
             with open("prv_weishi.txt", 'r', encoding='utf-8') as file:
