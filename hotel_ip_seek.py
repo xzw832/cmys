@@ -226,7 +226,7 @@ for channel in channels:
 # 等待所有任务完成
 task_queue.join()
 
-results = sorted(results)
+results = sorted(results, reverse=True)
 
 for result in results:
     channel_name, channel_url, speed = result
@@ -299,5 +299,30 @@ with open("seekip_ok.txt", 'w', encoding='utf-8') as file:
         file.write(f"{channel_name},{channel_url}\n")
     file.write(f"测试完成时间,{now_today}\n")
     file.close()
-
+    
+channel_line = []
+with open("cfg_ip.txt", 'r', encoding='utf-8') as file:
+    lines = file.readlines()
+    for line in lines:
+        line = line.strip()
+        count = line.count(',')
+        if count == 1:
+            if line:
+                channel_name, channel_url = line.split(',')
+                if 'http' in channel_url:        # 读出原来的配置IP表
+                   for result in results:        # 占时循环进行判断名称是否相同，相同时，替代有效的IP
+                       ok_name, ok_url, speed = result
+                       if channel_name == ok_name:
+                           channel_line.append(f"{channel_name},{ok_url}")
+                       else:
+                           channel_line.append(f"{channel_name},{channel_url}")
+                else:
+                    channel_line.append(f"{channel_name},{channel_url}")
+    file.close()
+    
+with open("cfg_ip.txt", 'w', encoding='utf-8') as file:
+    for line in channel_line:
+        channel_name, channel_url = line.split(',')
+        file.write(f"{channel_name},{channel_url}\n")
+file.close()
 print(f"{now_today}ip测试完成")
