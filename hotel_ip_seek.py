@@ -238,13 +238,13 @@ for result in results:
             print("------------------------------------------------------")
             increment_counter()
             with open("prv_cctv.txt", 'r', encoding='utf-8') as file:
-                filedata = file.readlines()
+                filedata = file.read()
             file.close()
             filedata = filedata.replace('0_央卫秒开', url)
             cctv_files.append(filedata)
 
             with open("prv_weishi.txt", 'r', encoding='utf-8') as file:
-                weishi_filedata = file.readlines()
+                weishi_filedata = file.read()
             file.close()
             weishi_filedata = weishi_filedata.replace('0_央卫秒开', url)
             weishi_files.append(weishi_filedata)
@@ -256,20 +256,20 @@ for result in results:
             print("------------------------------------------------------")
             increment_counter()
             with open("prv_cctv.txt", 'r', encoding='utf-8') as file:
-                filedata = file.readlines()
+                filedata = file.read()
             file.close()
             filedata = filedata.replace('1_央卫秒开', url)
             cctv_files.append(filedata)
 
             with open("prv_weishi.txt", 'r', encoding='utf-8') as file:
-                weishi_filedata = file.readlines()
+                weishi_filedata = file.read()
             file.close()
             weishi_filedata = weishi_filedata.replace('1_央卫秒开', url)
             weishi_files.append(weishi_filedata)
             
 if counter > 0:
     with open('S_CCTV.txt', 'w', encoding='utf-8') as file:
-        results = list(set(cctv_files))
+        results = cctv_files.split('\n')
         for result in results:
             channel_name, channel_url = result.split(',')
             if '央卫秒开' not in channel_url:
@@ -278,7 +278,7 @@ if counter > 0:
     file.close()
     
     with open('S_weishi.txt', 'w', encoding='utf-8') as file:
-        results = list(set(weishi_files))
+        results = weishi_files.split('\n')
         for result in results:
             channel_name, channel_url = result.split(',')
             if '央卫秒开' not in channel_url:
