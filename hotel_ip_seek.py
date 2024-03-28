@@ -270,8 +270,7 @@ for result in results:
 if counter > 0:
     with open('S_CCTV.txt', 'w', encoding='utf-8') as file:
         liinest = [line.split('\n') for line in cctv_files]
-        split_list = [item.split(',') for item in liinest]
-        for result in split_list:
+        for result in liinest:
             print("------------------------------------------------------0_0")
             print(result)
             count = result.count(',')
