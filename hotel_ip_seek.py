@@ -270,7 +270,7 @@ for result in results:
 if counter > 0:
     with open('S_CCTV.txt', 'w', encoding='utf-8') as file:
         liinest = [line.strip('\n') for line in cctv_files]
-        for result in split_list:
+        for result in liinest:
             print("------------------------------------------------------0_0")
             print(result)
             count = result.count(',')
@@ -283,7 +283,7 @@ if counter > 0:
     
     with open('S_weishi.txt', 'w', encoding='utf-8') as file:
         liinest = [line.strip('\n') for line in weishi_files]
-        for result in split_list:
+        for result in liinest:
             count = result.count(',')
             if count == 1:
                 channel_name, channel_url = result.split(',')
