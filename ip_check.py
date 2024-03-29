@@ -91,6 +91,12 @@ def worker():
                         if time.time()-now > 60:
                             res.close()
                             print(f'Time out\t{channel_url}')
+                            error_channel = channel_name, channel_url
+                            # 获取锁
+                            lock.acquire()
+                            error_channels.append(error_channel)
+                            # 释放锁
+                            lock.release()
                             break
                         else:
                             if k:    # 检查是否有内容
