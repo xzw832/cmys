@@ -11,15 +11,18 @@ def get_redirected_urls(url_list):
                 if 'http' in channel_url:
                     session = requests.Session()
                     response = requests.head(channel_url, allow_redirects=True)
+                    # 如果初始请求返回200，但之后服务器又发出了302重定向，我们需要处理这种情况
                     if response.status_code == 200 and 'Location' in response.headers:
                         redirected_url = response.headers['Location']
                         redirected_response = session.head(redirected_url)
                         new_url = channel_name, redirected_response.url
                         redirected_urls.append(new_url)
+                    # 如果初始请求直接返回了重定向，我们直接返回重定向的URL
                     elif response.status_code in [301, 302, 303, 307, 308]:
                         new_url = channel_name, response.headers['Location']
                         redirected_urls.append(new_url)
                     else:
+                        # 如果没有重定向，返回原始URL
                         new_url = channel_name, channel_url
                         redirected_urls.append(new_url)
             else:
