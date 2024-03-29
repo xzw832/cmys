@@ -9,9 +9,14 @@ def get_redirected_urls(url_list):
             if line:
                 channel_name, channel_url = line.split(',')
                 if 'http' in channel_url:
+                    session = requests.Session()
                     response = requests.head(channel_url, allow_redirects=True)
-                    print(response)
-                    if response.status_code in [301, 302, 303, 307, 308]:
+                    if response.status_code == 200 and 'Location' in response.headers:
+                        redirected_url = response.headers['Location']
+                        redirected_response = session.head(redirected_url)
+                        new_url = channel_name, redirected_response.url
+                        redirected_urls.append(new_url)
+                    elif response.status_code in [301, 302, 303, 307, 308]:
                         new_url = channel_name, response.headers['Location']
                         redirected_urls.append(new_url)
                     else:
