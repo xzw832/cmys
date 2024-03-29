@@ -27,7 +27,7 @@ def get_redirected_urls(url_list):
                     print("==========>>>>>",channel_name, channel_url)
                     if '#' not in channel_url:
                         try:
-                            response = requests.head(channel_url, allow_redirects=False, timeout=3.0)
+                            response = requests.head(channel_url, allow_redirects=False, timeout=1.5)
                             # 如果初始请求返回200，但之后服务器又发出了302重定向，我们需要处理这种情况
                             if response.status_code == 200 and 'Location' in response.headers:
                                 redirected_url = response.headers['Location']
@@ -65,9 +65,13 @@ redirected_urls = get_redirected_urls(url_list)
 
 with open("mywlkj_all.txt", 'w', encoding='utf-8') as file:
     for line in redirected_urls:
-        name, name_url = line
-        channel_url =(f"{name_url}")
-        channel_url = channel_url.replace("https://gitee.com/tv2785/tvbox/raw/master/gg.mp4", "https://gitee.com/guoqi8899/ipvideo/raw/master/gg.mp4")
-        file.write(f"{name},{channel_url}\n")
-        print(line)
+        parts = line.split()
+        if len(parts) >= 2:
+            name, name_url = parts 
+            channel_url =(f"{name_url}")
+            channel_url = channel_url.replace("https://gitee.com/tv2785/tvbox/raw/master/gg.mp4", "https://gitee.com/guoqi8899/ipvideo/raw/master/gg.mp4")
+            file.write(f"{name},{channel_url}\n")
+            print(line)
+        else:
+            file.write(f"{line}\n")
     file.close()
