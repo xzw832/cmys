@@ -10,6 +10,7 @@ def get_redirected_urls(url_list):
                 channel_name, channel_url = line.split(',')
                 if 'http' in channel_url:
                     response = requests.head(channel_url, allow_redirects=True)
+                    print(response)
                     if response.status_code in [301, 302, 303, 307, 308]:
                         new_url = channel_name, response.headers['Location']
                         redirected_urls.append(new_url)
