@@ -315,8 +315,8 @@ with open("seekip_ok.txt", 'w', encoding='utf-8') as file:
         new_line = f"{channel_name},{channel_url}"
         replace_line_in_file(file_path, channel_name, new_line)
         time.sleep(1)
-file.write(f"测试完成时间,{now_today}\n")
-file.close()
+    file.write(f"测试完成时间,{now_today}\n")
+    file.close()
 
 
 # 使用示例
