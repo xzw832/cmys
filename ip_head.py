@@ -3,7 +3,14 @@ import requests
 load_urls = [
     "http://mywlkj.ddns.net:754/tv.php",
     ]
-
+file_contents = []
+for url in load_urls:
+    response = requests.get(url, allow_redirects=True)
+    file_contents.append(response)
+all_lines = [line for line_str in file_contents for line in line_str.split('\n')]
+for result in all_lines:
+    print(result)
+    
 def get_redirected_urls(url_list):
     session = requests.Session()
     redirected_urls = []
@@ -148,7 +155,9 @@ redirected_urls = get_redirected_urls(url_list)
 
 with open("mywlkj.txt", 'w', encoding='utf-8') as file:
     for line in redirected_urls:
-        name, channel_url = line
+        channel_name, channel_url = line
+        name =(f"{channel_name}")
+        name = name.replace("xxxxxxxxxxxxx", "https://gitee.com/guoqi8899/ipvideo/raw/master/gg.mp4")
         file.write(f"{name},{channel_url}\n")
         print(line)
     file.close()
