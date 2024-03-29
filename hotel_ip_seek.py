@@ -309,15 +309,15 @@ if len(weishi_files) > 0:
 
 file_path = "cfg_ip.txt"
 # 将结果写入文件
-with open("seekip_ok.txt", 'w', encoding='utf-8') as file:
+with open("seekip_ok.txt", 'w', encoding='utf-8') as out_file:
     for result in results:
         channel_name, channel_url, speed = result
-        file.write(f"{channel_name},{channel_url}\n")
+        out_file.write(f"{channel_name},{channel_url}\n")
         new_line = f"{channel_name},{channel_url}"
         replace_line_in_file(file_path, channel_name, new_line)
         time.sleep(1)
-    file.write(f"测试完成时间,{now_today}\n")
-    file.close()
+    out_file.write(f"测试完成时间,{now_today}\n")
+    out_file.close()
 
 
 # 使用示例
