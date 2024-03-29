@@ -157,9 +157,9 @@ redirected_urls = get_redirected_urls(url_list)
 
 with open("mywlkj.txt", 'w', encoding='utf-8') as file:
     for line in redirected_urls:
-        channel_name, channel_url = line
-        name =(f"{channel_name}")
-        name = name.replace("https://gitee.com/tv2785/tvbox/raw/master/gg.mp4", "https://gitee.com/guoqi8899/ipvideo/raw/master/gg.mp4")
+        name, name_url = line
+        channel_url =(f"{name_url}")
+        channel_url = name.replace("https://gitee.com/tv2785/tvbox/raw/master/gg.mp4", "https://gitee.com/guoqi8899/ipvideo/raw/master/gg.mp4")
         file.write(f"{name},{channel_url}\n")
         print(line)
     file.close()
