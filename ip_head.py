@@ -1,5 +1,9 @@
 import requests
 
+load_urls = [
+    "http://mywlkj.ddns.net:754/tv.php",
+    ]
+
 def get_redirected_urls(url_list):
     session = requests.Session()
     redirected_urls = []
@@ -142,5 +146,9 @@ url_list = [
 
 redirected_urls = get_redirected_urls(url_list)
 
-for line in redirected_urls:
-    print(line)
+with open("mywlkj.txt", 'w', encoding='utf-8') as file:
+    for line in redirected_urls:
+        name, channel_url = line
+        file.write(f"{name},{channel_url}\n")
+        print(line)
+    file.close()
