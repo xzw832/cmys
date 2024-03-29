@@ -44,8 +44,12 @@ def get_redirected_urls(url_list):
                                 new_url = channel_name, channel_url
                                 redirected_urls.append(new_url)
                         except Timeout:
+                            new_url = f"timeout_{channel_name}", channel_url
+                            redirected_urls.append(new_url)
                             print("请求超时")
                         except requests.RequestException as e:
+                            new_url = f"error_{channel_name}", channel_url
+                            redirected_urls.append(new_url)
                             print(f"请求发生错误: {e}")
                     else:
                         # 如果没有重定向，返回原始URL
