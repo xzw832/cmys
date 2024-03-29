@@ -30,7 +30,7 @@ TVB财经体育资讯2台,http://61.158.166.42:1301/haiou.php?key=haiou&id=tvbca
 CINEMAX,http://61.158.166.42:1301/haiou.php?key=haiou&id=cinemax_twn
 AXN,http://61.158.166.42:1301/haiou.php?key=haiou&id=axn_twn
 tvNMovie,http://61.158.166.42:1301/haiou.php?key=haiou&id=Tvnmovie
-民视,http://61.158.166.42:1301/haiou.php?key=haiou&id=ftvhd_taiwan
+民视,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1050
 台视,http://61.158.166.42:1301/haiou.php?key=haiou&id=ttv_taiwan
 中视,http://61.158.166.42:1301/haiou.php?key=haiou&id=zhongshihd_twn
 华视,http://61.158.166.42:1301/haiou.php?key=haiou&id=ctshd_twn
