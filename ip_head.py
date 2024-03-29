@@ -1,6 +1,7 @@
 import requests
 
 def get_redirected_urls(url_list):
+    session = requests.Session()
     redirected_urls = []
     for line in url_list:
         line = line.strip()
@@ -9,7 +10,6 @@ def get_redirected_urls(url_list):
             if line:
                 channel_name, channel_url = line.split(',')
                 if 'http' in channel_url:
-                    session = requests.Session()
                     response = requests.head(channel_url, allow_redirects=True)
                     print(response)
                     # 如果初始请求返回200，但之后服务器又发出了302重定向，我们需要处理这种情况
