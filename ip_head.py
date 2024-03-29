@@ -6,7 +6,9 @@ load_urls = [
 file_contents = []
 for url in load_urls:
     response = requests.get(url, allow_redirects=True)
-    file_contents.append(response)
+    if response.status_code == 200:
+        print(response.text)
+        file_contents.append(response.text)
 all_lines = [line for line_str in file_contents for line in line_str.split('\n')]
 for result in all_lines:
     print(result)
