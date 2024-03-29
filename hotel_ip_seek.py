@@ -306,8 +306,6 @@ if len(weishi_files) > 0:
         # file.write('\n'.join(weishi_files))
     file.close()
 
-now_today = datetime.date.today()
-
 file_path = "cfg_ip.txt"
 # 将结果写入文件
 with open("seekip_ok.txt", 'w', encoding='utf-8') as file:
