@@ -139,7 +139,7 @@ for channel in channels:
 # 等待所有任务完成
 task_queue.join()
 
-now_today = datetime.date.today()
+now_today = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 
 # 将结果写入文件
 with open("cfg_ip.txt", 'w', encoding='utf-8') as file:
