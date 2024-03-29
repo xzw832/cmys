@@ -4,6 +4,7 @@
 2_CCTV11_电信,http://180.143.83.235:8181/tsfile/live/0011_1.m3u8
 3_CCTV6_电信,http://171.8.245.48:808/hls/6/index.m3u8
 9_港台秒开,http://61.158.166.42:1301/haiou.php?key=haiou&id=jade_twn&l=.m3u8
+10_民视,http://61.158.166.42:1301/haiou.php?key=haiou&id=ftvhd_taiwan
 有效连接,#genre#
 汕头经济生活_电信,http://119.23.60.89:8460/udp/239.253.43.46:5146
 汕头文旅体育_电信,http://119.23.60.89:8460/udp/239.253.43.47:5146
