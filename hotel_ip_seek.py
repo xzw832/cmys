@@ -36,11 +36,12 @@ def replace_line_in_file(file_path, target_string, new_line):
     for i, line in enumerate(lines):
         if target_string in line:
             lines[i] = new_line + '\n'  # 确保新行以换行符结尾
+    file.close()
 
     # 将修改后的内容写回文件
     with open(file_path, 'w', encoding='utf-8') as file:
         file.writelines(lines)
-        file.close()
+    file.close()
 
 # 初始化计数器为0
 counter = 0
