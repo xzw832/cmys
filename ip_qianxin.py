@@ -1,8 +1,7 @@
 import os
 import base64
 import requests
-import aiohttp
-import asyncio
+
 
 # 从环境变量中获取API密钥和基础URL
 api_key = "f2c0a15a6c33c43418b37a7027d99b739a38b6bace593b176e0c459a572808b2"
@@ -39,27 +38,6 @@ def get_target_list():
         print(f"获取目标列表时发生错误: {e}")
         return []
 item = get_target_list()
-
-async def get_source_list(target):
-    async with aiohttp.ClientSession() as session:
-        try:
-            async with session.get(target, timeout=500) as response:
-                if response.status == 200:
-                    data = await response.text()
-                    if data.startswith("#EXTM3U"):
-                        # 假设你有一个名为utils的模块，并且它有一个名为analysis_m3u的函数
-                        print("=====================================================================")
-                        print(data)
-                    else:
-                        # 假设你有一个名为utils的模块，并且它有一个名为analysis_txt的函数
-                        print("--------------------------------------------------------------------")
-                        print(data)
-        except aiohttp.ClientError:
-            pass  # Handle any client errors here, if needed
-        return []
-
-async def main():
-    for target_url in item:
-        await get_source_list(target_url)
-
-
+for lin in item:
+    print(lin)
+    
