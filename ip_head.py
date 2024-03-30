@@ -2,7 +2,7 @@ import requests
 from requests.exceptions import Timeout
 
 load_urls = [
-    "http://mywlkj.ddns.net:754/tv.php",
+    "http://mywlkj.ddns.net:754/tv.php?id=63",
     ]
 file_contents = []
 for url in load_urls:
@@ -32,11 +32,12 @@ def get_redirected_urls(url_list):
                             if response.status_code == 200 and 'Location' in response.headers:
                                 redirected_url = response.headers['Location']
                                 redirected_response = session.head(redirected_url)
-                                new_url = channel_name, redirected_response.url
+                                new_url = channel_name, redirected_url
+                                print("--------------再次定向------》",redirected_url，redirected_response.url)
                                 redirected_urls.append(new_url)
                             # 如果初始请求直接返回了重定向，我们直接返回重定向的URL
                             elif response.status_code in [301, 302, 303, 307, 308]:
-                                print("--------------------",response.headers['Location'])
+                                print("--------------直接定向------》",response.headers['Location'])
                                 new_url = channel_name, response.headers['Location']
                                 redirected_urls.append(new_url)
                             else:
@@ -69,13 +70,14 @@ redirected_urls = get_redirected_urls(url_list)
 
 with open("mywlkj_all.txt", 'w', encoding='utf-8') as file:
     for line in redirected_urls:
-        parts = line.split()
-        if len(parts) >= 2:
-            name, name_url = parts 
-            channel_url =(f"{name_url}")
-            channel_url = channel_url.replace("https://gitee.com/tv2785/tvbox/raw/master/gg.mp4", "https://gitee.com/guoqi8899/ipvideo/raw/master/gg.mp4")
-            file.write(f"{name},{channel_url}\n")
-            print(line)
-        else:
-            file.write(f"{line}\n")
+        if len(line) > 0:
+            parts = line.split()
+            if len(parts) >= 2:
+                name, name_url = parts 
+                channel_url =(f"{name_url}")
+                channel_url = channel_url.replace("https://gitee.com/tv2785/tvbox/raw/master/gg.mp4", "https://gitee.com/guoqi8899/ipvideo/raw/master/gg.mp4")
+                file.write(f"{name},{channel_url}\n")
+                print(line)
+            else:
+                file.write(f"{line}\n")
     file.close()
