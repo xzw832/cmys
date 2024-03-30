@@ -12,7 +12,7 @@ spider_cfg = {
     'baseUrl': base_url,
     'search': 'web.body="dbiptv.sn.chinamobile.com" && ip.country=="中国"',
     'page': 1,
-    'pageSize': 20,
+    'pageSize': 10,
 }
 
 def get_target_list():
