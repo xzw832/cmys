@@ -39,7 +39,7 @@ TVBS,http://61.158.166.42:1301/haiou.php?key=haiou&id=tvbs
 台视综合台,http://61.158.166.42:1301/haiou.php?key=haiou&id=ttvzhonghe
 民视台湾台,https://gitee.com/guoqi8899/ipvideo/raw/master/gg.mp4
 三立综合台,http://61.158.166.42:1301/haiou.php?key=haiou&id=sanlizhonghe
-三立台湾台,http://61.158.166.42:1301/haiou.php?key=haiou&id=sanlitaiwan
+三立台湾台,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1021
 三立戏剧台,http://61.158.166.42:1301/haiou.php?key=haiou&id=sanlixiju_twn
 三立都会台,http://61.158.166.42:1301/haiou.php?key=haiou&id=sanlidouhui_twn
 八大综合台,http://61.158.166.42:1301/haiou.php?key=haiou&id=badazhonghe
