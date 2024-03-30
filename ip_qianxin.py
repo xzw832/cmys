@@ -1,7 +1,6 @@
 import os
 import base64
 import requests
-from pathlib import Path
 
 # 从环境变量中获取API密钥和基础URL
 api_key = "f2c0a15a6c33c43418b37a7027d99b739a38b6bace593b176e0c459a572808b2"
@@ -21,7 +20,7 @@ def get_target_list():
         # 构建API URL
         search_encoded = base64.b64encode(spider_cfg['search'].encode()).decode()
         url = f"{spider_cfg['baseUrl']}?api-key={spider_cfg['apiKey']}&search={search_encoded}&page={spider_cfg['page']}&page_size={spider_cfg['pageSize']}"
-        
+        print(url)
         # 发送GET请求
         response = requests.get(url)
         
@@ -35,3 +34,8 @@ def get_target_list():
     except Exception as e:
         print(f"获取目标列表时发生错误: {e}")
         return []
+item = get_target_list()
+
+if len(item) > 0:
+    for lin in item:
+        print(lin)
