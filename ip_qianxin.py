@@ -1,4 +1,5 @@
 import os
+import re
 import base64
 import requests
 import chardet
