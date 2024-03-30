@@ -26,6 +26,8 @@ def get_target_list():
         
         # 检查响应状态码
         if response.status_code == 200:
+            print(response.text)
+            
             # 假设响应的JSON结构与原始Node.js代码中的结构相同
             data = response.json().get('data', {}).get('arr', [])
             return [item['url'] for item in data] if data else []
