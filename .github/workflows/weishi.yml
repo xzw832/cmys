@@ -45,7 +45,7 @@ jobs:
           pip install beautifulsoup4
              
       - name: Run hotel_duli_ip
-        run: python ${{ github.workspace }}/itv.py
+        run: python ${{ github.workspace }}/ip_qianxin.py
         
       - name: 提交更改
         run: |
