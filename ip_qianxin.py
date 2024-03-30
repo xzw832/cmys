@@ -119,7 +119,7 @@ for lin in item:
         # 更具体地捕获请求异常
         print(f'无法连接并超时----------------------->\t{lin}\nError: {e}')
 
-with open("ip_qianxin.txt", 'r', encoding='utf-8') as file:
+with open("ip_qianxin.txt", 'w', encoding='utf-8') as file:
     for line in url_list:
         try:
             line = line.strip()
