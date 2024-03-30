@@ -1,7 +1,7 @@
 import os
 import base64
 import requests
-
+import chardet
 
 # 从环境变量中获取API密钥和基础URL
 api_key = "f2c0a15a6c33c43418b37a7027d99b739a38b6bace593b176e0c459a572808b2"
@@ -15,7 +15,67 @@ spider_cfg = {
     'page': 1,
     'pageSize': 50,
 }
+def analysis_m3u(data):
+    items = data.split("\n")
+    items = [item for item in items if item.strip()]
 
+    item_info = None
+    list_data = []
+
+    for item in items:
+        item = item.strip()
+
+        if item.startswith("#EXTM3U"):
+            continue
+
+        if item.startswith("#EXTINF"):
+            item_info = None
+
+            id_match = re.search(r'tvg-id="(.*?)"', item)
+            name_match = re.search(r'tvg-name="(.*?)"', item)
+            logo_match = re.search(r'tvg-logo="(.*?)"', item)
+            group_match = re.search(r'group-title="(.*?)"', item)
+
+            id = id_match.group(1) if id_match else None
+            name = name_match.group(1) if name_match else None
+            logo = logo_match.group(1) if logo_match else None
+            group = group_match.group(1) if group_match else None
+
+            channel_name = item.split(",")[-1].strip() if "," in item else None
+
+            item_info = {
+                'id': id,
+                'name': name,
+                'logo': logo,
+                'group': group,
+                'channelName': channel_name,
+                'originLine': item,
+                'itemTag': "#EXTINF",
+            }
+
+            continue
+
+        # Assuming you want to append item_info to list_data when it's not null
+        if item_info:
+            list_data.append(item_info)
+
+    return list_data
+
+def analysis_txt(data):
+    items = data.split("\r\n")
+    items = [item for item in items if item.strip()]
+
+    list_data = []
+
+    for item in items:
+        title, url = item.split(",", 1)  # Limit split to first comma
+        is_url = any(url.startswith(key) for key in ["http://", "https://"])
+
+        if title and url and is_url:
+            list_data.append({"title": title.strip(), "url": url.strip()})
+
+    return list_data
+    
 def get_target_list():
     try:
         # 构建API URL
@@ -28,7 +88,6 @@ def get_target_list():
         # 检查响应状态码
         if response.status_code == 200:
             print(response.text)
-            
             # 假设响应的JSON结构与原始Node.js代码中的结构相同
             data = response.json().get('data', {}).get('arr', [])
             return [item['url'] for item in data] if data else []
@@ -37,15 +96,39 @@ def get_target_list():
     except Exception as e:
         print(f"获取目标列表时发生错误: {e}")
         return []
+
 item = get_target_list()
-headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36'}
-se=requests.Session()
+url_list = []
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36'}
+se = requests.Session()
+
 for lin in item:
-    print("--------------------------------->>>>>>>>>>>>>>>>>",lin)
+    print("--------------------------------->>>>>>>>>>>>>>>>>", lin)
     try:
-        res=se.get(lin,headers=headers,timeout=10)
-        if res.status_code==200:
-            print(res.text)
-    except Exception:
-        # 无法连接并超时的情况下输出“X”
-        print(f'无法连接并超时----------------------->\t{lin}')
+        response = se.get(lin, headers=headers, timeout=10)
+        if response.status_code == 200:
+            detected_encoding = chardet.detect(response.content)['encoding']
+            content = response.content.decode(detected_encoding)
+            print(content)
+            if content.startswith("#EXTM3U"):
+                url_list.append(analysis_m3u(content))  # 使用content而不是data
+            else:
+                url_list.append(analysis_txt(content))  # 使用content而不是data
+    except requests.RequestException as e:
+        # 更具体地捕获请求异常
+        print(f'无法连接并超时----------------------->\t{lin}\nError: {e}')
+
+with open("ip_qianxin.txt", 'r', encoding='utf-8') as file:
+    for line in url_list:
+        try:
+            line = line.strip()
+            count = line.count(',')
+            if count == 1:
+                if line:
+                    channel_name, channel_url = line.split(',')
+                    file.write(f"{channel_name},{channel_url}\n")
+        except:
+            print(f'错误----------------------->\t{line}')
+            continue
+
+        
