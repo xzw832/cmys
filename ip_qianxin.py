@@ -38,6 +38,15 @@ def get_target_list():
         print(f"获取目标列表时发生错误: {e}")
         return []
 item = get_target_list()
+headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36'}
+se=requests.Session()
 for lin in item:
-    print(lin)
-    
+    print("--------------------------------->>>>>>>>>>>>>>>>>",lin)
+    now=time.time()
+    try:
+        res=se.get(lin,headers=headers,timeout=10)
+        if res.status_code==200:
+            print(res.text)
+    except Exception:
+        # 无法连接并超时的情况下输出“X”
+        print(f'无法连接并超时----------------------->\t{lin}')
