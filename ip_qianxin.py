@@ -4,7 +4,7 @@ import requests
 
 # 从环境变量中获取API密钥和基础URL
 api_key = "f2c0a15a6c33c43418b37a7027d99b739a38b6bace593b176e0c459a572808b2"
-base_url = "https://hunter.qianxin.com/list"
+base_url = "https://hunter.qianxin.com/openApi/search"
 
 # 配置信息
 spider_cfg = {
