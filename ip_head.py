@@ -33,7 +33,7 @@ def get_redirected_urls(url_list):
                                 redirected_url = response.headers['Location']
                                 redirected_response = session.head(redirected_url)
                                 new_url = channel_name, redirected_url
-                                print("--------------再次定向------》",redirected_url，redirected_response.url)
+                                print("--------------再次定向------》",redirected_url,redirected_response.url)
                                 redirected_urls.append(new_url)
                             # 如果初始请求直接返回了重定向，我们直接返回重定向的URL
                             elif response.status_code in [301, 302, 303, 307, 308]:
