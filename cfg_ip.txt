@@ -1,8 +1,6 @@
 失效连接,#genre#
 6_联通秒开,http://182.117.77.177:808/hls/12/index.m3u8
 6_CCTV1_联通,http://182.117.77.177:808/hls/1/index.m3u8
-10_民视,http://61.158.166.42:1301/haiou.php?key=haiou&id=ftvhd_taiwan&l=.m3u8
-11_民视,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1050&a=.m3u8
 2_CCTV11_电信,http://180.143.83.235:8181/tsfile/live/0011_1.m3u8
 3_CCTV6_电信,http://171.8.245.48:808/hls/6/index.m3u8
 9_港台秒开,http://61.158.166.42:1301/haiou.php?key=haiou&id=jade_twn&l=.m3u8
