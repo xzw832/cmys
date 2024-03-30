@@ -42,7 +42,6 @@ headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/53
 se=requests.Session()
 for lin in item:
     print("--------------------------------->>>>>>>>>>>>>>>>>",lin)
-    now=time.time()
     try:
         res=se.get(lin,headers=headers,timeout=10)
         if res.status_code==200:
