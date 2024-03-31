@@ -2389,108 +2389,85 @@ DOX电影,http://test.tvboxosc.cyou/ipv4_live/8/DOX电影/yiyang
 港台电影,http://159.75.85.63:35455/douyu/3637778
 
 测试频道,#genre#
-凤凰香港台,http://test.tvboxosc.cyou/ipv4_live/1/凤凰香港台/gangao
-凤凰中文台,http://test.tvboxosc.cyou/ipv4_live/1/凤凰中文台/gangao
-凤凰资讯台,http://test.tvboxosc.cyou/ipv4_live/1/凤凰资讯台/gangao
-TVB翡翠台,http://test.tvboxosc.cyou/ipv4_live/1/TVB翡翠台/gangao
-TVBJ2台,http://test.tvboxosc.cyou/ipv4_live/1/TVBJ2台/gangao
-TVB明珠台,http://test.tvboxosc.cyou/ipv4_live/1/TVB明珠台/gangao
-TVB华丽翡翠台,http://test.tvboxosc.cyou/ipv4_live/1/TVB华丽翡翠台/gangao
-TVB星河台(粤),http://test.tvboxosc.cyou/ipv4_live/1/TVB星河台(粤)/gangao
-TVB星河台(国),http://test.tvboxosc.cyou/ipv4_live/1/TVB星河台(国)/gangao
-TVB星河台(粤),http://test.tvboxosc.cyou/ipv4_live/1/TVB星河台(粤)/gangao
-港台RHK31,http://test.tvboxosc.cyou/ipv4_live/1/港台RHK31/gangao
-港台RHK32,http://test.tvboxosc.cyou/ipv4_live/1/港台RHK32/gangao
+凤凰卫视中文,http://test.tvboxosc.cyou/ipv4_live/1/凤凰卫视中文/weishi
+凤凰卫视中文,http://test.tvboxosc.cyou/ipv4_live/2/凤凰卫视中文/weishi
+凤凰卫视中文,http://test.tvboxosc.cyou/ipv4_live/3/凤凰卫视中文/weishi
+凤凰卫视中文,http://test.tvboxosc.cyou/ipv4_live/4/凤凰卫视中文/weishi
+凤凰卫视中文,http://test.tvboxosc.cyou/ipv4_live/5/凤凰卫视中文/weishi
+凤凰卫视中文,http://test.tvboxosc.cyou/ipv4_live/6/凤凰卫视中文/weishi
+凤凰卫视中文,http://test.tvboxosc.cyou/ipv4_live/7/凤凰卫视中文/weishi
+凤凰卫视中文,http://test.tvboxosc.cyou/ipv4_live/8/凤凰卫视中文/weishi
+
+凤凰卫视资讯,http://test.tvboxosc.cyou/ipv4_live/1/凤凰卫视资讯/weishi
+凤凰卫视资讯,http://test.tvboxosc.cyou/ipv4_live/2/凤凰卫视资讯/weishi
+凤凰卫视资讯,http://test.tvboxosc.cyou/ipv4_live/3/凤凰卫视资讯/weishi
+凤凰卫视资讯,http://test.tvboxosc.cyou/ipv4_live/4/凤凰卫视资讯/weishi
+凤凰卫视资讯,http://test.tvboxosc.cyou/ipv4_live/5/凤凰卫视资讯/weishi
+凤凰卫视资讯,http://test.tvboxosc.cyou/ipv4_live/6/凤凰卫视资讯/weishi
+凤凰卫视资讯,http://test.tvboxosc.cyou/ipv4_live/7/凤凰卫视资讯/weishi
+凤凰卫视资讯,http://test.tvboxosc.cyou/ipv4_live/8/凤凰卫视资讯/weishi
 民视,http://test.tvboxosc.cyou/ipv4_live/1/民视/gangao
-台视,http://test.tvboxosc.cyou/ipv4_live/1/台视/gangao
-TVB无线新闻台,http://test.tvboxosc.cyou/ipv4_live/1/TVB无线新闻台/gangao
-TVB财经体育资讯2台,http://test.tvboxosc.cyou/ipv4_live/1/TVB财经体育资讯2台/gangao
-HBO_HD,http://test.tvboxosc.cyou/ipv4_live/1/HBO_HD/gangao
-HBO_HITS,http://test.tvboxosc.cyou/ipv4_live/1/HBO_HITS/gangao
-HBOSignatureHD,http://test.tvboxosc.cyou/ipv4_live/1/HBOSignatureHD/gangao
-HBO温馨家庭,http://test.tvboxosc.cyou/ipv4_live/1/HBO温馨家庭/gangao
-华纳电影台,http://test.tvboxosc.cyou/ipv4_live/1/华纳电影台/gangao
-惊辣Thrill,http://test.tvboxosc.cyou/ipv4_live/1/惊辣Thrill/gangao
-8度空间HD,http://test.tvboxosc.cyou/ipv4_live/1/8度空间HD/gangao
-欢喜台HD,http://test.tvboxosc.cyou/ipv4_live/1/欢喜台HD/gangao
-全佳台HD,http://test.tvboxosc.cyou/ipv4_live/1/全佳台HD/gangao
-爱奇艺HD,http://test.tvboxosc.cyou/ipv4_live/1/爱奇艺HD/gangao
-VIU TV,http://test.tvboxosc.cyou/ipv4_live/1/VIU TV/gangao
-VIU TV6,http://test.tvboxosc.cyou/ipv4_live/1/VIU TV6/gangao
-美亚电影台,http://test.tvboxosc.cyou/ipv4_live/1/美亚电影台/gangao
-天映经典,http://test.tvboxosc.cyou/ipv4_live/1/天映经典/gangao
-天映频道,http://test.tvboxosc.cyou/ipv4_live/1/天映频道/gangao
-CINEMAX,http://test.tvboxosc.cyou/ipv4_live/1/CINEMAX/gangao
-AXN,http://test.tvboxosc.cyou/ipv4_live/1/AXN/gangao
-tvNMovie,http://test.tvboxosc.cyou/ipv4_live/1/tvNMovie/gangao
-中视,http://test.tvboxosc.cyou/ipv4_live/1/中视/gangao
-华视,http://test.tvboxosc.cyou/ipv4_live/1/华视/gangao
-公视,http://test.tvboxosc.cyou/ipv4_live/1/公视/gangao
-TVBS,http://test.tvboxosc.cyou/ipv4_live/1/TVBS/gangao
-台视综合台,http://test.tvboxosc.cyou/ipv4_live/1/台视综合台/gangao
-民视台湾台,http://test.tvboxosc.cyou/ipv4_live/1/民视台湾台/gangao
-三立综合台,http://test.tvboxosc.cyou/ipv4_live/1/三立综合台/gangao
-三立台湾台,http://test.tvboxosc.cyou/ipv4_live/1/三立台湾台/gangao
-三立戏剧台,http://test.tvboxosc.cyou/ipv4_live/1/三立戏剧台/gangao
-三立都会台,http://test.tvboxosc.cyou/ipv4_live/1/三立都会台/gangao
-八大综合台,http://test.tvboxosc.cyou/ipv4_live/1/八大综合台/gangao
-八大第一台,http://test.tvboxosc.cyou/ipv4_live/1/八大第一台/gangao
-八大戏剧台,http://test.tvboxosc.cyou/ipv4_live/1/八大戏剧台/gangao
-爱尔达综合,http://test.tvboxosc.cyou/ipv4_live/1/爱尔达综合/gangao
-爱尔达影剧,http://test.tvboxosc.cyou/ipv4_live/1/爱尔达影剧/gangao
-中天亚洲台,http://test.tvboxosc.cyou/ipv4_live/1/中天亚洲台/gangao
-中天综合台,http://test.tvboxosc.cyou/ipv4_live/1/中天综合台/gangao
-中天娱乐台,http://test.tvboxosc.cyou/ipv4_live/1/中天娱乐台/gangao
-TVBS欢乐台,http://test.tvboxosc.cyou/ipv4_live/1/TVBS欢乐台/gangao
-龙详时代台,http://test.tvboxosc.cyou/ipv4_live/1/龙详时代台/gangao
-东森电影台,http://test.tvboxosc.cyou/ipv4_live/1/东森电影台/gangao
-东森洋片台,http://test.tvboxosc.cyou/ipv4_live/1/东森洋片台/gangao
-东森综合台,http://test.tvboxosc.cyou/ipv4_live/1/东森综合台/gangao
-东森戏剧台,http://test.tvboxosc.cyou/ipv4_live/1/东森戏剧台/gangao
-东森超视台,http://test.tvboxosc.cyou/ipv4_live/1/东森超视台/gangao
-好莱坞电影台,http://test.tvboxosc.cyou/ipv4_live/1/好莱坞电影台/gangao
-緯來電影台,http://test.tvboxosc.cyou/ipv4_live/1/緯來電影台/gangao
-卫视洋片台,http://test.tvboxosc.cyou/ipv4_live/1/卫视洋片台/gangao
-龙华戏剧台,http://test.tvboxosc.cyou/ipv4_live/1/龙华戏剧台/gangao
-龙华偶像台,http://test.tvboxosc.cyou/ipv4_live/1/龙华偶像台/gangao
-龙华洋片台,http://test.tvboxosc.cyou/ipv4_live/1/龙华洋片台/gangao
-龙华电影台,http://test.tvboxosc.cyou/ipv4_live/1/龙华电影台/gangao
-TVBS新闻台,http://test.tvboxosc.cyou/ipv4_live/1/TVBS新闻台/gangao
-中天新闻台,http://test.tvboxosc.cyou/ipv4_live/1/中天新闻台/gangao
+台視HD,http://test.tvboxosc.cyou/ipv4_live/1/台視HD/gangao
+中視HD,http://test.tvboxosc.cyou/ipv4_live/1/中視HD/gangao
+華視HD,http://test.tvboxosc.cyou/ipv4_live/1/華視HD/gangao
+民視HD,http://test.tvboxosc.cyou/ipv4_live/1/民視HD/gangao
+公視,http://test.tvboxosc.cyou/ipv4_live/1/公視/gangao
+三立台灣HD,http://test.tvboxosc.cyou/ipv4_live/1/三立台灣HD/gangao
+民視,http://test.tvboxosc.cyou/ipv4_live/1/民視/gangao
+⑥香港21:30,http://test.tvboxosc.cyou/ipv4_live/1/⑥香港21:30/gangao
+@新澳21:30,http://test.tvboxosc.cyou/ipv4_live/1/@新澳21:30/gangao
+@老澳21:32,http://test.tvboxosc.cyou/ipv4_live/1/@老澳21:32/gangao
+Now 星影台,http://test.tvboxosc.cyou/ipv4_live/1/Now 星影台/gangao
+Now 爆谷台,http://test.tvboxosc.cyou/ipv4_live/1/Now 爆谷台/gangao
+CHC动作电影,http://test.tvboxosc.cyou/ipv4_live/1/CHC动作电影/gangao
+CHC家庭影院,http://test.tvboxosc.cyou/ipv4_live/1/CHC家庭影院/gangao
+CHC高清电影,http://test.tvboxosc.cyou/ipv4_live/1/CHC高清电影/gangao
+新视觉,http://test.tvboxosc.cyou/ipv4_live/1/新视觉/gangao
+TVB明珠,http://test.tvboxosc.cyou/ipv4_live/1/TVB明珠/gangao
+TVB翡翠台,http://test.tvboxosc.cyou/ipv4_live/1/TVB翡翠台/gangao
+凤凰中文,http://test.tvboxosc.cyou/ipv4_live/1/凤凰中文/gangao
+劲爆体育,http://test.tvboxosc.cyou/ipv4_live/1/劲爆体育/gangao
+星空卫视,http://test.tvboxosc.cyou/ipv4_live/1/星空卫视/gangao
+澳视澳门,http://test.tvboxosc.cyou/ipv4_live/1/澳视澳门/gangao
+澳亚卫视,http://test.tvboxosc.cyou/ipv4_live/1/澳亚卫视/gangao
+重温经典,http://test.tvboxosc.cyou/ipv4_live/1/重温经典/gangao
+中天新聞,http://test.tvboxosc.cyou/ipv4_live/1/中天新聞/gangao
+翡翠台,http://test.tvboxosc.cyou/ipv4_live/1/翡翠台/gangao
+ViuTVsix,http://test.tvboxosc.cyou/ipv4_live/1/ViuTVsix/gangao
+ViuTV,http://test.tvboxosc.cyou/ipv4_live/1/ViuTV/gangao
+明珠台,http://test.tvboxosc.cyou/ipv4_live/1/明珠台/gangao
+J2台,http://test.tvboxosc.cyou/ipv4_live/1/J2台/gangao
+無綫新聞台,http://test.tvboxosc.cyou/ipv4_live/1/無綫新聞台/gangao
+無綫財經-體育-資訊台,http://test.tvboxosc.cyou/ipv4_live/1/無綫財經-體育-資訊台/gangao
+HOY 國際財經台,http://test.tvboxosc.cyou/ipv4_live/1/HOY 國際財經台/gangao
+HOY TV,http://test.tvboxosc.cyou/ipv4_live/1/HOY TV/gangao
+HOY 資訊台,http://test.tvboxosc.cyou/ipv4_live/1/HOY 資訊台/gangao
+港台電視 31,http://test.tvboxosc.cyou/ipv4_live/1/港台電視 31/gangao
+港台電視 32,http://test.tvboxosc.cyou/ipv4_live/1/港台電視 32/gangao
+港台電視 33,http://test.tvboxosc.cyou/ipv4_live/1/港台電視 33/gangao
+港台電視 34,http://test.tvboxosc.cyou/ipv4_live/1/港台電視 34/gangao
+公視戲劇,http://test.tvboxosc.cyou/ipv4_live/1/公視戲劇/gangao
+民視影劇台,http://test.tvboxosc.cyou/ipv4_live/1/民視影劇台/gangao
+龍華戲劇台,http://test.tvboxosc.cyou/ipv4_live/1/龍華戲劇台/gangao
+台视 TTV HD,http://test.tvboxosc.cyou/ipv4_live/1/台视 TTV HD/gangao
 台视新闻台,http://test.tvboxosc.cyou/ipv4_live/1/台视新闻台/gangao
+台视综合台,http://test.tvboxosc.cyou/ipv4_live/1/台视综合台/gangao
+中视 HD,http://test.tvboxosc.cyou/ipv4_live/1/中视 HD/gangao
 中视新闻台,http://test.tvboxosc.cyou/ipv4_live/1/中视新闻台/gangao
-民视新闻台,http://test.tvboxosc.cyou/ipv4_live/1/民视新闻台/gangao
-东森新闻台,http://test.tvboxosc.cyou/ipv4_live/1/东森新闻台/gangao
-东森财经台,http://test.tvboxosc.cyou/ipv4_live/1/东森财经台/gangao
-寰宇新闻台,http://test.tvboxosc.cyou/ipv4_live/1/寰宇新闻台/gangao
-非凡新闻台,http://test.tvboxosc.cyou/ipv4_live/1/非凡新闻台/gangao
-年代新闻台,http://test.tvboxosc.cyou/ipv4_live/1/年代新闻台/gangao
-WWEHD,http://test.tvboxosc.cyou/ipv4_live/1/WWEHD/gangao
-爱尔达体育2台,http://test.tvboxosc.cyou/ipv4_live/1/爱尔达体育2台/gangao
-博斯运动1,http://test.tvboxosc.cyou/ipv4_live/1/博斯运动1/gangao
-博斯运动2,http://test.tvboxosc.cyou/ipv4_live/1/博斯运动2/gangao
-博斯高球台,http://test.tvboxosc.cyou/ipv4_live/1/博斯高球台/gangao
-博斯网球台,http://test.tvboxosc.cyou/ipv4_live/1/博斯网球台/gangao
-Supersports1,http://test.tvboxosc.cyou/ipv4_live/1/Supersports1/gangao
-Supersports4,http://test.tvboxosc.cyou/ipv4_live/1/Supersports4/gangao
-SonyTen1,http://test.tvboxosc.cyou/ipv4_live/1/SonyTen1/gangao
-SonyTen2,http://test.tvboxosc.cyou/ipv4_live/1/SonyTen2/gangao
-SonyTen3,http://test.tvboxosc.cyou/ipv4_live/1/SonyTen3/gangao
-纬来体育台,http://test.tvboxosc.cyou/ipv4_live/1/纬来体育台/gangao
-纬来日本台,http://test.tvboxosc.cyou/ipv4_live/1/纬来日本台/gangao
-EYETV旅游,http://test.tvboxosc.cyou/ipv4_live/1/EYETV旅游/gangao
-EYETV戏剧,http://test.tvboxosc.cyou/ipv4_live/1/EYETV戏剧/gangao
-Momo综合,http://test.tvboxosc.cyou/ipv4_live/1/Momo综合/gangao
-靖天国际台,http://test.tvboxosc.cyou/ipv4_live/1/靖天国际台/gangao
-靖天卡通台,http://test.tvboxosc.cyou/ipv4_live/1/靖天卡通台/gangao
-大爱电视台,http://test.tvboxosc.cyou/ipv4_live/1/大爱电视台/gangao
-美食星球台,http://test.tvboxosc.cyou/ipv4_live/1/美食星球台/gangao
-亚洲旅游台,http://test.tvboxosc.cyou/ipv4_live/1/亚洲旅游台/gangao
-TLC旅游台,http://test.tvboxosc.cyou/ipv4_live/1/TLC旅游台/gangao
-国家地理野生,http://test.tvboxosc.cyou/ipv4_live/1/国家地理野生/gangao
-国家地理台湾,http://test.tvboxosc.cyou/ipv4_live/1/国家地理台湾/gangao
-DiscoveryAsia,http://test.tvboxosc.cyou/ipv4_live/1/DiscoveryAsia/gangao
-DiscoveryHD,http://test.tvboxosc.cyou/ipv4_live/1/DiscoveryHD/gangao
+民视 HD,http://test.tvboxosc.cyou/ipv4_live/1/民视 HD/gangao
+民视新闻台 FTV News,http://test.tvboxosc.cyou/ipv4_live/1/民视新闻台 FTV News/gangao
+民视台湾台,http://test.tvboxosc.cyou/ipv4_live/1/民视台湾台/gangao
+华视 CTS HD,http://test.tvboxosc.cyou/ipv4_live/1/华视 CTS HD/gangao
+公视 CTV,http://test.tvboxosc.cyou/ipv4_live/1/公视 CTV/gangao
+八大第一 GTV First,http://test.tvboxosc.cyou/ipv4_live/1/八大第一 GTV First/gangao
+八大综合 GTV Metro,http://test.tvboxosc.cyou/ipv4_live/1/八大综合 GTV Metro/gangao
+八大戏剧 GTV Drama,http://test.tvboxosc.cyou/ipv4_live/1/八大戏剧 GTV Drama/gangao
+八大娱乐 GTV Entertainment,http://test.tvboxosc.cyou/ipv4_live/1/八大娱乐 GTV Entertainment/gangao
+三立台湾 Sanli Taiwan,http://test.tvboxosc.cyou/ipv4_live/1/三立台湾 Sanli Taiwan/gangao
+三立戏剧台,http://test.tvboxosc.cyou/ipv4_live/1/三立戏剧台/gangao
+三立综合 Sanli Metro,http://test.tvboxosc.cyou/ipv4_live/1/三立综合 Sanli Metro/gangao
+三立都会台,http://test.tvboxosc.cyou/ipv4_live/1/三立都会台/gangao
+
 
 歌星金曲,#genre#
 歌MV1,http://15799848.s21v.faiusr.com/58/ABUIABA6GAAgypLV4gUo-ZmUhwc.mp4
