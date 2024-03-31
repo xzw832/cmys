@@ -6,6 +6,7 @@ import threading
 from queue import Queue
 import requests
 import eventlet
+from requests.exceptions import Timeout
 eventlet.monkey_patch()
 channels = []
 headers={'User-Agent': 'okhttp/3.12.10(Linux;Android9;V2049ABuild/TP1A.220624.014;wv)AppleWebKit/537.36(KHTML,likeGecko)Version/4.0Chrome/116.0.0.0MobileSafari/537.36'}
