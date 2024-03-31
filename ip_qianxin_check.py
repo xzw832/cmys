@@ -33,6 +33,7 @@ def get_redirected_urls(url_list):
     session = requests.Session()
     redirected_urls = []
     for line in url_list:
+        increment_counter()
         try:
             line = line.strip()
             count = line.count(',')
@@ -68,8 +69,10 @@ def get_redirected_urls(url_list):
                             new_url = f"error_{channel_name}", channel_url
                             redirected_urls.append(new_url)
                             print(f"请求发生错误: {e}")
-
-        if increment_counter() > 10:
+        except:
+            print(line)
+        
+        if counter > 10:
             print(f"执行完成，次数: {counter}")
             break
         
