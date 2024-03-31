@@ -1,3 +1,5 @@
+import os
+import re
 import requests
 from requests.exceptions import Timeout
 
