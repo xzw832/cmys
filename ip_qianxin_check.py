@@ -43,6 +43,7 @@ with open("ip_qianxin.txt", 'r', encoding='utf-8') as file:
 
 for channel_name, channel_url in channels:
     try:
+        print(channel_url)
         get_redirected_urls(channel_url)
         time.sleep(1)
     except RequestException as e:
