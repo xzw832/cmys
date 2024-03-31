@@ -5,14 +5,8 @@ load_urls = [
     "http://mywlkj.ddns.net:754/tv.php?id=63",
     ]
 file_contents = []
-for url in load_urls:
-    response = requests.get(url, allow_redirects=True)
-    if response.status_code == 200:
-        print(response.text)
-        file_contents.append(response.text)
-url_list = [line for line_str in file_contents for line in line_str.split('\n')]
-for result in url_list:
-    print(result)
+with open("mywlkj_gt.txt", 'r', encoding='utf-8') as file:
+    file_contents = file.readlines()
     
 def get_redirected_urls(url_list):
     session = requests.Session()
@@ -25,7 +19,7 @@ def get_redirected_urls(url_list):
                 if line:
                     channel_name, channel_url = line.split(',')
                     print("==========>>>>>",channel_name, channel_url)
-                    if '#' not in channel_url:
+                    if '#' not in channel_url and 'mp4' not in channel_url:
                         try:
                             response = requests.head(channel_url, allow_redirects=False, timeout=1.5)
                             # 如果初始请求返回200，但之后服务器又发出了302重定向，我们需要处理这种情况
@@ -68,7 +62,7 @@ def get_redirected_urls(url_list):
 # 示例用法
 redirected_urls = get_redirected_urls(url_list)
 
-with open("mywlkj_all.txt", 'w', encoding='utf-8') as file:
+with open("mywlkj_all_gt.txt", 'w', encoding='utf-8') as file:
     for line in redirected_urls:
         if len(line) > 0:
             parts = line.split()
