@@ -7,7 +7,7 @@ import chardet
 # 从环境变量中获取API密钥和基础URL
 api_key = "f2c0a15a6c33c43418b37a7027d99b739a38b6bace593b176e0c459a572808b2"
 base_url = "https://hunter.qianxin.com/openApi/search"
-
+flattened_list = []
 # 配置信息
 spider_cfg = {
     'apiKey': api_key,
@@ -63,7 +63,7 @@ def analysis_m3u(data):
         # Assuming you want to append item_info to list_data when it's not null
         if item_info:
             item_info = f"{channel_name},{channel_url}"
-            list_data.append(item_info)
+            flattened_list.append(item_info)
 
     return list_data
 
@@ -83,7 +83,7 @@ def analysis_txt(data):
                 channel_name = title.strip()
                 channel_url = url.strip()
                 item_info = f"{channel_name},{channel_url}"
-                list_data.append(item_info)
+                flattened_list.append(item_info)
     return list_data
     
 def get_target_list():
@@ -130,7 +130,6 @@ for lin in item:
         continue
 
 with open("ip_qianxin.txt", 'w', encoding='utf-8') as file:
-    flattened_list = [item for sublist in url_list for item in sublist]
     for line in flattened_list:
         try:
             line = line.strip()
