@@ -30,39 +30,24 @@ with open("ip_qianxin.txt", 'r', encoding='utf-8') as file:
     file.close()
     
 def get_redirected_urls(url_list):
-    redirected_urls = []
     session = requests.Session()
-    
-    for line in url_list:
-        try:
-            channel_name, channel_url = line
-            if '#' not in channel_url:
-                response = session.head(channel_url, allow_redirects=False, timeout=2)
-                
-                if response.status_code == 200 and 'Location' in response.headers:
-                    # 处理初始请求返回200但之后服务器又发出302重定向的情况
-                    redirected_url = response.headers['Location']
-                    print("1:----------------------------------------------------")
-                    print(f"Initial URL: {channel_url}, Redirected URL: {redirected_url}")
-                    redirected_urls.append((channel_name, redirected_url))
-                elif response.status_code in [301, 302, 303, 307, 308]:
-                    # 处理直接重定向的情况
-                    redirected_url = response.headers['Location']
-                    print("2:----------------------------------------------------")
-                    print(f"Redirected URL: {redirected_url}")
-                    redirected_urls.append((channel_name, redirected_url))
-                else:
-                    # 对于其他状态码，你可以选择打印或忽略
-                    print(f"Response Status Code: {response.status_code}")
+    if '#' not in url_list:
+        response = session.head(url_list, allow_redirects=False, timeout=2)
+        if response.status_code == 200 and 'Location' in response.headers:
+            # 处理初始请求返回200但之后服务器又发出302重定向的情况
+            redirected_url = response.headers['Location']
+            print("1:----------------------------------------------------")
+            print(f"Initial URL: {channel_url}, Redirected URL: {redirected_url}")
 
-        except Timeout:
-            print(f"Request for {channel_url} timed out")
-            redirected_urls.append((f"timeout_{channel_name}", channel_url))
-        except requests.RequestException as e:
-            print(f"Error for {channel_url}: {e}")
-            redirected_urls.append((f"error_{channel_name}", channel_url))
-    
-    return redirected_urls
-        
-        
-redirected_urls = get_redirected_urls(channels)
+        elif response.status_code in [301, 302, 303, 307, 308]:
+            # 处理直接重定向的情况
+            redirected_url = response.headers['Location']
+            print("2:----------------------------------------------------")
+            print(f"Redirected URL: {redirected_url}")
+        else:
+            # 对于其他状态码，你可以选择打印或忽略
+            print(f"Response Status Code: {response.status_code}")
+
+for url in channels:
+    channel_name, channel_url = url
+    get_redirected_urls(url)
