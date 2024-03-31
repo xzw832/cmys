@@ -43,7 +43,7 @@ def get_redirected_urls(url_list):
                     # 如果初始请求返回200，但之后服务器又发出了302重定向，我们需要处理这种情况
                     if response.status_code == 200 and 'Location' in response.headers:
                         print("1:----------------------------------------------------")
-                        print(response.txt)
+                        print(response.text)
                         # redirected_url = response.headers['Location']
                         # redirected_response = session.head(redirected_url)
                         # new_url = channel_name, redirected_url
