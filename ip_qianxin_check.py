@@ -40,7 +40,6 @@ def get_redirected_urls(url_list):
                 print("进来了",channel_url)
                 try:
                     response = se.head(channel_url, allow_redirects=False, timeout=2)
-                    print(response.text)
                     # 如果初始请求返回200，但之后服务器又发出了302重定向，我们需要处理这种情况
                     if response.status_code == 200 and 'Location' in response.headers:
                         print("1:----------------------------------------------------")
