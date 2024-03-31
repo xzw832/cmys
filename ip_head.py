@@ -69,8 +69,8 @@ with open("mywlkj_all_gt.txt", 'w', encoding='utf-8') as file:
     for line in redirected_urls:
         if len(line) > 0:
             name, name_url = line.split(',')
-                channel_url =(f"{name_url}")
-                channel_url = channel_url.replace("https://gitee.com/tv2785/tvbox/raw/master/gg.mp4", "https://gitee.com/guoqi8899/ipvideo/raw/master/gg.mp4")
-                file.write(f"{name},{channel_url}\n")
-                print(line)
+            channel_url =(f"{name_url}")
+            channel_url = channel_url.replace("https://gitee.com/tv2785/tvbox/raw/master/gg.mp4", "https://gitee.com/guoqi8899/ipvideo/raw/master/gg.mp4")
+            file.write(f"{name},{channel_url}\n")
+            print(line)
     file.close()
