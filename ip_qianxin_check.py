@@ -16,7 +16,7 @@ headers = {'User-Agent': 'okhttp/3.12.10(Linux;Android9;V2049ABuild/TP1A.220624.
 def get_redirected_urls(url):
     try:
         session = requests.Session()
-        response = session.head(url, allow_redirects=False, timeout=2)
+        response = requests.head(url, allow_redirects=False, timeout=2)
         
         if response.status_code == 200 and 'Location' in response.headers:
             redirected_url = response.headers['Location']
