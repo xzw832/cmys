@@ -61,5 +61,7 @@ def get_redirected_urls(url_list):
         except:
             print(line)
         if increment_counter() > 10:
+            print(f"执行完成，次数: {counter}")
             break
         
+get_redirected_urls(channels)
