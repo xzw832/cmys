@@ -133,7 +133,11 @@ for i in range(1, spider_cfg['page'] + 1):
             response = se.get(lin, headers=headers, timeout=10)
             if response.status_code == 200:
                 detected_encoding = chardet.detect(response.content)['encoding']
-                content = response.content.decode(detected_encoding, errors='ignore')
+                if detected_encoding is not None:
+                    content = response.content.decode(detected_encoding, errors='ignore')
+                else:
+                    # 你可以选择一个默认的编码，或者记录一个错误，或者采取其他措施
+                    content = response.content.decode('utf-8', errors='ignore')
                 print(content)
                 if content.startswith("#EXTM3U"):
                     url_list.append(analysis_m3u(content))  # 使用content而不是data
