@@ -30,7 +30,6 @@ with open("ip_qianxin.txt", 'r', encoding='utf-8') as file:
     file.close()
     
 def get_redirected_urls(url_list):
-    session = requests.Session()
     redirected_urls = []
     for line in url_list:
         increment_counter()
