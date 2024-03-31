@@ -2389,6 +2389,18 @@ DOX电影,http://test.tvboxosc.cyou/ipv4_live/8/DOX电影/yiyang
 港台电影,http://159.75.85.63:35455/douyu/3637778
 
 测试频道,#genre#
+凤凰中文台HD,http://test.tvboxosc.cyou/ipv4_live/1/凤凰中文台HD/gangao
+凤凰资讯台HD,http://test.tvboxosc.cyou/ipv4_live/1/凤凰资讯台HD/gangao
+凤凰香港台HD,http://test.tvboxosc.cyou/ipv4_live/1/凤凰香港台HD/gangao
+翡翠台HD,http://test.tvboxosc.cyou/ipv4_live/1/翡翠台HD/gangao
+无线新闻台,http://test.tvboxosc.cyou/ipv4_live/1/无线新闻台/gangao
+无线新闻台HD,http://test.tvboxosc.cyou/ipv4_live/1/无线新闻台HD/gangao
+J2,http://test.tvboxosc.cyou/ipv4_live/1/J2/gangao
+TVB明珠台,http://test.tvboxosc.cyou/ipv4_live/1/TVB明珠台/gangao
+TVB财经体育资讯台,http://test.tvboxosc.cyou/ipv4_live/1/TVB财经体育资讯台/gangao
+翡翠台,http://test.tvboxosc.cyou/ipv4_live/1/翡翠台/gangao
+功夫台,http://test.tvboxosc.cyou/ipv4_live/1/功夫台/gangao
+
 凤凰卫视中文,http://test.tvboxosc.cyou/ipv4_live/1/凤凰卫视中文/weishi
 凤凰卫视中文,http://test.tvboxosc.cyou/ipv4_live/2/凤凰卫视中文/weishi
 凤凰卫视中文,http://test.tvboxosc.cyou/ipv4_live/3/凤凰卫视中文/weishi
@@ -2422,14 +2434,6 @@ DOX电影,http://test.tvboxosc.cyou/ipv4_live/8/DOX电影/yiyang
 @老澳21:32,http://test.tvboxosc.cyou/ipv4_live/3/@老澳21:32/gangao
 @老澳21:32,http://test.tvboxosc.cyou/ipv4_live/4/@老澳21:32/gangao
 
-翡翠台HD,http://test.tvboxosc.cyou/ipv4_live/1/翡翠台HD/gangao
-无线新闻台,http://test.tvboxosc.cyou/ipv4_live/1/无线新闻台/gangao
-无线新闻台HD,http://test.tvboxosc.cyou/ipv4_live/1/无线新闻台HD/gangao
-J2,http://test.tvboxosc.cyou/ipv4_live/1/J2/gangao
-TVB明珠台,http://test.tvboxosc.cyou/ipv4_live/1/TVB明珠台/gangao
-TVB财经体育资讯台,http://test.tvboxosc.cyou/ipv4_live/1/TVB财经体育资讯台/gangao
-翡翠台,http://test.tvboxosc.cyou/ipv4_live/1/翡翠台/gangao
-功夫台,http://test.tvboxosc.cyou/ipv4_live/1/功夫台/gangao
 18台,http://test.tvboxosc.cyou/ipv4_live/1/18台/gangao
 TVB欢乐新闻台,http://test.tvboxosc.cyou/ipv4_live/1/TVB欢乐新闻台/gangao
 TVB星河,http://test.tvboxosc.cyou/ipv4_live/1/TVB星河/gangao
@@ -2478,9 +2482,6 @@ LTV龙华电影,http://test.tvboxosc.cyou/ipv4_live/1/LTV龙华电影/gangao
 美亚电影台,http://test.tvboxosc.cyou/ipv4_live/1/美亚电影台/gangao
 动物星球,http://test.tvboxosc.cyou/ipv4_live/1/动物星球/gangao
 TVB千禧经典台,http://test.tvboxosc.cyou/ipv4_live/1/TVB千禧经典台/gangao
-凤凰中文台HD,http://test.tvboxosc.cyou/ipv4_live/1/凤凰中文台HD/gangao
-凤凰资讯台HD,http://test.tvboxosc.cyou/ipv4_live/1/凤凰资讯台HD/gangao
-凤凰香港台HD,http://test.tvboxosc.cyou/ipv4_live/1/凤凰香港台HD/gangao
 TVB星河,http://test.tvboxosc.cyou/ipv4_live/1/TVB星河/gangao
 
 Now 星影台,http://test.tvboxosc.cyou/ipv4_live/1/Now 星影台/gangao
