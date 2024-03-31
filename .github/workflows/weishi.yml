@@ -17,7 +17,7 @@ jobs:
       - name: Run with setup-python 3.8
         uses: actions/setup-python@v3
         with:
-          python-version: '3.x'
+          python-version: '3.9'
           update-environment: false
           cache: 'pipenv'
 
