@@ -4,6 +4,8 @@ import base64
 import requests
 import chardet
 import json
+import time
+import random
 
 # 从环境变量中获取API密钥和基础URL
 api_key = "f2c0a15a6c33c43418b37a7027d99b739a38b6bace593b176e0c459a572808b2"
@@ -17,6 +19,7 @@ spider_cfg = {
     'page': 2,
     'pageSize': 50,
 }
+
 def analysis_m3u(data):
     items = data.split("\n")
     items = [item for item in items if item.strip()]
@@ -99,11 +102,11 @@ def analysis_json(json_data):
             for url in urls:
                 flattened_list.append(f"{name},{url}")
 
-def get_target_list():
+def get_target_list(page):
     try:
         # 构建API URL
         search_encoded = base64.b64encode(spider_cfg['search'].encode()).decode()
-        url = f"{spider_cfg['baseUrl']}?api-key={spider_cfg['apiKey']}&search={search_encoded}&page={spider_cfg['page']}&page_size={spider_cfg['pageSize']}"
+        url = f"{spider_cfg['baseUrl']}?api-key={spider_cfg['apiKey']}&search={search_encoded}&page={page}&page_size={spider_cfg['pageSize']}"
         print(url)
         # 发送GET请求
         response = requests.get(url)
@@ -119,8 +122,10 @@ def get_target_list():
     except Exception as e:
         print(f"获取目标列表时发生错误: {e}")
         return []
+for i in range(1, spider_cfg['page'] + 1):
+    item = get_target_list(i)
+    time.sleep(5)
 
-item = get_target_list()
 url_list = []
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36'}
 se = requests.Session()
@@ -136,6 +141,8 @@ for lin in item:
             if content.startswith("#EXTM3U"):
                 url_list.append(analysis_m3u(content))  # 使用content而不是data
             elif content.startswith('{"lives"'):
+                analysis_json(content)
+            elif content.startswith('{"spider"'):
                 analysis_json(content)
             else:
                 url_list.append(analysis_txt(content))  # 使用content而不是data
