@@ -15,7 +15,7 @@ spider_cfg = {
     'baseUrl': base_url,
     'search': 'web.body="dbiptv.sn.chinamobile.com" && ip.country=="中国"',
     'page': 2,
-    'pageSize': 100,
+    'pageSize': 50,
 }
 def analysis_m3u(data):
     items = data.split("\n")
@@ -145,16 +145,17 @@ for lin in item:
         continue
 
 with open("ip_qianxin.txt", 'w', encoding='utf-8') as file:
-    for line in flattened_list:
-        try:
-            line = line.strip()
-            count = line.count(',')
-            if count == 1:
-                if line:
-                    channel_name, channel_url = line.split(',')
-                    file.write(f"{channel_name},{channel_url}\n")
-        except:
-            print(f'错误----------------------->\t{line}')
-            continue
+    if len(flattened_list) > 0:
+        for line in flattened_list:
+            try:
+                line = line.strip()
+                count = line.count(',')
+                if count == 1:
+                    if line:
+                        channel_name, channel_url = line.split(',')
+                        file.write(f"{channel_name},{channel_url}\n")
+            except:
+                print(f'错误----------------------->\t{line}')
+                continue
 
         
