@@ -14,8 +14,8 @@ spider_cfg = {
     'apiKey': api_key,
     'baseUrl': base_url,
     'search': 'web.body="dbiptv.sn.chinamobile.com" && ip.country=="中国"',
-    'page': 1,
-    'pageSize': 50,
+    'page': 2,
+    'pageSize': 100,
 }
 def analysis_m3u(data):
     items = data.split("\n")
