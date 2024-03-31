@@ -68,8 +68,7 @@ def get_redirected_urls(url_list):
                             new_url = f"error_{channel_name}", channel_url
                             redirected_urls.append(new_url)
                             print(f"请求发生错误: {e}")
-        except:
-            print(line)
+
         if increment_counter() > 10:
             print(f"执行完成，次数: {counter}")
             break
