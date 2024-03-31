@@ -130,8 +130,8 @@ for lin in item:
         continue
 
 with open("ip_qianxin.txt", 'w', encoding='utf-8') as file:
-    all_lines = [line for line_str in url_list if isinstance(line_str, str) for line in line_str.split(',')]
-    for line in all_lines:
+    flattened_list = [item for sublist in url_list for item in sublist]
+    for line in flattened_list:
         try:
             line = line.strip()
             count = line.count(',')
