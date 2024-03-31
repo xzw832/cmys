@@ -130,7 +130,7 @@ for lin in item:
         continue
 
 with open("ip_qianxin.txt", 'w', encoding='utf-8') as file:
-    all_lines = [line for line_str in url_list for line in line_str.split(',')]
+    all_lines = [line for line_str in url_list if isinstance(line_str, str) for line in line_str.split(',')]
     for line in all_lines:
         try:
             line = line.strip()
