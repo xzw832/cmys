@@ -42,10 +42,20 @@ def get_redirected_urls(url_list):
                     print("==========>>>>>",channel_name, channel_url)
                     if '#' not in channel_url:
                         try:
-                            response = requests.head(channel_url, allow_redirects=False, timeout=1.5)
+                            response = requests.head(channel_url, allow_redirects=False, timeout=2)
+                           # 如果初始请求返回200，但之后服务器又发出了302重定向，我们需要处理这种情况
+                            if response.status_code == 200 and 'Location' in response.headers:
+                                print("1:----------------------------------------------------")
+                                print(response.txt)
+                                # redirected_url = response.headers['Location']
+                                # redirected_response = session.head(redirected_url)
+                                # new_url = channel_name, redirected_url
+                                print("--------------再次定向------》",redirected_url,redirected_response.url)
+                                # redirected_urls.append(new_url)
                             # 如果初始请求返回200，但之后服务器又发出了302重定向，我们需要处理这种情况
-                            if response.status_code in [301, 302, 303, 307, 308]:
+                            elif response.status_code in [301, 302, 303, 307, 308]:
                                 print("--------------直接定向------》",response.headers['Location'])
+                                print("2:----------------------------------------------------")
                                 print(response.text)
                                 # new_url = channel_name, response.headers['Location']
                                 # redirected_urls.append(new_url)
