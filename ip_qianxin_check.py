@@ -36,6 +36,7 @@ def get_redirected_urls(url_list):
         try:
             channel_name, channel_url = line
             if '#' not in channel_url:
+                print("进来了",channel_url)
                 try:
                     response = se.head(channel_url, allow_redirects=False, timeout=2)
                     print(response.text)
