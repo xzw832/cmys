@@ -116,7 +116,7 @@ for lin in item:
         response = se.get(lin, headers=headers, timeout=10)
         if response.status_code == 200:
             detected_encoding = chardet.detect(response.content)['encoding']
-            content = response.content.decode(detected_encoding, errors='ignore'))
+            content = response.content.decode(detected_encoding, errors='ignore')
             print(content)
             if content.startswith("#EXTM3U"):
                 url_list.append(analysis_m3u(content))  # 使用content而不是data
