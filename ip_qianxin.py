@@ -19,6 +19,9 @@ spider_cfg = {
     'page': 3,
     'pageSize': 50,
 }
+url_list = []
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36'}
+se = requests.Session()
 
 def analysis_m3u(data):
     items = data.split("\n")
@@ -124,32 +127,27 @@ def get_target_list(page):
         return []
 for i in range(1, spider_cfg['page'] + 1):
     item = get_target_list(i)
-    time.sleep(5)
-
-url_list = []
-headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36'}
-se = requests.Session()
-
-for lin in item:
-    print("--------------------------------->>>>>>>>>>>>>>>>>", lin)
-    try:
-        response = se.get(lin, headers=headers, timeout=10)
-        if response.status_code == 200:
-            detected_encoding = chardet.detect(response.content)['encoding']
-            content = response.content.decode(detected_encoding, errors='ignore')
-            print(content)
-            if content.startswith("#EXTM3U"):
-                url_list.append(analysis_m3u(content))  # 使用content而不是data
-            elif content.startswith('{"lives"'):
-                analysis_json(content)
-            elif content.startswith('{"spider"'):
-                analysis_json(content)
-            else:
-                url_list.append(analysis_txt(content))  # 使用content而不是data
-    except requests.RequestException as e:
-        # 更具体地捕获请求异常
-        print(f'无法连接并超时----------------------->\t{lin}\nError: {e}')
-        continue
+    for lin in item:
+        print("--------------------------------->>>>>>>>>>>>>>>>>", lin)
+        try:
+            response = se.get(lin, headers=headers, timeout=10)
+            if response.status_code == 200:
+                detected_encoding = chardet.detect(response.content)['encoding']
+                content = response.content.decode(detected_encoding, errors='ignore')
+                print(content)
+                if content.startswith("#EXTM3U"):
+                    url_list.append(analysis_m3u(content))  # 使用content而不是data
+                elif content.startswith('{"lives"'):
+                    analysis_json(content)
+                elif content.startswith('{"spider"'):
+                    analysis_json(content)
+                else:
+                    url_list.append(analysis_txt(content))  # 使用content而不是data
+        except requests.RequestException as e:
+            # 更具体地捕获请求异常
+            print(f'无法连接并超时----------------------->\t{lin}\nError: {e}')
+            continue
+        time.sleep(5)
 
 with open("ip_qianxin.txt", 'w', encoding='utf-8') as file:
     if len(flattened_list) > 0:
