@@ -50,5 +50,5 @@ def get_redirected_urls(url_list):
 
 for url in channels:
     channel_name, channel_url = url
-    get_redirected_urls(url)
+    get_redirected_urls(channel_url)
     time.sleep(1)
