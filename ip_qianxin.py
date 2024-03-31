@@ -82,7 +82,8 @@ def analysis_txt(data):
             if title and url and is_url:
                 channel_name = title.strip()
                 channel_url = url.strip()
-                item_info = f"{channel_name},{channel_url}"      
+                item_info = f"{channel_name},{channel_url}"
+                list_data.append(item_info)
     return list_data
     
 def get_target_list():
