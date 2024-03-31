@@ -3,6 +3,7 @@ import re
 import base64
 import requests
 import chardet
+import json
 
 # 从环境变量中获取API密钥和基础URL
 api_key = "f2c0a15a6c33c43418b37a7027d99b739a38b6bace593b176e0c459a572808b2"
@@ -85,7 +86,19 @@ def analysis_txt(data):
                 item_info = f"{channel_name},{channel_url}"
                 flattened_list.append(item_info)
     return list_data
-    
+
+def analysis_json(json_data):
+    data = json.loads(json_data)
+    for item in data['lives']:
+        # 遍历"channels"列表
+        for sub_item in item['channels']:
+            # 获取"name"和"urls"列表
+            name = sub_item['name']
+            urls = sub_item['urls']
+            # 遍历"urls"列表，将"name"和每个"url"组合成字符串，并添加到结果列表中
+            for url in urls:
+                flattened_list.append(f"{name},{url}")
+
 def get_target_list():
     try:
         # 构建API URL
@@ -122,6 +135,8 @@ for lin in item:
             print(content)
             if content.startswith("#EXTM3U"):
                 url_list.append(analysis_m3u(content))  # 使用content而不是data
+            elif content.startswith('{"lives"'):
+                analysis_json(content)
             else:
                 url_list.append(analysis_txt(content))  # 使用content而不是data
     except requests.RequestException as e:
