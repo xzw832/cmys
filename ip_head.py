@@ -8,7 +8,7 @@ load_urls = [
     ]
 file_contents = []
 with open("mywlkj_gt.txt", 'r', encoding='utf-8') as file:
-    file_contents = file.readlines()
+    url_list = file.readlines()
     
 def get_redirected_urls(url_list):
     session = requests.Session()
