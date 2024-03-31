@@ -30,7 +30,6 @@ def get_redirected_urls(url):
             print(f"Response Status Code: {response.status_code}")
     except RequestException as e:
         print(f"Error occurred for URL {url}: {e}")
-        break
 
 with open("ip_qianxin.txt", 'r', encoding='utf-8') as file:
     lines = file.readlines()
