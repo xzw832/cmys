@@ -16,7 +16,7 @@ spider_cfg = {
     'apiKey': api_key,
     'baseUrl': base_url,
     'search': 'web.body="dbiptv.sn.chinamobile.com" && ip.country=="中国"',
-    'page': 3,
+    'page': 2,
     'pageSize': 50,
 }
 url_list = []
