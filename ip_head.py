@@ -28,36 +28,37 @@ def get_redirected_urls(url_list):
                             if response.status_code == 200 and 'Location' in response.headers:
                                 redirected_url = response.headers['Location']
                                 redirected_response = session.head(redirected_url)
-                                new_url = channel_name, redirected_url
+                                new_url = f"{channel_name},{redirected_url}" 
                                 print("--------------再次定向------》",redirected_url,redirected_response.url)
                                 redirected_urls.append(new_url)
                             # 如果初始请求直接返回了重定向，我们直接返回重定向的URL
                             elif response.status_code in [301, 302, 303, 307, 308]:
                                 print("--------------直接定向------》",response.headers['Location'])
-                                new_url = channel_name, response.headers['Location']
+                                _url = response.headers['Location']
+                                new_url = f"{channel_name},{_url}" 
                                 redirected_urls.append(new_url)
                             else:
                                 # 如果没有重定向，返回原始URL
                                 new_url = channel_name, channel_url
-                                redirected_urls.append(new_url)
+                                redirected_urls.append(line)
                         except Timeout:
                             new_url = f"timeout_{channel_name}", channel_url
-                            redirected_urls.append(new_url)
+                            redirected_urls.append(line)
                             print("请求超时")
                         except requests.RequestException as e:
                             new_url = f"error_{channel_name}", channel_url
-                            redirected_urls.append(new_url)
+                            redirected_urls.append(line)
                             print(f"请求发生错误: {e}")
                     else:
                         # 如果没有重定向，返回原始URL
                         new_url = channel_name, channel_url
-                        redirected_urls.append(new_url)
+                        redirected_urls.append(line)
                 else:
                     redirected_urls.append(line)
             else:
                 redirected_urls.append(line)
         except:
-            print(line)
+            print(url_list)
             
     return redirected_urls
 
@@ -67,13 +68,9 @@ redirected_urls = get_redirected_urls(url_list)
 with open("mywlkj_all_gt.txt", 'w', encoding='utf-8') as file:
     for line in redirected_urls:
         if len(line) > 0:
-            parts = line.split()
-            if len(parts) >= 2:
-                name, name_url = parts 
+            name, name_url = line.split(',')
                 channel_url =(f"{name_url}")
                 channel_url = channel_url.replace("https://gitee.com/tv2785/tvbox/raw/master/gg.mp4", "https://gitee.com/guoqi8899/ipvideo/raw/master/gg.mp4")
                 file.write(f"{name},{channel_url}\n")
                 print(line)
-            else:
-                file.write(f"{line}\n")
     file.close()
