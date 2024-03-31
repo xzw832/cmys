@@ -55,11 +55,10 @@ def analysis_m3u(data):
             }
 
             continue
-        elif:
+        elif len(item) > 0:
             count = item.count(',')
             if count = 0:
-                if len(item) > 0:
-                    channel_url = item
+                channel_url = item
         # Assuming you want to append item_info to list_data when it's not null
         if item_info:
             item_info = f"{channel_name},{channel_url}"
