@@ -74,14 +74,15 @@ def analysis_txt(data):
     list_data = []
 
     for item in items:
-        title, url = item.split(",", 1)  # Limit split to first comma
-        is_url = any(url.startswith(key) for key in ["http://", "https://"])
-
-        if title and url and is_url:
-            channel_name = title.strip()
-            channel_url = url.strip()
-            item_info = f"{channel_name},{channel_url}"
-
+        count = item.count(',')
+        if count == 1:
+            title, url = item.split(",")  # Limit split to first comma
+            is_url = any(url.startswith(key) for key in ["http://", "https://"])
+    
+            if title and url and is_url:
+                channel_name = title.strip()
+                channel_url = url.strip()
+                item_info = f"{channel_name},{channel_url}"      
     return list_data
     
 def get_target_list():
