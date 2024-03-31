@@ -10,7 +10,6 @@ from requests.exceptions import Timeout
 eventlet.monkey_patch()
 channels = []
 headers={'User-Agent': 'okhttp/3.12.10(Linux;Android9;V2049ABuild/TP1A.220624.014;wv)AppleWebKit/537.36(KHTML,likeGecko)Version/4.0Chrome/116.0.0.0MobileSafari/537.36'}
-se=requests.Session()
 # 初始化计数器为0
 counter = 0
 # 每次调用该函数时将计数器加1并返回结果
@@ -32,46 +31,38 @@ with open("ip_qianxin.txt", 'r', encoding='utf-8') as file:
     
 def get_redirected_urls(url_list):
     redirected_urls = []
+    session = requests.Session()
+    
     for line in url_list:
-        increment_counter()
         try:
             channel_name, channel_url = line
             if '#' not in channel_url:
-                print("进来了",channel_url)
-                try:
-                    response = se.head(channel_url, allow_redirects=False, timeout=2)
-                    print(response.text)
-                    # 如果初始请求返回200，但之后服务器又发出了302重定向，我们需要处理这种情况
-                    if response.status_code == 200 and 'Location' in response.headers:
-                        print("1:----------------------------------------------------")
-                        print(response.text)
-                        # redirected_url = response.headers['Location']
-                        # redirected_response = session.head(redirected_url)
-                        # new_url = channel_name, redirected_url
-                        # print("--------------再次定向------》",redirected_url,redirected_response.url)
-                        # redirected_urls.append(new_url)
-                    # 如果初始请求返回200，但之后服务器又发出了302重定向，我们需要处理这种情况
-                    elif response.status_code in [301, 302, 303, 307, 308]:
-                        # print("--------------直接定向------》",response.headers['Location'])
-                        print("2:----------------------------------------------------")
-                        print(response.text)
-                        # new_url = channel_name, response.headers['Location']
-                        # redirected_urls.append(new_url)
+                response = session.head(channel_url, allow_redirects=False, timeout=2)
+                
+                if response.status_code == 200 and 'Location' in response.headers:
+                    # 处理初始请求返回200但之后服务器又发出302重定向的情况
+                    redirected_url = response.headers['Location']
+                    print("1:----------------------------------------------------")
+                    print(f"Initial URL: {channel_url}, Redirected URL: {redirected_url}")
+                    redirected_urls.append((channel_name, redirected_url))
+                elif response.status_code in [301, 302, 303, 307, 308]:
+                    # 处理直接重定向的情况
+                    redirected_url = response.headers['Location']
+                    print("2:----------------------------------------------------")
+                    print(f"Redirected URL: {redirected_url}")
+                    redirected_urls.append((channel_name, redirected_url))
+                else:
+                    # 对于其他状态码，你可以选择打印或忽略
+                    print(f"Response Status Code: {response.status_code}")
 
-                except Timeout:
-                    # new_url = f"timeout_{channel_name}", channel_url
-                    # redirected_urls.append(new_url)
-                    print("请求超时")
-                except requests.RequestException as e:
-                    # new_url = f"error_{channel_name}", channel_url
-                    # redirected_urls.append(new_url)
-                    print(f"请求发生错误: {e}")
-        except Exception as e:
-            print("发生了一个错误:", e)
-
+        except Timeout:
+            print(f"Request for {channel_url} timed out")
+            redirected_urls.append((f"timeout_{channel_name}", channel_url))
+        except requests.RequestException as e:
+            print(f"Error for {channel_url}: {e}")
+            redirected_urls.append((f"error_{channel_name}", channel_url))
+    
+    return redirected_urls
         
-        if counter > 10:
-            print(f"执行完成，次数: {counter}")
-            break
         
-get_redirected_urls(channels)
+redirected_urls ＝ get_redirected_urls(channels)
