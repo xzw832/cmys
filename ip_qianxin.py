@@ -151,17 +151,16 @@ for i in range(1, spider_cfg['page'] + 1):
 flattened_list = set(flattened_list)
 
 with open("ip_qianxin.txt", 'w', encoding='utf-8') as file:
-    if len(flattened_list) > 0:
-        for line in flattened_list:
-            try:
-                line = line.strip()
-                count = line.count(',')
-                if count == 1:
-                    if line:
-                        channel_name, channel_url = line.split(',')
-                        file.write(f"{channel_name},{channel_url}\n")
-            except:
-                print(f'错误----------------------->\t{line}')
-                continue
+    for line in flattened_list:
+        try:
+            line = line.strip()
+            count = line.count(',')
+            if count == 1:
+                if line:
+                    channel_name, channel_url = line.split(',')
+                    file.write(f"{channel_name},{channel_url}\n")
+        except:
+            print(f'错误----------------------->\t{line}')
+            continue
 
         
