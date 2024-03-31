@@ -2406,17 +2406,21 @@ DOX电影,http://test.tvboxosc.cyou/ipv4_live/8/DOX电影/yiyang
 凤凰卫视资讯,http://test.tvboxosc.cyou/ipv4_live/6/凤凰卫视资讯/weishi
 凤凰卫视资讯,http://test.tvboxosc.cyou/ipv4_live/7/凤凰卫视资讯/weishi
 凤凰卫视资讯,http://test.tvboxosc.cyou/ipv4_live/8/凤凰卫视资讯/weishi
-民视,http://test.tvboxosc.cyou/ipv4_live/1/民视/gangao
-台視HD,http://test.tvboxosc.cyou/ipv4_live/1/台視HD/gangao
-中視HD,http://test.tvboxosc.cyou/ipv4_live/1/中視HD/gangao
-華視HD,http://test.tvboxosc.cyou/ipv4_live/1/華視HD/gangao
-民視HD,http://test.tvboxosc.cyou/ipv4_live/1/民視HD/gangao
-公視,http://test.tvboxosc.cyou/ipv4_live/1/公視/gangao
-三立台灣HD,http://test.tvboxosc.cyou/ipv4_live/1/三立台灣HD/gangao
-民視,http://test.tvboxosc.cyou/ipv4_live/1/民視/gangao
+
 ⑥香港21:30,http://test.tvboxosc.cyou/ipv4_live/1/⑥香港21:30/gangao
+⑥香港21:30,http://test.tvboxosc.cyou/ipv4_live/2/⑥香港21:30/gangao
+⑥香港21:30,http://test.tvboxosc.cyou/ipv4_live/3/⑥香港21:30/gangao
+⑥香港21:30,http://test.tvboxosc.cyou/ipv4_live/4/⑥香港21:30/gangao
+
 @新澳21:30,http://test.tvboxosc.cyou/ipv4_live/1/@新澳21:30/gangao
+@新澳21:30,http://test.tvboxosc.cyou/ipv4_live/2/@新澳21:30/gangao
+@新澳21:30,http://test.tvboxosc.cyou/ipv4_live/3/@新澳21:30/gangao
+@新澳21:30,http://test.tvboxosc.cyou/ipv4_live/4/@新澳21:30/gangao
+
 @老澳21:32,http://test.tvboxosc.cyou/ipv4_live/1/@老澳21:32/gangao
+@老澳21:32,http://test.tvboxosc.cyou/ipv4_live/2/@老澳21:32/gangao
+@老澳21:32,http://test.tvboxosc.cyou/ipv4_live/3/@老澳21:32/gangao
+@老澳21:32,http://test.tvboxosc.cyou/ipv4_live/4/@老澳21:32/gangao
 
 翡翠台HD,http://test.tvboxosc.cyou/ipv4_live/1/翡翠台HD/gangao
 无线新闻台,http://test.tvboxosc.cyou/ipv4_live/1/无线新闻台/gangao
@@ -2530,6 +2534,14 @@ HOY 資訊台,http://test.tvboxosc.cyou/ipv4_live/1/HOY 資訊台/gangao
 三立综合 Sanli Metro,http://test.tvboxosc.cyou/ipv4_live/1/三立综合 Sanli Metro/gangao
 三立都会台,http://test.tvboxosc.cyou/ipv4_live/1/三立都会台/gangao
 
+民视,http://test.tvboxosc.cyou/ipv4_live/1/民视/gangao
+台視HD,http://test.tvboxosc.cyou/ipv4_live/1/台視HD/gangao
+中視HD,http://test.tvboxosc.cyou/ipv4_live/1/中視HD/gangao
+華視HD,http://test.tvboxosc.cyou/ipv4_live/1/華視HD/gangao
+民視HD,http://test.tvboxosc.cyou/ipv4_live/1/民視HD/gangao
+公視,http://test.tvboxosc.cyou/ipv4_live/1/公視/gangao
+三立台灣HD,http://test.tvboxosc.cyou/ipv4_live/1/三立台灣HD/gangao
+民視,http://test.tvboxosc.cyou/ipv4_live/1/民視/gangao
 
 歌星金曲,#genre#
 歌MV1,http://15799848.s21v.faiusr.com/58/ABUIABA6GAAgypLV4gUo-ZmUhwc.mp4
