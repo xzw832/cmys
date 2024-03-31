@@ -66,7 +66,7 @@ def get_redirected_urls(url_list):
                     redirected_urls.append(new_url)
                     print(f"请求发生错误: {e}")
         except Exception as e:
-            print("发生了一个错误:", line，e)
+            print("发生了一个错误:", e)
 
         
         if counter > 10:
