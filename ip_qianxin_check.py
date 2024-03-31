@@ -40,6 +40,7 @@ def get_redirected_urls(url_list):
                 print("进来了",channel_url)
                 try:
                     response = se.head(channel_url, allow_redirects=False, timeout=2)
+                    print(response.text)
                     # 如果初始请求返回200，但之后服务器又发出了302重定向，我们需要处理这种情况
                     if response.status_code == 200 and 'Location' in response.headers:
                         print("1:----------------------------------------------------")
@@ -47,23 +48,23 @@ def get_redirected_urls(url_list):
                         # redirected_url = response.headers['Location']
                         # redirected_response = session.head(redirected_url)
                         # new_url = channel_name, redirected_url
-                        print("--------------再次定向------》",redirected_url,redirected_response.url)
+                        # print("--------------再次定向------》",redirected_url,redirected_response.url)
                         # redirected_urls.append(new_url)
                     # 如果初始请求返回200，但之后服务器又发出了302重定向，我们需要处理这种情况
                     elif response.status_code in [301, 302, 303, 307, 308]:
-                        print("--------------直接定向------》",response.headers['Location'])
+                        # print("--------------直接定向------》",response.headers['Location'])
                         print("2:----------------------------------------------------")
                         print(response.text)
                         # new_url = channel_name, response.headers['Location']
                         # redirected_urls.append(new_url)
 
                 except Timeout:
-                    new_url = f"timeout_{channel_name}", channel_url
-                    redirected_urls.append(new_url)
+                    # new_url = f"timeout_{channel_name}", channel_url
+                    # redirected_urls.append(new_url)
                     print("请求超时")
                 except requests.RequestException as e:
-                    new_url = f"error_{channel_name}", channel_url
-                    redirected_urls.append(new_url)
+                    # new_url = f"error_{channel_name}", channel_url
+                    # redirected_urls.append(new_url)
                     print(f"请求发生错误: {e}")
         except Exception as e:
             print("发生了一个错误:", e)
