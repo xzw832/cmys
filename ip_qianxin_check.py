@@ -65,4 +65,4 @@ def get_redirected_urls(url_list):
     return redirected_urls
         
         
-redirected_urls ＝ get_redirected_urls(channels)
+redirected_urls = get_redirected_urls(channels)
