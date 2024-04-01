@@ -1,26 +1,34 @@
-import ffmpeg
-
-def get_live_source_resolution(url):
-    # 使用ffmpeg.input获取输入流
-    input_stream = ffmpeg.input(url)
+import subprocess
+ 
+def test_stream_resolution(stream_url):
+    # 构建ffmpeg命令
+    command = ['ffmpeg', '-i', stream_url, '-t', '0.1', '-an', '-vn', '-rw_frame_count', '1', '-loglevel', 'quiet']
     
-    # 使用ffmpeg.output设置输出参数，这里我们不真正输出到文件，而是使用null输出
-    # 注意：新版本ffmpeg-python可能不再需要.global_args()
-    output_stream = ffmpeg.output(input_stream, 'null', format='null', vframes=1, vf='scale=n:-1')
+    # 使用subprocess运行命令
+    try:
+        output = subprocess.check_output(command, stderr=subprocess.STDOUT)
+    except subprocess.CalledProcessError as e:
+        print(f"Error: {e.output.decode()}")
+        return None
     
-    # 执行FFmpeg命令并获取输出
-    ffmpeg_process = output_stream.run()
-    ffmpeg_output = ffmpeg_process.stdout.decode()
-    
-    # 在输出中查找分辨率信息
-    for line in ffmpeg_output.split('\n'):
-        if 'Stream' in line and 'Video' in line:
-            resolution = line.split(',')[0].split(' ')[-1]
-            return resolution.split('x')
-
+    # 解析输出结果获取分辨率
+    output_str = output.decode()
+    lines = output_str.split('\n')
+    for line in lines:
+        if 'Video: ' in line:
+            parts = line.split(', ')
+            for part in parts:
+                if 'Video: ' in part:
+                    video_info = part.split()
+                    if len(video_info) > 2:
+                        resolution = video_info[2]
+                        return resolution
     return None
-
-# 示例使用
-live_source_url = "http://119.54.0.212:9999/hls/48/index.m3u8"  # 替换为你的直播源URL
-resolution = get_live_source_resolution(live_source_url)
-print(resolution)
+ 
+# 使用示例
+stream_url = "http://119.54.0.212:9999/hls/48/index.m3u8"
+resolution = test_stream_resolution(stream_url)
+if resolution:
+    print(f"Stream resolution is: {resolution}")
+else:
+    print("Unable to determine stream resolution.")
