@@ -153,7 +153,7 @@ for i in range(1, spider_cfg['page'] + 1):
             continue
         time.sleep(5)
 flattened_list = set(flattened_list)
-
+flattened_list = sorted(flattened_list)
 with open("ip_qianxin.txt", 'w', encoding='utf-8') as file:
     for line in flattened_list:
         try:
