@@ -37,7 +37,7 @@ def is_odd_or_even(number):
 
     
 sorted_list = [
-  "119.54.0.212:9999"
+  "119.23.60.89:8460"
 ]
 
 
