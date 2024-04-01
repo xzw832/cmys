@@ -2389,18 +2389,6 @@ DOX电影,http://test.tvboxosc.cyou/ipv4_live/8/DOX电影/yiyang
 港台电影,http://159.75.85.63:35455/douyu/3637778
 
 测试频道,#genre#
-凤凰中文台HD,http://test.tvboxosc.cyou/ipv4_live/1/凤凰中文台HD/gangao
-凤凰资讯台HD,http://test.tvboxosc.cyou/ipv4_live/1/凤凰资讯台HD/gangao
-凤凰香港台HD,http://test.tvboxosc.cyou/ipv4_live/1/凤凰香港台HD/gangao
-翡翠台HD,http://test.tvboxosc.cyou/ipv4_live/1/翡翠台HD/gangao
-无线新闻台,http://test.tvboxosc.cyou/ipv4_live/1/无线新闻台/gangao
-无线新闻台HD,http://test.tvboxosc.cyou/ipv4_live/1/无线新闻台HD/gangao
-J2,http://test.tvboxosc.cyou/ipv4_live/1/J2/gangao
-TVB明珠台,http://test.tvboxosc.cyou/ipv4_live/1/TVB明珠台/gangao
-TVB财经体育资讯台,http://test.tvboxosc.cyou/ipv4_live/1/TVB财经体育资讯台/gangao
-翡翠台,http://test.tvboxosc.cyou/ipv4_live/1/翡翠台/gangao
-功夫台,http://test.tvboxosc.cyou/ipv4_live/1/功夫台/gangao
-
 凤凰卫视中文,http://test.tvboxosc.cyou/ipv4_live/1/凤凰卫视中文/weishi
 凤凰卫视中文,http://test.tvboxosc.cyou/ipv4_live/2/凤凰卫视中文/weishi
 凤凰卫视中文,http://test.tvboxosc.cyou/ipv4_live/3/凤凰卫视中文/weishi
@@ -2434,115 +2422,80 @@ TVB财经体育资讯台,http://test.tvboxosc.cyou/ipv4_live/1/TVB财经体育�
 @老澳21:32,http://test.tvboxosc.cyou/ipv4_live/3/@老澳21:32/gangao
 @老澳21:32,http://test.tvboxosc.cyou/ipv4_live/4/@老澳21:32/gangao
 
-18台,http://test.tvboxosc.cyou/ipv4_live/1/18台/gangao
-TVB欢乐新闻台,http://test.tvboxosc.cyou/ipv4_live/1/TVB欢乐新闻台/gangao
-TVB星河,http://test.tvboxosc.cyou/ipv4_live/1/TVB星河/gangao
-美亚电影台,http://test.tvboxosc.cyou/ipv4_live/1/美亚电影台/gangao
-NOW新闻台,http://test.tvboxosc.cyou/ipv4_live/1/NOW新闻台/gangao
-NOW财经台,http://test.tvboxosc.cyou/ipv4_live/1/NOW财经台/gangao
-NOW星影台,http://test.tvboxosc.cyou/ipv4_live/1/NOW星影台/gangao
-NOW爆谷台,http://test.tvboxosc.cyou/ipv4_live/1/NOW爆谷台/gangao
-TVB翡翠台HD,http://test.tvboxosc.cyou/ipv4_live/1/TVB翡翠台HD/gangao
-民视HD,http://test.tvboxosc.cyou/ipv4_live/1/民视HD/gangao
-台视HD,http://test.tvboxosc.cyou/ipv4_live/1/台视HD/gangao
-中视HD,http://test.tvboxosc.cyou/ipv4_live/1/中视HD/gangao
-华视HD,http://test.tvboxosc.cyou/ipv4_live/1/华视HD/gangao
-公视,http://test.tvboxosc.cyou/ipv4_live/1/公视/gangao
-台视综合HD,http://test.tvboxosc.cyou/ipv4_live/1/台视综合HD/gangao
-民视台湾台HD,http://test.tvboxosc.cyou/ipv4_live/1/民视台湾台HD/gangao
-三立综合台,http://test.tvboxosc.cyou/ipv4_live/1/三立综合台/gangao
-三立台湾台,http://test.tvboxosc.cyou/ipv4_live/1/三立台湾台/gangao
-三立都会台,http://test.tvboxosc.cyou/ipv4_live/1/三立都会台/gangao
-GTV八大综合台HD,http://test.tvboxosc.cyou/ipv4_live/1/GTV八大综合台HD/gangao
-ELTA综合HD,http://test.tvboxosc.cyou/ipv4_live/1/ELTA综合HD/gangao
-中天亚洲台,http://test.tvboxosc.cyou/ipv4_live/1/中天亚洲台/gangao
-中天综合HD,http://test.tvboxosc.cyou/ipv4_live/1/中天综合HD/gangao
-中天娱乐HD,http://test.tvboxosc.cyou/ipv4_live/1/中天娱乐HD/gangao
-EYETV旅游,http://test.tvboxosc.cyou/ipv4_live/1/EYETV旅游/gangao
-EYETV剧场,http://test.tvboxosc.cyou/ipv4_live/1/EYETV剧场/gangao
-CN卡通频道,http://test.tvboxosc.cyou/ipv4_live/1/CN卡通频道/gangao
-EBC东森超视HD,http://test.tvboxosc.cyou/ipv4_live/1/EBC东森超视HD/gangao
-美食星球,http://test.tvboxosc.cyou/ipv4_live/1/美食星球/gangao
-亚洲旅游台,http://test.tvboxosc.cyou/ipv4_live/1/亚洲旅游台/gangao
-寰宇新闻HD,http://test.tvboxosc.cyou/ipv4_live/1/寰宇新闻HD/gangao
-TVBS新闻HD,http://test.tvboxosc.cyou/ipv4_live/1/TVBS新闻HD/gangao
-三立新闻HD,http://test.tvboxosc.cyou/ipv4_live/1/三立新闻HD/gangao
-中视新闻HD,http://test.tvboxosc.cyou/ipv4_live/1/中视新闻HD/gangao
-台视新闻HD,http://test.tvboxosc.cyou/ipv4_live/1/台视新闻HD/gangao
-中天新闻2,http://test.tvboxosc.cyou/ipv4_live/1/中天新闻2/gangao
-民视新闻台HD,http://test.tvboxosc.cyou/ipv4_live/1/民视新闻台HD/gangao
-LS龙祥时代,http://test.tvboxosc.cyou/ipv4_live/1/LS龙祥时代/gangao
-EBC东森电影HD,http://test.tvboxosc.cyou/ipv4_live/1/EBC东森电影HD/gangao
-EBC东森洋片HD,http://test.tvboxosc.cyou/ipv4_live/1/EBC东森洋片HD/gangao
-好莱坞HD,http://test.tvboxosc.cyou/ipv4_live/1/好莱坞HD/gangao
-LTV龙华戏剧,http://test.tvboxosc.cyou/ipv4_live/1/LTV龙华戏剧/gangao
-LTV龙华偶像,http://test.tvboxosc.cyou/ipv4_live/1/LTV龙华偶像/gangao
-LTV龙华洋片,http://test.tvboxosc.cyou/ipv4_live/1/LTV龙华洋片/gangao
-LTV龙华电影,http://test.tvboxosc.cyou/ipv4_live/1/LTV龙华电影/gangao
-美亚电影台,http://test.tvboxosc.cyou/ipv4_live/1/美亚电影台/gangao
-动物星球,http://test.tvboxosc.cyou/ipv4_live/1/动物星球/gangao
-TVB千禧经典台,http://test.tvboxosc.cyou/ipv4_live/1/TVB千禧经典台/gangao
-TVB星河,http://test.tvboxosc.cyou/ipv4_live/1/TVB星河/gangao
-
-Now 星影台,http://test.tvboxosc.cyou/ipv4_live/1/Now 星影台/gangao
-Now 爆谷台,http://test.tvboxosc.cyou/ipv4_live/1/Now 爆谷台/gangao
-CHC动作电影,http://test.tvboxosc.cyou/ipv4_live/1/CHC动作电影/gangao
-CHC家庭影院,http://test.tvboxosc.cyou/ipv4_live/1/CHC家庭影院/gangao
-CHC高清电影,http://test.tvboxosc.cyou/ipv4_live/1/CHC高清电影/gangao
-新视觉,http://test.tvboxosc.cyou/ipv4_live/1/新视觉/gangao
-TVB明珠,http://test.tvboxosc.cyou/ipv4_live/1/TVB明珠/gangao
-TVB翡翠台,http://test.tvboxosc.cyou/ipv4_live/1/TVB翡翠台/gangao
-凤凰中文,http://test.tvboxosc.cyou/ipv4_live/1/凤凰中文/gangao
-劲爆体育,http://test.tvboxosc.cyou/ipv4_live/1/劲爆体育/gangao
-星空卫视,http://test.tvboxosc.cyou/ipv4_live/1/星空卫视/gangao
-澳视澳门,http://test.tvboxosc.cyou/ipv4_live/1/澳视澳门/gangao
-澳亚卫视,http://test.tvboxosc.cyou/ipv4_live/1/澳亚卫视/gangao
-重温经典,http://test.tvboxosc.cyou/ipv4_live/1/重温经典/gangao
-中天新聞,http://test.tvboxosc.cyou/ipv4_live/1/中天新聞/gangao
-翡翠台,http://test.tvboxosc.cyou/ipv4_live/1/翡翠台/gangao
-ViuTVsix,http://test.tvboxosc.cyou/ipv4_live/1/ViuTVsix/gangao
-ViuTV,http://test.tvboxosc.cyou/ipv4_live/1/ViuTV/gangao
-明珠台,http://test.tvboxosc.cyou/ipv4_live/1/明珠台/gangao
-J2台,http://test.tvboxosc.cyou/ipv4_live/1/J2台/gangao
-無綫新聞台,http://test.tvboxosc.cyou/ipv4_live/1/無綫新聞台/gangao
-無綫財經-體育-資訊台,http://test.tvboxosc.cyou/ipv4_live/1/無綫財經-體育-資訊台/gangao
-HOY 國際財經台,http://test.tvboxosc.cyou/ipv4_live/1/HOY 國際財經台/gangao
-HOY TV,http://test.tvboxosc.cyou/ipv4_live/1/HOY TV/gangao
-HOY 資訊台,http://test.tvboxosc.cyou/ipv4_live/1/HOY 資訊台/gangao
-港台電視 31,http://test.tvboxosc.cyou/ipv4_live/1/港台電視 31/gangao
-港台電視 32,http://test.tvboxosc.cyou/ipv4_live/1/港台電視 32/gangao
-港台電視 33,http://test.tvboxosc.cyou/ipv4_live/1/港台電視 33/gangao
-港台電視 34,http://test.tvboxosc.cyou/ipv4_live/1/港台電視 34/gangao
-公視戲劇,http://test.tvboxosc.cyou/ipv4_live/1/公視戲劇/gangao
-民視影劇台,http://test.tvboxosc.cyou/ipv4_live/1/民視影劇台/gangao
-龍華戲劇台,http://test.tvboxosc.cyou/ipv4_live/1/龍華戲劇台/gangao
-台视 TTV HD,http://test.tvboxosc.cyou/ipv4_live/1/台视 TTV HD/gangao
-台视新闻台,http://test.tvboxosc.cyou/ipv4_live/1/台视新闻台/gangao
-台视综合台,http://test.tvboxosc.cyou/ipv4_live/1/台视综合台/gangao
-中视 HD,http://test.tvboxosc.cyou/ipv4_live/1/中视 HD/gangao
-中视新闻台,http://test.tvboxosc.cyou/ipv4_live/1/中视新闻台/gangao
-民视 HD,http://test.tvboxosc.cyou/ipv4_live/1/民视 HD/gangao
-民视新闻台 FTV News,http://test.tvboxosc.cyou/ipv4_live/1/民视新闻台 FTV News/gangao
-民视台湾台,http://test.tvboxosc.cyou/ipv4_live/1/民视台湾台/gangao
-华视 CTS HD,http://test.tvboxosc.cyou/ipv4_live/1/华视 CTS HD/gangao
-公视 CTV,http://test.tvboxosc.cyou/ipv4_live/1/公视 CTV/gangao
-八大第一 GTV First,http://test.tvboxosc.cyou/ipv4_live/1/八大第一 GTV First/gangao
-八大综合 GTV Metro,http://test.tvboxosc.cyou/ipv4_live/1/八大综合 GTV Metro/gangao
-八大戏剧 GTV Drama,http://test.tvboxosc.cyou/ipv4_live/1/八大戏剧 GTV Drama/gangao
-八大娱乐 GTV Entertainment,http://test.tvboxosc.cyou/ipv4_live/1/八大娱乐 GTV Entertainment/gangao
-三立台湾 Sanli Taiwan,http://test.tvboxosc.cyou/ipv4_live/1/三立台湾 Sanli Taiwan/gangao
-三立戏剧台,http://test.tvboxosc.cyou/ipv4_live/1/三立戏剧台/gangao
-三立综合 Sanli Metro,http://test.tvboxosc.cyou/ipv4_live/1/三立综合 Sanli Metro/gangao
-三立都会台,http://test.tvboxosc.cyou/ipv4_live/1/三立都会台/gangao
-
-民视,http://test.tvboxosc.cyou/ipv4_live/1/民视/gangao
-台視HD,http://test.tvboxosc.cyou/ipv4_live/1/台視HD/gangao
-中視HD,http://test.tvboxosc.cyou/ipv4_live/1/中視HD/gangao
-華視HD,http://test.tvboxosc.cyou/ipv4_live/1/華視HD/gangao
-民視HD,http://test.tvboxosc.cyou/ipv4_live/1/民視HD/gangao
-公視,http://test.tvboxosc.cyou/ipv4_live/1/公視/gangao
-三立台灣HD,http://test.tvboxosc.cyou/ipv4_live/1/三立台灣HD/gangao
-民視,http://test.tvboxosc.cyou/ipv4_live/1/民視/gangao
+台視HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1047
+中視HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1048
+華視HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1049
+民視HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1050
+公視,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1201
+人間衛視,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1198
+大愛電視,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1216
+好消息GOOD TV,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1669
+Trace Sport Stars,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1003
+DISCOVERY,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1002
+旅遊生活,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1005
+動物星球,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1004
+亞洲旅遊,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1219
+MOMO親子台,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1007
+東森幼幼HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1008
+龍華卡通台,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1670
+緯來綜合HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1044
+八大第一HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1043
+八大綜合HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1019
+三立台灣HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1021
+三立都會HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1020
+韓國娛樂台,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1024
+東森綜合HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1041
+超視HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1180
+中天綜合HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1022
+中天娛樂HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1023
+東風衛視,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1195
+MUCH TV,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1189
+東森戲劇HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1042
+八大戲劇HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1057
+TVBS歡樂HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1018
+緯來戲劇,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1186
+龍華戲劇台,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1671
+龍華日韓劇,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1672
+龍華偶像劇,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1673
+緯來日本HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1026
+Taiwan Plus,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1674
+年代新聞,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1192
+東森新聞HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1014
+中天新聞,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1675
+民視新聞,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1204
+三立新聞HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1016
+TVBS新聞HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1052
+TVBS HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1668
+非凡新聞HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1013
+非凡商業HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1012
+東森財經HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1017
+寰宇新聞,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1222
+壹新聞,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1676
+Bloomberg News,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1066
+NHK世界HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1027
+鏡電視新聞台,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1031
+好萊塢電影HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1025
+緯來電影HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1183
+龍華電影台,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1677
+HBO,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1029
+AXN,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1054
+CINEMAX HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1030
+AMC 電影台,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1032
+寵物頻道,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1040
+緯來育樂HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1045
+緯來體育HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1011
+博斯運動一,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1678
+momo綜合台,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1225
+ELEVEN SPORTS 1 HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1069
+ELEVEN SPORTS 2 HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1072
+廈門衛視,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1033
+CCTV4-中央衛視,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1034
+海峽衛視,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1035
+浙江衛視,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1036
+東方衛視,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1037
+湖南衛視,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1038
+鳯凰衛視資訊,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1666
+鳯凰衛視中文,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1213
 
 歌星金曲,#genre#
 歌MV1,http://15799848.s21v.faiusr.com/58/ABUIABA6GAAgypLV4gUo-ZmUhwc.mp4
