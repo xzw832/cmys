@@ -45,6 +45,7 @@ jobs:
           pip install beautifulsoup4
           pip install chardet
           pip install ffmpeg-python
+          pip install --upgrade ffmpeg-python
              
       - name: Run hotel_duli_ip
         run: python ${{ github.workspace }}/url_ffmpeg.py
