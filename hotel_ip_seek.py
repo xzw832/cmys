@@ -155,7 +155,7 @@ def worker():
                 # 多获取的视频数据进行5秒钟限制
                 with eventlet.Timeout(5, False):
                     start_time = time.time()
-                    content = requests.get(ts_url,headers=headers, timeout=(1,4), stream=True).content
+                    content = requests.get(ts_url,headers=headers, timeout=(3,4), stream=True).content
                     end_time = time.time()
                     response_time = (end_time - start_time) * 1
     
