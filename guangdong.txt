@@ -2422,6 +2422,19 @@ DOX电影,http://test.tvboxosc.cyou/ipv4_live/8/DOX电影/yiyang
 @老澳21:32,http://test.tvboxosc.cyou/ipv4_live/3/@老澳21:32/gangao
 @老澳21:32,http://test.tvboxosc.cyou/ipv4_live/4/@老澳21:32/gangao
 
+民视,rtmp://f13h.mine.nu/sat/tv051
+台视,rtmp://f13h.mine.nu/sat/tv071
+中视,rtmp://f13h.mine.nu/sat/tv091
+华视,rtmp://f13h.mine.nu/sat/tv111
+纬来体育,rtmp://f13h.mine.nu/sat/tv721
+纬来体育,http://cloud.yumixiu768.com/tmp/123.m3u8
+纬来育乐,rtmp://f13h.mine.nu/sat/tv701
+纬来日本,rtmp://f13h.mine.nu/sat/tv771
+东森超视,rtmp://f13h.mine.nu/sat/tv331
+MoMo综合,rtmp://f13h.mine.nu/sat/tv761
+ELEVEN体育1,rtmp://f13h.mine.nu/sat/tv731
+ELEVEN体育2,rtmp://f13h.mine.nu/sat/tv741
+
 台視HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1047
 中視HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1048
 華視HD,http://104.233.187.235:2082/mqitv?user=tianya666&id=live1049
