@@ -1,0 +1,51 @@
+name: Get Live Source Resolution
+on:
+  # schedule:
+  #  - cron: '0 9,15 * * *'  #14-在晚上22点起运行，时区应该是+8
+  # 手动运行
+  workflow_dispatch:
+
+jobs:
+  push:
+      runs-on: ${{ matrix.operating-system }}
+      strategy:
+        matrix:
+          # in this example, there is a newer version already installed, 3.7.7, so the older version will be downloaded
+          operating-system: ['ubuntu-20.04']
+      steps:
+      - uses: actions/checkout@v3 # Checking out the repo
+      - name: Run with setup-python 3.8
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.9'
+          update-environment: false
+          cache: 'pipenv'
+
+
+      - name: Set up Chrome
+        uses: browser-actions/setup-chrome@latest
+        with:
+          chrome-version: stable
+      - name: Download chrome driver
+        uses: nanasess/setup-chromedriver@master
+      - name: Launch chrome driver
+        run: |
+            export DISPLAY=:99
+            chromedriver --url-base=/wd/hub &
+            sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional         
+        
+      - name: Install pipenv
+        run: pip3 install --user pipenv
+      - name: Install dependecies
+        run:  pipenv --python python3 && pipenv install
+      # 安装所需的包
+      - name: Install dependencies
+        run: |
+          pip install selenium requests futures eventlet
+          pip install beautifulsoup4
+          pip install chardet
+          pip install ffmpeg-python
+             
+      - name: Run hotel_duli_ip
+        run: python ${{ github.workspace }}/url_ffmpeg.py
+        
