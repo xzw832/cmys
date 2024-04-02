@@ -25,7 +25,7 @@ def text_list(list_str):
                 print(line)
                 results.append(f"{part_before_comma},{line}")
         else:
-            results.append(list)
+            results.append(list_str)
     
 for result in url_list:
     text_list(result)
