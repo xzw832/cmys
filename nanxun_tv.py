@@ -4,7 +4,7 @@ import requests
 from requests.exceptions import Timeout
 
 load_urls = [
-    "http://mywlkj.ddns.net:754/tv.php?id=63",
+    "http://tvbox.nx66.bf:99/tvbox/zhibo.php"
     ]
 file_contents = []
 results = []
