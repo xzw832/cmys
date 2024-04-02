@@ -10,15 +10,17 @@ load_urls = [
     "http://tvbox.nx66.bf:99/tvbox/zhibo.php",
     "http://api.mcqq.cn/tvbox/zhibo.php",
     "http://39.101.135.137:8081/ls.txt",
-    "https://raw.gitcode.com/lionzang/TV/raw/main/channel.txt"
+    "https://raw.gitcode.com/lionzang/TV/raw/main/channel.txt",
+    "https://gitee.com/chuangxin-chuang_0/cysmlzx/raw/master/iptv.txt",
+    "http://107.174.127.132:2082/getplaylist?user=tianya666&type=txt"
     ]
 file_contents = []
 results = []
 for url in load_urls:
     try:
-        file_contents.append(f"//地址：{url}\n")
         response = requests.get(url, allow_redirects=True, timeout=10)
         if response.status_code == 200:
+            file_contents.append(f"//地址：{url}\n")
             # print(response.text)
             detected_encoding = chardet.detect(response.content)['encoding']
             if detected_encoding is not None:
