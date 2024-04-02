@@ -19,10 +19,11 @@ def text_list(list):
         if '#genre#' in list:
             results.append(list)
         elif '#' in list:
+            part_before_comma = text.split(',')[0]
             parts = list(filter(None, list.split("#")))
             for line in parts:
                 print(line)
-                results.append(line)
+                results.append(f"{part_before_comma},{line}")
         else:
             results.append(list)
     
