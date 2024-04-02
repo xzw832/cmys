@@ -174,19 +174,20 @@ with open("nanxun_tv.txt", 'w', encoding='utf-8') as file:
     file.write(f"更新时间：{now_today}\n")
     file.close()
 
-results = set(results)
-results = sorted(results)
+results_list = set(results)
+results_set = sorted(results_list)
 # 分离出移动源
 with open("chinamobile.txt", 'w', encoding='utf-8') as file:
-    for result in results:
+    for result in results_set:
         if 'http://ottrrs.hl.chinamobile.com' in result or '/dbiptv.sn.chinamobile.com/' in result:
-            line = result.strip()
-            count = line.count(',')
-            if count == 1:
-                if line:
-                    channel_name, channel_url = line.split(',')
-                    name =(f"{channel_name}")
-                    file.write(f"{name}_移动,{channel_url}\n")
-                    print(f"{name},{channel_url}")
+            if '://[' not in results_set:
+                line = result.strip()
+                count = line.count(',')
+                if count == 1:
+                    if line:
+                        channel_name, channel_url = line.split(',')
+                        name =(f"{channel_name}")
+                        file.write(f"{name}_移动,{channel_url}\n")
+                        print(f"{name},{channel_url}")
     file.write(f"更新时间：{now_today}\n")
     file.close()
