@@ -12,7 +12,8 @@ load_urls = [
     "http://39.101.135.137:8081/ls.txt",
     "https://raw.gitcode.com/lionzang/TV/raw/main/channel.txt",
     "https://gitee.com/chuangxin-chuang_0/cysmlzx/raw/master/iptv.txt",
-    "http://107.174.127.132:2082/getplaylist?user=tianya666&type=txt"
+    "http://107.174.127.132:2082/getplaylist?user=tianya666&type=txt",
+    "http://mywlkj.ddns.net:754/tv.php"
     ]
 file_contents = []
 results = []
