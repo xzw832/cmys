@@ -63,7 +63,7 @@ with open("nanxun_tv.txt", 'w', encoding='utf-8') as file:
 # 分离出移动源
 with open("chinamobile.txt", 'w', encoding='utf-8') as file:
     for result in results:
-        if 'http://dbiptv.sn.chinamobile.com/' in result:
+        if 'http://ottrrs.hl.chinamobile.com' in result:
             line = result.strip()
             count = line.count(',')
             if count == 1:
