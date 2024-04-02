@@ -14,13 +14,13 @@ for url in load_urls:
         # print(response.text)
         file_contents.append(response.text)
 url_list = [line for line_str in file_contents for line in line_str.split('\n')]
-def text_list(list):
-    if len(list) > 0:
-        if '#genre#' in list:
-            results.append(list)
-        elif '#' in list:
-            part_before_comma = list.split(',')[0]
-            parts = list(filter(None, list.split("#")))
+def text_list(list_str):
+    if len(list_str) > 0:
+        if '#genre#' in list_str:
+            results.append(list_str)
+        elif '#' in list_str:
+            part_before_comma = list_str.split(',')[0]
+            parts = list(filter(None, list_str.split("#")))
             for line in parts:
                 print(line)
                 results.append(f"{part_before_comma},{line}")
