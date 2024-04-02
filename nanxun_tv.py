@@ -14,18 +14,20 @@ load_urls = [
 file_contents = []
 results = []
 for url in load_urls:
-    file_contents.append(f"//地址：{url}\n")
-    response = requests.get(url, allow_redirects=True)
-    if response.status_code == 200:
-        # print(response.text)
-        detected_encoding = chardet.detect(response.content)['encoding']
-        if detected_encoding is not None:
-            content = response.content.decode(detected_encoding, errors='ignore')
-        else:
-            # 你可以选择一个默认的编码，或者记录一个错误，或者采取其他措施
-            content = response.content.decode('utf-8', errors='ignore')
-        file_contents.append(content)
-        
+    try:
+        file_contents.append(f"//地址：{url}\n")
+        response = requests.get(url, allow_redirects=True, timeout=10)
+        if response.status_code == 200:
+            # print(response.text)
+            detected_encoding = chardet.detect(response.content)['encoding']
+            if detected_encoding is not None:
+                content = response.content.decode(detected_encoding, errors='ignore')
+            else:
+                # 你可以选择一个默认的编码，或者记录一个错误，或者采取其他措施
+                content = response.content.decode('utf-8', errors='ignore')
+            file_contents.append(content)
+    except:
+        print("=============Errot=============")
 url_list = [line for line_str in file_contents for line in line_str.split('\n')]
 def text_list(list_str):
     if len(list_str) > 0:
