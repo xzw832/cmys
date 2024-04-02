@@ -1,3 +1,4 @@
+//地址：http://tvbox.nx66.bf:99/tvbox/zhibo.php
 央视频道1,#genre#
 CCTV-1综合,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226016/index.m3u8
 CCTV-1综合,http://39.134.24.162/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221225804/index.m3u8
@@ -3622,3 +3623,6 @@ DJ 流浪兄弟[1920*1080],https://vd2.bdstatic.com/mda-mhrdtax1km0idkc5/1080p/c
 食叔牛膝盖骨,https://vd2.bdstatic.com/mda-neqaikd1xvvtrc2a/480p/h264/1653464493901543639/mda-neqaikd1xvvtrc2a.mp4?v_from_s=hkapp-haokan-tucheng&auth_key=1655033339-0-0-fccf02e69c19c9227ebee50760846d7e&bcevod_channel=searchbox_feed&pd=1&cd=0&pt=3&logid=3539483479&vid=8419620275932311899&abtest=all
 食叔肥肠鹅,https://vd4.bdstatic.com/mda-nepbnx1gkwwfe6h4/480p/h264/1653380567130163019/mda-nepbnx1gkwwfe6h4.mp4?v_from_s=hkapp-haokan-hbe&auth_key=1655033379-0-0-2321e8dcc8049dd5833ded28592aa557&bcevod_channel=searchbox_feed&pd=1&cd=0&pt=3&logid=3579472476&vid=5831581271697130378&abtest=all
 食叔馍包羊腿,https://vd2.bdstatic.com/mda-nen8av4mmq6b6jdn/hd/cae_h264/1653291282172118783/mda-nen8av4mmq6b6jdn.mp4?v_from_s=hkapp-haokan-tucheng&auth_key=1655033428-0-0-1ae329bc1264912e601d4e999f52cd24&bcevod_channel=searchbox_feed&pd=1&cd=0&pt=3&logid=0028519303&vid=778061406411546269&abtest=all
+//地址：http://api.mcqq.cn/tvbox/zhibo.php
+//地址：http://39.101.135.137:8081/ls.txt
+更新时间,2024-04-02 01:05:54
