@@ -180,7 +180,7 @@ results_set = sorted(results_list)
 with open("chinamobile.txt", 'w', encoding='utf-8') as file:
     for result in results_set:
         if 'http://ottrrs.hl.chinamobile.com' in result or '/dbiptv.sn.chinamobile.com/' in result:
-            if '://[' not in results_set:
+            if '://[' not in result:
                 line = result.strip()
                 count = line.count(',')
                 if count == 1:
