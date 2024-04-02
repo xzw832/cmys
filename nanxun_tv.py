@@ -27,7 +27,7 @@ for url in load_urls:
                 content = response.content.decode('utf-8', errors='ignore')
             file_contents.append(content)
     except:
-        print("=============Errot=============")
+        print(f"=============Errot============={url}")
 url_list = [line for line_str in file_contents for line in line_str.split('\n')]
 def text_list(list_str):
     if len(list_str) > 0:
