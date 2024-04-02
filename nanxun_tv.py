@@ -80,6 +80,7 @@ with open("chinamobile.txt", 'w', encoding='utf-8') as file:
                     name = name.replace("标清", "")
                     name = name.replace("频道", "")
                     name = name.replace("-", "")
+                    name = name.replace("·", "")
                     name = name.replace(" ", "")
                     name = name.replace("PLUS", "+")
                     name = name.replace("＋", "+")
