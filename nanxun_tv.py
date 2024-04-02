@@ -19,7 +19,7 @@ def text_list(list):
         if '#genre#' in list:
             results.append(list)
         elif '#' in list:
-            parts = list(filter(None, text.split("#")))
+            parts = list(filter(None, list.split("#")))
             for line in parts:
                 print(line)
                 results.append(line)
