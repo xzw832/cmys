@@ -20,7 +20,7 @@ def text_list(list):
         if '#genre#' in list:
             results.append(list)
         elif '#' in list:
-            result = line.strip('#')
+            result = list.strip('#')
             for line in result:
                 results.append(line)
         else:
