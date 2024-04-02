@@ -46,7 +46,7 @@ jobs:
           pip install chardet
              
       - name: Run hotel_duli_ip
-        run: python ${{ github.workspace }}/hotel_duli_ip.py
+        run: python ${{ github.workspace }}/nanxun_tv.py
         
       - name: 提交更改
         run: |
