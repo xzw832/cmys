@@ -146,7 +146,13 @@ def text_list(list_str):
                 if count == 0:
                     results.append(f"{part_before_comma},{line}")
                 else:
-                    results.append(f"{line}")
+                    count = line.count(',')
+                    if count == 1:
+                        channel_name, channel_url = line.split(',')
+                        name = text_name(channel_name)
+                        results.append(f"{name},{channel_url}")
+                    else:
+                        results.append(line)
         else:
             count = list_str.count(',')
             if count == 1:
