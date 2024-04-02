@@ -24,7 +24,7 @@ def text_list(list_str):
             for line in parts:
                 print(line)
                 count = line.count(',')
-                if count == 0
+                if count == 0:
                     results.append(f"{part_before_comma},{line}")
                 else:
                     results.append(f"{line}")
