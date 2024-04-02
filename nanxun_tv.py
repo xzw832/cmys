@@ -9,7 +9,8 @@ now_today = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 load_urls = [
     "http://tvbox.nx66.bf:99/tvbox/zhibo.php",
     "http://api.mcqq.cn/tvbox/zhibo.php",
-    "http://39.101.135.137:8081/ls.txt"
+    "http://39.101.135.137:8081/ls.txt",
+    "https://raw.gitcode.com/lionzang/TV/raw/main/channel.txt"
     ]
 file_contents = []
 results = []
