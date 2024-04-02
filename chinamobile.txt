@@ -1,15 +1,3 @@
-CCTV-10科教_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225730/index.m3u8
-CCTV-12社会与法_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225731/index.m3u8
-CCTV-13新闻_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226537/index.m3u8
-CCTV-16奥林匹克_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226100/index.m3u8
-CCTV-1综合_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226016/index.m3u8
-CCTV-2财经_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226540/index.m3u8
-CCTV-4中文国际_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226428/index.m3u8
-CCTV-5+体育赛事_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225603/index.m3u8
-CCTV-5体育_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226019/index.m3u8
-CCTV-6电影_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226010/index.m3u8
-CCTV-8电视剧_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226008/index.m3u8
-CCTV-9纪录_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225734/index.m3u8
 CCTV1_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226016/index.m3u8
 CCTV1_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226016/index.m3u8
 CCTV10_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225730/index.m3u8
@@ -20,6 +8,7 @@ CCTV12_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225731/inde
 CCTV12_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225731/index.m3u8
 CCTV13_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226011/index.m3u8
 CCTV13_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226011/index.m3u8
+CCTV13_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226537/index.m3u8
 CCTV14_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225732/index.m3u8
 CCTV14_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225732/index.m3u8
 CCTV15_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225601/index.m3u8
@@ -30,6 +19,7 @@ CCTV17_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225765/inde
 CCTV17_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225765/index.m3u8
 CCTV2_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225588/index.m3u8
 CCTV2_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225588/index.m3u8
+CCTV2_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226540/index.m3u8
 CCTV3_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226021/index.m3u8
 CCTV3_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226021/index.m3u8
 CCTV4_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226428/index.m3u8
@@ -120,4 +110,4 @@ CETV4_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225783/index
 青海卫视_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225628/index.m3u8
 黑龙江卫视_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226327/index.m3u8
 龙江卫视_移动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226327/index.m3u8
-更新时间：2024-04-02 04:27:06
+更新时间：2024-04-02 04:32:14
