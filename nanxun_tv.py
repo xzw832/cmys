@@ -1,9 +1,11 @@
 import os
 import re
+import time
 import requests
 from requests.exceptions import Timeout
 import chardet
 
+now_today = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 load_urls = [
     "http://tvbox.nx66.bf:99/tvbox/zhibo.php",
     "http://api.mcqq.cn/tvbox/zhibo.php",
@@ -52,4 +54,5 @@ with open("nanxun_tv.txt", 'w', encoding='utf-8') as file:
         print("======================================")
         print(result)
         file.write(f"{result}\n")
+    file.write(f"更新时间,{now_today}\n")
     file.close()
