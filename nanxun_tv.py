@@ -11,10 +11,9 @@ results = []
 for url in load_urls:
     response = requests.get(url, allow_redirects=True)
     if response.status_code == 200:
-        print(response.text)
+        # print(response.text)
         file_contents.append(response.text)
 url_list = [line for line_str in file_contents for line in line_str.split('\n')]
-
 def text_list(list):
     if len(list) > 0:
         if '#genre#' in list:
@@ -34,6 +33,7 @@ for result in url_list:
 # 将结果写入文件
 with open("nanxun_tv.txt", 'w', encoding='utf-8') as file:
     for result in results:
+        print("======================================")
         print(result)
         file.write(f"{result}\n")
     file.close()
