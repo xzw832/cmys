@@ -144,23 +144,23 @@ def text_list(list_str):
                 print(line)
                 count = line.count(',')
                 if count == 0:
-                    results.append(f"{part_before_comma},{line}")
+                    results.append(f"{part_before_comma},{line.strip()}")
                 else:
                     count = line.count(',')
                     if count == 1:
-                        channel_name, channel_url = line.split(',')
+                        channel_name, channel_url = line.strip().split(',')
                         name = text_name(channel_name)
                         results.append(f"{name},{channel_url}")
                     else:
-                        results.append(line)
+                        results.append(line.strip())
         else:
             count = list_str.count(',')
             if count == 1:
-                channel_name, channel_url = list_str.split(',')
+                channel_name, channel_url = list_str.strip().split(',')
                 name = text_name(channel_name)
                 results.append(f"{name},{channel_url}")
             else:
-                results.append(list_str)
+                results.append(list_str.strip())
     
 for result in url_list:
     text_list(result)
