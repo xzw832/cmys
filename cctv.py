@@ -246,6 +246,19 @@ for channel in channels:
 task_queue.join()
 
 
+# 打开移动源文件
+with open("chinamobile.txt", 'r', encoding='utf-8') as file:
+    lines = file.readlines()
+    for line in lines:
+        line = line.strip()
+        count = line.count(',')
+        if count == 1:
+            if line:
+                channel_name, channel_url = line.split(',')
+                if 'CCTV' in channel_name:
+                    result = channel_name, channel_url, "0.001 MB/s"
+                    results.append(result)
+
 def channel_key(channel_name):
     match = re.search(r'\d+', channel_name)
     if match:
