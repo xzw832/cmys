@@ -22,13 +22,14 @@ def text_list(list):
         elif '#' in list:
             result = list.strip('#')
             for line in result:
+                print(line)
                 results.append(line)
         else:
             results.append(list)
     
 for result in url_list:
     text_list(result)
-    print(result)
+    # print(result)
 
 # 将结果写入文件
 with open("nanxun_tv.txt", 'w', encoding='utf-8') as file:
