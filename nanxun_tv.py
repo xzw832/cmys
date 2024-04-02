@@ -23,7 +23,11 @@ def text_list(list_str):
             parts = list(filter(None, list_str.split("#")))
             for line in parts:
                 print(line)
-                results.append(f"{part_before_comma},{line}")
+                count = line.count(',')
+                if count == 0
+                    results.append(f"{part_before_comma},{line}")
+                else:
+                    results.append(f"{line}")
         else:
             results.append(list_str)
     
