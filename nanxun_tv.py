@@ -2,6 +2,7 @@ import os
 import re
 import requests
 from requests.exceptions import Timeout
+import chardet
 
 load_urls = [
     "http://tvbox.nx66.bf:99/tvbox/zhibo.php"
