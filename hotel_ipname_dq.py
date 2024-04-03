@@ -92,7 +92,7 @@ for i in range(1, page + 1):
                 (By.CSS_SELECTOR, "div.tables")
                 )
         )
-        time.sleep(20)
+        time.sleep(random.randint(3, 10))
         soup = BeautifulSoup(driver.page_source, "html.parser")
     
         # 关闭WebDriver
