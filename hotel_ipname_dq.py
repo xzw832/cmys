@@ -13,57 +13,46 @@ from queue import Queue
 import threading
 
 lock = threading.Lock()
+
+diqu = [
+    "江苏",
+    "香港",
+    "青海",
+    "甘肃",
+    "陕西",
+    "云南",
+    "贵州",
+    "四川",
+    "海南",
+    "广东",
+    "湖南",
+    "湖北",
+    "河南",
+    "山东",
+    "江西",
+    "福建",
+    "安徽",
+    "浙江",
+    "黑龙江",
+    "吉林",
+    "辽宁",
+    "山西",
+    "河北",
+    "上海",
+    "台湾"
+    ]
+def contains_any_value(text, diqu):
+    for dq in diqu:
+        if dq in text:
+            return dq
+    return "未分类"
 # 查找所有符合指定格式的网址
 infoList = []
 urls_y = []
 resultslist = []
+page = 544
 urls = [
     "http://tonkiang.us/hoteliptv.php?page=1&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=2&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=3&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=4&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=5&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=6&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=7&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=8&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=9&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=10&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=11&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=12&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=13&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=14&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=15&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=16&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=17&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=18&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=19&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=20&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=21&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=22&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=23&s=江苏",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=广东",
-    "http://tonkiang.us/hoteliptv.php?page=2&s=广东",
-    "http://tonkiang.us/hoteliptv.php?page=3&s=广东",
-    "http://tonkiang.us/hoteliptv.php?page=4&s=广东",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=凤凰",
-    "http://tonkiang.us/hoteliptv.php?page=2&s=凤凰",
-    "http://tonkiang.us/hoteliptv.php?page=3&s=凤凰",
-    "http://tonkiang.us/hoteliptv.php?page=4&s=凤凰",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=东海新闻",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=南京",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=响水",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=宿迁",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=常州",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=徐州",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=江苏体育",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=沛县",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=泗洪",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=泰州",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=淮安",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=睢宁",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=赣榆",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=连云",
-    "http://tonkiang.us/hoteliptv.php?page=1&s=高淳"
     ]
 # 初始化计数器为0
 counter = -1
@@ -81,10 +70,11 @@ def is_odd_or_even(number):
     else:
         return False
 
-for url in urls:
+for i in range(1, page + 1):
     try:
         # 创建一个Chrome WebDriver实例
         results = []
+        url = f"http://tonkiang.us/hoteliptv.php?page={i}&s=广东"
         chrome_options = Options()
         chrome_options.add_argument('--headless')
         chrome_options.add_argument('--no-sandbox')
@@ -123,7 +113,7 @@ for url in urls:
             # print(result)
             html_txt = f"{result}"
             # print(html_txt)
-            if "result" in html_txt:
+            if "暂时失效" not in html_txt:
                 m3u8_div = result.find("a")
                 if m3u8_div:
                     pattern = r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d+"  # 设置匹配的格式，如http://8.8.8.8:8888
@@ -145,6 +135,7 @@ for url in urls:
                                 ipname = '电信'
                             else:
                                 ipname ='其他'
+                            dq_name = contains_any_value(html_txt, diqu)
                             resultslist.append(f"{ipname},{ip}")
     except:
         print(f"=========================>>> Thread {url} error")
@@ -270,7 +261,7 @@ def worker(thread_url,counter_id):
             if "http" in urlsp:
                 # 获取锁
                 lock.acquire()
-                infoList.append(f"{name}_{in_name},{urlsp}")
+                infoList.append(f"{name}_{in_name}_{dq_name},{urlsp}")
                 # 释放锁
                 lock.release()
         print(f"=========================>>> Thread {in_url} save ok")
