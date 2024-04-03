@@ -136,7 +136,7 @@ for i in range(1, page + 1):
                             else:
                                 ipname ='其他'
                             dq_name = contains_any_value(html_txt, diqu)
-                            resultslist.append(f"{ipname},{ip}")
+                            resultslist.append(f"{ipname},{ip},{dq_name}")
     except:
         print(f"=========================>>> Thread {url} error")
         
@@ -154,7 +154,7 @@ def worker(thread_url,counter_id):
         # 创建一个Chrome WebDriver实例
         results = []
         #分离出运营商和IP
-        in_name,in_url = thread_url.split(',')
+        in_name,in_url,dq_name = thread_url.split(',')
         chrome_options = Options()
         chrome_options.add_argument(f"user-data-dir=selenium{counter_id}")
         chrome_options.add_argument('--headless')
@@ -210,7 +210,7 @@ def worker(thread_url,counter_id):
             urlsp =f"{url_int}"
             if len(urlsp) == 0:
                 urlsp = "rtp://127.0.0.1"             
-            print(f"{url_name}\t{url_int}")
+            print(f"{dq_name}_{url_name}\t{url_int}")
             #print("-------------------------------------------------------------------------------------------------------")
             urlsp = urlsp.replace("http://67.211.73.118:9901", "")
             name = name.replace("cctv", "CCTV")
