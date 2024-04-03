@@ -110,10 +110,11 @@ for i in range(1, page + 1):
             #break
             print("Err-------------------------------------------------------------------------------------------------------")
         for result in results:
-            # print("============================================================================================================")
+            print("============================================================================================================")
             # print(result)
             html_txt = f"{result}"
-            # print(html_txt)
+            print("============================================================================================================")
+            print(html_txt)
             if "暂时失效" not in html_txt:
                 m3u8_div = result.find("a")
                 if m3u8_div:
@@ -128,6 +129,7 @@ for i in range(1, page + 1):
                             second_italic_tag = italic_tags[1]  # 索引从0开始，所以第二个标签的索引是1
                             url_name = second_italic_tag.text
                             name_html_txt = f"{url_name}"
+                            print(name_html_txt)
                             if "移动" in html_txt:
                                 ipname = '移动'
                             elif "联通" in html_txt:
@@ -136,7 +138,7 @@ for i in range(1, page + 1):
                                 ipname = '电信'
                             else:
                                 ipname ='其他'
-                            dq_name = contains_any_value(html_txt, diqu)
+                            dq_name = contains_any_value(name_html_txt, diqu)
                             resultslist.append(f"{ipname},{ip},{dq_name}")
     except:
         print(f"=========================>>> Thread {url} error")
