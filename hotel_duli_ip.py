@@ -37,7 +37,7 @@ def is_odd_or_even(number):
 
     
 sorted_list = [
-  "111.59.63.32:9901"
+  "1.70.32.95:8085"
 ]
 
 
@@ -171,7 +171,7 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
 infoList = set(infoList)  # 去重得到唯一的URL列表
 infoList = sorted(infoList)
 
-with open("duliip.txt", 'w', encoding='utf-8') as file:
+with open("duliip_sx.txt", 'w', encoding='utf-8') as file:
     for info in infoList:
         file.write(info + "\n")
         print(info)
