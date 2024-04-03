@@ -50,7 +50,7 @@ def contains_any_value(text, diqu):
 infoList = []
 urls_y = []
 resultslist = []
-page = 544
+page = 100
 urls = [
     "http://tonkiang.us/hoteliptv.php?page=1&s=江苏",
     ]
@@ -75,6 +75,7 @@ for i in range(1, page + 1):
         # 创建一个Chrome WebDriver实例
         results = []
         url = f"http://tonkiang.us/hoteliptv.php?page={i}&s=广东"
+        print(url)
         chrome_options = Options()
         chrome_options.add_argument('--headless')
         chrome_options.add_argument('--no-sandbox')
