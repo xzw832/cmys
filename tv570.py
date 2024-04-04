@@ -42,6 +42,8 @@ with open("myitv.txt", 'r', encoding='utf-8') as file:
                     if '画中画' in channel_name:
                       name =(f"{channel_name}")
                       name = name.replace("画中画", "")
+                      name = name.replace("_联通", "_电信")
+                      name = name.replace("_其他", "_电信")
                       channels.append((name, channel_url))
     file.close()
     
@@ -52,8 +54,8 @@ with open("tv570.txt", 'r', encoding='utf-8') as file:
         count = line.count(',')
         if count == 1:
             if line:
+                channel_name, channel_url = line.split(',')
                 if 'http' in channel_url:
-                    channel_name, channel_url = line.split(',')
                     channels.append((channel_name, channel_url))
     file.close()
 channels = set(channels)  # 去重得到唯一的URL列表
@@ -111,7 +113,7 @@ def worker():
                 now=time.time()
                 res=se.get(channel_url,headers=headers,timeout=5,stream=True)
                 if res.status_code==200:
-                    for k in res.iter_content(chunk_size=2097152):
+                    for k in res.iter_content(chunk_size=1048576):
                         # 这里的chunk_size是1MB，每次读取1MB测试视频流
                         # 如果能获取视频流，则输出读取的时间以及链接
                         if time.time()-now > 20:
@@ -122,7 +124,7 @@ def worker():
                             if k:
                                 print(f'{time.time()-now:.2f}\t{channel_url}')
                                 response_time = (time.time()-now) * 1
-                                download_speed = 2097152 / response_time / 1024
+                                download_speed = 1048576 / response_time / 1024
                                 normalized_speed = min(max(download_speed / 1024, 0.001), 100)
                                 if response_time > 1:
                                     result = channel_name, channel_url, f"{normalized_speed:.3f} MB/s"
