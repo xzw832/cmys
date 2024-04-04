@@ -15,6 +15,10 @@ import threading
 lock = threading.Lock()
 
 diqu = [
+    "西藏",
+    "天津"
+    "北京",
+    "重庆",
     "江苏",
     "香港",
     "青海",
@@ -50,7 +54,7 @@ def contains_any_value(text, diqu):
 infoList = []
 urls_y = []
 resultslist = []
-page = 50
+page = 1
 urls = [
     "http://tonkiang.us/hoteliptv.php?page=1&s=江苏",
     ]
@@ -110,10 +114,9 @@ for i in range(1, page + 1):
             #break
             print("Err-------------------------------------------------------------------------------------------------------")
         for result in results:
-            print("============================================================================================================")
             # print(result)
             html_txt = f"{result}"
-            print("============================================================================================================")
+            print("1===========================================================================================================")
             print(html_txt)
             if "暂时失效" not in html_txt:
                 m3u8_div = result.find("a")
@@ -125,10 +128,11 @@ for i in range(1, page + 1):
                         ip = urls_all[0]
                         italic_tags = soup.find_all('i')
                         # 尝试获取第二个<i>标签
-                        if len(italic_tags) > 1:
+                        if len(italic_tags) > 0:
                             second_italic_tag = italic_tags[1]  # 索引从0开始，所以第二个标签的索引是1
                             url_name = second_italic_tag.text
                             name_html_txt = f"{url_name}"
+                            name_html_txt = name_html_txt.replace(" ", "").replace("\n", "")
                             print(name_html_txt)
                             if "移动" in html_txt:
                                 ipname = '移动'
@@ -140,6 +144,7 @@ for i in range(1, page + 1):
                                 ipname ='其他'
                             dq_name = contains_any_value(name_html_txt, diqu)
                             resultslist.append(f"{ipname},{ip},{dq_name}")
+                            print(f"{ipname},{ip},{dq_name}")
     except:
         print(f"=========================>>> Thread {url} error")
         
