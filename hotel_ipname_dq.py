@@ -160,8 +160,7 @@ with open("iplist.txt", 'w', encoding='utf-8') as file:
         file.write(iplist + "\n")
         print(iplist)
     file.close()
-# sorted_list = sorted(resultslist)
-sorted_list = set(resultslist)
+sorted_list = sorted(resultslist)
 
 def worker(thread_url,counter_id):
     try:
