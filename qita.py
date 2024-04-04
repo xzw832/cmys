@@ -38,11 +38,14 @@ with open("itv.txt", 'r', encoding='utf-8') as file:
         if count == 1:
             if line:
                 channel_name, channel_url = line.split(',')
+                name =(f"{channel_name}")
+                name = name.replace("高清", "")
                 if '卫视' not in channel_name and 'CCTV' not in channel_name and '测试' not in channel_name and '电影' not in channel_name and '影院' not in channel_name and '剧场' not in channel_name and '影视' not in channel_name and '卡通' not in channel_name and '动漫' not in channel_name and '动画' not in channel_name and '少儿' not in channel_name:
-                    if cut_first_chinese_words(channel_name) in all_text:
-                        channels.append((channel_name, channel_url))
-                    else:
-                        qita_channels.append(f"{channel_name},{channel_url}")
+                    if 'CETV' not in channel_name and 'CQTV' not in channel_name and 'IPTV' not in channel_name:
+                        if cut_first_chinese_words(channel_name) in all_text:
+                            channels.append((name, channel_url))
+                        else:
+                            qita_channels.append(f"{name},{channel_url}")
     file.close()
 
 # 写入未用的其他频道
@@ -177,48 +180,51 @@ with open("qita.txt", 'w', encoding='utf-8') as file:
     for result in results:
         channel_name, channel_url, speed = result
         if '卫视' not in channel_name and 'CCTV' not in channel_name and '测试' not in channel_name and '电影' not in channel_name and '影院' not in channel_name and '剧场' not in channel_name and '影视' not in channel_name and '卡通' not in channel_name and '动漫' not in channel_name and '动画' not in channel_name and '少儿' not in channel_name:
-            if cut_first_chinese_words(channel_name) in js_txt:
-                if channel_name in channel_counters:
-                    if channel_counters[channel_name] >= result_counter:
-                        continue
+            if 'CETV' not in channel_name and 'CQTV' not in channel_name and 'IPTV' not in channel_name:
+                if cut_first_chinese_words(channel_name) in js_txt:
+                    if channel_name in channel_counters:
+                        if channel_counters[channel_name] >= result_counter:
+                            continue
+                        else:
+                            file.write(f"{channel_name},{channel_url}\n")
+                            channel_counters[channel_name] += 1
                     else:
                         file.write(f"{channel_name},{channel_url}\n")
-                        channel_counters[channel_name] += 1
-                else:
-                    file.write(f"{channel_name},{channel_url}\n")
-                    channel_counters[channel_name] = 1
+                        channel_counters[channel_name] = 1
                     
     channel_counters = {}
     file.write('【  广东频道  】,#genre#\n')
     for result in results:
         channel_name, channel_url, speed = result
         if '卫视' not in channel_name and 'CCTV' not in channel_name and '测试' not in channel_name and '电影' not in channel_name and '影院' not in channel_name and '剧场' not in channel_name and '影视' not in channel_name and '卡通' not in channel_name and '动漫' not in channel_name and '动画' not in channel_name and '少儿' not in channel_name:
-            if cut_first_chinese_words(channel_name) in guangdong_text:
-                if channel_name in channel_counters:
-                    if channel_counters[channel_name] >= result_counter:
-                        continue
+            if 'CETV' not in channel_name and 'CQTV' not in channel_name and 'IPTV' not in channel_name:
+                if cut_first_chinese_words(channel_name) in guangdong_text:
+                    if channel_name in channel_counters:
+                        if channel_counters[channel_name] >= result_counter:
+                            continue
+                        else:
+                            file.write(f"{channel_name},{channel_url}\n")
+                            channel_counters[channel_name] += 1
                     else:
                         file.write(f"{channel_name},{channel_url}\n")
-                        channel_counters[channel_name] += 1
-                else:
-                    file.write(f"{channel_name},{channel_url}\n")
-                    channel_counters[channel_name] = 1
+                        channel_counters[channel_name] = 1
                     
     channel_counters = {}                
     file.write('【  体育频道  】,#genre#\n')
     for result in results:
         channel_name, channel_url, speed = result
         if '卫视' not in channel_name and 'CCTV' not in channel_name and '测试' not in channel_name and '电影' not in channel_name and '影院' not in channel_name and '剧场' not in channel_name and '影视' not in channel_name and '卡通' not in channel_name and '动漫' not in channel_name and '动画' not in channel_name and '少儿' not in channel_name:
-            if cut_first_chinese_words(channel_name) in tiyu_text:
-                if channel_name in channel_counters:
-                    if channel_counters[channel_name] >= result_counter:
-                        continue
+            if 'CETV' not in channel_name and 'CQTV' not in channel_name and 'IPTV' not in channel_name:
+                if cut_first_chinese_words(channel_name) in tiyu_text:
+                    if channel_name in channel_counters:
+                        if channel_counters[channel_name] >= result_counter:
+                            continue
+                        else:
+                            file.write(f"{channel_name},{channel_url}\n")
+                            channel_counters[channel_name] += 1
                     else:
                         file.write(f"{channel_name},{channel_url}\n")
-                        channel_counters[channel_name] += 1
-                else:
-                    file.write(f"{channel_name},{channel_url}\n")
-                    channel_counters[channel_name] = 1
+                        channel_counters[channel_name] = 1
 
     file.close() 
 
