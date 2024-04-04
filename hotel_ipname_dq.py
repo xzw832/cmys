@@ -55,7 +55,7 @@ def contains_any_value(text, diqu):
 infoList = []
 urls_y = []
 resultslist = []
-page = 1
+page = 150
 urls = [
     "http://tonkiang.us/hoteliptv.php?page=1&s=江苏",
     ]
@@ -132,8 +132,8 @@ for i in range(1, page + 1):
                             url_name = second_italic_tag.text
                             name_html_txt = f"{url_name}"
                             name_html_txt = name_html_txt.replace(" ", "").replace("\n", "")
-                            print(html_txt)
-                            print("1===========================================================================================================")
+                            # print(html_txt)
+                            # print("1===========================================================================================================")
                             if "移动" in html_txt:
                                 ipname = '移动'
                             elif "移通" in html_txt:
@@ -148,7 +148,7 @@ for i in range(1, page + 1):
                                 ipname ='其他'
                             dq_name = contains_any_value(html_txt, diqu)
                             resultslist.append(f"{ipname},{ip},{dq_name}")
-                            print(f"{ipname},{ip},{dq_name}")
+                            # print(f"{ipname},{ip},{dq_name}")
                             name_html_txt = ""
     except:
         print(f"=========================>>> Thread {url} error")
