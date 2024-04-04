@@ -15,8 +15,9 @@ import threading
 lock = threading.Lock()
 
 diqu = [
+    "内蒙",
     "西藏",
-    "天津"
+    "天津",
     "北京",
     "重庆",
     "江苏",
