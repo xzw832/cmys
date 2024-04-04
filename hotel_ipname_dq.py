@@ -133,7 +133,6 @@ for i in range(1, page + 1):
                             name_html_txt = name_html_txt.replace(" ", "").replace("\n", "")
                             print(html_txt)
                             print("1===========================================================================================================")
-                            print(name_html_txt)
                             if "移动" in html_txt:
                                 ipname = '移动'
                             elif "移通" in html_txt:
@@ -146,7 +145,7 @@ for i in range(1, page + 1):
                                 ipname = '电信'
                             else:
                                 ipname ='其他'
-                            dq_name = contains_any_value(name_html_txt, diqu)
+                            dq_name = contains_any_value(html_txt, diqu)
                             resultslist.append(f"{ipname},{ip},{dq_name}")
                             print(f"{ipname},{ip},{dq_name}")
                             name_html_txt = ""
