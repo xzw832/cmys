@@ -16,7 +16,7 @@ results = []
 
 channels = []
 error_channels = []
-headers={'User-Agent': 'okhttp/3.12.10(Linux;Android9;V2049ABuild/TP1A.220624.014;wv)AppleWebKit/537.36(KHTML,likeGecko)Version/4.0Chrome/116.0.0.0MobileSafari/537.36'}
+headers={'User-Agent': 'okhttp/3.15 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36'}
 se=requests.Session()
 
 with open("itv.txt", 'r', encoding='utf-8') as file:
@@ -47,9 +47,10 @@ def worker():
                 # 多获取的视频数据进行5秒钟限制
                 with eventlet.Timeout(5, False):
                     start_time = time.time()
-                    content = requests.get(ts_url,headers=headers, timeout=(1,4), stream=True).content
+                    content = requests.get(ts_url,headers=headers, timeout=(2,5), stream=True).content
                     end_time = time.time()
                     response_time = (end_time - start_time) * 1
+    
                 if content:
                     with open(ts_lists_0, 'ab') as f:
                         f.write(content)  # 写入文件
@@ -59,7 +60,7 @@ def worker():
                     # print(f"下载速度：{download_speed:.3f} kB/s")
                     normalized_speed = min(max(download_speed / 1024, 0.001), 100)  # 将速率从kB/s转换为MB/s并限制在1~100之间
                     #print(f'{channel_url}')
-                    print(f"m3u8 标准化后的速率：{normalized_speed:.3f} MB/s {channel_url}")
+                    #print(f"m3u8 标准化后的速率：{normalized_speed:.3f} MB/s")
     
                     # 删除下载的文件
                     os.remove(ts_lists_0)
@@ -73,11 +74,7 @@ def worker():
                     # print(f"可用频道：{len(results)} 个 , 不可用频道：{len(error_channels)} 个 , 总频道：{len(channels)} 个 ,总进度：{numberx:.2f} %。")
             except:
                 error_channel = channel_name, channel_url
-                # 获取锁
-                lock.acquire()
-                error_channels.append(error_channel)
-                # 释放锁
-                lock.release()
+                # error_channels.append(error_channel)
                 numberx = (len(results) + len(error_channels)) / len(channels) * 100
         else:
             try:
@@ -87,7 +84,7 @@ def worker():
                     for k in res.iter_content(chunk_size=2097152):
                         # 这里的chunk_size是1MB，每次读取1MB测试视频流
                         # 如果能获取视频流，则输出读取的时间以及链接
-                        if time.time()-now > 60:
+                        if time.time()-now > 15:
                             res.close()
                             print(f'Time out\t{channel_url}')
                             break
@@ -132,7 +129,19 @@ for channel in channels:
 # 等待所有任务完成
 task_queue.join()
 
-
+# 打开移动源文件
+with open("chinamobile.txt", 'r', encoding='utf-8') as file:
+    lines = file.readlines()
+    for line in lines:
+        line = line.strip()
+        count = line.count(',')
+        if count == 1:
+            if line:
+                channel_name, channel_url = line.split(',')
+                if '卡通' in channel_name or '动漫' in channel_name or '动画' in channel_name or '少儿' in channel_name:
+                    result = channel_name, channel_url, "0.001 MB/s"
+                    results.append(result)
+                    
 def channel_key(channel_name):
     match = re.search(r'\d+', channel_name)
     if match:
