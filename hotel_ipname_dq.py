@@ -148,7 +148,7 @@ for i in range(1, page + 1):
                                 ipname ='其他'
                             dq_name = contains_any_value(html_txt, diqu)
                             resultslist.append(f"{ipname},{ip},{dq_name}")
-                            # print(f"{ipname},{ip},{dq_name}")
+                            print(f"{ipname},{ip},{dq_name}")
                             name_html_txt = ""
     except:
         print(f"=========================>>> Thread {url} error")
