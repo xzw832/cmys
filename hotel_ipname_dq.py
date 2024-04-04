@@ -55,7 +55,7 @@ def contains_any_value(text, diqu):
 infoList = []
 urls_y = []
 resultslist = []
-page = 150
+page = 250
 urls = [
     "http://tonkiang.us/hoteliptv.php?page=1&s=江苏",
     ]
