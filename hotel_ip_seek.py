@@ -251,7 +251,7 @@ results = sorted(results, reverse=True)
 for result in results:
     channel_name, channel_url, speed = result
     print(result)
-    if '11_联通秒开' in channel_name:
+    if '11_央卫秒开' in channel_name:
         url = ret_urls(channel_url)
         print(url)
         if len(url) > 0:
@@ -259,13 +259,13 @@ for result in results:
             with open("11_cctv.txt", 'r', encoding='utf-8') as file:
                 filedata = file.read()
             file.close()
-            filedata = filedata.replace('11_联通秒开', url)
+            filedata = filedata.replace('11_央卫秒开', url)
             cctv_files.append(filedata)
 
             with open("11_weishi.txt", 'r', encoding='utf-8') as file:
                 weishi_filedata = file.read()
             file.close()
-            weishi_filedata = weishi_filedata.replace('11_联通秒开', url)
+            weishi_filedata = weishi_filedata.replace('11_央卫秒开', url)
             weishi_files.append(weishi_filedata)
 
             # 保存，
