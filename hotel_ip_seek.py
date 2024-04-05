@@ -256,13 +256,13 @@ for result in results:
         print(url)
         if len(url) > 0:
             increment_counter()
-            with open("prv_cctv.txt", 'r', encoding='utf-8') as file:
+            with open("11_cctv.txt", 'r', encoding='utf-8') as file:
                 filedata = file.read()
             file.close()
             filedata = filedata.replace('11_联通秒开', url)
             cctv_files.append(filedata)
 
-            with open("prv_weishi.txt", 'r', encoding='utf-8') as file:
+            with open("11_weishi.txt", 'r', encoding='utf-8') as file:
                 weishi_filedata = file.read()
             file.close()
             weishi_filedata = weishi_filedata.replace('11_联通秒开', url)
@@ -321,7 +321,5 @@ with open("seekip_ok.txt", 'w', encoding='utf-8') as out_file:
 
 
 # 使用示例
-
-
 
 print(f"{now_today}ip测试完成")
