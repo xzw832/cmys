@@ -251,29 +251,27 @@ results = sorted(results, reverse=True)
 for result in results:
     channel_name, channel_url, speed = result
     print(result)
-    if '1_央卫秒开' in channel_name:
+    if '11_联通秒开' in channel_name:
         url = ret_urls(channel_url)
         print(url)
         if len(url) > 0:
-            print("------------------------------------------------------1_央卫秒开")
             increment_counter()
             with open("prv_cctv.txt", 'r', encoding='utf-8') as file:
                 filedata = file.read()
             file.close()
-            filedata = filedata.replace('1_央卫秒开', url)
+            filedata = filedata.replace('11_联通秒开', url)
             cctv_files.append(filedata)
 
             with open("prv_weishi.txt", 'r', encoding='utf-8') as file:
                 weishi_filedata = file.read()
             file.close()
-            weishi_filedata = weishi_filedata.replace('1_央卫秒开', url)
+            weishi_filedata = weishi_filedata.replace('11_联通秒开', url)
             weishi_files.append(weishi_filedata)
 
     elif '0_央卫秒开' in channel_name:
         url = ret_urls(channel_url)
         print(url)
         if len(url) > 0:
-            print("------------------------------------------------------0_央卫秒开")
             increment_counter()
             with open("prv_cctv.txt", 'r', encoding='utf-8') as file:
                 filedata = file.read()
@@ -286,7 +284,7 @@ for result in results:
             file.close()
             weishi_filedata = weishi_filedata.replace('0_央卫秒开', url)
             weishi_files.append(weishi_filedata)
-            
+
 with open('S_CCTV.txt', 'w', encoding='utf-8') as file:
     all_lines = [line for line_str in cctv_files for line in line_str.split('\n')]
     for result in all_lines:
