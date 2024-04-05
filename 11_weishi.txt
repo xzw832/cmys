@@ -70,9 +70,4 @@
 长影_联通,http://11_央卫秒开/hls/28/index.m3u8
 陕西卫视_联通,http://11_央卫秒开/hls/49/index.m3u8
 青海卫视_联通,http://11_央卫秒开/hls/50/index.m3u8
-靓装_联通,http://11_央卫秒开/hls/83/index.m3u8
-风云剧场_联通,http://11_央卫秒开/hls/86/index.m3u8
-风云足球_联通,http://11_央卫秒开/hls/77/index.m3u8
-风云音乐_联通,http://11_央卫秒开/hls/79/index.m3u8
-高尔夫_联通,http://11_央卫秒开/hls/89/index.m3u8
 黑龙江卫视_联通,http://11_央卫秒开/hls/42/index.m3u8
