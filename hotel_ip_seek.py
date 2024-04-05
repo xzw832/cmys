@@ -226,12 +226,12 @@ def worker():
                 print(f'X\t{channel_url}')
         
         # 减少CPU占用
-        time.sleep(0)
+        time.sleep(random.randint(3, 10))
         # 标记任务完成
         task_queue.task_done()
 
 # 创建多个工作线程
-num_threads = 50
+num_threads = 100
 for _ in range(num_threads):
     t = threading.Thread(target=worker, daemon=True) 
     #t = threading.Thread(target=worker, args=(event,len(channels)))  # 将工作线程设置为守护线程
