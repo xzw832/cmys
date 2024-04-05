@@ -246,6 +246,42 @@ for channel in channels:
 # 等待所有任务完成
 task_queue.join()
 
+# 如果存在于检测列表时，表示已失效，清空原来的源
+cctv_00 = 0
+cctv_11 = 0
+cctv_12 = 0
+
+for url in urls:
+    channel_name, channel_url = url.split(',')
+    if '11_央卫秒开' in channel_name:
+        cctv11 = 1
+    elif '0_央卫秒开' in channel_name:
+        cctv_00 = 1
+    elif '12_央卫秒开' in channel_name:
+        cctv_12 = 1
+        
+if cctv00 == 1:
+    with open('Z_00_cctv.txt', 'w') as file:
+    pass
+    file.close()
+    with open('Z_00_weishi.txt', 'w') as file:
+    pass
+    file.close()
+if cctv11 == 1:
+    with open('Z_11_cctv.txt', 'w') as file:
+    pass
+    file.close()
+    with open('Z_11_weishi.txt', 'w') as file:
+    pass
+    file.close()
+if cctv12 == 1:
+    with open('Z_12_cctv.txt', 'w') as file:
+    pass
+    file.close()
+    with open('Z_12_weishi.txt', 'w') as file:
+    pass
+    file.close()
+    
 results = sorted(results, reverse=True)
 
 for result in results:
@@ -256,6 +292,8 @@ for result in results:
         print(url)
         if len(url) > 0:
             increment_counter()
+            cctv_files = []
+            weishi_files = []
             with open("11_cctv.txt", 'r', encoding='utf-8') as file:
                 filedata = file.read()
             file.close()
@@ -269,8 +307,37 @@ for result in results:
             weishi_files.append(weishi_filedata)
 
             # 保存，
-            with open("Z_11.txt", "w", encoding="utf-8") as output:
-                output.write('\n'.join(cctv_files))
+            with open("Z_11_cctv.txt", "w", encoding="utf-8") as output:
+                output.write('\n'.join(weishi_files))
+                output.close()
+            with open("Z_11_weishi.txt", "w", encoding="utf-8") as output:
+                output.write('\n'.join(weishi_files))
+                output.close()
+
+    elif '12_央卫秒开' in channel_name:
+        url = ret_urls(channel_url)
+        print(url)
+        if len(url) > 0:
+            increment_counter()
+            cctv_files = []
+            weishi_files = []
+            with open("12_cctv.txt", 'r', encoding='utf-8') as file:
+                filedata = file.read()
+            file.close()
+            filedata = filedata.replace('12_央卫秒开', url)
+            cctv_files.append(filedata)
+
+            with open("12_weishi.txt", 'r', encoding='utf-8') as file:
+                weishi_filedata = file.read()
+            file.close()
+            weishi_filedata = weishi_filedata.replace('12_央卫秒开', url)
+            weishi_files.append(weishi_filedata)
+
+            # 保存，
+            with open("Z_12_cctv.txt", "w", encoding="utf-8") as output:
+                output.write('\n'.join(weishi_files))
+                output.close()
+            with open("Z_12_weishi.txt", "w", encoding="utf-8") as output:
                 output.write('\n'.join(weishi_files))
                 output.close()
                 
@@ -279,6 +346,8 @@ for result in results:
         print(url)
         if len(url) > 0:
             increment_counter()
+            cctv_files = []
+            weishi_files = []
             with open("prv_cctv.txt", 'r', encoding='utf-8') as file:
                 filedata = file.read()
             file.close()
@@ -295,28 +364,41 @@ for result in results:
                 output.write('\n'.join(cctv_files))
                 output.write('\n'.join(weishi_files))
                 output.close()
-                
-with open('S_CCTV.txt', 'w', encoding='utf-8') as file:
-    all_lines = [line for line_str in cctv_files for line in line_str.split('\n')]
-    for result in all_lines:
-        count = result.count(',')
-        if count == 1:
-            channel_name, channel_url = result.split(',')
-            if '央卫秒开' not in channel_url:
-                file.write(f"{channel_name},{channel_url}\n")
-    #file.write('\n'.join(cctv_files))
-file.close()
+            # 保存，
+            with open("Z_00_cctv.txt", "w", encoding="utf-8") as output:
+                output.write('\n'.join(weishi_files))
+                output.close()
+            with open("Z_00_weishi.txt", "w", encoding="utf-8") as output:
+                output.write('\n'.join(weishi_files))
+                output.close()
 
-with open('S_weishi.txt', 'w', encoding='utf-8') as file:
-    all_lines = [line for line_str in weishi_files for line in line_str.split('\n')]
-    for result in all_lines:
-        count = result.count(',')
-        if count == 1:
-            channel_name, channel_url = result.split(',')
-            if '央卫秒开' not in channel_url:
-                file.write(f"{channel_name},{channel_url}\n") 
-    # file.write('\n'.join(weishi_files))
-file.close()
+# 合并文件内容
+file_contents = []
+file_paths = ["Z_12_cctv.txt", "Z_11_cctv.txt", "Z_00_cctv.txt"]  # 替换为实际的文件路径列表
+for file_path in file_paths:
+    with open(file_path, 'r', encoding="utf-8") as file:
+        content = file.read()
+        file_contents.append(content)
+        file.close()
+# 写入合并后的文件
+with open("S_CCTV.txt", "w", encoding="utf-8") as output:
+    output.write('\n'.join(file_contents))
+    output.close()
+
+# print("================================================================================================================")
+# 合并文件内容
+file_contents = []
+file_paths = ["Z_12_weishi.txt", "Z_11_weishi.txt", "Z_00_weishi.txt"]  # 替换为实际的文件路径列表
+for file_path in file_paths:
+    with open(file_path, 'r', encoding="utf-8") as file:
+        content = file.read()
+        file_contents.append(content)
+        file.close()
+# 写入合并后的文件
+with open("S_weishi.txt", "w", encoding="utf-8") as output:
+    output.write('\n'.join(file_contents))
+    output.close()
+# print("================================================================================================================")
 
 file_path = "cfg_ip.txt"
 # 将结果写入文件
