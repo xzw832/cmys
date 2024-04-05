@@ -262,24 +262,18 @@ for url in urls:
         
 if cctv00 == 1:
     with open('Z_00_cctv.txt', 'w') as file:
-    pass
     file.close()
     with open('Z_00_weishi.txt', 'w') as file:
-    pass
     file.close()
 if cctv11 == 1:
     with open('Z_11_cctv.txt', 'w') as file:
-    pass
     file.close()
     with open('Z_11_weishi.txt', 'w') as file:
-    pass
     file.close()
 if cctv12 == 1:
     with open('Z_12_cctv.txt', 'w') as file:
-    pass
     file.close()
     with open('Z_12_weishi.txt', 'w') as file:
-    pass
     file.close()
     
 results = sorted(results, reverse=True)
