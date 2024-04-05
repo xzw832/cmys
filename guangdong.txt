@@ -3097,7 +3097,7 @@ CCTV音乐,http://test.tvboxosc.cyou/ipv4_live/4/CCTV音乐/tv570
 黑龙江卫视,http://test.tvboxosc.cyou/ipv4_live/3/黑龙江卫视/tv570
 黑龙江卫视,http://test.tvboxosc.cyou/ipv4_live/4/黑龙江卫视/tv570
 
-线路测试,#genre#
+央卫备用线路,#genre#
 CCTV1,http://1.70.32.95:8085/udp/239.1.1.7:8007
 CCTV10,http://1.70.32.95:8085/udp/239.1.1.17:8017
 CCTV11,http://1.70.32.95:8085/udp/239.1.1.18:8018
