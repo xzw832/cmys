@@ -16,7 +16,7 @@ CCTV6_联通,http://11_央卫秒开/hls/6/index.m3u8
 CCTV7_联通,http://11_央卫秒开/hls/7/index.m3u8
 CCTV8_联通,http://11_央卫秒开/hls/8/index.m3u8
 CCTV9_联通,http://11_央卫秒开/hls/9/index.m3u8
-CCTV台球_联通,http://11_央卫秒开/hls/78/index.m3u8
+央视台球_联通,http://11_央卫秒开/hls/78/index.m3u8
 CCTV文化精品_联通,http://11_央卫秒开/hls/81/index.m3u8
 CETV1_联通,http://11_央卫秒开/hls/70/index.m3u8
 CETV2_联通,http://11_央卫秒开/hls/71/index.m3u8
