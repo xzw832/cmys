@@ -67,9 +67,14 @@ def worker():
                     result = channel_name, channel_url, f"{normalized_speed:.3f} MB/s"
                     # 获取锁
                     lock.acquire() 
-                    results.append(result)
+                    if normalized_speed > 0.001:
+                        results.append(result)
+                    else:
+                        error_channel = channel_name, channel_url
+                        error_channels.append(error_channel)
                     # 释放锁
                     lock.release()
+                    
                     numberx = (len(results) + len(error_channels)) / len(channels) * 100
                     # print(f"可用频道：{len(results)} 个 , 不可用频道：{len(error_channels)} 个 , 总频道：{len(channels)} 个 ,总进度：{numberx:.2f} %。")
             except:
