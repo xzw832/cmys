@@ -138,8 +138,6 @@ for ipv in urls:
         modify_urls(url)
         
 channels = set(channels)
-#随机打乱列表
-random.shuffle(channels)
 
 # 定义工作线程函数
 def worker():
