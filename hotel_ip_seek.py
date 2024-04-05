@@ -268,6 +268,12 @@ for result in results:
             weishi_filedata = weishi_filedata.replace('11_联通秒开', url)
             weishi_files.append(weishi_filedata)
 
+            # 保存，
+            with open("Z_11.txt", "w", encoding="utf-8") as output:
+                output.write('\n'.join(cctv_files))
+                output.write('\n'.join(weishi_files))
+                output.close()
+                
     elif '0_央卫秒开' in channel_name:
         url = ret_urls(channel_url)
         print(url)
@@ -284,7 +290,12 @@ for result in results:
             file.close()
             weishi_filedata = weishi_filedata.replace('0_央卫秒开', url)
             weishi_files.append(weishi_filedata)
-
+            # 保存，
+            with open("Z_00.txt", "w", encoding="utf-8") as output:
+                output.write('\n'.join(cctv_files))
+                output.write('\n'.join(weishi_files))
+                output.close()
+                
 with open('S_CCTV.txt', 'w', encoding='utf-8') as file:
     all_lines = [line for line_str in cctv_files for line in line_str.split('\n')]
     for result in all_lines:
