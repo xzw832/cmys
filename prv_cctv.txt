@@ -71,6 +71,7 @@ CCTV风云音乐_电信,http://0_央卫秒开/tsfile/live/1193_1.m3u8
 CCTV风云足球_电信,http://0_央卫秒开/tsfile/live/1194_1.m3u8
 CCTV女性时尚_电信,http://0_央卫秒开/tsfile/live/1196_1.m3u8
 CCTV世界地理_电信,http://0_央卫秒开/tsfile/live/1197_1.m3u8
+CCTV兵器科技_电信,http://0_央卫秒开/tsfile/live/1110_1.m3u8
 
 CCTV1_联通,http://0_央卫秒开/tsfile/live/1140_1.m3u8
 CCTV2_联通,http://0_央卫秒开/tsfile/live/1141_1.m3u8
@@ -95,6 +96,7 @@ CCTV风云音乐_联通,http://0_央卫秒开/tsfile/live/1193_1.m3u8
 CCTV风云足球_联通,http://0_央卫秒开/tsfile/live/1194_1.m3u8
 CCTV女性时尚_联通,http://0_央卫秒开/tsfile/live/1196_1.m3u8
 CCTV世界地理_联通,http://0_央卫秒开/tsfile/live/1197_1.m3u8
+CCTV兵器科技_联通,http://0_央卫秒开/tsfile/live/1110_1.m3u8
 
 #119.54.0.212
 CCTV1_联通,http://1_央卫秒开/hls/1/index.m3u8
