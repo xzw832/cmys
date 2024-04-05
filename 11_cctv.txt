@@ -21,3 +21,8 @@ CCTV文化精品_联通,http://11_央卫秒开/hls/81/index.m3u8
 CETV1_联通,http://11_央卫秒开/hls/70/index.m3u8
 CETV2_联通,http://11_央卫秒开/hls/71/index.m3u8
 CETV4_联通,http://11_央卫秒开/hls/72/index.m3u8
+CCTV靓装_联通,http://11_央卫秒开/hls/83/index.m3u8
+CCTV风云剧场_联通,http://11_央卫秒开/hls/86/index.m3u8
+CCTV风云足球_联通,http://11_央卫秒开/hls/77/index.m3u8
+CCTV风云音乐_联通,http://11_央卫秒开/hls/79/index.m3u8
+CCTV高尔夫_联通,http://11_央卫秒开/hls/89/index.m3u8
