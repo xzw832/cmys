@@ -409,29 +409,32 @@ for result in results:
 file_contents = []
 file_paths = ["Z_13_cctv.txt", "Z_12_cctv.txt", "Z_11_cctv.txt", "Z_00_cctv.txt"]  # 替换为实际的文件路径列表
 for file_path in file_paths:
-    with open(file_path, 'r', encoding="utf-8") as file:
-        content = file.read()
-        file_contents.append(content)
-        file.close()
+    if os.path.exists(file_path):
+        with open(file_path, 'r', encoding="utf-8") as file:
+            content = file.read()
+            file_contents.append(content)
+            file.close()
 # 写入合并后的文件
-with open("S_CCTV.txt", "w", encoding="utf-8") as output:
-    output.write('\n'.join(file_contents))
-    output.close()
+if len() > 0:
+    with open("S_CCTV.txt", "w", encoding="utf-8") as output:
+        output.write('\n'.join(file_contents))
+        output.close()
 
 # print("================================================================================================================")
 # 合并文件内容
 file_contents = []
-file_paths = ["Z_12_weishi.txt", "Z_11_weishi.txt", "Z_00_weishi.txt"]  # 替换为实际的文件路径列表
+file_paths = ["Z_13_weishi.txt", "Z_12_weishi.txt", "Z_11_weishi.txt", "Z_00_weishi.txt"]  # 替换为实际的文件路径列表
 for file_path in file_paths:
-    with open(file_path, 'r', encoding="utf-8") as file:
-        content = file.read()
-        file_contents.append(content)
-        file.close()
+    if os.path.exists(file_path):
+        with open(file_path, 'r', encoding="utf-8") as file:
+            content = file.read()
+            file_contents.append(content)
+            file.close()
 # 写入合并后的文件
-with open("S_weishi.txt", "w", encoding="utf-8") as output:
-    output.write('\n'.join(file_contents))
-    output.close()
-# print("================================================================================================================")
+if len() > 0:
+    with open("S_weishi.txt", "w", encoding="utf-8") as output:
+        output.write('\n'.join(file_contents))
+        output.close()
 
 file_path = "cfg_ip.txt"
 # 将结果写入文件
