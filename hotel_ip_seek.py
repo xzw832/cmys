@@ -287,29 +287,27 @@ for result in results:
             weishi_filedata = weishi_filedata.replace('0_央卫秒开', url)
             weishi_files.append(weishi_filedata)
             
-if len(cctv_files) > 0:
-    with open('S_CCTV.txt', 'w', encoding='utf-8') as file:
-        all_lines = [line for line_str in cctv_files for line in line_str.split('\n')]
-        for result in all_lines:
-            count = result.count(',')
-            if count == 1:
-                channel_name, channel_url = result.split(',')
-                if '央卫秒开' not in channel_url:
-                    file.write(f"{channel_name},{channel_url}\n")
-        #file.write('\n'.join(cctv_files))
-    file.close()
-    
-if len(weishi_files) > 0:
-    with open('S_weishi.txt', 'w', encoding='utf-8') as file:
-        all_lines = [line for line_str in weishi_files for line in line_str.split('\n')]
-        for result in all_lines:
-            count = result.count(',')
-            if count == 1:
-                channel_name, channel_url = result.split(',')
-                if '央卫秒开' not in channel_url:
-                    file.write(f"{channel_name},{channel_url}\n") 
-        # file.write('\n'.join(weishi_files))
-    file.close()
+with open('S_CCTV.txt', 'w', encoding='utf-8') as file:
+    all_lines = [line for line_str in cctv_files for line in line_str.split('\n')]
+    for result in all_lines:
+        count = result.count(',')
+        if count == 1:
+            channel_name, channel_url = result.split(',')
+            if '央卫秒开' not in channel_url:
+                file.write(f"{channel_name},{channel_url}\n")
+    #file.write('\n'.join(cctv_files))
+file.close()
+
+with open('S_weishi.txt', 'w', encoding='utf-8') as file:
+    all_lines = [line for line_str in weishi_files for line in line_str.split('\n')]
+    for result in all_lines:
+        count = result.count(',')
+        if count == 1:
+            channel_name, channel_url = result.split(',')
+            if '央卫秒开' not in channel_url:
+                file.write(f"{channel_name},{channel_url}\n") 
+    # file.write('\n'.join(weishi_files))
+file.close()
 
 file_path = "cfg_ip.txt"
 # 将结果写入文件
