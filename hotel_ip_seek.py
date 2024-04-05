@@ -252,6 +252,7 @@ task_queue.join()
 cctv_00 = 0
 cctv_11 = 0
 cctv_12 = 0
+cctv_13 = 0
 
 for url in urls:
     channel_name, channel_url = url.split(',')
@@ -261,6 +262,8 @@ for url in urls:
         cctv_00 = 1
     elif '12_央卫秒开' in channel_name:
         cctv_12 = 1
+    elif '13_央卫秒开' in channel_name:
+        cctv_13 = 1
         
 if cctv_00 == 1:
     with open('Z_00_cctv.txt', 'w', encoding='utf-8') as file:
@@ -283,6 +286,13 @@ if cctv_12 == 1:
     with open('Z_12_weishi.txt', 'w', encoding='utf-8') as file:
         pass
     file.close()
+if cctv_13 == 1:
+    with open('Z_13_cctv.txt', 'w', encoding='utf-8') as file:
+        pass
+    file.close()
+    with open('Z_13_weishi.txt', 'w', encoding='utf-8') as file:
+        pass
+    file.close()    
     
 results = sorted(results, reverse=True)
 
@@ -342,6 +352,32 @@ for result in results:
             with open("Z_12_weishi.txt", "w", encoding="utf-8") as output:
                 output.write('\n'.join(weishi_files))
                 output.close()
+    elif '13_央卫秒开' in channel_name:
+        url = ret_urls(channel_url)
+        print(url)
+        if len(url) > 0:
+            increment_counter()
+            cctv_files = []
+            weishi_files = []
+            with open("13_cctv.txt", 'r', encoding='utf-8') as file:
+                filedata = file.read()
+            file.close()
+            filedata = filedata.replace('13_央卫秒开', url)
+            cctv_files.append(filedata)
+
+            with open("13_weishi.txt", 'r', encoding='utf-8') as file:
+                weishi_filedata = file.read()
+            file.close()
+            weishi_filedata = weishi_filedata.replace('13_央卫秒开', url)
+            weishi_files.append(weishi_filedata)
+
+            # 保存，
+            with open("Z_13_cctv.txt", "w", encoding="utf-8") as output:
+                output.write('\n'.join(cctv_files))
+                output.close()
+            with open("Z_13_weishi.txt", "w", encoding="utf-8") as output:
+                output.write('\n'.join(weishi_files))
+                output.close()      
                 
     elif '0_央卫秒开' in channel_name:
         url = ret_urls(channel_url)
@@ -371,7 +407,7 @@ for result in results:
 
 # 合并文件内容
 file_contents = []
-file_paths = ["Z_12_cctv.txt", "Z_11_cctv.txt", "Z_00_cctv.txt"]  # 替换为实际的文件路径列表
+file_paths = ["Z_13_cctv.txt", "Z_12_cctv.txt", "Z_11_cctv.txt", "Z_00_cctv.txt"]  # 替换为实际的文件路径列表
 for file_path in file_paths:
     with open(file_path, 'r', encoding="utf-8") as file:
         content = file.read()
