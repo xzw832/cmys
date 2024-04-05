@@ -254,27 +254,27 @@ cctv_12 = 0
 for url in urls:
     channel_name, channel_url = url.split(',')
     if '11_央卫秒开' in channel_name:
-        cctv11 = 1
+        cctv_11 = 1
     elif '0_央卫秒开' in channel_name:
         cctv_00 = 1
     elif '12_央卫秒开' in channel_name:
         cctv_12 = 1
         
-if cctv00 == 1:
+if cctv_00 == 1:
     with open('Z_00_cctv.txt', 'w', encoding='utf-8') as file:
         pass
     file.close()
     with open('Z_00_weishi.txt', 'w', encoding='utf-8') as file:
         pass
     file.close()
-if cctv11 == 1:
+if cctv_11 == 1:
     with open('Z_11_cctv.txt', 'w', encoding='utf-8') as file:
         pass
     file.close()
     with open('Z_11_weishi.txt', 'w', encoding='utf-8') as file:
         pass
     file.close()
-if cctv12 == 1:
+if cctv_12 == 1:
     with open('Z_12_cctv.txt', 'w', encoding='utf-8') as file:
         pass
     file.close()
