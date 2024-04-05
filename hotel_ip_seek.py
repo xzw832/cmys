@@ -308,7 +308,7 @@ for result in results:
 
             # 保存，
             with open("Z_11_cctv.txt", "w", encoding="utf-8") as output:
-                output.write('\n'.join(weishi_files))
+                output.write('\n'.join(cctv_files))
                 output.close()
             with open("Z_11_weishi.txt", "w", encoding="utf-8") as output:
                 output.write('\n'.join(weishi_files))
@@ -335,7 +335,7 @@ for result in results:
 
             # 保存，
             with open("Z_12_cctv.txt", "w", encoding="utf-8") as output:
-                output.write('\n'.join(weishi_files))
+                output.write('\n'.join(cctv_files))
                 output.close()
             with open("Z_12_weishi.txt", "w", encoding="utf-8") as output:
                 output.write('\n'.join(weishi_files))
@@ -360,13 +360,8 @@ for result in results:
             weishi_filedata = weishi_filedata.replace('0_央卫秒开', url)
             weishi_files.append(weishi_filedata)
             # 保存，
-            with open("Z_00.txt", "w", encoding="utf-8") as output:
-                output.write('\n'.join(cctv_files))
-                output.write('\n'.join(weishi_files))
-                output.close()
-            # 保存，
             with open("Z_00_cctv.txt", "w", encoding="utf-8") as output:
-                output.write('\n'.join(weishi_files))
+                output.write('\n'.join(cctv_files))
                 output.close()
             with open("Z_00_weishi.txt", "w", encoding="utf-8") as output:
                 output.write('\n'.join(weishi_files))
