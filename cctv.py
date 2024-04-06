@@ -10,7 +10,8 @@ eventlet.monkey_patch()
 # 判断首位是否为数字，是返回真
 def is_first_digit(s):
     return s[0].isdigit() if s else False
-    
+
+chunk_size = 5242880
 # 线程安全的队列，用于存储下载任务
 task_queue = Queue()
 lock = threading.Lock()
@@ -160,9 +161,9 @@ def worker():
                 ts_url = channel_url_t + ts_lists[0]  # 拼接单个视频片段下载链接
     
                 # 多获取的视频数据进行5秒钟限制
-                with eventlet.Timeout(5, False):
+                with eventlet.Timeout(10, False):
                     start_time = time.time()
-                    content = requests.get(ts_url,headers=headers, timeout=(2,5), stream=True).content
+                    content = requests.get(ts_url,headers=headers, timeout=(3,5), stream=True).content
                     end_time = time.time()
                     response_time = (end_time - start_time) * 1
     
@@ -196,7 +197,8 @@ def worker():
                 now=time.time()
                 res=se.get(channel_url,headers=headers,stream=True,timeout=5)
                 if res.status_code==200:
-                    for k in res.iter_content(chunk_size=2097152):
+                    total_received = 0
+                    for k in res.iter_content(chunk_size=chunk_size):
                         # 这里的chunk_size是1MB，每次读取1MB测试视频流
                         # 如果能获取视频流，则输出读取的时间以及链接
                         if time.time()-now > 15:
@@ -205,20 +207,24 @@ def worker():
                             break
                         else:
                             if k:
-                                print(f'{time.time()-now:.2f}\t{channel_url}')
-                                response_time = (time.time()-now) * 1
-                                download_speed = 2097152 / response_time / 1024
-                                normalized_speed = min(max(download_speed / 1024, 0.001), 100)
-                                if response_time > 1.2:
-                                    result = channel_name, channel_url, f"{normalized_speed:.3f} MB/s"
-                                    # 获取锁
-                                    lock.acquire()
-                                    results.append(result)
-                                    # 释放锁
-                                    lock.release()
-                                else:
-                                    print(f'X\t{channel_url}')
-                                break
+                                chunk_len = len(k)
+                                if chunk_len >= chunk_size:
+                                    print(f'{time.time()-now:.2f}\t{channel_url}')
+                                    response_time = (time.time()-now) * 1
+                                    download_speed = chunk_len / response_time / 1024
+                                    normalized_speed = min(max(download_speed / 1024, 0.001), 100)
+                                    if response_time > 3:
+                                        result = channel_name, channel_url, f"{normalized_speed:.3f} MB/s"
+                                        # 获取锁
+                                        lock.acquire()
+                                        results.append(result)
+                                        # 释放锁
+                                        lock.release()
+                                    else:
+                                        print(f'X\t{channel_url}')
+                                    break
+                            else:
+                                print(f'X 数据块小于设置值 \t{channel_url}')
             except:
                 # 无法连接并超时的情况下输出“X”
                 print(f'X\t{channel_url}')
@@ -230,7 +236,7 @@ def worker():
 
 
 # 创建多个工作线程
-num_threads = 40
+num_threads = 100
 for _ in range(num_threads):
     t = threading.Thread(target=worker, daemon=True) 
     #t = threading.Thread(target=worker, args=(event,len(channels)))  # 将工作线程设置为守护线程
