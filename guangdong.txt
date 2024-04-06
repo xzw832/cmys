@@ -2876,7 +2876,7 @@ dj,https://txmov2.a.kwimgs.com/upic/2022/03/21/19/BMjAyMjAzMjExOTA2MjRfMjYyNzI4M
 《英雄泪》,https://vd3.bdstatic.com/mda-ncnp6tm56ngrxbis/360p/h264_delogo/1648055585617071282/mda-ncnp6tm56ngrxbis.mp4
 2022几首DJ串烧,https://vd3.bdstatic.com/mda-nck3tqzgjvj076vc/sc/cae_h264_delogo/1647833645083560959/mda-nck3tqzgjvj076vc.mp4
 
-普清频道,#genre#
+低网速使用,#genre#
 CCTV1,http://test.tvboxosc.cyou/ipv4_live/1/CCTV1/tv570
 CCTV1,http://test.tvboxosc.cyou/ipv4_live/2/CCTV1/tv570
 CCTV1,http://test.tvboxosc.cyou/ipv4_live/3/CCTV1/tv570
