@@ -223,8 +223,8 @@ def worker():
                                     else:
                                         print(f'X\t{channel_url}')
                                     break
-                            else:
-                                print(f'X 数据块小于设置值 \t{channel_url}')
+                                else:
+                                    print(f'X 数据块小于设置值 \t{channel_url}')
             except:
                 # 无法连接并超时的情况下输出“X”
                 print(f'X\t{channel_url}')
