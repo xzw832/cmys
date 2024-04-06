@@ -421,10 +421,9 @@ for file_path in file_paths:
             file_contents.append(content)
             file.close()
 # 写入合并后的文件
-if len(file_contents) > 0:
-    with open("S_CCTV.txt", "w", encoding="utf-8") as output:
-        output.write('\n'.join(file_contents))
-        output.close()
+with open("S_CCTV.txt", "w", encoding="utf-8") as output:
+    output.write('\n'.join(file_contents))
+    output.close()
 
 # print("================================================================================================================")
 # 合并文件内容
@@ -437,10 +436,9 @@ for file_path in file_paths:
             file_contents.append(content)
             file.close()
 # 写入合并后的文件
-if len(file_contents) > 0:
-    with open("S_weishi.txt", "w", encoding="utf-8") as output:
-        output.write('\n'.join(file_contents))
-        output.close()
+with open("S_weishi.txt", "w", encoding="utf-8") as output:
+    output.write('\n'.join(file_contents))
+    output.close()
 
 file_path = "cfg_ip.txt"
 # 将结果写入文件
