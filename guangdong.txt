@@ -1037,6 +1037,15 @@ CCTV世界地理,http://test.tvboxosc.cyou/ipv4_live/8/CCTV世界地理/CCTV
 香港明珠卫视,http://test.tvboxosc.cyou/ipv4_live/7/香港明珠卫视/weishi
 香港明珠卫视,http://test.tvboxosc.cyou/ipv4_live/8/香港明珠卫视/weishi
 
+TVB翡翠卫视,http://test.tvboxosc.cyou/ipv4_live/1/TVB翡翠卫视/weishi
+TVB翡翠卫视,http://test.tvboxosc.cyou/ipv4_live/2/TVB翡翠卫视/weishi
+TVB翡翠卫视,http://test.tvboxosc.cyou/ipv4_live/3/TVB翡翠卫视/weishi
+TVB翡翠卫视,http://test.tvboxosc.cyou/ipv4_live/4/TVB翡翠卫视/weishi
+TVB翡翠卫视,http://test.tvboxosc.cyou/ipv4_live/5/TVB翡翠卫视/weishi
+TVB翡翠卫视,http://test.tvboxosc.cyou/ipv4_live/6/TVB翡翠卫视/weishi
+TVB翡翠卫视,http://test.tvboxosc.cyou/ipv4_live/7/TVB翡翠卫视/weishi
+TVB翡翠卫视,http://test.tvboxosc.cyou/ipv4_live/8/TVB翡翠卫视/weishi
+
 凤凰卫视中文,http://test.tvboxosc.cyou/ipv4_live/1/凤凰卫视中文/weishi
 凤凰卫视中文,http://test.tvboxosc.cyou/ipv4_live/2/凤凰卫视中文/weishi
 凤凰卫视中文,http://test.tvboxosc.cyou/ipv4_live/3/凤凰卫视中文/weishi
@@ -1332,14 +1341,7 @@ CCTV世界地理,http://test.tvboxosc.cyou/ipv4_live/8/CCTV世界地理/CCTV
 海峡卫视,http://test.tvboxosc.cyou/ipv4_live/6/海峡卫视/weishi
 海峡卫视,http://test.tvboxosc.cyou/ipv4_live/7/海峡卫视/weishi
 海峡卫视,http://test.tvboxosc.cyou/ipv4_live/8/海峡卫视/weishi
-热门卫视,http://test.tvboxosc.cyou/ipv4_live/1/热门卫视/weishi
-热门卫视,http://test.tvboxosc.cyou/ipv4_live/2/热门卫视/weishi
-热门卫视,http://test.tvboxosc.cyou/ipv4_live/3/热门卫视/weishi
-热门卫视,http://test.tvboxosc.cyou/ipv4_live/4/热门卫视/weishi
-热门卫视,http://test.tvboxosc.cyou/ipv4_live/5/热门卫视/weishi
-热门卫视,http://test.tvboxosc.cyou/ipv4_live/6/热门卫视/weishi
-热门卫视,http://test.tvboxosc.cyou/ipv4_live/7/热门卫视/weishi
-热门卫视,http://test.tvboxosc.cyou/ipv4_live/8/热门卫视/weishi
+
 
 西藏卫视,http://test.tvboxosc.cyou/ipv4_live/1/西藏卫视/weishi
 西藏卫视,http://test.tvboxosc.cyou/ipv4_live/2/西藏卫视/weishi
