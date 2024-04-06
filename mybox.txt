@@ -3181,7 +3181,7 @@ CCTV8K,http://[2409:8087:2001:20:2800:0:df6e:eb03]/wh7f454c46tw1981574683_-21187
 江苏移动8K测试,http://[2409:8087:2001:20:2800:0:df6e:eb04]/ott.mobaibox.com/PLTV/3/224/3221228132/index.m3u8
 香港8K,http://[2409:8087:2001:20:2800:0:df6e:eb04]/wh7f454c46tW1782571424_-1576923679/ott.mobaibox.com/PLTV/3/224/3221228132/index.m3u8
 
-普清频道,#genre#
+低网速使用,#genre#
 CCTV1,http://test.tvboxosc.cyou/ipv4_live/1/CCTV1/tv570
 CCTV1,http://test.tvboxosc.cyou/ipv4_live/2/CCTV1/tv570
 CCTV1,http://test.tvboxosc.cyou/ipv4_live/3/CCTV1/tv570
