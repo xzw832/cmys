@@ -11,7 +11,6 @@ eventlet.monkey_patch()
 def is_first_digit(s):
     return s[0].isdigit() if s else False
 
-chunk_size = 5242880
 # 线程安全的队列，用于存储下载任务
 task_queue = Queue()
 lock = threading.Lock()
@@ -195,6 +194,7 @@ def worker():
         else:
             try:
                 now=time.time()
+                chunk_size = 5242880
                 res=se.get(channel_url,headers=headers,stream=True,timeout=5)
                 if res.status_code==200:
                     total_received = 0
