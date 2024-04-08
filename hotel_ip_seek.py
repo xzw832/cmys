@@ -261,6 +261,8 @@ cctv_12 = 0
 cctv_13 = 0
 cctv_14 = 0
 cctv_15 = 0
+cctv_20 = 0
+cctv_21 = 0
 for url in urls:
     channel_name, channel_url = url.split(',')
     if '11_央卫秒开' in channel_name:
@@ -271,6 +273,14 @@ for url in urls:
         cctv_12 = 1
     elif '13_央卫秒开' in channel_name:
         cctv_13 = 1
+    elif '14_央卫秒开' in channel_name:
+        cctv_14 = 1
+    elif '15_央卫秒开' in channel_name:
+        cctv_15 = 1
+    elif '20_央卫秒开' in channel_name:
+        cctv_20 = 1
+    elif '21_央卫秒开' in channel_name:
+        cctv_21 = 1
         
 if cctv_00 == 1:
     with open('Z_00_cctv.txt', 'w', encoding='utf-8') as file:
@@ -314,7 +324,20 @@ if cctv_15 == 1:
     with open('Z_15_weishi.txt', 'w', encoding='utf-8') as file:
         pass
     file.close()
-    
+if cctv_20 == 1:
+    with open('Z_20_cctv.txt', 'w', encoding='utf-8') as file:
+        pass
+    file.close()
+    with open('Z_20_weishi.txt', 'w', encoding='utf-8') as file:
+        pass
+    file.close()  
+if cctv_21 == 1:
+    with open('Z_21_cctv.txt', 'w', encoding='utf-8') as file:
+        pass
+    file.close()
+    with open('Z_21_weishi.txt', 'w', encoding='utf-8') as file:
+        pass
+    file.close()
 results = sorted(results, reverse=True)
 
 for result in results:
@@ -476,10 +499,61 @@ for result in results:
             with open("Z_00_weishi.txt", "w", encoding="utf-8") as output:
                 output.write('\n'.join(weishi_files))
                 output.close()
+    elif '20_央卫秒开' in channel_name:
+        url = ret_urls(channel_url)
+        print(url)
+        if len(url) > 0:
+            increment_counter()
+            cctv_files = []
+            weishi_files = []
+            with open("20_cctv.txt", 'r', encoding='utf-8') as file:
+                filedata = file.read()
+            file.close()
+            filedata = filedata.replace('20_央卫秒开', url)
+            cctv_files.append(filedata)
 
+            with open("20_weishi.txt", 'r', encoding='utf-8') as file:
+                weishi_filedata = file.read()
+            file.close()
+            weishi_filedata = weishi_filedata.replace('20_央卫秒开', url)
+            weishi_files.append(weishi_filedata)
+
+            # 保存，
+            with open("Z_20_cctv.txt", "w", encoding="utf-8") as output:
+                output.write('\n'.join(cctv_files))
+                output.close()
+            with open("Z_20_weishi.txt", "w", encoding="utf-8") as output:
+                output.write('\n'.join(weishi_files))
+                output.close()    
+    elif '21_央卫秒开' in channel_name:
+        url = ret_urls(channel_url)
+        print(url)
+        if len(url) > 0:
+            increment_counter()
+            cctv_files = []
+            weishi_files = []
+            with open("21_cctv.txt", 'r', encoding='utf-8') as file:
+                filedata = file.read()
+            file.close()
+            filedata = filedata.replace('21_央卫秒开', url)
+            cctv_files.append(filedata)
+
+            with open("21_weishi.txt", 'r', encoding='utf-8') as file:
+                weishi_filedata = file.read()
+            file.close()
+            weishi_filedata = weishi_filedata.replace('21_央卫秒开', url)
+            weishi_files.append(weishi_filedata)
+
+            # 保存，
+            with open("Z_21_cctv.txt", "w", encoding="utf-8") as output:
+                output.write('\n'.join(cctv_files))
+                output.close()
+            with open("Z_21_weishi.txt", "w", encoding="utf-8") as output:
+                output.write('\n'.join(weishi_files))
+                output.close()              
 # 合并文件内容
 file_contents = []
-file_paths = ["Z_15_cctv.txt", "Z_14_cctv.txt", "Z_13_cctv.txt", "Z_12_cctv.txt", "Z_11_cctv.txt", "Z_00_cctv.txt"]  # 替换为实际的文件路径列表
+file_paths = ["Z_21_cctv.txt", "Z_20_cctv.txt", "Z_15_cctv.txt", "Z_14_cctv.txt", "Z_13_cctv.txt", "Z_12_cctv.txt", "Z_11_cctv.txt", "Z_00_cctv.txt"]  # 替换为实际的文件路径列表
 for file_path in file_paths:
     if os.path.exists(file_path):
         with open(file_path, 'r', encoding="utf-8") as file:
@@ -494,7 +568,7 @@ with open("S_CCTV.txt", "w", encoding="utf-8") as output:
 # print("================================================================================================================")
 # 合并文件内容
 file_contents = []
-file_paths = ["Z_15_weishi.txt", "Z_14_weishi.txt", "Z_13_weishi.txt", "Z_12_weishi.txt", "Z_11_weishi.txt", "Z_00_weishi.txt"]  # 替换为实际的文件路径列表
+file_paths = ["Z_21_weishi.txt", "Z_20_weishi.txt", "Z_15_weishi.txt", "Z_14_weishi.txt", "Z_13_weishi.txt", "Z_12_weishi.txt", "Z_11_weishi.txt", "Z_00_weishi.txt"]  # 替换为实际的文件路径列表
 for file_path in file_paths:
     if os.path.exists(file_path):
         with open(file_path, 'r', encoding="utf-8") as file:
