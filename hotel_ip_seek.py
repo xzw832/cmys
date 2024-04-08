@@ -259,6 +259,7 @@ cctv_00 = 0
 cctv_11 = 0
 cctv_12 = 0
 cctv_13 = 0
+cctv_14 = 0
 cctv_15 = 0
 for url in urls:
     channel_name, channel_url = url.split(',')
@@ -299,6 +300,13 @@ if cctv_13 == 1:
     with open('Z_13_weishi.txt', 'w', encoding='utf-8') as file:
         pass
     file.close()    
+if cctv_14 == 1:
+    with open('Z_14_cctv.txt', 'w', encoding='utf-8') as file:
+        pass
+    file.close()
+    with open('Z_14_weishi.txt', 'w', encoding='utf-8') as file:
+        pass
+    file.close()   
 if cctv_15 == 1:
     with open('Z_15_cctv.txt', 'w', encoding='utf-8') as file:
         pass
