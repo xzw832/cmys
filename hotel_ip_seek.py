@@ -435,7 +435,7 @@ for result in results:
             filedata = filedata.replace('14_央卫秒开', url)
             cctv_files.append(filedata)
 
-            with open("13_weishi.txt", 'r', encoding='utf-8') as file:
+            with open("14_weishi.txt", 'r', encoding='utf-8') as file:
                 weishi_filedata = file.read()
             file.close()
             weishi_filedata = weishi_filedata.replace('14_央卫秒开', url)
@@ -461,7 +461,7 @@ for result in results:
             filedata = filedata.replace('15_央卫秒开', url)
             cctv_files.append(filedata)
 
-            with open("13_weishi.txt", 'r', encoding='utf-8') as file:
+            with open("15_weishi.txt", 'r', encoding='utf-8') as file:
                 weishi_filedata = file.read()
             file.close()
             weishi_filedata = weishi_filedata.replace('15_央卫秒开', url)
