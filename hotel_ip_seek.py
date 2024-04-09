@@ -264,6 +264,7 @@ cctv_15 = 0
 cctv_20 = 0
 cctv_21 = 0
 cctv_22 = 0
+cctv_23 = 0
 for url in urls:
     channel_name, channel_url = url.split(',')
     if '11_央卫秒开' in channel_name:
