@@ -37,9 +37,15 @@ def is_odd_or_even(number):
 
     
 sorted_list = [
-  "182.122.73.120:8089"
+    "36.99.132.88:808",
+    "120.7.86.15:808",
+    "183.184.207.40:8084",
+    "60.220.167.74:8085",
+    "1.26.24.63:9999",
+    "117.9.169.196:8888",
+    "106.57.0.11:55555",
+    "222.89.29.199:808"
 ]
-
 
 def worker(thread_url,counter_id):
     try:
@@ -162,7 +168,7 @@ def worker(thread_url,counter_id):
         time.sleep(0)
 
 # 创建一个线程池，限制最大线程数为3
-with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
     # 提交任务到线程池，并传入参数
     counter = increment_counter()
     for i in sorted_list:  # 假设有5个任务需要执行
@@ -171,7 +177,7 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
 infoList = set(infoList)  # 去重得到唯一的URL列表
 infoList = sorted(infoList)
 
-with open("unicom22_182_122_73.txt", 'w', encoding='utf-8') as file:
+with open("unicom22_all.txt", 'w', encoding='utf-8') as file:
     for info in infoList:
         file.write(info + "\n")
         print(info)
