@@ -205,7 +205,7 @@ def worker():
                     for k in res.iter_content(chunk_size=chunk_size):
                         # 这里的chunk_size是1MB，每次读取1MB测试视频流
                         # 如果能获取视频流，则输出读取的时间以及链接
-                        if time.time()-now > 15:
+                        if time.time()-now > 35:
                             res.close()
                             print(f'Time out\t{channel_url}')
                             break
@@ -217,7 +217,7 @@ def worker():
                                     response_time = (time.time()-now) * 1
                                     download_speed = chunk_len / response_time / 1024
                                     normalized_speed = min(max(download_speed / 1024, 0.001), 100)
-                                    if response_time > 3:
+                                    if response_time > 2.8:
                                         result = channel_name, channel_url, f"{normalized_speed:.3f} MB/s"
                                         # 获取锁
                                         lock.acquire()
