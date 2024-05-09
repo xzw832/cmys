@@ -11,6 +11,8 @@ import re
 from bs4 import BeautifulSoup
 from queue import Queue
 import threading
+import requests
+from requests.exceptions import Timeout
 
 lock = threading.Lock()
 # 查找所有符合指定格式的网址
