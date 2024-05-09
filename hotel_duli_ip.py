@@ -64,8 +64,9 @@ def worker(thread_url,counter_id):
         data = {
             'search': f'{thread_url}'  # 使用f-string插入变量值（Python 3.6+）
         }
-        page_url= "http://foodieguide.com/iptvsearch/hotellist.html"
-        response = requests.post(page_url, data=data, headers=headers, timeout=15)
+        page_url= "http://foodieguide.com/iptvsearch/index.php?s={thread_url}"
+        print(page_url)
+        response = requests.get(page_url,  headers=headers, timeout=30)
         if response.status_code == 200:
             soup = BeautifulSoup(response.text, "html.parser")
             print(soup)
