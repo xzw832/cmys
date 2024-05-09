@@ -52,7 +52,7 @@ headers={
     'Content-Type': 'application/x-www-form-urlencoded',
     'Host': 'foodieguide.com',
     'Origin': 'http://foodieguide.com',
-    'Referer': 'http://foodieguide.com/iptvsearch/hoteliptv.php',
+    'Referer': 'http://foodieguide.com/iptvsearch/hotellist.html',
     'Upgrade-Insecure-Requests': '1',
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
     }
@@ -64,7 +64,7 @@ def worker(thread_url,counter_id):
         data = {
             'search': f'{thread_url}'  # 使用f-string插入变量值（Python 3.6+）
         }
-        page_url= f"http://foodieguide.com/iptvsearch/alllist.php"
+        page_url= "http://foodieguide.com/iptvsearch/hotellist.html"
         response = requests.post(page_url, data=data, headers=headers, timeout=15)
         if response.status_code == 200:
             soup = BeautifulSoup(response.text, "html.parser")
