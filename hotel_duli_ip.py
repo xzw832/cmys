@@ -86,6 +86,7 @@ def worker(thread_url,counter_id):
         )
         time.sleep(10)
         soup = BeautifulSoup(driver.page_source, "html.parser")
+        print(soup)
         tables_div = soup.find("div", class_="tables")
         results = (
             tables_div.find_all("div", class_="result")
