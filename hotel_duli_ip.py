@@ -81,12 +81,8 @@ def worker(thread_url,counter_id):
         page_url= f"http://tonkiang.us/alllist.php?s={thread_url}"
         print(page_url)
         driver.get(page_url)  # 将网址替换为你要访问的网页地址
-        WebDriverWait(driver, 90).until(
-            EC.presence_of_element_located(
-                (By.CSS_SELECTOR, "div.m3u8")
-                )
-        )
-        time.sleep(10)
+
+        time.sleep(30)
         soup = BeautifulSoup(driver.page_source, "html.parser")
         print(soup)
         tables_div = soup.find("div", class_="tables")
