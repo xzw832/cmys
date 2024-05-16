@@ -78,7 +78,7 @@ def worker(thread_url,counter_id):
         driver.set_script_timeout(50)  # 5秒后超时
         # 使用WebDriver访问网页
         # page_url= f"http://foodieguide.com/iptvsearch/alllist.php?s={thread_url}"
-        page_url= f"http://tonkiang.us/alllist.php?s=={thread_url}"
+        page_url= f"http://tonkiang.us/alllist.php?s={thread_url}"
         print(page_url)
         driver.get(page_url)  # 将网址替换为你要访问的网页地址
         WebDriverWait(driver, 45).until(
