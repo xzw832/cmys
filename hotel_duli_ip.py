@@ -39,7 +39,7 @@ def is_odd_or_even(number):
 
     
 sorted_list = [
-    "171.117.255.176:8082",
+    "113.64.145.105:8081",
 ]
 
 headers={
@@ -61,103 +61,121 @@ def worker(thread_url,counter_id):
     try:
         # 创建一个Chrome WebDriver实例
         results = []
-        data = {
-            'search': f'{thread_url}'  # 使用f-string插入变量值（Python 3.6+）
-        }
-        page_url= f"http://foodieguide.com/iptvsearch/hotellist.html?s={thread_url}"
+        chrome_options = Options()
+        chrome_options.add_argument(f"user-data-dir=selenium{counter_id}")
+        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--no-sandbox')
+        chrome_options.add_argument('--disable-dev-shm-usage')
+        chrome_options.add_experimental_option("useAutomationExtension", False)
+        chrome_options.add_argument("blink-settings=imagesEnabled=false")
+        driver = webdriver.Chrome(options=chrome_options)
+        # 设置页面加载超时
+        driver.set_page_load_timeout(60)  # 10秒后超时
+
+        # 设置脚本执行超时
+        driver.set_script_timeout(50)  # 5秒后超时
+        # 使用WebDriver访问网页
+        page_url= f"http://foodieguide.com/iptvsearch/alllist.php?s={in_url}"
+
         print(page_url)
-        response = requests.get(page_url,  headers=headers, timeout=30)
-        if response.status_code == 200:
-            soup = BeautifulSoup(response.text, "html.parser")
-            print(soup)
-            tables_div = soup.find("div", class_="tables")
-            results = (
-                tables_div.find_all("div", class_="result")
-                if tables_div
-                else []
-            )
-            if not any(
-                result.find("div", class_="m3u8") for result in results
-            ):
-                #break
-                print("Err-------------------------------------------------------------------------------------------------------")
-            for result in results:
-                #print(result)
-                m3u8_div = result.find("div", class_="m3u8")
-                url_int = m3u8_div.text.strip() if m3u8_div else None
-                #取频道名称
-                m3u8_name_div = result.find("div", class_="channel")
-                url_name = m3u8_name_div.text.strip() if m3u8_div else None
-                #－－－－－
-                #print("-------------------------------------------------------------------------------------------------------")
-                name =f"{url_name}"
-                if len(name) == 0:
-                    name = "Err画中画"
-                #print(name)
-                urlsp =f"{url_int}"
-                if len(urlsp) == 0:
-                    urlsp = "rtp://127.0.0.1"             
-                print(f"{url_name}\t{url_int}")
-                #print("-------------------------------------------------------------------------------------------------------")
-                urlsp = urlsp.replace("http://67.211.73.118:9901", "")
-                name = name.replace("cctv", "CCTV")
-                name = name.replace("中央", "CCTV")
-                name = name.replace("央视", "CCTV")
-                name = name.replace("高清", "")
-                name = name.replace("HD", "")
-                name = name.replace("标清", "")
-                name = name.replace("频道", "")
-                name = name.replace("-", "")
-                name = name.replace(" ", "")
-                name = name.replace("PLUS", "+")
-                name = name.replace("＋", "+")
-                name = name.replace("(", "")
-                name = name.replace(")", "")
-                name = re.sub(r"CCTV(\d+)台", r"CCTV\1", name)
-                name = name.replace("CCTV1综合", "CCTV1")
-                name = name.replace("CCTV2财经", "CCTV2")
-                name = name.replace("CCTV3综艺", "CCTV3")
-                name = name.replace("CCTV4国际", "CCTV4")
-                name = name.replace("CCTV4中文国际", "CCTV4")
-                name = name.replace("CCTV4欧洲", "CCTV4")
-                name = name.replace("CCTV5体育", "CCTV5")
-                name = name.replace("CCTV6电影", "CCTV6")
-                name = name.replace("CCTV7军事", "CCTV7")
-                name = name.replace("CCTV7军农", "CCTV7")
-                name = name.replace("CCTV7农业", "CCTV7")
-                name = name.replace("CCTV7国防军事", "CCTV7")
-                name = name.replace("CCTV8电视剧", "CCTV8")
-                name = name.replace("CCTV9记录", "CCTV9")
-                name = name.replace("CCTV9纪录", "CCTV9")
-                name = name.replace("CCTV10科教", "CCTV10")
-                name = name.replace("CCTV11戏曲", "CCTV11")
-                name = name.replace("CCTV12社会与法", "CCTV12")
-                name = name.replace("CCTV13新闻", "CCTV13")
-                name = name.replace("CCTV新闻", "CCTV13")
-                name = name.replace("CCTV14少儿", "CCTV14")
-                name = name.replace("CCTV15音乐", "CCTV15")
-                name = name.replace("CCTV16奥林匹克", "CCTV16")
-                name = name.replace("CCTV17农业农村", "CCTV17")
-                name = name.replace("CCTV17农业", "CCTV17")
-                name = name.replace("CCTV5+体育赛视", "CCTV5+")
-                name = name.replace("CCTV5+体育赛事", "CCTV5+")
-                name = name.replace("CCTV5+体育", "CCTV5+")
-                name = name.replace("CMIPTV", "")
-                name = name.replace("内蒙卫视", "内蒙古卫视")
-                name = name.replace("CCTVCCTV", "CCTV")
-                if "http" in urlsp:
-                    # 获取锁
-                    lock.acquire()
-                    infoList.append(f"{name},{urlsp}")
-                    # 释放锁
-                    lock.release()
-            print(f"=========================>>> Thread {thread_url} save ok")
+        driver.get(page_url)  # 将网址替换为你要访问的网页地址
+        WebDriverWait(driver, 45).until(
+            EC.presence_of_element_located(
+                (By.CSS_SELECTOR, "div.tables")
+                )
+        )
+        time.sleep(10)
+        soup = BeautifulSoup(driver.page_source, "html.parser")
+        tables_div = soup.find("div", class_="tables")
+        results = (
+            tables_div.find_all("div", class_="result")
+            if tables_div
+            else []
+        )
+        if not any(
+            result.find("div", class_="m3u8") for result in results
+        ):
+            #break
+            print("Err-------------------------------------------------------------------------------------------------------")
+        for result in results:
+            #print(result)
+            m3u8_div = result.find("div", class_="m3u8")
+            url_int = m3u8_div.text.strip() if m3u8_div else None
+            #取频道名称
+            m3u8_name_div = result.find("div", class_="channel")
+            url_name = m3u8_name_div.text.strip() if m3u8_div else None
+            #－－－－－
+            #print("-------------------------------------------------------------------------------------------------------")
+            name =f"{url_name}"
+            if len(name) == 0:
+                name = "Err画中画"
+            #print(name)
+            urlsp =f"{url_int}"
+            if len(urlsp) == 0:
+                urlsp = "rtp://127.0.0.1"             
+            print(f"{url_name}\t{url_int}")
+            #print("-------------------------------------------------------------------------------------------------------")
+            urlsp = urlsp.replace("http://67.211.73.118:9901", "")
+            name = name.replace("cctv", "CCTV")
+            name = name.replace("中央", "CCTV")
+            name = name.replace("央视", "CCTV")
+            name = name.replace("高清", "")
+            name = name.replace("HD", "")
+            name = name.replace("标清", "")
+            name = name.replace("频道", "")
+            name = name.replace("-", "")
+            name = name.replace(" ", "")
+            name = name.replace("PLUS", "+")
+            name = name.replace("＋", "+")
+            name = name.replace("(", "")
+            name = name.replace(")", "")
+            name = re.sub(r"CCTV(\d+)台", r"CCTV\1", name)
+            name = name.replace("CCTV1综合", "CCTV1")
+            name = name.replace("CCTV2财经", "CCTV2")
+            name = name.replace("CCTV3综艺", "CCTV3")
+            name = name.replace("CCTV4国际", "CCTV4")
+            name = name.replace("CCTV4中文国际", "CCTV4")
+            name = name.replace("CCTV4欧洲", "CCTV4")
+            name = name.replace("CCTV5体育", "CCTV5")
+            name = name.replace("CCTV6电影", "CCTV6")
+            name = name.replace("CCTV7军事", "CCTV7")
+            name = name.replace("CCTV7军农", "CCTV7")
+            name = name.replace("CCTV7农业", "CCTV7")
+            name = name.replace("CCTV7国防军事", "CCTV7")
+            name = name.replace("CCTV8电视剧", "CCTV8")
+            name = name.replace("CCTV9记录", "CCTV9")
+            name = name.replace("CCTV9纪录", "CCTV9")
+            name = name.replace("CCTV10科教", "CCTV10")
+            name = name.replace("CCTV11戏曲", "CCTV11")
+            name = name.replace("CCTV12社会与法", "CCTV12")
+            name = name.replace("CCTV13新闻", "CCTV13")
+            name = name.replace("CCTV新闻", "CCTV13")
+            name = name.replace("CCTV14少儿", "CCTV14")
+            name = name.replace("CCTV15音乐", "CCTV15")
+            name = name.replace("CCTV16奥林匹克", "CCTV16")
+            name = name.replace("CCTV17农业农村", "CCTV17")
+            name = name.replace("CCTV17农业", "CCTV17")
+            name = name.replace("CCTV5+体育赛视", "CCTV5+")
+            name = name.replace("CCTV5+体育赛事", "CCTV5+")
+            name = name.replace("CCTV5+体育", "CCTV5+")
+            name = name.replace("CMIPTV", "")
+            name = name.replace("内蒙卫视", "内蒙古卫视")
+            name = name.replace("CCTVCCTV", "CCTV")
+            if "http" in urlsp:
+                # 获取锁
+                lock.acquire()
+                infoList.append(f"{name},{urlsp}")
+                # 释放锁
+                lock.release()
+        print(f"=========================>>> Thread {thread_url} save ok")
     except Exception as e:
         print(f"=========================>>> Thread {thread_url} caught an exception: {e}")
     finally:
+        # 确保线程结束时关闭WebDriver实例
+        driver.quit() 
         print(f"=========================>>> Thread {thread_url}  quiting")
         # 标记任务完成
-        time.sleep(10)
+        time.sleep(0)
 
 # 创建一个线程池，限制最大线程数为3
 with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
@@ -169,7 +187,7 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
 infoList = set(infoList)  # 去重得到唯一的URL列表
 infoList = sorted(infoList)
 
-with open("unicom-test.txt", 'w', encoding='utf-8') as file:
+with open("unicom24-113-64-145-105.txt", 'w', encoding='utf-8') as file:
     for info in infoList:
         file.write(info + "\n")
         print(info)
