@@ -56,13 +56,13 @@ headers={
     'Upgrade-Insecure-Requests': '1',
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
     }
-
+ua = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.1.0 Safari/537.36"
 def worker(thread_url,counter_id):
     try:
         # 创建一个Chrome WebDriver实例
         results = []
         chrome_options = Options()
-        chrome_options.add_argument(f'user-agent={Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.1.0 Safari/537.36}')
+        chrome_options.add_argument(f'user-agent={ua}')
         chrome_options.add_argument(f"user-data-dir=selenium{counter_id}")
         chrome_options.add_argument('--headless')
         chrome_options.add_argument('--no-sandbox')
