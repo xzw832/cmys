@@ -25,7 +25,29 @@ cctv_files = []
 weishi_files = []
 headers={'User-Agent': 'okhttp/3.12.10(Linux;Android9;V2049ABuild/TP1A.220624.014;wv)AppleWebKit/537.36(KHTML,likeGecko)Version/4.0Chrome/116.0.0.0MobileSafari/537.36'}
 se=requests.Session()
-
+dcom = [
+    "4000",
+    "1013",
+    "8080",
+    "8081",
+    "8181",
+    "8088",
+    "4022",
+    "9999",
+    "801",
+    "9901",
+    "8082",
+    "18088",
+    "808",
+    "8001",
+    "6666",
+    "8083",
+    "8084",
+    "8888",
+    "8090",
+    "8008"
+    
+]
 js_txt="江苏 聚鲨 南京 盱眙 沛县 泰州 徐州 淮安 泗洪 东海 宿迁 常州 东海 响水 高淳 新沂 邳州 连云 睢宁 赣榆 水韵 贾汪"
 urls = []
 # 更新文件数据
@@ -119,8 +141,13 @@ def modify_urls(http_url):
         for i in range(1, 255):
             modified_ip = f"{ip_address[:-1]}{i}"
             modified_url = f"{ip_start}{modified_ip}:{port}{ip_end}"
-            print(modified_url)
+            # print(modified_url)
             channels.append((channel, modified_url))
+            for dy_port in dcom:
+                if port not in dy_port:
+                    modified_url = f"{ip_start}{modified_ip}:{dy_port}{ip_end}"
+                    channels.append((channel, modified_url))
+            
 
 def is_url_accessible(url):
     try:
