@@ -143,11 +143,7 @@ def modify_urls(http_url):
             modified_url = f"{ip_start}{modified_ip}:{port}{ip_end}"
             # print(modified_url)
             channels.append((channel, modified_url))
-            for dy_port in dcom:
-                if port not in dy_port:
-                    modified_url = f"{ip_start}{modified_ip}:{dy_port}{ip_end}"
-                    channels.append((channel, modified_url))
-            
+           
 
 def is_url_accessible(url):
     try:
