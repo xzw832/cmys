@@ -663,7 +663,7 @@ with open("S_CCTV.txt", "w", encoding="utf-8") as output:
 # print("================================================================================================================")
 # 合并文件内容
 file_contents = []
-file_paths = ["Z_22_weishi.txt", "Z_21_weishi.txt", "Z_20_weishi.txt", "Z_15_weishi.txt", "Z_14_weishi.txt", "Z_13_weishi.txt", "Z_12_weishi.txt", "Z_11_weishi.txt", "Z_00_weishi.txt", "Z_23_weishi.txt"]  # 替换为实际的文件路径列表
+file_paths = ["Z_22_weishi.txt", "Z_21_weishi.txt", "Z_20_weishi.txt", "Z_15_weishi.txt", "Z_14_weishi.txt", "Z_13_weishi.txt", "Z_12_weishi.txt", "Z_11_weishi.txt", "Z_00_weishi.txt", "Z_23_weishi.txt", "S_CCTV.txt"]  # 替换为实际的文件路径列表
 for file_path in file_paths:
     if os.path.exists(file_path):
         with open(file_path, 'r', encoding="utf-8") as file:
