@@ -42,3 +42,21 @@ CCTV9_电信,http://222.218.158.106:8181/tsfile/live/0009_1.m3u8
 
 
 
+CCTV1_联通,http://221.5.12.130:2223/hls/23/index.m3u8
+﻿CCTV2_联通,http://221.5.12.130:2223/hls/73/index.m3u8
+CCTV10_联通,http://221.5.12.130:2223/hls/56/index.m3u8
+CCTV11_联通,http://221.5.12.130:2223/hls/60/index.m3u8
+CCTV12_联通,http://221.5.12.130:2223/hls/81/index.m3u8
+CCTV13_联通,http://221.5.12.130:2223/hls/65/index.m3u8
+CCTV14_联通,http://221.5.12.130:2223/hls/84/index.m3u8
+CCTV15_联通,http://221.5.12.130:2223/hls/70/index.m3u8
+CCTV3_联通,http://221.5.12.130:2223/hls/24/index.m3u8
+CCTV4_联通,http://221.5.12.130:2223/hls/74/index.m3u8
+CCTV5+_联通,http://221.5.12.130:2223/hls/91/index.m3u8
+CCTV5_联通,http://221.5.12.130:2223/hls/89/index.m3u8
+CCTV6_联通,http://221.5.12.130:2223/hls/75/index.m3u8
+CCTV7_联通,http://221.5.12.130:2223/hls/79/index.m3u8
+CCTV8_联通,http://221.5.12.130:2223/hls/80/index.m3u8
+CCTV9_联通,http://221.5.12.130:2223/hls/90/index.m3u8
+CCTV风云音乐_联通,http://221.5.12.130:2223/hls/70/index.m3u8
+CCTV风云足球_联通,http://221.5.12.130:2223/hls/85/index.m3u8
